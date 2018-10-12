@@ -42,9 +42,9 @@ def dtFromNtpSec(dtNtpSeconds):
 
 # datetime formats
 dtOOI = '%Y-%m-%dT%H:%M:%S.000Z'
-dtFmt = '%Y-%m-%d+%H:%M:%S'
+dtFmt = '%Y-%m-%d+%H.%M.%S'
 dFmt = '%Y-%m-%d'
-tFmt = '%H:%M:%S'
+tFmt = '%H.%M.%S'
 
 # optional cmd line arg for datetime, default is now
 # we use now-15minutes by default if no cmd line arg or if bad datetime
