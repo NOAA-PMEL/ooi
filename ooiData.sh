@@ -19,7 +19,7 @@ if [ -x $py ]; then
   # check success
   if [ $? != 0 ]; then
     echo $0: failure
-    if [ -n $EMAIL_ON_FAIL ]; then
+    if [ -n "$EMAIL_ON_FAIL" ]; then
       echo "$(date) $0 fail" | mailx -s "$0 fail" $EMAIL_ON_FAIL
     fi
   fi
