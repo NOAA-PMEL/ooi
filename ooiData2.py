@@ -4,25 +4,21 @@
 # .1 make an URL describing the instrument sensor data stream
 # .2 create time interval - round time to nearest part of hour
 # .3 stream into data[] array, select certain data items
-# .4 write out to file with name like ./2018-10-11+16:03
+# .4 write out to file with name like ./2018-10-11+16:03:39
 # Thu Oct 11 16:15:09 PDT 2018
-# make a monthly dir data/2018/10 - 3000 files / month
-# Mon Nov  5 08:59:00 PST 2018
 
 from datetime import datetime, timedelta
 import requests
 import sys
-import os
 
 progName = sys.argv[0]
 
 # my params
 sampMinutes = 15          # time interval and start time modulus
 sampLimit = 60*60         # one hour at one sample per second
-sampHeader = True	  # column header in csv file
-sampPrint = False         # print to std out (as well as into file)
 sampRound = True          # round down start time, e.g. nearest quarter hour
-sampPath = 'data'	  # path to data store
+sampPrint = False         # print to std out (as well as into file)
+sampFname = "./%s.csv"    # create filename from datetime
 
 # authen
 username = 'OOIAPI-8PGYR9GA7YHVXX'
@@ -33,16 +29,9 @@ node = 'MJ03B'
 sensor = '10-CTDPFB304'
 method = 'streamed'
 stream = 'ctdpf_optode_sample'
-# url
+
 baseUrl = 'https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv'
 dataRequestUrl ='/'.join((baseUrl, subsite, node, sensor, method, stream))
-
-# datetime formats
-dtOOI = '%Y-%m-%dT%H:%M:%S.000Z'
-dFmt = '%Y-%m-%d'
-tFmt = '%H.%M.%S'
-dtFmt = '%Y-%m-%d+%H.%M'
-fnameFmt = dtFmt
 
 # date time conversions, OOI data uses seconds since 1900
 dtNtpEpoch = datetime(1900, 1, 1)
@@ -50,6 +39,12 @@ dtUnixEpoch = datetime(1970, 1, 1)
 dtNtpDelta = (dtUnixEpoch - dtNtpEpoch).total_seconds()
 def dtFromNtpSec(dtNtpSeconds):
   return datetime.utcfromtimestamp(dtNtpSeconds - dtNtpDelta)
+
+# datetime formats
+dtOOI = '%Y-%m-%dT%H:%M:%S.000Z'
+dtFmt = '%Y-%m-%d+%H.%M.%S'
+dFmt = '%Y-%m-%d'
+tFmt = '%H.%M.%S'
 
 # optional cmd line arg for datetime, default is now
 # we use now-15minutes by default if no cmd line arg or if bad datetime
@@ -80,6 +75,10 @@ params = {
   'limit': sampLimit, 
 }
 
+# insert datetime into the filename, e.g. 2018-10-11+16:03:39.csv
+filename = sampFname % beginDT.strftime(dtFmt)
+# does it exist? exit
+
 # select data items, see list at end of file
 selectData = ( 
   'density', 
@@ -98,33 +97,24 @@ if response.status_code!=200:
   print dataRequestUrl
   sys.exit(response.status_code)
 
-## write data
-dataPath = "%s/%s/%s" % (sampPath, beginDT.year, beginDT.month)
-if not os.path.isdir(dataPath):
-  os.makedirs(dataPath)
-
-# insert datetime into the filename, ie 2018-10-11+16.00.csv
-fname = beginDT.strftime(fnameFmt)
-with open(dataPath + '/' + fname, "w+") as f:
-  # column header
-  if sampHeader:
-    line = "seconds, time"
-    for i in selectData:
-      line = "%s, %s" % (line, i)
-    if sampPrint:
-      print line
-    f.write(line+'\n')
-  # data
-  for j in range(len(data)):
-    ntpSec = data[j]['time']
-    tStr = dtFromNtpSec(ntpSec).strftime(tFmt)
-    line = "%.2f, %s" % (ntpSec, tStr)
-    for i in selectData:
-      line = line + ", %f" % data[j][i]
-    if sampPrint:
-      print line
-    f.write(line+'\n')
-
+# write data
+f = open(filename, "w")
+line = "seconds, time"
+for i in selectData:
+  line = line + ", %s" % i
+if sampPrint:
+  print line
+f.write(line+'\n')
+for i in range(len(data)):
+  ntpSec = data[i]['time']
+  tStr = dtFromNtpSec(ntpSec).strftime(tFmt)
+  line = "%.2f, %s" % (ntpSec, tStr)
+  for j in selectData:
+    line = line + ", %f" % data[i][j]
+  if sampPrint:
+    print line
+  f.write(line+'\n')
+f.close()
 sys.exit(0)
 
 

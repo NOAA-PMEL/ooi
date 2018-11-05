@@ -2,7 +2,7 @@
 # EMAIL_ON_FAIL="brian.kahn@noaa.gov"
 
 # format that OOI likes
-fmt='+%Y-%m-%d+%H.%M.%S'
+fmt='+%Y-%m-%d+%H.%M'
 # parm1
 if [ $# -gt 0 ]; then
   when=$1

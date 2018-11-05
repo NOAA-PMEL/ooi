@@ -1,1 +1,1 @@
-5,20,35,50 * * * * cd ~/ooi/data; ../ooiData.sh &> ../ooiData.log
+5,20,35,50 * * * * cd ~/ooi; ./ooiData.sh &> ./ooiData.log
