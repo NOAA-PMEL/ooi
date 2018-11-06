@@ -1,29 +1,50 @@
 #!/bin/bash
-# EMAIL_ON_FAIL="brian.kahn@noaa.gov"
+Email="brian.kahn@noaa.gov"
+
+# ooiData
+Base=$(basename $0 .sh)
 
 # format that OOI likes
 fmt='+%Y-%m-%d+%H.%M'
-# parm1
+# Date
 if [ $# -gt 0 ]; then
   when=$1
   shift
 else
-  when="15 min ago"
+  when="today"
 fi
-parm1=$(date -u -d "$when" $fmt)
+Date=$(date -u -d "$when" $fmt)
 
-py=${0/sh/py} 
-if [ -x $py ]; then
-  echo $py $parm1
-  $py $parm1
-  # check success
-  if [ $? != 0 ]; then
-    echo $0: failure
-    if [ -n "$EMAIL_ON_FAIL" ]; then
-      echo "$(date) $0 fail" | mailx -s "$0 fail" $EMAIL_ON_FAIL
+# use full path
+py=${0/sh/py}
+if [ ! -x $py ]; then
+  echo $0: cannot find $py 
+  exit 1
+fi
+
+# run, capture out with std err
+Out=$( $py $Date 2>&1 )
+Result=$?
+# log, and email if result differs from last time
+if [ -n "$Out" ]; then 
+  echo -e "=== $Base $(date) \n $Out" >> $Base.log
+fi
+if [ $Result -eq 0 ]; then
+  # success
+  if grep -s -q fail $Base.last; then
+    if [ -n "$Email" ]; then
+      echo -e "$Base success $(date) \n $Out" | mailx -s "$0 success" $Email
     fi
   fi
+  echo "$Base: success $Date" > $Base.last
 else
-  echo $0: cannot find $py 
+  # fail
+  if grep -s -q success $Base.last; then
+    if [ -n "$Email" ]; then
+      echo -e "$Base fail $(date) \n $Out" | mailx -s "$0 fail" $Email
+    fi
+  fi
+  echo "$Base: fail $Date" > $Base.last
 fi
 
+exit $Result

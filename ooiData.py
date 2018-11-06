@@ -24,6 +24,10 @@ sampPrint = False         # print to std out (as well as into file)
 sampRound = True          # round down start time, e.g. nearest quarter hour
 sampPath = 'data'	  # path to data store
 
+# testing - turn these off
+verbose = False
+testing = False
+
 # authen
 username = 'OOIAPI-8PGYR9GA7YHVXX'
 token = '0MT4ME7UEL5Y8L'
@@ -62,7 +66,7 @@ except (IndexError,ValueError) as ex:
   # bad date
   if isinstance(ex, ValueError):
     print ex.message
-    print "using default datetime = now"
+    print "bad datetime, default is now"
 
 # round down modulo sampMinute (e.g. to quarter hour)
 if sampRound:
@@ -71,7 +75,7 @@ if sampRound:
     beginDT = beginDT - timedelta(minutes=sampDown)
     beginDT = beginDT.replace(second=0)
     beginDT = beginDT.replace(microsecond=0)
-    print "rounding time down to %s" % beginDT.strftime(tFmt)
+    if verbose: print "rounding time down to %s" % beginDT.strftime(tFmt)
 
 endDT = beginDT + timedelta(minutes=sampMinutes)
 
@@ -89,7 +93,8 @@ selectData = (
 )
 
 # fetch all data from beginDT to endDT
-# ooi has a way to fetch only selected data, but it's poorly documented
+# ooi has a way to fetch only selected data, 
+#  but it's poorly documented so fetch all and save selected
 session = requests.session()
 response = session.get(dataRequestUrl, params=params, auth=(username, token))
 data = response.json()
@@ -99,6 +104,8 @@ if response.status_code!=200:
   print dataRequestUrl
   sys.exit(response.status_code)
 
+if testing: sys.exit()
+
 ## write data
 dataPath = "%s/%s/%s" % (sampPath, beginDT.year, beginDT.month)
 if not os.path.isdir(dataPath):
@@ -107,14 +114,13 @@ if not os.path.isdir(dataPath):
 # insert datetime into the filename, ie 2018-10-11+16.00.csv
 fname = beginDT.strftime(fnameFmt) + '.csv'
 with open(dataPath + '/' + fname, "w+") as f:
-  print "writing %s" % fname
+  if verbose: print "writing %s" % fname
   # column header
   if sampHeader:
     line = "seconds, time"
     for i in selectData:
       line = "%s, %s" % (line, i)
-    if sampPrint:
-      print line
+    if verbose: print line
     f.write(line+'\n')
   # data
   for j in range(len(data)):
@@ -123,8 +129,7 @@ with open(dataPath + '/' + fname, "w+") as f:
     line = "%.2f, %s" % (ntpSec, tStr)
     for i in selectData:
       line = line + ", %f" % data[j][i]
-    if sampPrint:
-      print line
+    if verbose: print line
     f.write(line+'\n')
 
 sys.exit(0)
