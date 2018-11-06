@@ -66,11 +66,12 @@ except (IndexError,ValueError) as ex:
 
 # round down modulo sampMinute (e.g. to quarter hour)
 if sampRound:
-  sampDown = beginDT.minute - beginDT.minute % sampMinutes
-  beginDT = beginDT.replace(minute=sampDown)
-  beginDT = beginDT.replace(second=0)
-  beginDT = beginDT.replace(microsecond=0)
-  print "rounding time down to %s" % beginDT.strftime(tFmt)
+  sampDown = beginDT.minute % sampMinutes
+  if sampDown:
+    beginDT = beginDT - timedelta(minutes=sampDown)
+    beginDT = beginDT.replace(second=0)
+    beginDT = beginDT.replace(microsecond=0)
+    print "rounding time down to %s" % beginDT.strftime(tFmt)
 
 endDT = beginDT + timedelta(minutes=sampMinutes)
 
@@ -106,6 +107,7 @@ if not os.path.isdir(dataPath):
 # insert datetime into the filename, ie 2018-10-11+16.00.csv
 fname = beginDT.strftime(fnameFmt) + '.csv'
 with open(dataPath + '/' + fname, "w+") as f:
+  print "writing %s" % fname
   # column header
   if sampHeader:
     line = "seconds, time"
