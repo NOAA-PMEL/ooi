@@ -10,7 +10,7 @@ if [ $# -gt 0 ]; then
 else
   when="15 min ago"
 fi
-parm1=$(date -d "$when" $fmt)
+parm1=$(date -u -d "$when" $fmt)
 
 py=${0/sh/py} 
 if [ -x $py ]; then

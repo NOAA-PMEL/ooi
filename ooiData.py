@@ -104,7 +104,7 @@ if not os.path.isdir(dataPath):
   os.makedirs(dataPath)
 
 # insert datetime into the filename, ie 2018-10-11+16.00.csv
-fname = beginDT.strftime(fnameFmt)
+fname = beginDT.strftime(fnameFmt) + '.csv'
 with open(dataPath + '/' + fname, "w+") as f:
   # column header
   if sampHeader:
