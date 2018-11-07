@@ -98,13 +98,15 @@ selectData = (
 session = requests.session()
 response = session.get(dataRequestUrl, params=params, auth=(username, token))
 data = response.json()
-if response.status_code!=200:
+if testing or response.status_code!=200:
   print data['message']['status']
   print params
   print dataRequestUrl
   sys.exit(response.status_code)
 
-if testing: sys.exit()
+if len(data) < 2:
+  print "data length = %s" % len(data)
+  sys.exit(response.status_code)
 
 ## write data
 dataPath = "%s/%s/%s" % (sampPath, beginDT.year, beginDT.month)

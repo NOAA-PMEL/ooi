@@ -9,11 +9,9 @@ fmt='+%Y-%m-%d+%H.%M'
 # Date
 if [ $# -gt 0 ]; then
   when=$1
-  shift
 else
-  when="today"
+  when=$(date -u -d now $fmt)
 fi
-Date=$(date -u -d "$when" $fmt)
 
 # use full path
 py=${0/sh/py}
