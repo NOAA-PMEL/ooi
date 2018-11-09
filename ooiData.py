@@ -103,9 +103,11 @@ if response.status_code!=200:
   print( "%s fail: %s", progName, 'request error' )
   sys.exit(response.status_code)
 
-if len(data) < 2:
+# should have close to 1/sec
+sec = 60*(sampMinutes-1)
+if len(data) < sec:
   sys.stderr.write( "=== %s" % beginDT.strftime(dtFmt) )
-  sys.stderr.write( "data length = %s" % len(data))
+  sys.stderr.write( "short data length = %s" % len(data))
   print( "%s fail: %s", progName, 'no data' )
   sys.exit(response.status_code)
 
