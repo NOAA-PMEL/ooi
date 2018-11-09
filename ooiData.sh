@@ -1,48 +1,53 @@
 #!/bin/bash
+##
+# ooiData.sh v2
+# figure reasonable date time
+# Thu Nov  8 10:04:00 PST 2018
+# v2: no monthly dir. daily file up to current time. repeat fails in *.fail
+# crontab daily ooiClean.sh to remove segments from previous days
+
 Email="brian.kahn@noaa.gov"
 
 # ooiData
-Base=$(basename $0 .sh)
+base=$(basename $0 .sh)
+dir=$(dirname $0)
+cd $dir
 
-# format that OOI likes
-fmt='+%Y-%m-%d+%H.%M'
 # Date
 if [ $# -gt 0 ]; then
   when=$1
 else
-  when=$(date -u -d now $fmt)
+  when="15 minutes ago"
 fi
+dateTime=$(date -u -d "$when" '+%Y-%m-%d+%H.%M')
+day=$(date -u -d "$when" '+%Y-%m-%d')
 
 # use full path
 py=${0/sh/py}
 if [ ! -x $py ]; then
-  echo $0: cannot find $py 
+  echo $0: cannot find $py > $base.out
   exit 1
 fi
 
-# run, capture out with std err
-Out=$( $py $Date 2>&1 )
-Result=$?
-# log, and email if result differs from last time
-if [ -n "$Out" ]; then 
-  echo -e "=== $Base $(date) \n $Out" >> $Base.log
-fi
-if [ $Result -eq 0 ]; then
-  # success
-  if grep -s -q fail $Base.last; then
-    if [ -n "$Email" ]; then
-      echo -e "$Base success $(date) \n $Out" | mailx -s "$0 success" $Email
-    fi
+# was last run a success?
+grep -s -q success $base.out
+Last=$?
+
+# run
+$py "$dateTime" > $base.out 2>> $base.log
+This=$?
+
+# email if result differs from last time
+if [ $This -ne $Last ]; then
+  if [ -n "$Email" ]; then
+    cat $base.out | mailx -s "$0" $Email
   fi
-  echo "$Base: success $Date" > $Base.last
-else
-  # fail
-  if grep -s -q success $Base.last; then
-    if [ -n "$Email" ]; then
-      echo -e "$Base fail $(date) \n $Out" | mailx -s "$0 fail" $Email
-    fi
-  fi
-  echo "$Base: fail $Date" > $Base.last
 fi
 
-exit $Result
+# make daily file
+seg="segments/$day??*.csv"
+if [ "$(echo $seg)" != "$seg" ]; then
+  cat $seg > data/$day.csv
+fi
+
+exit $This

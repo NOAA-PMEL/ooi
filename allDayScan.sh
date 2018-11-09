@@ -9,7 +9,8 @@ if [ $# -gt 0 ]; then
   when=$1
   shift
 else
-  when="today"
+  # today isn't finished yet
+  when="yesterday"
 fi
 date=$(date -u -d "$when" '+%Y-%m-%d')
 year=$(date -u -d "$when" '+%Y')
