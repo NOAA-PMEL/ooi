@@ -45,6 +45,7 @@ if [ $This -ne $Last ]; then
 fi
 
 # make daily file
+# day=$(date -u -d "$when" '+%Y-%m-%d')
 seg="segments/$day??*.csv"
 if [ "$(echo $seg)" != "$seg" ]; then
   cat $seg > data/$day.csv

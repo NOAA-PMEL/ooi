@@ -2,19 +2,20 @@
 # scan the day "%Y-%m-%d" and fetch missing segments
 # EMAIL_ON_FAIL="brian.kahn@noaa.gov"
 
-path=data
+dirname=$(dirname $0)
+cd $dirname
+
+path=segments
 fmt='+%Y-%m-%d'
 
 if [ $# -gt 0 ]; then
   when=$1
   shift
 else
-  # today isn't finished yet
   when="yesterday"
 fi
-date=$(date -u -d "$when" '+%Y-%m-%d')
-year=$(date -u -d "$when" '+%Y')
-month=$(date -u -d "$when" '+%m')
+
+date=$(date -u -d "$when" '+%Y-%m-%d') || exit 1
 
 echo checking $date UTC
 
@@ -22,9 +23,18 @@ for hour in {00..23}; do
   # 15min segments
   for min in {00..45..15}; do
     dt=$date+$hour.$min
-    fn=$path/$year/$month/$dt.csv
+    fn=$path/$dt.csv
     if [ ! -f "$fn" ]; then
-      echo $dt
+      echo ./ooiData.py $dt
+      # ./ooiData.py $dt
     fi
   done
 done
+
+# make daily file
+day=$(date -u -d "$when" '+%Y-%m-%d')
+seg="segments/$day??*.csv"
+if [ "$(echo $seg)" != "$seg" ]; then
+  cat $seg > data/$day.csv
+fi
+

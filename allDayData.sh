@@ -2,6 +2,9 @@
 # scan the day "%Y-%m-%d" and fetch missing segments
 # EMAIL_ON_FAIL="brian.kahn@noaa.gov"
 
+dirname=$(dirname $0)
+cd $dirname
+
 path=segments
 fmt='+%Y-%m-%d'
 
@@ -11,7 +14,8 @@ if [ $# -gt 0 ]; then
 else
   when="yesterday"
 fi
-date=$(date -u -d "$when" '+%Y-%m-%d')
+
+date=$(date -u -d "$when" '+%Y-%m-%d') || exit 1
 
 echo checking $date UTC
 
@@ -26,3 +30,11 @@ for hour in {00..23}; do
     fi
   done
 done
+
+# make daily file
+day=$(date -u -d "$when" '+%Y-%m-%d')
+seg="segments/$day??*.csv"
+if [ "$(echo $seg)" != "$seg" ]; then
+  cat $seg > data/$day.csv
+fi
+
