@@ -1,6 +1,6 @@
 #!/opt/anaconda2/bin/python2.7
 ## 
-# ooiData.py v2
+# ooiData.py v3
 # .1 make an URL describing the instrument sensor data stream
 # .2 create time interval - round time to nearest part of hour
 # .3 stream into data[] array, select certain data items
@@ -9,6 +9,8 @@
 # make a monthly dir data/2018/10 - 3000 files / month
 # Thu Nov  8 10:04:00 PST 2018
 # v2: no monthly dir, no header
+# Fri Nov  9 16:10:55 PST 2018
+# v3: reorganized for exception handling. retry fetch 3 times.
 
 from datetime import datetime, timedelta
 import requests
@@ -16,6 +18,9 @@ import sys
 import os
 
 progName = sys.argv[0]
+# go there
+path = progName[:progName.rfind('/')] 
+os.chdir( path )
 
 # my params
 sampMinutes = 15          # time interval and start time modulus
@@ -24,20 +29,6 @@ sampHeader = True	  # column header in csv file
 sampPrint = False         # print to std out (as well as into file)
 sampRound = True          # round down start time, e.g. nearest quarter hour
 segPath = 'segments'	  # dir for segments
-verbose = False
-
-# authen
-username = 'OOIAPI-8PGYR9GA7YHVXX'
-token = '0MT4ME7UEL5Y8L'
-# Instrument Information
-subsite = 'RS03ASHS'
-node = 'MJ03B'
-sensor = '10-CTDPFB304'
-method = 'streamed'
-stream = 'ctdpf_optode_sample'
-# url
-baseUrl = 'https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv'
-dataRequestUrl ='/'.join((baseUrl, subsite, node, sensor, method, stream))
 
 # datetime formats
 dtOOI = '%Y-%m-%dT%H:%M:%S.000Z'
@@ -49,8 +40,45 @@ dtFmt = '%Y-%m-%d+%H.%M'
 dtNtpEpoch = datetime(1900, 1, 1)
 dtUnixEpoch = datetime(1970, 1, 1)
 dtNtpDelta = (dtUnixEpoch - dtNtpEpoch).total_seconds()
+
 def dtFromNtpSec(dtNtpSeconds):
   return datetime.utcfromtimestamp(dtNtpSeconds - dtNtpDelta)
+
+def dataSegment(url, params, auth):
+  "fetch data in time segment. return: response"
+  # retry if no success, transient server err 501
+  for i in range(1,3):
+    session = requests.session()
+    response = session.get(url, params=params, auth=auth)
+    # good to go
+    if response.status_code == 200: break
+    sys.stderr.write( "fetch fail #%s, %s: %s" % 
+        (i, response.status_code), response.reason)
+  else:
+    raise ValueError(('request error', response))
+  data = response.json()
+  # should have close to 1/sec
+  sec = 60*(sampMinutes-1)
+  if len(data) < sec:
+    raise ValueError(("short data length = %s" % len(data), response))
+  return data
+
+def saveSegment(path, data, select):
+  "write data to file in path (may be relative)"
+  # ooi has a way to fetch only selected data, 
+  #  but it's poorly documented so fetch all and save selected
+  if not os.path.isdir(path):
+    os.makedirs(path)
+  # insert datetime into the filename, ie 2018-10-11+16.30.csv
+  fName = path + '/' + beginDT.strftime(dtFmt) + '.csv'
+  with open(fName, "w") as f:
+    for j in range(len(data)):
+      ntpSec = data[j]['time']
+      tStr = dtFromNtpSec(ntpSec).strftime(tFmt)
+      line = "%.2f, %s" % (ntpSec, tStr)
+      for i in select:
+	line = line + ", %f" % data[j][i]
+      f.write(line+'\n')
 
 # optional cmd line arg for datetime, default is now
 # we use now-15minutes by default if no cmd line arg or if bad datetime
@@ -72,7 +100,6 @@ if sampRound:
     beginDT = beginDT - timedelta(minutes=sampDown)
     beginDT = beginDT.replace(second=0)
     beginDT = beginDT.replace(microsecond=0)
-    if verbose: print "rounding time down to %s" % beginDT.strftime(tFmt)
 
 endDT = beginDT + timedelta(minutes=sampMinutes)
 
@@ -82,55 +109,42 @@ params = {
   'limit': sampLimit, 
 }
 
-# select data items, see list at end of file
-selectData = ( 
+# authentication
+username = 'OOIAPI-8PGYR9GA7YHVXX'
+token = '0MT4ME7UEL5Y8L'
+auth = (username, token)
+# Instrument Information
+subsite = 'RS03ASHS'
+node = 'MJ03B'
+sensor = '10-CTDPFB304'
+method = 'streamed'
+stream = 'ctdpf_optode_sample'
+# url
+baseUrl = 'https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv'
+dataRequestUrl ='/'.join((baseUrl, subsite, node, sensor, method, stream))
+
+# select data items, see list in README
+select = ( 
   'density', 
   'practical_salinity', 
   'seawater_temperature', 
 )
 
-# fetch all data from beginDT to endDT
-# ooi has a way to fetch only selected data, 
-#  but it's poorly documented so fetch all and save selected
-session = requests.session()
-response = session.get(dataRequestUrl, params=params, auth=(username, token))
-data = response.json()
-if response.status_code!=200:
-  sys.stderr.write( "=== %s" % beginDT.strftime(dtFmt) )
-  sys.stderr.write( data['message']['status'] )
-  sys.stderr.write( params )
-  sys.stderr.write( dataRequestUrl )
-  print( "%s fail: %s", progName, 'request error' )
-  sys.exit(response.status_code)
-
-# should have close to 1/sec
-sec = 60*(sampMinutes-1)
-if len(data) < sec:
-  sys.stderr.write( "=== %s" % beginDT.strftime(dtFmt) )
-  sys.stderr.write( "short data length = %s" % len(data))
-  print( "%s fail: %s", progName, 'no data' )
-  sys.exit(response.status_code)
-
-# go there
-os.chdir( progName[:progName.rfind('/')] )
-if not os.path.isdir(segPath):
-  os.makedirs(segPath)
-
-## write segment
-# insert datetime into the filename, ie 2018-10-11+16.30.csv
-fName = segPath + '/' + beginDT.strftime(dtFmt) + '.csv'
-# write data segment
-with open(fName, "w") as f:
-  if verbose: print "writing %s" % fName
-  # data
-  for j in range(len(data)):
-    ntpSec = data[j]['time']
-    tStr = dtFromNtpSec(ntpSec).strftime(tFmt)
-    line = "%.2f, %s" % (ntpSec, tStr)
-    for i in selectData:
-      line = line + ", %f" % data[j][i]
-    if verbose: print line
-    f.write(line+'\n')
+# main
+try:
+  data = dataSegment( url=dataRequestUrl, params=params, auth=auth )
+  saveSegment( segPath, data, select )
+except ValueError as ex:
+  msg = ex.message[0]
+  rsp = ex.message[1]
+  sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
+  sys.stderr.write( "code %s, reason %s\n%s\n" %
+      (rsp.status_code, rsp.reason, rsp.url) )
+  print( "%s fail: %s" % (progName, ex.message) )
+  raise
+except Exception as ex:
+  print( "%s fail: (unexpected) %s" % (progName, ex.message) )
+  raise
 
 print( "%s success: %s" % (progName, len(data)) )
 sys.exit(0)

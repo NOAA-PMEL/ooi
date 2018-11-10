@@ -1,5 +1,6 @@
 Legal Disclaimer
 This repository is a software product and is not official communication of the National Oceanic and Atmospheric Administration (NOAA), or the United States Department of Commerce (DOC). All NOAA GitHub project code is provided on an 'as is' basis and the user assumes responsibility for its use. Any claims against the DOC or DOC bureaus stemming from the use of this GitHub project will be governed by all applicable Federal law. Any reference to specific commercial products, processes, or services by service mark, trademark, manufacturer, or otherwise, does not constitute or imply their endorsement, recommendation, or favoring by the DOC. The DOC seal and logo, or the seal and logo of a DOC bureau, shall not be used in any manner to imply endorsement of any commercial product or activity by the DOC or the United States Government.
+
 # ooi
 streamed data from OOI
 # data in this instrument:
@@ -64,4 +65,20 @@ streamed data from OOI
 # u'time': 3745594521.6167817, 
 # u'dissolved_oxygen_qc_executed': 1, 
 # u'seawater_conductivity_qc_executed': 1}
+
+>>> dir (response)
+['__attrs__', '__bool__', '__class__', '__delattr__', '__dict__', '__doc__', '__enter__', '__exit__', '__format__', '__getattribute__', '__getstate__', '__hash__', '__init__', '__iter__', '__module__', '__new__', '__nonzero__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__setstate__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_content', '_content_consumed', '_next', 'apparent_encoding', 'close', 'connection', 'content', 'cookies', 'elapsed', 'encoding', 'headers', 'history', 'is_permanent_redirect', 'is_redirect', 'iter_content', 'iter_lines', 'json', 'links', 'next', 'ok', 'raise_for_status', 'raw', 'reason', 'request', 'status_code', 'text', 'url']
+
+Fri Nov  9 15:34:48 PST 2018
+ ./oo.py 2018-11-06+00.00
+=== 2018-11-06+00.00
+code 502, reason Bad Gateway
+https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv/RS03ASHS/MJ03B/10-CTDPFB304/streamed/ctdpf_optode_sample?beginDT=2018-11-06T00%3A00%3A00.000Z&endDT=2018-11-06T00%3A15%3A00.000Z&limit=3600
+./oo.py fail: request error 502
+Traceback (most recent call last):
+  File "./oo.py", line 126, in <module>
+    data = dataSegment( url=dataRequestUrl, params=params, auth=auth )
+  File "./oo.py", line 65, in dataSegment
+    raise ValueError(('request error %s' % response.status_code, response))
+ValueError: ('request error 502', <Response [502]>)
 
