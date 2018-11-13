@@ -17,27 +17,14 @@ fi
 
 date=$(date -u -d "$when" '+%Y-%m-%d') || exit 1
 
-echo checking $date UTC
-
-result=0
 for hour in {00..23}; do
   # 15min segments
   for min in {00..45..15}; do
     dt=$date+$hour.$min
     fn=$path/$dt.csv
     if [ ! -f "$fn" ]; then
-      echo ./ooiData.py $dt
+      # echo $dt
       ./ooiData.py $dt
-      result=$(($result+1))
-    else 
-      set $(wc -l $fn)
-      if [ $1 -lt 880 ]; then
-	echo ./ooiData.py $dt
-	./ooiData.py $dt
-	result=$(($result+1))
-      fi
     fi
   done
 done
-
-exit $result

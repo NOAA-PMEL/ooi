@@ -32,7 +32,6 @@ sampRound = True          # round down start time, e.g. nearest quarter hour
 segPath = 'segments'	  # dir for segments
 
 # datetime formats
-dtOOI = '%Y-%m-%dT%H:%M:%S.000Z'
 dFmt = '%Y-%m-%d'
 tFmt = '%H.%M.%S'
 dtFmt = '%Y-%m-%d+%H.%M'
@@ -41,12 +40,13 @@ dtFmt = '%Y-%m-%d+%H.%M'
 dtNtpEpoch = datetime(1900, 1, 1)
 dtUnixEpoch = datetime(1970, 1, 1)
 dtNtpDelta = (dtUnixEpoch - dtNtpEpoch).total_seconds()
-
 def dtFromNtpSec(dtNtpSeconds):
+  global dtNtpDelta
   return datetime.utcfromtimestamp(dtNtpSeconds - dtNtpDelta)
 
-def dataSegment(url, params, auth):
+def dataSegment(dtStr, url, params, auth):
   "fetch data in time segment. return: response"
+  global dtFmt, tFmt
   # retry if no success, transient server err 501
   for i in range(1,9):
     session = requests.session()
@@ -54,7 +54,7 @@ def dataSegment(url, params, auth):
     # good to go
     if response.status_code == 200: break
     # pause, retry
-    sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
+    sys.stderr.write( "=== %s\n" % dtStr )
     sys.stderr.write( "fetch fail on try #%s, %s: %s\n" % 
         (i, response.status_code, response.reason) )
     sleep(5)
@@ -65,18 +65,19 @@ def dataSegment(url, params, auth):
   sec = 60*(sampMinutes-1)
   # allow but log
   if len(data) < sec:
-    sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
+    sys.stderr.write( "=== %s\n" % dtStr )
     sys.stderr.write( "fetch short, length = %s\n" % len(data) )
   return data
 
-def saveSegment(path, data, select):
+def saveSegment(dtStr, path, data, select):
   "write data to file in path (may be relative)"
+  global tFmt
   # ooi has a way to fetch only selected data, 
   #  but it's poorly documented so fetch all and save selected
   if not os.path.isdir(path):
     os.makedirs(path)
   # insert datetime into the filename, ie 2018-10-11+16.30.csv
-  fName = path + '/' + beginDT.strftime(dtFmt) + '.csv'
+  fName = path + '/' + dtStr + '.csv'
   with open(fName, "w") as f:
     for j in range(len(data)):
       ntpSec = data[j]['time']
@@ -86,29 +87,35 @@ def saveSegment(path, data, select):
 	line = line + ", %f" % data[j][i]
       f.write(line+'\n')
 
-# optional cmd line arg for datetime, default is now
-# we use now-15minutes by default if no cmd line arg or if bad datetime
-try:
-  # date time from cmd line
-  beginDT = datetime.strptime(sys.argv[1], dtFmt)
-except (IndexError,ValueError) as ex:
-  # sampMinutes ago
-  beginDT = datetime.utcnow() - timedelta(minutes=sampMinutes) 
-  # bad date
-  if isinstance(ex, ValueError):
-    print ex.message
-    print "bad datetime '%s', defaulting to now" % sys.argv[1]
+def beginDateTime():
+  "optional cmd line arg for datetime, default is now"
+  # we use now-15minutes by default if no cmd line arg or if bad datetime
+  try:
+    # date time from cmd line
+    beginDT = datetime.strptime(sys.argv[1], dtFmt)
+  except (IndexError,ValueError) as ex:
+    # sampMinutes ago
+    beginDT = datetime.utcnow() - timedelta(minutes=sampMinutes) 
+    # bad date
+    if isinstance(ex, ValueError):
+      print ex.message
+      print "bad datetime '%s', defaulting to now" % sys.argv[1]
+  # round down modulo sampMinute (e.g. to quarter hour)
+  if sampRound:
+    sampDown = beginDT.minute % sampMinutes
+    if sampDown:
+      beginDT = beginDT - timedelta(minutes=sampDown)
+      beginDT = beginDT.replace(second=0)
+      beginDT = beginDT.replace(microsecond=0)
+  return beginDT
 
-# round down modulo sampMinute (e.g. to quarter hour)
-if sampRound:
-  sampDown = beginDT.minute % sampMinutes
-  if sampDown:
-    beginDT = beginDT - timedelta(minutes=sampDown)
-    beginDT = beginDT.replace(second=0)
-    beginDT = beginDT.replace(microsecond=0)
+##
+# setup parameters
+beginDT = beginDateTime()
+dtStr = beginDT.strftime(dtFmt)
 
 endDT = beginDT + timedelta(minutes=sampMinutes)
-
+dtOOI = '%Y-%m-%dT%H:%M:%S.000Z'
 params = { 
   'beginDT': beginDT.strftime(dtOOI),
   'endDT': endDT.strftime(dtOOI),
@@ -138,19 +145,19 @@ select = (
 
 # main
 try:
-  data = dataSegment( url=dataRequestUrl, params=params, auth=auth )
-  saveSegment( segPath, data, select )
+  data = dataSegment( dtStr, url=dataRequestUrl, params=params, auth=auth )
+  saveSegment( dtStr, segPath, data, select )
 except ValueError as ex:
   msg = ex.message[0]
   rsp = ex.message[1]
-  sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
+  sys.stderr.write( "=== %s\n" % dtStr )
   sys.stderr.write( "code %s, reason %s\n%s\n" %
       (rsp.status_code, rsp.reason, rsp.url) )
-  print( "%s fail: %s" % (progName, ex.message) )
+  print( "%s fail: %s" % (dtStr, ex.message) )
   raise
 except Exception as ex:
-  print( "%s fail: (unexpected) %s" % (progName, ex.message) )
+  print( "%s fail: (unexpected) %s" % (dtStr, ex.message) )
   raise
 
-print( "%s success: %s" % (progName, len(data)) )
+print( "%s success: %s" % (dtStr, len(data)) )
 sys.exit(0)
