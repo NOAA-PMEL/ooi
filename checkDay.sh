@@ -28,6 +28,11 @@ for hour in {00..23}; do
       echo ./ooiData.py $dt
       # ./ooiData.py $dt
     fi
+    set $(wc -l $fn)
+    if [ $1 -lt 880 ]; then
+      echo ./ooiData.py $dt
+      # ./ooiData.py $dt
+    fi
   done
 done
 

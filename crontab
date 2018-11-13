@@ -1,3 +1,3 @@
 5,20,35,50 * * * * ~/ooi/ooiData.sh 
 # once an hour, delete old segments (-depth is for good style)
-2 * * * * find ~/ooi/segments/ -depth -mtime +3 -delete
+2 * * * * find ~/ooi/segments/ -depth -mtime +5 -delete

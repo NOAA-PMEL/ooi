@@ -13,6 +13,7 @@
 # v3: reorganized for exception handling. retry fetch 3 times.
 
 from datetime import datetime, timedelta
+from time import sleep
 import requests
 import sys
 import os
@@ -47,20 +48,24 @@ def dtFromNtpSec(dtNtpSeconds):
 def dataSegment(url, params, auth):
   "fetch data in time segment. return: response"
   # retry if no success, transient server err 501
-  for i in range(1,3):
+  for i in range(1,9):
     session = requests.session()
     response = session.get(url, params=params, auth=auth)
     # good to go
     if response.status_code == 200: break
-    sys.stderr.write( "fetch fail #%s, %s: %s" % 
-        (i, response.status_code), response.reason)
+    sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
+    sys.stderr.write( "fetch fail on try #%s, %s: %s\n" % 
+        (i, response.status_code, response.reason) )
+    sleep(5)
   else:
     raise ValueError(('request error', response))
   data = response.json()
-  # should have close to 1/sec
+  # should have close to 1 sec data intervals (actual 1.014?)
   sec = 60*(sampMinutes-1)
+  # allow but log
   if len(data) < sec:
-    raise ValueError(("short data length = %s" % len(data), response))
+    sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
+    sys.stderr.write( "fetch short, length = %s\n" % len(data) )
   return data
 
 def saveSegment(path, data, select):
