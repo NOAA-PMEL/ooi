@@ -19,6 +19,7 @@ date=$(date -u -d "$when" '+%Y-%m-%d') || exit 1
 
 echo checking $date UTC
 
+result=0
 for hour in {00..23}; do
   # 15min segments
   for min in {00..45..15}; do
@@ -27,18 +28,16 @@ for hour in {00..23}; do
     if [ ! -f "$fn" ]; then
       echo ./ooiData.py $dt
       ./ooiData.py $dt
-    fi
-    if [ $1 -lt 880 ]; then
-      echo ./ooiData.py $dt
-      ./ooiData.py $dt
+      result=$(($result+1))
+    else 
+      set $(wc -l $fn)
+      if [ $1 -lt 880 ]; then
+	echo ./ooiData.py $dt
+	./ooiData.py $dt
+	result=$(($result+1))
+      fi
     fi
   done
 done
 
-# make daily file
-day=$(date -u -d "$when" '+%Y-%m-%d')
-seg="segments/$day??*.csv"
-if [ "$(echo $seg)" != "$seg" ]; then
-  cat $seg > data/$day.csv
-fi
-
+exit $result

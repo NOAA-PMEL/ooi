@@ -53,6 +53,7 @@ def dataSegment(url, params, auth):
     response = session.get(url, params=params, auth=auth)
     # good to go
     if response.status_code == 200: break
+    # pause, retry
     sys.stderr.write( "=== %s\n" % beginDT.strftime(dtFmt) )
     sys.stderr.write( "fetch fail on try #%s, %s: %s\n" % 
         (i, response.status_code, response.reason) )
