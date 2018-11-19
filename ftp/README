@@ -1,0 +1,24 @@
+figuring out a problem
+
+.1 is our fetch running?
+look at timestamp of download.log - should be within last 15min
+ $chadwick@syspc$ ls -l /data/chadwick/4andy/download.log
+
+.2 are we fetching?
+look at time of most recent file in one dir, e.g. mj03f
+note: this file is timestamped GMT, 7 or 8 hours earlier than us (pacific)
+
+.3 are they updating?
+
+.3.1 get ftp pwd
+ $chadwick@syspc$ crontab -l
+
+.3.2 ftp login, from syspc or a web browser
+ $chadwick@syspc$ lftp noaa@ftp.ooirsn.uw.edu
+
+.3.3 check file time, using date wildcard
+ lftp noaa@ftp.ooirsn.uw.edu:/mj03f> cd mj03f
+ lftp noaa@ftp.ooirsn.uw.edu:/mj03f> dir *20160713*
+-rwxr--r--    1 134      110      10595525 Jul 13 02:23 BOTPTA301_10.31.6.5_9338_20160713T0000_UTC.dat
+
+note: this file is timestamped GMT, 7 or 8 hours earlier than us (pacific)
