@@ -32,6 +32,7 @@ nodeInst=(('mj03d', 'BOTPTA303'), ('mj03e', 'BOTPTA302'),
 # if first half of month, then check last month also
 now=datetime.utcnow()
 if now.day>14:
+  lastmonth = 0
   months = [now.month,]
 else:
   lastmonth = (now - timedelta(days=15)).month
@@ -53,6 +54,8 @@ with pysftp.Connection(site, username=user,
           # is file new or newer?
           if ((not os.path.isfile(f.filename)) or
               (f.st_mtime > os.path.getmtime(f.filename))):
-            print("%s/%s" % (node, f.filename))
+            # no log for prev month downloads
+            if mon==now.month:
+              print("%s/%s" % (node, f.filename))
             # download with server timestamp preserved
             sftp.get(f.filename, preserve_mtime=True)

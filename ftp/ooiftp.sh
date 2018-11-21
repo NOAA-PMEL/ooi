@@ -3,6 +3,7 @@
 # ooiftp.sh
 # Tue Nov 20 13:58:12 PST 2018
 
+#Email="brian.kahn@noaa.gov"
 Email="brian.kahn@noaa.gov william.w.chadwick@noaa.gov andy.lau@noaa.gov"
 
 # ooiData
