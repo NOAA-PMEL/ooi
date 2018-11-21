@@ -3,7 +3,7 @@
 # download daily data files from UW ftp site - reimplements download.sh 
 # Mon Nov 19 09:43:33 PST 2018
 # .1 move from syspc to caldera and put in git
-# .2 status to data/inst/ftp.out
+# .2 status to data/node/ftp.out
 # .3 make style closer to the newer api/*.py
 # .4 checks this month and last month (if now is before day 15)
 
@@ -17,9 +17,7 @@ import pysftp
 import stat
 from datetime import datetime, timedelta
 
-progName = sys.argv[0]
-# go there
-here = progName[:progName.rfind('/')]
+(here, me) = os.path.split( os.path.abspath(sys.argv[0]) )
 os.chdir( here )
 
 # my params
@@ -28,8 +26,8 @@ user='noaa'
 keyP='ooirsn'
 keyF='~/.ssh/noaa-pmel4uw'
 
-instruments=(('mj03d', 'BOTPTA303'), ('mj03e', 'BOTPTA302'),
-             ('mj03f', 'BOTPTA301'), ('mj03b', 'BOTPTA304'))
+nodeInst=(('mj03d', 'BOTPTA303'), ('mj03e', 'BOTPTA302'),
+          ('mj03f', 'BOTPTA301'), ('mj03b', 'BOTPTA304'))
 
 # if first half of month, then check last month also
 now=datetime.utcnow()
@@ -39,25 +37,22 @@ else:
   lastmonth = (now - timedelta(days=15)).month
   months = [now.month, lastmonth]
 
-# with Connection, for instruments, with ftp.out, for months, for listdir: get
+# with Connection, for nodeInst, for months, for listdir: get
 with pysftp.Connection(site, username=user, 
-        	       private_key=keyF, private_key_pass=keyP ) as sftp:
-  for inst in instruments:
-    os.chdir("%s/%s" % (here, inst[0]))
-    # overwrite *.out
-    with open("ftp.out", "w") as out:
+                       private_key=keyF, private_key_pass=keyP ) as sftp:
+  for node, inst in nodeInst:
+    os.chdir("%s/data/%s" % (here, node))
+    for mon in months:
       # cd to month directory on ftp server
-      for mon in months:
-        path="/data/%s/%s/%4d/%02d/" % (inst[0], inst[1], now.year, mon)
-        sftp.cwd(path)
-        os.chdir("%s/%s" % (here, inst[0]))
-        # for all files in directory
-        for f in sftp.listdir_attr():
-          # ignore dirs
-          if not stat.S_ISDIR(f.st_mode):
-            # is file new or newer?
-            if ((not os.path.isfile(f.filename)) or
-        	(f.st_mtime > os.path.getmtime(f.filename))):
-              out.write("Downloading %s...\n" % f.filename)
-              # download with server timestamp preserved
-              sftp.get(f.filename, preserve_mtime=True)
+      path="/data/%s/%s/%4d/%02d/" % (node, inst, now.year, mon)
+      sftp.cwd(path)
+      # for all files in directory
+      for f in sftp.listdir_attr():
+        # ignore dirs
+        if not stat.S_ISDIR(f.st_mode):
+          # is file new or newer?
+          if ((not os.path.isfile(f.filename)) or
+              (f.st_mtime > os.path.getmtime(f.filename))):
+            print("%s/%s" % (node, f.filename))
+            # download with server timestamp preserved
+            sftp.get(f.filename, preserve_mtime=True)

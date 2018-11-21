@@ -1,6 +1,7 @@
 # project
 data/
 segments/
+*.out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
