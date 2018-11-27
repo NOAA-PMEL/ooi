@@ -54,8 +54,7 @@ with pysftp.Connection(site, username=user,
           # is file new or newer?
           if ((not os.path.isfile(f.filename)) or
               (f.st_mtime > os.path.getmtime(f.filename))):
-            # no log for prev month downloads
-            if mon==now.month:
-              print("%s/%s" % (node, f.filename))
             # download with server timestamp preserved
             sftp.get(f.filename, preserve_mtime=True)
+    else: # for months: print last file downloaded (today's)
+      print("%s/%s" % (node, f.filename))
