@@ -47,26 +47,21 @@ def dtFromNtpSec(dtNtpSeconds):
 def dataSegment(dtStr, url, params, auth):
   "fetch data in time segment. return: response"
   global dtFmt, tFmt
-  # retry if no success, transient server err 501
-  for i in range(1,9):
-    session = requests.session()
-    response = session.get(url, params=params, auth=auth)
-    # good to go
-    if response.status_code == 200: break
-    # pause, retry
+  # retry if no success does not help, transient failure > 1minute
+  session = requests.session()
+  response = session.get(url, params=params, auth=auth)
+  if response.status_code != 200: 
     sys.stderr.write( "=== %s\n" % dtStr )
-    sys.stderr.write( "fetch fail on try #%s, %s: %s\n" % 
-        (i, response.status_code, response.reason) )
-    sleep(5)
-  else:
+    sys.stderr.write( "fetch fail %s: %s\n" % 
+        (response.status_code, response.reason) )
     raise ValueError(('request error', response))
   data = response.json()
   # should have close to 1 sec data intervals (actual 1.014?)
-  sec = 60*(sampMinutes-1)
-  # allow but log
-  if len(data) < sec:
+  sec = 60*sampMinutes
+  if len(data) < sec-5:
     sys.stderr.write( "=== %s\n" % dtStr )
     sys.stderr.write( "fetch short, length = %s\n" % len(data) )
+    raise ValueError(('request error', response))
   return data
 
 def saveSegment(dtStr, path, data, select):
