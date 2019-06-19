@@ -5,26 +5,35 @@
 dirname=$(dirname $0)
 cd $dirname
 
-path=segments
-fmt='+%Y-%m-%d'
+mini=887
+mind=$(( $mini * 24 * 4 ))
 
-if [ $# -gt 0 ]; then
-  when=$1
-  shift
-else
-  when="yesterday"
-fi
+today=$(date '+%Y-%m-%d')
+date=$(date -u -d $1 '+%Y-%m-%d') || exit 1
+if [ $today == $date ]; then exit 0; fi
 
-date=$(date -u -d "$when" '+%Y-%m-%d') || exit 1
+data=$(cat data/$date.csv | wc -l)
+if [ $data -gt $mind ]; then exit 0; fi
 
+echo "checking $date ($data vs $mind)"
 for hour in {00..23}; do
   # 15min segments
   for min in {00..45..15}; do
     dt=$date+$hour.$min
-    fn=$path/$dt.csv
-    if [ ! -f "$fn" ]; then
-      echo $dt
-      # ./ooiData.py $dt
+    fn=segments/$dt.csv
+    # if segments/datetime missing or short
+    if [ ! -f "$fn" ] || [ $(cat "$fn" | wc -l) -lt $mini ]; then
+      wc -l $fn
+      ./ooiData.py $dt |& head -1
     fi
   done
 done
+
+segs=$(cat segments/$date*|wc -l) 
+if [ $segs -gt $data ]; then
+  echo "$date got more data, $(($segs-$data)) lines"
+  cat segments/$date* > data/$date.csv
+  exit 0
+fi
+
+exit 1

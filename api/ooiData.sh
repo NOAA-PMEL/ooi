@@ -6,7 +6,7 @@
 # v2: no monthly dir. daily file up to current time. repeat fails in *.fail
 # crontab daily ooiClean.sh to remove segments from previous days
 
-Email="brian.kahn@noaa.gov william.w.chadwick@noaa.gov andy.lau@noaa.gov"
+#Email="brian.kahn@noaa.gov william.w.chadwick@noaa.gov andy.lau@noaa.gov"
 
 # ooiData
 base=$(basename $0 .sh)
@@ -23,7 +23,7 @@ dateTime=$(date -u -d "$when" '+%Y-%m-%d+%H.%M')
 day=$(date -u -d "$when" '+%Y-%m-%d')
 
 # use full path
-py=${0/sh/py}
+py=./$base.py
 if [ ! -x $py ]; then
   echo $0: cannot find $py > $base.out
   exit 1
@@ -34,8 +34,9 @@ grep -s -q success $base.out
 Last=$?
 
 # run
-$py "$dateTime" > $base.out 2>> $base.log
+$py "$dateTime" > $base.out 2> $base.err
 This=$?
+wc -l "segments/$dateTime.csv" >> $base.log
 
 # email if result differs from last time
 if [ $This -ne $Last ]; then

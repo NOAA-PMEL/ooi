@@ -23,8 +23,8 @@ for hour in {00..23}; do
     dt=$date+$hour.$min
     fn=$path/$dt.csv
     if [ ! -f "$fn" ]; then
-      # echo $dt
-      ./ooiData.py $dt
+      echo $dt
+      # ./ooiData.py $dt
     fi
   done
 done

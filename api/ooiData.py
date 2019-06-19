@@ -51,18 +51,9 @@ def dataSegment(dtStr, url, params, auth):
   session = requests.session()
   response = session.get(url, params=params, auth=auth)
   if response.status_code != 200: 
-    sys.stderr.write( "=== %s\n" % dtStr )
-    sys.stderr.write( "fetch fail %s: %s\n" % 
-        (response.status_code, response.reason) )
-    raise ValueError(('request error', response))
+    raise ValueError(('request error (%s)' % response.status_code, response))
   data = response.json()
-  # should have close to 1 sec data intervals (actual 1.014?)
-  sec = 60*sampMinutes
-  if len(data) < sec-5:
-    sys.stderr.write( "=== %s\n" % dtStr )
-    sys.stderr.write( "fetch short, length = %s\n" % len(data) )
-    raise ValueError(('request error', response))
-  return data
+  return (data, response)
 
 def saveSegment(dtStr, path, data, select):
   "write data to file in path (may be relative)"
@@ -140,19 +131,25 @@ select = (
 
 # main
 try:
-  data = dataSegment( dtStr, url=dataRequestUrl, params=params, auth=auth )
+  data, response = dataSegment( 
+      dtStr, url=dataRequestUrl, 
+      params=params, auth=auth )
   saveSegment( dtStr, segPath, data, select )
+  # should have close to 1 sec data intervals (1.014? 888 in 15min)
+  if len(data) > (60-1)*sampMinutes:
+    print( "%s success: %s" % (dtStr, len(data)) )
+    sys.exit(0)
+  else: # short
+    raise ValueError(('fetch short (%s)' % len(data), response))
+
 except ValueError as ex:
   msg = ex.message[0]
   rsp = ex.message[1]
-  sys.stderr.write( "=== %s\n" % dtStr )
-  sys.stderr.write( "code %s, reason %s\n%s\n" %
-      (rsp.status_code, rsp.reason, rsp.url) )
-  print( "%s fail: %s" % (dtStr, ex.message) )
+  print( "%s fail: %s" % (dtStr, msg) )
+  sys.stderr.write( "=== %s fail: %s\n" % (dtStr, msg) )
+  sys.stderr.write( " %s\n" % rsp.url)
   raise
 except Exception as ex:
   print( "%s fail: (unexpected) %s" % (dtStr, ex.message) )
   raise
 
-print( "%s success: %s" % (dtStr, len(data)) )
-sys.exit(0)
