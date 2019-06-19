@@ -1,5 +1,5 @@
-=== 2019-06-19+15.45 fail: request error (404)
- https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv/RS03ASHS/MJ03B/10-CTDPFB304/streamed/ctdpf_optode_sample?beginDT=2019-06-19T15%3A45%3A00.000Z&endDT=2019-06-19T16%3A00%3A00.000Z&limit=3600
+=== 2019-06-19+16.00 fail: request error (404)
+ https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv/RS03ASHS/MJ03B/10-CTDPFB304/streamed/ctdpf_optode_sample?beginDT=2019-06-19T16%3A00%3A00.000Z&endDT=2019-06-19T16%3A15%3A00.000Z&limit=3600
 Traceback (most recent call last):
   File "./ooiData.py", line 136, in <module>
     params=params, auth=auth )

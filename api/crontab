@@ -1,3 +1,4 @@
 5,20,35,50 * * * * ~/ooi/api/ooiData.sh 
-# once a day, delete old segments (-depth is for good style)
-1 1 * * * find ~/ooi/api/segments/ -depth -mtime +5 -delete
+5,20,35,50 * * * * ~/ooi/ftp/ooiftp.sh 
+# once a day, check previous days and delete old segments 
+1 1 * * * find ~/ooi/api/cleanup.sh
