@@ -5,7 +5,8 @@
 dirname=$(dirname $0)
 cd $dirname
 
-mini=887
+# minimum for data to be "good" - not quite one per second
+mini=870
 mind=$(( $mini * 24 * 4 ))
 
 today=$(date '+%Y-%m-%d')
@@ -15,7 +16,7 @@ if [ $today == $date ]; then exit 0; fi
 data=$(cat data/$date.csv | wc -l)
 if [ $data -gt $mind ]; then exit 0; fi
 
-echo "checking $date ($data vs $mind)"
+echo "checking $date ($data lines looks short)"
 for hour in {00..23}; do
   # 15min segments
   for min in {00..45..15}; do
@@ -23,7 +24,6 @@ for hour in {00..23}; do
     fn=segments/$dt.csv
     # if segments/datetime missing or short
     if [ ! -f "$fn" ] || [ $(cat "$fn" | wc -l) -lt $mini ]; then
-      wc -l $fn
       ./ooiData.py $dt |& head -1
     fi
   done

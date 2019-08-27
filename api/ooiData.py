@@ -30,6 +30,7 @@ sampHeader = True	  # column header in csv file
 sampPrint = False         # print to std out (as well as into file)
 sampRound = True          # round down start time, e.g. nearest quarter hour
 segPath = 'segments'	  # dir for segments
+mini = 870		  # minimum data lines in seg to be "good"
 
 # datetime formats
 dFmt = '%Y-%m-%d'
@@ -135,8 +136,8 @@ try:
       dtStr, url=dataRequestUrl, 
       params=params, auth=auth )
   saveSegment( dtStr, segPath, data, select )
-  # should have close to 1 sec data intervals (1.014? 888 in 15min)
-  if len(data) > (60-1)*sampMinutes:
+  # should have close to 1 sec data intervals 
+  if len(data) > mini:
     print( "%s success: %s" % (dtStr, len(data)) )
     sys.exit(0)
   else: # short

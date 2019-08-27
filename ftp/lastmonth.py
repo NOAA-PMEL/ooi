@@ -5,8 +5,7 @@
 # .1 move from syspc to caldera and put in git
 # .2 status to data/node/ftp.out
 # .3 make style closer to the newer api/*.py
-# .4 checks this month and last month 
-# .5 corrects year error in january
+# .4 checks this month and last month (if now is before day 15)
 
 # https://pysftp.readthedocs.io/en/release_0.2.8/cookbook.html
 # Use the pysftp.Connection.listdir_attr to get file listing with attributes
@@ -30,15 +29,22 @@ keyF='~/.ssh/noaa-pmel4uw'
 nodeInst=(('mj03d', 'BOTPTA303'), ('mj03e', 'BOTPTA302'),
           ('mj03f', 'BOTPTA301'), ('mj03b', 'BOTPTA304'))
 
+# if first half of month, then check last month also
 now=datetime.utcnow()
+#if now.day>14:
+#  lastmonth = 0
+#  months = [now.month,]
+#else:
+#  lastmonth = (now - timedelta(days=15)).month
+#  months = [now.month, lastmonth]
+lastmonth = now - timedelta(days=now.day)
+months = [lastmonth,]
 
 # with Connection, for nodeInst, for months, for listdir: get
 with pysftp.Connection(site, username=user, 
                        private_key=keyF, private_key_pass=keyP ) as sftp:
   for node, inst in nodeInst:
     os.chdir("%s/data/%s" % (here, node))
-    # check last month also
-    months = [now, now - timedelta(days=now.day)]
     for mon in months:
       # cd to month directory on ftp server
       path="/data/%s/%s/%4d/%02d/" % (node, inst, mon.year, mon.month)
