@@ -1,0 +1,736 @@
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 54, in <module>
+    sftp.get(f.filename, preserve_mtime=True)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 249, in get
+    self._sftp.get(remotepath, localpath, callback=callback)
+  File "/usr/lib/python3.4/site-packages/paramiko/sftp_client.py", line 806, in get
+    "size mismatch in get!  {} != {}".format(s.st_size, size)
+OSError: size mismatch in get!  0 != 51604701
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 39, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/chadwick/ooi/ftp/data/mj03d'
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 372, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/lib/python3.4/site-packages/paramiko/transport.py", line 357, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.4/socket.py", line 537, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chadwick/ooi/ftp/ooiftp.py", line 37, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/lib/python3.4/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)

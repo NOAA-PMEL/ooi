@@ -10,7 +10,7 @@ base=$(basename $0 .sh)
 dir=$(dirname $0)
 cd $dir
 
-( while [ $days -gt 1 ]; do
+( while [ $days -gt 0 ]; do
     ./checkDay.sh $(date -u -d "$days days ago" '+%Y-%m-%d')
     days=$((days-1))
   done
