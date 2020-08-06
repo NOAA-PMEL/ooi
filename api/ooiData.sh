@@ -6,7 +6,7 @@
 # v2: no monthly dir. daily file up to current time. repeat fails in *.fail
 # crontab daily ooiClean.sh to remove segments from previous days
 
-Email="brian.kahn@noaa.gov william.w.chadwick@noaa.gov andy.lau@noaa.gov"
+#Email="brian.kahn@noaa.gov andy.lau@noaa.gov william.w.chadwick@gmail.com"
 
 # ooiData
 base=$(basename $0 .sh)

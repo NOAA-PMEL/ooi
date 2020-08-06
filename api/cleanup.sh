@@ -1,8 +1,8 @@
 #!/bin/bash
 # cleanup
 
-#Email="brian.kahn@noaa.gov william.w.chadwick@noaa.gov andy.lau@noaa.gov"
-Email="brian.kahn@noaa.gov"
+Email="brian.kahn@noaa.gov william.w.chadwick@gmail.com andy.lau@noaa.gov"
+#Email="brian.kahn@noaa.gov"
 # days to check
 days=14
 
@@ -16,10 +16,9 @@ cd $dir
   done
 
   # remove segments older than 14 days
-  find segments/ -mtime +14 -delete
+  find segments/ -mtime +$days -delete
 ) >& $base.out
 
-a=$(cat $base.out)
-if [ -n "$a" ]; then 
-  echo "$a" | mailx -s $0 $Email 
+if [ -s "$base.out" ]; then 
+  cat $base.out | mailx -s $0 $Email 
 fi

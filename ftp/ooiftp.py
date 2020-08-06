@@ -42,6 +42,7 @@ with pysftp.Connection(site, username=user,
     for mon in months:
       # cd to month directory on ftp server
       path="/data/%s/%s/%4d/%02d/" % (node, inst, mon.year, mon.month)
+      # this fails out if data is not updating
       sftp.cwd(path)
       # for all files in directory
       for f in sftp.listdir_attr():
@@ -54,3 +55,6 @@ with pysftp.Connection(site, username=user,
             sftp.get(f.filename, preserve_mtime=True)
     else: # for months: print last file downloaded (today's)
       print("%s/%s" % (node, f.filename))
+
+# to run, requires .ssh/noaa-pmel4uw{.pub}  and known_hosts:
+#ftp.ooirsn.uw.edu,128.95.195.8 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWgwuFVWkOJpW4GMBv4ob77/i+bMjul1kQkzsWkFXq0d+EduakhHWE7mY8y5JiMpYdrjnBDktT5s9Ay5vfdl+tMeF+4Zb1fosVPVdZ60do0XePVsJ7junqwzclvZdrg4iiiwqtbS2Olw0UtIglUOY9us0VM4UTemOsFI6Uip6BLbg8FZOtVc9FNFdgzXtd8yrakTCMmZaOdh8AFWlJcSHt33Bv4uf2Aa8s+9MXDS4yb+zL+L3BcbxdfuCUAuDHQUUawZCZ/nl3JTMgzM+wOrFzsF1xzB3FnlK0d49Nw2ZMKaTruiuqsg1uEISlJ/uz0jbTBOLa0n5idqsnVNbdpbxL

@@ -11,24 +11,14 @@ base=$(basename $0 .sh)
 dir=$(dirname $0)
 cd $dir
 
-# use full path
-py=${0/sh/py}
-if [ ! -x $py ]; then
-  echo $0: cannot find $py > $base.out
-  exit 1
-fi
+# run
+./$base.py "$dateTime" > $base.out 2> $base.err
 
 # count lines with "mj"
-Last=$(grep -s -c mj $base.out)
-
-# run
-$py "$dateTime" > $base.out 2>> $base.err
-
-# email if result differs from last time
 This=$(grep -s -c mj $base.out)
-if [ $This -ne $Last ]; then
+if [ $This -ne 4 ]; then
   if [ -n "$Email" ]; then
-    cat $base.out | mailx -s "$0" $Email
+    (ls -l $base.out; cat $base.out) | mailx -s "$0" $Email
   fi
 fi
 

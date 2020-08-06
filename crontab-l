@@ -1,0 +1,13 @@
+# Run the RSN Data Processing Program at 11 minutes after every hours,
+# like 00:11, 01:11, ... 23:11, & repeat.  Use 11 * * * *   Before 11/07/2014
+# 
+# Run the RSN Data Processing Program at XX:10, XX:25, XX:40, XX:55
+# where XX = Hr at 00, 01, ..., 23.   Started on November 7th, 2014
+# 10,25,40,55 * * * * at now was used till march 17th, 2015
+#
+ 9,24,39,54 * * * * at now -f ~/4Chadwick/RSN/ProcessRSNdata.job 2> ~/4Chadwick/RSN/ProcessRSNdata.log
+
+5,20,35,50 * * * * /home/chadwick/ooi/api/ooiData.sh
+5,20,35,50 * * * * /home/chadwick/ooi/ftp/ooiftp.sh
+# once a day, check previous days and delete old segments
+1 1 * * * /home/chadwick/ooi/api/cleanup.sh

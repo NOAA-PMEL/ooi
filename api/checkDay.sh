@@ -14,7 +14,10 @@ date=$(date -u -d $1 '+%Y-%m-%d') || exit 1
 if [ $today == $date ]; then exit 0; fi
 
 data=$(cat data/$date.csv | wc -l)
-if [ $data -gt $mind ]; then exit 0; fi
+if [ $data -gt $mind ]; then 
+  echo $date is good
+  exit 0
+fi
 
 echo "checking $date ($data lines looks short)"
 for hour in {00..23}; do
