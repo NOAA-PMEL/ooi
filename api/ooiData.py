@@ -1,6 +1,6 @@
 #!/opt/anaconda2/bin/python2.7
 ## 
-# ooiData.py v3
+# ooiData.py v4
 # .1 make an URL describing the instrument sensor data stream
 # .2 create time interval - round time to nearest part of hour
 # .3 stream into data[] array, select certain data items
@@ -11,6 +11,7 @@
 # v2: no monthly dir, no header
 # Fri Nov  9 16:10:55 PST 2018
 # v3: reorganized for exception handling. retry fetch 3 times.
+# v4: two instruments
 
 from datetime import datetime, timedelta
 from time import sleep
@@ -29,7 +30,6 @@ sampLimit = 60*60         # one hour at one sample per second
 sampHeader = True	  # column header in csv file
 sampPrint = False         # print to std out (as well as into file)
 sampRound = True          # round down start time, e.g. nearest quarter hour
-segPath = 'segments'	  # dir for segments
 mini = 870		  # minimum data lines in seg to be "good"
 
 # datetime formats
@@ -75,18 +75,18 @@ def saveSegment(dtStr, path, data, select):
       f.write(line+'\n')
 
 def beginDateTime():
-  "optional cmd line arg for datetime, default is now"
+  "optional cmd line 2nd arg for datetime, default is now"
   # we use now-15minutes by default if no cmd line arg or if bad datetime
   try:
     # date time from cmd line
-    beginDT = datetime.strptime(sys.argv[1], dtFmt)
+    beginDT = datetime.strptime(sys.argv[2], dtFmt)
   except (IndexError,ValueError) as ex:
     # sampMinutes ago
     beginDT = datetime.utcnow() - timedelta(minutes=sampMinutes) 
     # bad date
     if isinstance(ex, ValueError):
       print ex.message
-      print "bad datetime '%s', defaulting to now" % sys.argv[1]
+      print "bad datetime '%s', defaulting to now" % sys.argv[2]
   # round down modulo sampMinute (e.g. to quarter hour)
   if sampRound:
     sampDown = beginDT.minute % sampMinutes
@@ -97,7 +97,9 @@ def beginDateTime():
   return beginDT
 
 ##
-# setup parameters
+# setup parameters: instrument DT
+instrument = sys.argv[1]
+segPath = 'segments/' + instrument	  # dir for segments
 beginDT = beginDateTime()
 dtStr = beginDT.strftime(dtFmt)
 
@@ -114,6 +116,13 @@ username = 'OOIAPI-8PGYR9GA7YHVXX'
 token = '0MT4ME7UEL5Y8L'
 auth = (username, token)
 # Instrument Information
+
+#CTDs = {
+#  'mj03b': 'RS03ASHS/MJ03B/10-CTDPFB304',
+#  'mj03e': 'RS03ECAL/MJ03E/12-CTDPFB306',
+#}
+#try: ctd = CTDs[instrument]
+#except: print 'bad instrument'; raise
 subsite = 'RS03ASHS'
 node = 'MJ03B'
 sensor = '10-CTDPFB304'
@@ -121,6 +130,7 @@ method = 'streamed'
 stream = 'ctdpf_optode_sample'
 # url
 baseUrl = 'https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv'
+#dataRequestUrl ='/'.join((baseUrl, ctd, method, stream))
 dataRequestUrl ='/'.join((baseUrl, subsite, node, sensor, method, stream))
 
 # select data items, see list in README

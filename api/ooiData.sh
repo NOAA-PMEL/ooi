@@ -13,6 +13,7 @@ base=$(basename $0 .sh)
 dir=$(dirname $0)
 cd $dir
 
+instruments="mj03b mj03e"
 # Date
 if [ $# -gt 0 ]; then
   when=$1
@@ -30,14 +31,23 @@ if [ ! -x $py ]; then
 fi
 
 # was last run a success?
-grep -s -q success $base.out
-Last=$?
+Last=$(grep -c fail $base.out)
+rm $base.out
+touch $base.out
 
 # run
-$py "$dateTime" > $base.out 2> $base.err
-grep -s -q success $base.out
-This=$?
-# wc -l "segments/$dateTime.csv" >> $base.log
+for inst in $instruments; do
+  $py $inst "$dateTime" >> $base.out 2>> $base.err
+
+  # make daily file
+  # day=$(date -u -d "$when" '+%Y-%m-%d')
+  seg="segments/$inst/$day??*.csv"
+  # if there are segment files ...
+  if [ "$(echo $seg)" != "$seg" ]; then
+    cat $seg > data/$inst/$day.csv
+  fi
+done
+This=$(grep -c fail $base.out)
 
 # email if result differs from last time
 if [ $This -ne $Last ]; then
@@ -45,13 +55,6 @@ if [ $This -ne $Last ]; then
   if [ -n "$Email" ]; then
     cat $base.out | mailx -s "$0" $Email
   fi
-fi
-
-# make daily file
-# day=$(date -u -d "$when" '+%Y-%m-%d')
-seg="segments/$day??*.csv"
-if [ "$(echo $seg)" != "$seg" ]; then
-  cat $seg > data/$day.csv
 fi
 
 exit $This

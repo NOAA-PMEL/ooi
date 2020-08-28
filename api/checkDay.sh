@@ -4,39 +4,46 @@
 
 dirname=$(dirname $0)
 cd $dirname
+#instruments="mj03b"
+instruments="mj03b mj03e"
 
 # minimum for data to be "good" - not quite one per second
 mini=870
 mind=$(( $mini * 24 * 4 ))
 
-today=$(date '+%Y-%m-%d')
+today=$(TZ=UTC date '+%Y-%m-%d')
 date=$(date -u -d $1 '+%Y-%m-%d') || exit 1
 if [ $today == $date ]; then exit 0; fi
 
-data=$(cat data/$date.csv | wc -l)
-if [ $data -gt $mind ]; then 
-  echo $date is good
-  exit 0
-fi
+for inst in $instruments; do
+  file=data/$inst/$date.csv
+  lines=$(cat $file | wc -l)
+  if [ $lines -gt $mind ]; then 
+    echo $file is good
+    continue # inst
+  fi
+  rm $file
 
-echo "checking $date ($data lines looks short)"
-for hour in {00..23}; do
-  # 15min segments
-  for min in {00..45..15}; do
-    dt=$date+$hour.$min
-    fn=segments/$dt.csv
-    # if segments/datetime missing or short
-    if [ ! -f "$fn" ] || [ $(cat "$fn" | wc -l) -lt $mini ]; then
-      ./ooiData.py $dt |& head -1
-    fi
-  done
-done
+  echo "checking $inst/$date ($lines lines looks short)"
+  for hour in {00..23}; do
+    # 15min segments
+    for min in {00..45..15}; do
+      dt=$date+$hour.$min
+      if [ ! -d segments/$inst ]; then mkdir segments/$inst; fi
+      fn=segments/$inst/$dt.csv
+      # if segments/inst/datetime missing or short
+      if [ ! -f "$fn" ] || [ $(cat "$fn" | wc -l) -lt $mini ]; then
+        ./ooiData.py $inst $dt |& head -1
+      fi
+    done # min
+  done # hour
 
-segs=$(cat segments/$date*|wc -l) 
-if [ $segs -gt $data ]; then
-  echo "$date got more data, $(($segs-$data)) lines"
-  cat segments/$date* > data/$date.csv
-  exit 0
-fi
+  segs=$(cat segments/$inst/$date*|wc -l) 
+  if [ $segs -gt $lines ]; then
+    echo "$date got more data, $(($segs-$lines)) lines"
+    cat segments/$inst/$date* >> $file
+    exit 0
+  fi
+done # inst
 
 exit 1
