@@ -17,14 +17,20 @@ if [ $today == $date ]; then exit 0; fi
 
 for inst in $instruments; do
   file=data/$inst/$date.csv
-  lines=$(cat $file | wc -l)
-  if [ $lines -gt $mind ]; then 
-    echo $file is good
-    continue # inst
-  fi
-  rm $file
+  lines=0
+  if [ -r $file ]; then
+    lines=$(cat $file | wc -l)
+    if [ $lines -gt $mind ]; then 
+      echo $file is good
+      continue # inst
+    else # file is not good
+      rm $file
+    fi
+  else 
+    echo $file not found
+  fi # file is not here
+  echo "fetching $inst/$date ($lines lines is short)"
 
-  echo "checking $inst/$date ($lines lines looks short)"
   for hour in {00..23}; do
     # 15min segments
     for min in {00..45..15}; do

@@ -116,22 +116,21 @@ username = 'OOIAPI-8PGYR9GA7YHVXX'
 token = '0MT4ME7UEL5Y8L'
 auth = (username, token)
 # Instrument Information
-
-#CTDs = {
-#  'mj03b': 'RS03ASHS/MJ03B/10-CTDPFB304',
-#  'mj03e': 'RS03ECAL/MJ03E/12-CTDPFB306',
-#}
-#try: ctd = CTDs[instrument]
-#except: print 'bad instrument'; raise
-subsite = 'RS03ASHS'
-node = 'MJ03B'
-sensor = '10-CTDPFB304'
+CTDs = {
+  'mj03b': 'RS03ASHS/MJ03B/10-CTDPFB304',
+  'mj03e': 'RS03ECAL/MJ03E/12-CTDPFB306',
+}
+try: ctd = CTDs[instrument]
+except: print 'bad instrument'; raise
+#subsite = 'RS03ASHS'
+#node = 'MJ03B'
+#sensor = '10-CTDPFB304'
 method = 'streamed'
 stream = 'ctdpf_optode_sample'
 # url
 baseUrl = 'https://ooinet.oceanobservatories.org/api/m2m/12576/sensor/inv'
-#dataRequestUrl ='/'.join((baseUrl, ctd, method, stream))
-dataRequestUrl ='/'.join((baseUrl, subsite, node, sensor, method, stream))
+dataRequestUrl ='/'.join((baseUrl, ctd, method, stream))
+#dataRequestUrl ='/'.join((baseUrl, subsite, node, sensor, method, stream))
 
 # select data items, see list in README
 select = ( 
