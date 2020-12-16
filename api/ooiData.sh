@@ -50,7 +50,7 @@ done
 This=$(grep -c fail $base.out)
 
 # email if result differs from last time
-if [ $This -ne $Last ]; then
+if [ "$This" -ne "$Last" ]; then
   cat $base.out >> $base.log
   if [ -n "$Email" ]; then
     cat $base.out | mailx -s "$0" $Email

@@ -1,6 +1,6 @@
-#!/opt/anaconda2/bin/python2.7
+#!/usr/bin/python2
 ## 
-# ooiData.py v4
+# ooiData.py v5
 # .1 make an URL describing the instrument sensor data stream
 # .2 create time interval - round time to nearest part of hour
 # .3 stream into data[] array, select certain data items
@@ -12,6 +12,7 @@
 # Fri Nov  9 16:10:55 PST 2018
 # v3: reorganized for exception handling. retry fetch 3 times.
 # v4: two instruments
+# v5: anaconda/python2 -> /usr/bin/python2
 
 from datetime import datetime, timedelta
 from time import sleep
