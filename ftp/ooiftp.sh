@@ -12,13 +12,15 @@ dir=$(dirname $0)
 cd $dir
 
 # run
+mv $base.out $base.prv
 ./$base.py "$dateTime" > $base.out 2> $base.err
 
 # count lines with "mj"
-This=$(grep -s -c mj $base.out)
-if [ $This -ne 4 ]; then
+Curr=$(grep -s -c mj $base.out)
+Prev=$(grep -s -c mj $base.prv)
+if [ $Curr -ne $Prev ]; then
   if [ -n "$Email" ]; then
-    (ls -l $base.out; cat $base.out) | mailx -s "$0" $Email
+    (ls -l $base.out; cat $base.out) | mailx -s "$0 change" $Email
   fi
 fi
 
