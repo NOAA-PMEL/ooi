@@ -12,7 +12,7 @@ dir=$(dirname $0)
 cd $dir
 
 # run
-mv $base.out $base.prv
+if [ -f $base.out ]; then mv $base.out $base.prv; else rm -f $base.prv; fi
 ./$base.py "$dateTime" > $base.out 2> $base.err
 
 # count lines with "mj"
@@ -20,7 +20,7 @@ Curr=$(grep -s -c mj $base.out)
 Prev=$(grep -s -c mj $base.prv)
 if [ $Curr -ne $Prev ]; then
   if [ -n "$Email" ]; then
-    (ls -l $base.out; cat $base.out) | mailx -s "$0 change" $Email
+    (ls -l $base.out; cat $base.out) | mailx -s "$0 $Prev to $Curr" $Email
   fi
 fi
 
