@@ -24,5 +24,5 @@ cd $dir
 ) >& $base.out
 
 if [ -n "$Email" -a -s "$base.out" ]; then 
-  cat $base.out | mailx -s $0 $Email 
+  cat $base.out | mailx -r "brian.kahn@noaa.gov" -s $0 $Email 
 fi

@@ -20,7 +20,8 @@ Curr=$(grep -s -c mj $base.out)
 Prev=$(grep -s -c mj $base.prv)
 if [ $Curr -ne $Prev ]; then
   if [ -n "$Email" ]; then
-    (ls -l $base.out; cat $base.out) | mailx -s "$0 $Prev to $Curr" $Email
+    (ls -l $base.out; cat $base.out) | \
+      mailx -r "brian.kahn@noaa.gov" -s "$0 $Prev to $Curr" $Email
   fi
 fi
 
