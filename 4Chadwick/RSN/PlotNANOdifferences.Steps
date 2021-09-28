@@ -1,0 +1,273 @@
+;
+; File: PlotNANOdifferences.Stepss
+;
+; Display the Difference between the NANO Data from the 3 stations:
+; MJ03[D/E/F].
+;
+; Revised: January 29th, 2015
+;
+ .RUN ~/idl/IDLcolors.pro
+ .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
+;
+; Restrieve the Predicted Tide values.
+; Array variables: TIDAL_TIME, TIDAL and N_TIDALS
+;
+; RESTORE, '~/4Chadwick/RSN/Dec2014Jan2015AxialTidalData.idl'
+;
+; Restrieve the NANO data Array variables:
+; NANO_DETIDE, NANO_PSIA, NANO_TEMP and NANO_TIME.
+;
+  RESTORE, '~/4Chadwick/RSN/MJ03D/MJ03D-NANO.idl'
+  MJ03JD_TIME   = NANO_TIME
+  MJ03JD_DETIDE = NANO_DETIDE  ; Rename the arrays' variables.
+  MJ03JD_PSIA   = NANO_PSIA
+; MJ03JD_TEMP   = NANO_TEMP    ; Temperature values will not be used.
+  RESTORE, '~/4Chadwick/RSN/MJ03E/MJ03E-NANO.idl'
+  MJ03JE_TIME   = NANO_TIME
+  MJ03JE_DETIDE = NANO_DETIDE  ; Rename the arrays' variables.
+  MJ03JE_PSIA   = NANO_PSIA
+; MJ03JE_TEMP   = NANO_TEMP    ; Temperature values will not be used.
+  RESTORE, '~/4Chadwick/RSN/MJ03F/MJ03F-NANO.idl'
+  MJ03JF_TIME   = TEMPORARY( NANO_TIME   )
+  MJ03JF_DETIDE = TEMPORARY( NANO_DETIDE )  ; Rename the arrays' variables.
+  MJ03JF_PSIA   = TEMPORARY( NANO_PSIA   )
+; MJ03JF_TEMP   = TEMPORARY( NANO_TEMP   )  ; Temperature values will not be used.
+;
+; Locate the Start and End Times range indexes for the MJ03JD_TIME
+;
+  I  = LOCATE_TIME_POSITION( MJ03JD_TIME, JULDAY(1,24,2015,00,0,0) )
+  N  = LOCATE_TIME_POSITION( MJ03JD_TIME, JULDAY(1,27,2015,00,0,0) )
+  I -= 1
+  N -= 2
+;
+; Locate the Start and End Times range indexes for the MJ03JE_TIME
+;
+  J  = LOCATE_TIME_POSITION( MJ03JE_TIME, JULDAY(1,24,2015,00,0,0) )
+  M  = LOCATE_TIME_POSITION( MJ03JE_TIME, JULDAY(1,27,2015,00,0,0) )
+  J -= 1
+  M -= 2
+;
+; Locate the Start and End Times range indexes for the MJ03JF_TIME
+;
+  K  = LOCATE_TIME_POSITION( MJ03JF_TIME, JULDAY(1,24,2015,00,0,0) )
+  L  = LOCATE_TIME_POSITION( MJ03JF_TIME, JULDAY(1,27,2015,00,0,0) )
+  K -= 1
+  L -= 2
+;
+; Check the time ranges.
+;
+  PRINT, FORMAT='(C())', MJ03JD_TIME[I], MJ03JE_TIME[J], MJ03JF_TIME[K]
+  PRINT, FORMAT='(C())', MJ03JD_TIME[N], MJ03JE_TIME[M], MJ03JF_TIME[L]
+  PRINT, N - I,  M - J,  L - K
+;
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=256
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=512  ; for 1/26/2015 07:00 - 09:00.
+;
+; The following 2 procedures are in the file IDLcolors.pro
+;
+  SET_BACKGROUND, /WHITE  ; Plotting background to White.
+  RGB_COLORS,      C      ; Color name indexes, e.g. C.BLUE, C.GREEN, ... etc.
+;
+; Define an Upside Down Triangle symbol for plotting PSYM=8.
+;
+; USERSYM, [-1, 1, 0, -1 ], [1, 1, -1, 1]
+;
+; Determine number of Hourly or Daily marks per day.
+;
+; N_DAYS = ( NANO_TIME[N]   - NANO_TIME[S] )  ; Data Range in days.
+;
+; Call LABEL_DATE() to ask for plotting Time Label
+; as Hour, Month/Day/Year or Day, Month/Day/Year
+;
+; TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%D','%N/%D/%Z'] )
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%I:%S' ] )
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%H:%I','%N/%D'] )
+;
+  TIME_RANGE  = STRING( MJ03JD_TIME[I], $ ; Date & Time of the 1st data point.
+       FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' ) 
+  TIME_RANGE += ' to ' + STRING( MJ03JD_TIME[N],  $  ; to the Last data point.
+       FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' )
+;
+; Define the Y ranges for plotting.
+;
+  MN = -0.800  &  MX = -0.2
+;
+; Define the Hardware Fonts to be used.
+;
+  DEVICE, FONT='-adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+;
+ !X.THICK = 2
+ !Y.THICK = 2  ; for thinker line drawing.
+ !P.FONT  = 0  ; Use the hardware font above.
+;
+; Display the NANO Pressure values in meters.
+;
+; Compute the differences between MJ03JE & MJ03JD
+; and Normalized by its Mean: -11
+;
+  D = ( MJ03JE_PSIA[J:M] - MJ03JD_PSIA[I:N] )*0.670 + 11
+;
+; Display the Compute the differences using the NANO pressure data.
+;
+  PLOT, MJ03JE_TIME[J:M], D,      XMARGIN=[9,3],  $
+        YRANGE=[MN,MX], YSTYLE=1, YMARGIN=[5,2],  $
+        XSTYLE=1,  XRANGE=[ MJ03JE_TIME[J],MJ03JE_TIME[M] ],    $
+        XTICKFORMAT=['LABEL_DATE','LABEL_DATE'], XTICKUNITS=['Time','Day'], $
+        XTITLE=TIME_RANGE, XTICKINTERVAL=0.25, THICK=2,    $ ; for Hr:Mn
+  TITLE='NANO Pressure Differences between Stations: MJ03[D/E/F]'
+;
+; Over Plot the Normalize difference values of ( MJ03JF - MJ03JD )
+; and ( MJ03JE - MJ03JF )
+;
+  D = ( MJ03JF_PSIA[K:L] - MJ03JD_PSIA[I:N] )*0.670 + 2  ; Mean = -2
+ OPLOT, MJ03JF_TIME[K:L], D
+; D = ( MJ03JF_PSIA[K:L] - MJ03JE_PSIA[J:M] )*0.670 - 8  ; Mean =  8
+  D = ( MJ03JE_PSIA[J:M] - MJ03JF_PSIA[K:L] )*0.670 + 8  ; Mean = -8
+ OPLOT, MJ03JF_TIME[K:L], D
+;
+; Label each of the plotted lines.
+;
+  XYOUTS, JULDAY(1,24,2015,06,00,00),-0.27, 'MJ03JE - MJ03JD - 11'
+  XYOUTS, JULDAY(1,24,2015,06,00,00),-0.70, 'MJ03JF - MJ03JD - 2'
+  XYOUTS, JULDAY(1,24,2015,06,00,00),-0.55, 'MJ03JE - MJ03JF - 8'
+;
+ !P.FONT = -1  ; Back to graphic font.
+ XYOUTS, CHARSIZE=1.25, CHARTHICK=1, ORIENTATION=90,  $ ; Right Y-Axis's
+         JULDAY(1,23,2015,21,00,00), -0.6, '!17Meters'  ; Label.
+;
+  WRITE_PNG, '~/4Chadwick/RSN/Test/NANO24-27Jan2015Diff.png',  TVRD()
+;
+; Display the NANO Detided Pressure Differences.
+;
+  MN = -0.85   &  MX = -0.5    ;
+ !P.FONT  = 0  ; Use the hardware font above.
+;
+; Compute the differences between MJ03JE & MJ03JD
+; and Normalized by its Mean: -7
+;
+  D = ( MJ03JE_DETIDE[J:M] - MJ03JD_DETIDE[I:N] )*0.670 + 7
+;
+; Display the Compute the differences using the NANO Detided pressure data.
+;
+  PLOT, MJ03JE_TIME[J:M], D,      XMARGIN=[9,3],  $
+        YRANGE=[MN,MX], YSTYLE=1, YMARGIN=[5,2],  $
+        XSTYLE=1,  XRANGE=[ MJ03JE_TIME[J],MJ03JE_TIME[M] ],    $
+        XTICKFORMAT=['LABEL_DATE','LABEL_DATE'], XTICKUNITS=['Time','Day'], $
+        XTITLE=TIME_RANGE, XTICKINTERVAL=0.25, THICK=2,    $ ; for Hr:Mn
+  TITLE='NANO De-Tided Pressure Differences between Stations: MJ03[D/E/F]'
+;
+; Over Plot the Normalize difference values of ( MJ03JF - MJ03JD )
+; and ( MJ03JE - MJ03JF )
+;
+  D = ( MJ03JF_DETIDE[K:L] - MJ03JD_DETIDE[I:N] )*0.670 + 1  ; Mean = -1
+ OPLOT, MJ03JF_TIME[K:L], D
+  D = ( MJ03JE_DETIDE[J:M] - MJ03JF_DETIDE[K:L] )*0.670 + 5  ; Mean = -5
+ OPLOT, MJ03JF_TIME[K:L], D
+;
+; Label each of the plotted lines.
+;
+  XYOUTS, JULDAY(1,24,2015,06,00,00),-0.55, 'MJ03JE - MJ03JD - 7'
+  XYOUTS, JULDAY(1,24,2015,06,00,00),-0.80, 'MJ03JF - MJ03JD - 1'
+  XYOUTS, JULDAY(1,24,2015,06,00,00),-0.73, 'MJ03JE - MJ03JF - 5'
+;
+ !P.FONT = -1  ; Back to graphic font.
+ XYOUTS, CHARSIZE=1.25, CHARTHICK=1, ORIENTATION=90,  $ ; Right Y-Axis's
+         JULDAY(1,23,2015,21,00,00), -0.7, '!17Meters'  ; Label.
+;
+  WRITE_PNG, '~/4Chadwick/RSN/Test/DeTide24-27Jan2015Diff.png',  TVRD()
+;
+; Display All the NANO Detided Pressure Differences.  January 28th, 2015
+;
+; Show the start times of the data from all 3 stations.
+;
+  PRINT, FORMAT='(C())', MJ03JD_TIME[0], MJ03JE_TIME[0], MJ03JF_TIME[0]
+;
+; Locate the Start and End Times range indexes for the MJ03JD_TIME 
+; 
+  I  = LOCATE_TIME_POSITION( MJ03JD_TIME, JULDAY(9, 4,2014,00,0,0) )
+  N  = LOCATE_TIME_POSITION( MJ03JD_TIME, JULDAY(1,28,2015,00,0,0) )
+  I -= 1
+  N -= 2
+;
+; Locate the Start and End Times range indexes for the MJ03JE_TIME
+; 
+; J  = LOCATE_TIME_POSITION( MJ03JE_TIME, JULDAY(9, 4,2014,00,0,0) )
+  M  = LOCATE_TIME_POSITION( MJ03JE_TIME, JULDAY(1,28,2015,00,0,0) )
+  J  = 0  ;  J -= 1
+  M -= 2
+;
+; Locate the Start and End Times range indexes for the MJ03JF_TIME
+;
+  K  = LOCATE_TIME_POSITION( MJ03JF_TIME, JULDAY(9, 4,2014,00,0,0) )
+  L  = LOCATE_TIME_POSITION( MJ03JF_TIME, JULDAY(1,28,2015,00,0,0) )
+  K -= 1
+  L -= 2
+;
+; Check the time ranges.
+;
+  PRINT, FORMAT='(C())', MJ03JD_TIME[I], MJ03JE_TIME[J], MJ03JF_TIME[K]
+  PRINT, FORMAT='(C())', MJ03JD_TIME[N], MJ03JE_TIME[M], MJ03JF_TIME[L]
+  PRINT, N - I,  M - J,  L - K
+;
+; From all 3 stations, MJ03JE data have the least data points,
+; MJ03JF is the 2nd and the MJ03JD have the most data, i.e.
+; Total data points: MJ03JE < MJ03JF < MJ03JD as on January 28th, 2015.
+;
+ .RUN ~/idl/match.pro
+;
+;
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=256
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=512  ; for 1/26/2015 07:00 - 09:00.
+;
+; Call LABEL_DATE() to ask for plotting Time Label
+; as Hour, Month/Day/Year or Day, Month/Day/Year
+;
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%D','%N/%Z'] )
+;
+  TIME_RANGE  = STRING( MJ03JD_TIME[I], $ ; Date & Time of the 1st data point.
+       FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' ) 
+  TIME_RANGE += ' to ' + STRING( MJ03JD_TIME[N],  $  ; to the Last data point.
+       FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' )
+;
+  DEVICE, FONT='-adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+  MN = -0.9    &  MX = -0.5    ;
+ !P.FONT  = 0  ; Use the hardware font above.
+;
+; Compute the differences between MJ03JE & MJ03JD
+; and Normalized by its Mean: -7
+;
+  MATCH, MJ03JD_TIME[I:N], MJ03JE_TIME[J:M], JD, JE, EPSILON=0.000001
+  D = ( MJ03JE_DETIDE[JE+J] - MJ03JD_DETIDE[JD+I] )*0.670 + 7
+;
+; Display the Compute the differences using the NANO Detided pressure data.
+;
+  PLOT, MJ03JE_TIME[JE+J], D,     XMARGIN=[9,3],  $
+        YRANGE=[MN,MX], YSTYLE=1, YMARGIN=[5,2],  $
+        XSTYLE=1,  XRANGE=[ MJ03JE_TIME[J],MJ03JE_TIME[M] ],    $
+        XTICKFORMAT=['LABEL_DATE','LABEL_DATE'], XTICKUNITS=['Day','Day'], $
+        XTITLE=TIME_RANGE, XTICKINTERVAL= 5,   THICK=2,    $ ; for Hr:Mn
+  TITLE='NANO De-Tided Pressure Differences between Stations: MJ03[D/E/F]'
+; 
+; Over Plot the Normalize difference values of ( MJ03JF - MJ03JD )
+; and ( MJ03JE - MJ03JF )
+; 
+  MATCH, MJ03JF_TIME[K:L], MJ03JD_TIME[I:N], JF, JD, EPSILON=0.000001
+  D =  ( MJ03JF_DETIDE[JF+K] - MJ03JD_DETIDE[JD+I] )*0.670 + 1  ; Mean = -1
+  OPLOT, MJ03JF_TIME[JF+K], D, COLOR=C.BLUE
+  MATCH, MJ03JF_TIME[K:L], MJ03JE_TIME[J:M], JF, JE, EPSILON=0.000001
+  D =  ( MJ03JE_DETIDE[JE+J] - MJ03JF_DETIDE[JF+K] )*0.670 + 5  ; Mean = -5
+  OPLOT, MJ03JF_TIME[JE+K], D, COLOR=C.GREEN
+; 
+; Label each of the plotted lines.
+; 
+  XYOUTS, JULDAY(9,11,2014,06,00,00),-0.55,'MJ03JE - MJ03JD - 7'
+  XYOUTS, JULDAY(10,1,2014,06,00,00),-0.70,'MJ03JF - MJ03JD - 1',COLOR=C.BLUE
+  XYOUTS, JULDAY(11,1,2014,06,00,00),-0.87,'MJ03JE - MJ03JF - 5',COLOR=C.GREEN
+;
+ !P.FONT = -1  ; Back to graphic font.
+ XYOUTS, CHARSIZE=1.25, CHARTHICK=1, ORIENTATION=90,  $ ; Right Y-Axis's
+         JULDAY(8,30,2014,00,00,00),-0.75, '!17Meters'  ; Label.
+; 
+  WRITE_PNG,'~/4Chadwick/RSN/Test/DeTide06Sep2014-27Jan2015Diff.png',TVRD(/TRUE)
+;
+; Done PLotting.

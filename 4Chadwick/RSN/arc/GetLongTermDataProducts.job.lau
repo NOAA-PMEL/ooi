@@ -1,0 +1,5 @@
+cd ~/4Chadwick/RSN/
+export DISPLAY=:2
+rm -f GetLongTermDataProducts.log
+idl < GetLongTermDataProducts.pro > GetLongTermDataProducts.log 2>&1
+at 18:30 -f GetLongTermDataProducts.job 2>> GetLongTermDataProducts.log

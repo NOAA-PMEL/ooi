@@ -1,0 +1,12 @@
+cd ~/4Chadwick/RSN/
+rm -f ProcessRSNdata.log
+idl < ProcessRSN-MJ03Ddata.pro  > ProcessRSN-MJ03Ddata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03D/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03E/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+idl < ProcessRSN-MJ03Fdata.pro  > ProcessRSN-MJ03Fdata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03F/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+at -f ProcessRSNdata.Job now + 57 minutes 2> ProcessRSNdata.log
+
+idl < RunDisplayAlarmSummary.pro > DisplayAlarmSummary.log 2>&1
+cp ~/4Chadwick/RSN/AlarmSummary.png /internet/httpd/html/new-eoi/rsn/graphs/

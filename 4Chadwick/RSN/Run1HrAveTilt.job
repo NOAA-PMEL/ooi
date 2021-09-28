@@ -1,0 +1,10 @@
+cd ~/4Chadwick/RSN/
+export DISPLAY=:2
+rm -f Run1HrAveTilt.log
+crontab crontab.null
+date   > Run1HrAveTilt.log
+echo Stopped crontab            >> Run1HrAveTilt.log
+echo Running Run1HrAveTilt.pro  >> Run1HrAveTilt.log
+idl < Run1HrAveTilt.pro         >> Run1HrAveTilt.log 2>&1
+crontab crontab
+echo Resummed crontab >> Run1HrAveTilt.log

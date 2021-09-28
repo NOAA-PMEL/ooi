@@ -1,0 +1,18 @@
+cd ~/4Chadwick/RSN/
+
+crontab -r
+
+export DISPLAY=:2
+
+date  >  runGetRates.log
+echo Running RunPlotNANOdiffE-Frate.pro >> runGetRates.log
+/usr/local/bin/idl < RunPlotNANOdiffE-Frates.pro >> runGetRates.log 2>&1
+date  >> runGetRates.log
+cp ~/4Chadwick/RSN/MJ03F/NANO*E-F.png /internet/httpd/html/new-eoi/rsn/graphs/
+date  >> runGetRates.log
+
+crontab crontab
+echo Resummed crontab >> runGetRates.log
+
+rm -f /internet/httpd/html/new-eoi/rsn/graphs/MJ03?-RTM1DayMeans.png
+rm -f /internet/httpd/html/new-eoi/rsn/graphs/MJ03F-RTM4WkRATE.png

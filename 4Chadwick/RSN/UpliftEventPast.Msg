@@ -1,0 +1,6 @@
+     An uplift signal of greater than 5 cm/hr has been detected from
+     a BOTPT instrument at Axial Seamount, which indicates magma is
+     intruding to the surface and an eruption may be begin within
+     the next hour, based on previous events.
+
+     This is an auto-alert message.  Do not reply.

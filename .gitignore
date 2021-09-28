@@ -4,6 +4,9 @@ segments/
 *.out
 *.err
 4Chadwick/RSN/MJ03?
+*.idl
+*.log
+*.png
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

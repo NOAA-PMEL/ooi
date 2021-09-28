@@ -1,0 +1,77 @@
+#!/bin/sh
+#
+# This is an UNIX shell script: JoinBrokenLines
+# to Join 2 Broken lines in between 2 files: 1st part
+# is at the end of 1st file and rest of the line is
+# in the 1st line of 2nd file.
+#
+# Programmer: T-K Andy Lau  NOAA/PMEL/Acoustics Program
+#
+# Revised on  April 21st, 2015
+# Created on  April 21st, 2015
+#
+
+#
+# This script has been tested and worked during the testing
+# on April 21st, 2015
+#
+  echo "Join the Broken Lines in the following 2 files:"
+  echo "$1"
+  echo "$2"
+# echo ""
+#
+# Get the last incomplete line from the 1st file: $1
+# and the 1st  incomplete line from the 2nd file: $2.
+# The results will be 2 files named: Last.Line & First.Line
+# respectively.
+#
+  tail -1 $1 >  Last.Line
+  head -1 $2 > First.Line
+#
+  echo "The 2 Broken Lines:"
+  more  Last.Line
+  cat  First.Line
+# echo ""
+#
+# Join the 2 lines into 1 and call it Joint.Line
+#
+  paste --delimiters='' Last.Line First.Line > Joint.Line
+#
+  echo "The Joint Line:"
+  cat  Joint.Line
+# echo ""
+  echo "Updating the files..."
+# echo ""
+#
+# Get all the contents in the 1st file: $1 except the
+# Last line into the file: File.minus1
+#
+  head  -n-1 $1  >  File.minus1
+#
+# Append the Joint.Line into the file: File.minus1
+#
+  cat Joint.Line >> File.minus1
+#
+# Rename the file: File.minus1 to the 1st file's name.
+# Note that the contents of the 1st file will be changed
+#
+  mv File.minus1 $1
+#
+# Get all the contents in the 2nd file: $1 except the
+# First line into the file: File.minus1
+#
+  tail -n+2 $2 > File.minus1
+#
+# Rename the file: File.minus1 to the 2nd file's name.
+# Note that the contents of the 2nd file will be changed
+#
+  mv File.minus1 $2
+#
+# Delete the temporary files.
+#
+  rm Last.Line First.Line Joint.Line
+#
+  echo "Files Updated."
+  echo ""
+#
+# End of script: JoinBrokenLines

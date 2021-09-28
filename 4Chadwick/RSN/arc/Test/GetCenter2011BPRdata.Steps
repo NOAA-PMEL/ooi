@@ -1,0 +1,64 @@
+;
+; IDL steps for reading in and decoding the data in the
+; Center[2010/2011]BPR*.txt files.
+;
+; Revised: January 12th, 2015
+;
+
+;
+; Retrieve the last stored data array variables: TIME & DETIDED.
+;
+  RESTORE, '~/4Chadwick/RSN/Test/Center2011BPR.idl'
+  WINDOW, RETAIN=2, XS=1024, YS=256
+;
+; Define a string array for Reading in the data.
+;
+; 149987 /home/lau/4Chadwick/RSN/Test/Center2010BPR09.txt
+; 178560 /home/lau/4Chadwick/RSN/Test/Center2010BPR10.txt
+; 172800 /home/lau/4Chadwick/RSN/Test/Center2010BPR11.txt
+; 178560 /home/lau/4Chadwick/RSN/Test/Center2010BPR12.txt
+; 178560 /home/lau/4Chadwick/RSN/Test/Center2011BPR01.txt
+;
+; 161280 /home/lau/4Chadwick/RSN/Test/Center2011BPR02.txt
+; 178560 /home/lau/4Chadwick/RSN/Test/Center2011BPR03.txt
+; 172800 /home/lau/4Chadwick/RSN/Test/Center2011BPR04.txt
+; 178560 /home/lau/4Chadwick/RSN/Test/Center2011BPR05.txt
+;
+                N = 161280
+  RCD = STRARR( N )  ; Total records for the data file.
+  OPENR, 10, 'Center2011BPR02.txt'
+  READF, 10,  RCD  ; Read in All the data.
+  CLOSE, 10
+  PRINT, RCD[0:4], RCD[N-5:N-1]  ; Check out the records.
+;
+; Each recordi; RCD[i] will have the following formats:
+; '2/1/2011 0:00:00 -1510.907'  or
+; '2/28/2011 23:59:30 -1510.881'
+;
+; Seperate each record into individual columns of numbers.
+; For example, '2/1/2011 0:00:00 -1510.907' will because
+;  '2','1','2011','0,'00','00', '-1510.907'
+;
+  S = (STRSPLIT( RCD, '/|:| ', /REGEX, /EXTRACT )).ToArray()
+;
+; Note that STRSPLIT() will return a List variable and the ".ToArray()"
+; will convert the List variable to a string array.
+; S[i,0:6] = ['2','1','2011','0,'00','00', '-1510.907'] for example
+; for i = 0, ..., N-1
+;
+; Decode the data in S into 2 array variables: TIME and DETIDED
+;
+;                        DETIDED =  DOUBLE( S[0:N-1,6] )
+  DETIDED = [ TEMPORARY( DETIDED ), DOUBLE( S[0:N-1,6] ) ]
+;
+;              Month,  Day,   Year,       Hour,  Minute  ,Second 
+  T = JULDAY( S[*,0],S[*,1],S[*,2], S[0:N-1,3],S[0:N-1,4],S[0:N-1,5] )
+  PRINT, FORMAT='(C())', T[0:4], T[N-3:N-1]  ; Check the results.
+;
+  TIME = [ TEMPORARY( TIME ), TEMPORARY( T ) ]
+  PLOT, TIME, DETIDED,  YRANGE=[-1513.2,-1510.6]  ; for checking.
+;
+  SAVE, FILE='~/4Chadwick/RSN/Test/Center2010BPR.idl', TIME, DETIDED
+  SAVE, FILE='~/4Chadwick/RSN/Test/Center2011BPR.idl', TIME, DETIDED
+;
+; Done.

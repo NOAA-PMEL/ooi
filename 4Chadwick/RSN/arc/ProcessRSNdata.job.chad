@@ -1,0 +1,26 @@
+cd ~/4Chadwick/RSN/
+
+export Tlist="william.w.chadwick@gmail.com mikeh@apl.washington.edu dskelley@u.washington.edu danam@apl.uw.edu kawkaoe@uw.edu"
+
+export Alist="william.w.chadwick@gmail.com jdelaney@u.washington.edu dskelley@u.washington.edu giora@uw.edu danam@apl.uw.edu kawkaoe@uw.edu ksf1@uw.edu Brian.Kahn@noaa.gov christian.meinig@noaa.gov scott.e.stalin@noaa.gov nooners@uncw.edu"
+
+export Elist="robert.p.dziak@noaa.gov Haru.Matsumoto@noaa.gov david.a.butterfield@noaa.gov wilcock@u.washington.edu clague@mbari.org caress@mbari.org"
+
+export DISPLAY=:2
+
+/usr/local/bin/idl < RunProcessCTDdata.pro     >  ProcessCTDdata.log 2>&1
+/usr/local/bin/idl < RunPlotCTD7Days4MJ03B.pro >> ProcessCTDdata.log 2>&1
+/usr/local/bin/idl < RunPlotCTD7Days4MJ03E.pro >> ProcessCTDdata.log 2>&1
+
+/usr/local/bin/idl < ProcessRSN-MJ03Bdata.pro  > ProcessRSN-MJ03Bdata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03B/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+/usr/local/bin/idl < ProcessRSN-MJ03Ddata.pro  > ProcessRSN-MJ03Ddata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03D/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+/usr/local/bin/idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03E/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+/usr/local/bin/idl < ProcessRSN-MJ03Fdata.pro  > ProcessRSN-MJ03Fdata.log 2>&1
+/usr/local/bin/idl < RunPlotNANOdiffE-F7Days.pro > RunPlotNANOdiffE-F7Days.log 2>&1
+cp ~/4Chadwick/RSN/MJ03F/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+
+/usr/local/bin/idl < RunDisplayAlarmSummary.pro > DisplayAlarmSummary.log 2>&1
+cp ~/4Chadwick/RSN/AlarmSummary.png /internet/httpd/html/new-eoi/rsn/graphs/

@@ -1,0 +1,1000 @@
+ls -l /data/ooi/api/mj03b/ | tail
+tail RunPlotMJ03?-LILY.log      
+ls -l RunPlotMJ03?-LILY.log      
+vi RunUpdateRSNsaveFiles.log                     
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log            
+vi RunPlotRSNdata.log
+vi RunForecastDates.log                        
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log                         
+exit
+cd ~/4Chadwick/RSN/
+ ls -l /data/ooi/api/mj03b/ | tail
+ ls -l /data/ooi/api/mj03e/ | tail
+ ls -l /data/ooi/ftp/mj03b/ | tail
+ ls -l /data/ooi/ftp/mj03e/ | tail
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log 
+ls -l RunPlotMJ03?-LILY.log 
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunUpdateRSNsaveFiles.log                     
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log            
+vi RunPlotRSNdata.log
+vi RunForecastDates.log                        
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log                         
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ ls -l /data/ooi/ftp/mj03b/ | tail
+vi /data/ooi/ftp/mj03b/BOTPTA304_10.31.7.9_9338_20210325T0000_UTC.dat
+exit
+cd ~/4Chadwick/RSN/
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l ProcessRSNdata.*
+cp ProcessRSNdata.pro ProcessRSNdata.old
+ls -l /dat/lau/ProcessRSNdata.pro
+ls -l /data/lau/ProcessRSNdata.pro
+ls -l ProcessRSNdata.*
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+mv /data/lau/ProcessRSNdata.pro .
+ls -l ProcessRSNdata.*
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi ProcessRSN-MJ03Ddata.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log 
+ls -l RunPlotMJ03?-LILY.log 
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+vi RunUpdateRSNsaveFiles.log                     
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log            
+vi RunPlotRSNdata.log
+vi RunForecastDates.log                        
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log                         
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l ProcessRSNdata.*
+exit
+cd ~/4Chadwick/RSN/
+ls MJ03B/*.U*
+ls MJ03B/*.N*
+head MJ03B/BOTPTA304_10.31.7.9_9338_20210407T0000_UTC.NonData
+ls MJ03B/*.U* | tail
+more MJ03B/BOTPTA304_10.31.7.9_9338_20201223T0000_UTC.Unknown
+ls -l MJ03D/*.U* | tail
+head MJ03D/BOTPTA303_10.31.9.6_9338_20210317T0000_UTC.Unknown
+ls -l MJ03D/*.N* | tail
+head MJ03D/BOTPTA303_10.31.9.6_9338_20210407T0000_UTC.NonData
+ls -l MJ03E/*.N* | tail
+head MJ03E/BOTPTA302_10.31.10.6_9338_20210407T0000_UTC.NonData
+ls -l MJ03F/*.N* | tail
+head MJ03F/BOTPTA301_10.31.6.5_9338_20210406T0000_UTC.NonData
+ls -l MJ03F/*.U* | tail
+head MJ03F/BOTPTA301_10.31.6.5_9338_20210326T0000_UTC.Unknown
+head MJ03F/BOTPTA301_10.31.6.5_9338_20200902T0000_UTC.Unknown
+ls -l MJ03E/*.U* | tail
+ls -l MJ03B/*.U* | tail
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log 
+ls -l RunPlotMJ03?-LILY.log 
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/aoi/mj03e/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+vi RunUpdateRSNsaveFiles.log                     
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log            
+vi RunPlotRSNdata.log
+vi RunForecastDates.log                        
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log                         
+ls -l MJ03B/*.U* | tail
+ls -l MJ03D/*.U* | tail
+ls -l MJ03E/*.U* | tail
+ls -l MJ03F/*.U* | tail
+wc -l MJ03F/*.U* | tail
+head MJ03F/BOTPTA301_10.31.6.5_9338_20210311T0000_UTC.Unknown
+ls -l MJ03B/*.U* | tail
+ls *data
+ls *ata
+ls -l *ata
+ls -l N*
+idl
+vi ProcessRSNdata.pro
+vi test.data
+ls -l MJ03F/*.N* | tail
+head MJ03F/BOTPTA301_10.31.6.5_9338_20210408T0000_UTC.NonData
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+crontab -l
+ifconfig
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03d/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunUpdateRSNsaveFiles.log                     
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log            
+vi RunPlotRSNdata.log
+vi RunForecastDates.log                        
+ls -l /internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4*
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+vi RunForecastDates.log                        
+ls -l /internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4* | head
+exit
+cd ~/4Chadwick/RSN/
+ls -l /internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4*
+vi RunForecastDates.log                        
+ls -l /internet/httpd/html/new-eoi/rsn/numbered_plots/ | tail
+vi RunForecastDates.log                        
+ls -l ~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png 
+cp ~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png /data/lau/
+vi RunForecastDates.pro
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+idl
+ls -l /internet/httpd/html/new-eoi/rsn/numbered_plots/ | tail
+ls -l /internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-00000.png
+vi RunForecastDates.log
+vi RunForecastDates.job
+vi RunDiffForecastDates.pro
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+idl
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunForecastDates.log
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail RunPlotMJ03?-LILY.log 
+ls -l RunPlotMJ03?-LILY.log 
+ls -l /data/ooi/ftp/mj03f/ | tail           
+ls -l /data/ooi/ftp/mj03e/ | tail           
+ls -l /data/ooi/api/mj03e/ | tail           
+ls -l /data/ooi/api/mj03b/ | tail           
+crontab -l
+ifconfig
+vi RunUpdateRSNsaveFiles.log                        
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exitg
+exit
+cd ~/4Chadwick/RSN/
+ ls -l /data/ooi/api/mj03e/ | tail
+ ls -l /data/ooi/api/mj03f/ | tail
+ ls -l /data/ooi/api/mj03b/ | tail
+ ls -l /data/ooi/ftp/mj03e/ | tail
+ ls -l /data/ooi/ftp/mj03f/ | tail
+ifconfig
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log                        
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+ ls -l /data/ooi/ftp/mj03e/ | tail
+ ls -l /data/ooi/ftp/mj03b/ | tail
+ ls -l /data/ooi/api/mj03b/ | tail
+ ls -l /data/ooi/api/mj03e | tail
+tail RunPlotMJ03?-LILY.log         
+ls -l RunPlotMJ03?-LILY.log         
+tail /data/ooi/api/mj03e/2021-04-25.csv
+tail /data/ooi/api/mj03e/2021-04-26.csv
+head /data/ooi/api/mj03e/2021-04-26.csv
+head /data/ooi/api/mj03b/2021-04-26.csv
+tail /data/ooi/api/mj03b/2021-04-25.csv
+vi RunUpdateRSNsaveFiles.log                        
+vi RunPrintRSNdata2Files.log  
+vi RunGetRates.log
+vi RunPlotRSNdata.log               
+vi RunForecastDates.log
+vi SaveCTDdata.log            
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/lau/4Chadwick/RSN/MJ03E/CTD*.idl
+ls -l /data/lau/4Chadwick/RSN/MJ03B/CTD*.idl
+ls -l MJ03E/CTD*
+ls -l MJ03B/CTD*
+cp /data/lau/4Chadwick/RSN/MJ03E/CTD*.idl MJ03E/
+cp /data/lau/4Chadwick/RSN/MJ03B/CTD*.idl MJ03B/
+ls -l MJ03E/*CTD*
+ls -l /data/ooi/api/mj03e/ | tail
+head MJ03E/*ProcessedCTD.FileName
+vi MJ03E/LastProcessedCTD.FileName
+ls -l /data/ooi/api/mj03b/ | tail
+vi MJ03B/LastProcessedCTD.FileName
+ls -l MJ03E/*CTD*
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l *Job
+diff ProcessRSNdata.Job ProcessRSNdata.job
+vi ProcessRSNdata.job
+cp ProcessRSNdata.Job ProcessRSNdata.job
+vi ProcessRSNdata.job
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l MJ03E/*CTD*
+more MJ03E/LastProcessedCTD.FileName
+exit
+tail /data/ooi/api/mj03e/2021-04-25.csv
+tail /data/ooi/api/mj03e/2021-04-26.csv
+head /data/ooi/api/mj03e/2021-04-26.csv
+ls -l /data/ooi/api/mj03e/
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ifconfig
+crontab -l
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail RunPlotMJ03?-LILY.log         
+ls -l RunPlotMJ03?-LILY.log         
+vi RunPrintRSNdata2Files.log   
+vi RunUpdateRSNsaveFiles.log                        
+vi RunGetRates.log         
+vi RunPlotRSNdata.log               
+vi RunForecastDates.log                           
+vi SaveCTDdata.log            
+vi BackUpIDLfiles2data.log                  
+ls -l Run*
+ls *job
+vi ProcessRSNdata.job
+diff  ProcessRSNdata.job ProcessRSNdata.Job
+vi ProcessRSNdata.Job
+vi ProcessRSNdata.job
+ls MJ03B/*CTD*idl
+ls -l MJ03B/*CTD*idl
+vi BackUpIDLfiles2data.log                  
+ls -l /data/lau/4Chadwick/RSN/MJ03B/
+cp MJ03B/*CTD*idl /data/lau/4Chadwick/RSN/MJ03B/
+ls -l /data/lau/4Chadwick/RSN/MJ03B/*CTD*
+ls -l /data/lau/4Chadwick/RSN/MJ03E/*CTD*
+cp MJ03E/*CTD*idl /data/lau/4Chadwick/RSN/MJ03E/
+ls -l  MJ03E/*CTD*idl 
+ls -l /data/lau/4Chadwick/RSN/MJ03E/*CTD*idl 
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03d/ | tail
+tail RunPlotMJ03?-LILY.log            
+ls -l RunPlotMJ03?-LILY.log            
+vi RunUpdateRSNsaveFiles.log                        
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log         
+vi RunPlotRSNdata.log
+vi SaveCTDdata.log            
+vi RunForecastDates.log
+vi BackUpIDLfiles2data.log                  
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ls -l /data/ooi/ftp/mj03d/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03b/ | tail
+ifconfig
+crontab -l
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail RunPlotMJ03?-LILY.log            
+ls -l RunPlotMJ03?-LILY.log            
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log            
+vi BackUpIDLfiles2data.log
+ls -l MJ03B/*png
+ls -l MJ03E/*png
+ls -l MJ03B/*png
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/ftp/mj03b/ | tail
+vi BOTPTA304_10.31.7.9_9338_20210506T0000_UTC.dat
+vi /data/ooi/ftp/mj03b/BOTPTA304_10.31.7.9_9338_20210506T0000_UTC.dat
+head MJ03?/MJ03?.ProcessingStatus
+head  MJ03B/ProcessRSN-MJ03Bdata.log
+ls  MJ03B/
+head  MJ03B/LastProcessedFileName.MJ03B
+vi /data/ooi/ftp/mj03b/BOTPTA304_10.31.7.9_9338_20210506T0000_UTC.dat
+head  MJ03B/LastProcessedFileName.MJ03B
+head MJ03?/MJ03?.ProcessingStatus
+vi MJ03B/MJ03B.ProcessingStatus
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+crontab -l
+ls -l /data/ooi/ftp/mj03b/ | tail
+vi /data/ooi/ftp/mj03b/BOTPTA304_10.31.7.9_9338_20210507T0000_UTC.dat
+ls  MJ03B/
+ls  MJ03B/Un*
+ls  MJ03B/*Un*
+ls  MJ03B/*No* | tail
+vi MJ03B/BOTPTA304_10.31.7.9_9338_20210506T0000_UTC.NonData
+rm  MJ03B/*.Unknown
+date
+ls Run*
+*.job
+ls*.job
+ls *.job
+vi ProcessRSNdata.job
+vi ProcessRSN-MJ03Bdata.pro
+crontab -l
+date
+idl
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+tail RunPlotMJ03?-LILY.log                   
+ls -l RunPlotMJ03?-LILY.log                   
+vi RunPrintRSNdata2Files.log
+vi RunUpdateRSNsaveFiles.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi RunGetRates.log
+vi SaveCTDdata.log            
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+head MJ03?/MJ03?.ProcessingStatus
+pwd
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/api/mj03e/ | tail                   
+ls -l /data/ooi/api/mj03b/ | tail                   
+ls -l /data/ooi/ftp/mj03e/ | tail                   
+ls -l /data/ooi/ftp/mj03f/ | tail                   
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log                   
+ls -l RunPlotMJ03?-LILY.log                   
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log        
+vi RunGetRates.log
+vi RunPlotRSNdata.log          
+vi RunForecastDates.log
+vi SaveCTDdata.log                     
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/ftp/mj03b | tail
+ls -l /data/ooi/api/mj03b | tail
+ls -l /data/ooi/api/mj03e | tail
+crontab -l
+ifconfig
+tail RunPlotMJ03?-LILY.log                   
+ls -l RunPlotMJ03?-LILY.log                   
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log 
+vi RunGetRates.log
+vi RunPlotRSNdata.log                              
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+echo "Can you see me?" | mail -s "From Caldera to Andy Gmail" taikwantkl@gmail.com
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/api/mj03e | tail
+ls -l /data/ooi/api/mj03f | tail
+ls -l /data/ooi/api/mj03d | tail
+ls -l /data/ooi/api/mj03b | tail
+ls -l /data/ooi/ftp/mj03b | tail
+ls -l /data/ooi/ftp/mj03f | tail
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log                   
+ls -l RunPlotMJ03?-LILY.log                   
+vi RunUpdateRSNsaveFiles.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/ftp/mj03f | tail
+ls -l /data/ooi/ftp/mj03e | tail
+ls -l /data/ooi/api/mj03e | tail
+ls -l /data/ooi/api/mj03b/ | tail
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ tail RunPlotMJ03?-LILY.log
+ls -ll RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/ftp/mj03d/ | tail
+ls -l /data/ooi/api/mj03f/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+tail RunPlotMJ03?-LILY.log          
+ls -ll RunPlotMJ03?-LILY.log         
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log 
+vi RunGetRates.log
+vi RunPlotRSNdata.log 
+vi RunForecastDates.log
+vi SaveCTDdata.log       
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ifconfig
+crontab -l
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail RunPlotMJ03?-LILY.log          
+ls -l RunPlotMJ03?-LILY.log          
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log 
+vi RunGetRates.log
+vi RunPlotRSNdata.log 
+vi RunForecastDates.log
+vi SaveCTDdata.log       
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+cd ~/4Chadwick/RSN/
+tail RunPlotMJ03?-LILY.log          
+ls -l RunPlotMJ03?-LILY.log          
+ifconfig
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+history | grep echo | more
+echo "Can you see me?" | mail -s "From Caldera to RISSO" -r Andy.Lau@noaa.gov Andy.Lau@noaa.gov 
+ls *ist*
+ls
+rm *.idl
+y
+ls
+more TestEmailAlerts.pro
+ls -l /data/lau/*Axial*.idl | tail
+ls -l /data/lau/*Axial*.idl | wc -l
+mv /data/lau/*Axial*.idl . &
+ls -l *idl
+ls *.job
+vi ProcessRSNdata.job
+history | grep echo | more
+echo "Can you see me?" | mail -s "From Caldera to Andy Gmail" taikwantkl@gmail.com
+echo "Can you see me?" | mail -vs "From Caldera to Andy Gmail" -r taikwantkl@gmail.com taikwantkl@gmail.com
+ls -l *idl | tail
+ls -l *idl | wc -l
+ls -l /data/lau/*Axial*.idl | wv -l
+ls -l /data/lau/*Axial*.idl
+echo "Can you see me?" | mail -vs "From Caldera to Andy Gmail" -r Andy.Lau@noaa.gov taikwantkl@gmail.com
+ls 
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+head cat MJ03?/MJ03?.ProcessingStatus
+vi MJ03E/MJ03E.ProcessingStatus
+vi  MJ03F/MJ03F.ProcessingStatus
+head cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03d/ | tail
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log             
+vi RunGetRates.log
+vi RunPlotRSNdata.log      
+vi RunForecastDates.log
+vi SaveCTDdata.log                
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+history | tail -100
+echo "Using Brian's address" | mail -vs "From Caldera to Andy Gmail" -r brian.kahn@noaa.gov taikwantkl@gmail.com
+ls *ist*
+ls *job
+ls *Job
+ls -l ProcessRSNdata.*
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi ProcessRSN-MJ03Edata.log
+diff ProcessRSNdata.job ProcessRSNdata.Job
+vi ProcessRSNdata.job
+vi ProcessRSNdata.Job
+ grep mail *pro | more
+ls -l *ata4Alerts.*
+ls -l *ata4Alerts*
+diff CheckNANOdata4Alerts.pro /data/lau/CheckNANOdata4Alerts.pro
+mv CheckNANOdata4Alerts.pro CheckNANOdata4Alerts.old
+mv /data/lau/CheckNANOdata4Alerts.pro
+mv /data/lau/CheckNANOdata4Alerts.pro .
+ls -l *ata4Alerts*
+ls -l ProcessRSNdata*
+cp CheckNANOdata4Alerts.old CheckNANOdata4Alerts.pro
+echo "Using Brian's address" | mail -vs "From Caldera to Bill's Gmail" -r brian.kahn@noaa.gov william.w.chadwick@gmail.com taikwantkl@gmail.com
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03f/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ifconfig
+crontab -l
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l Check*
+diff CheckNANOdata4Alerts.pro CheckNANOdata4Alerts.old
+cp CheckNANOdata4Alerts.pro /data/lau/
+diff CheckNANOdata4Alerts.pro /data/lau/CheckNANOdata4Alerts.pro
+mv  /data/lau/CheckNANOdata4Alerts.pro .
+ls -l Check*
+cp CheckTiltData4Alerts.pro /data/lau
+cp CheckTiltData4Alerts.pro CheckTiltData4Alerts.old
+diff CheckTiltData4Alerts.pro /data/lau/CheckTiltData4Alerts.pro
+mv /data/lau/CheckTiltData4Alerts.pro .
+ls -l Check*
+ls -l ProcessRSNdata.*
+vi ProcessRSNdata.job
+vi ProcessRSNdata.Job
+cp ProcessRSNdata.pro ProcessRSNdata.old
+cp ProcessRSNdata.pro /data/lau/
+vi ProcessRSNdata.Job
+ls -l /data/lau/ProcessRSNdata.pro
+mv /data/lau/ProcessRSNdata.pro .
+ls -l ProcessRSNdata.*
+vi ProcessRSNdata.job
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+crontab -l
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+crontab -l
+ifconfig
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03f/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+tail /data/ooi/api/mj03b/2021-06-09.csv
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log                 
+tail /data/ooi/api/mj03e/2021-06-09.csv
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log     
+vi RunPlotRSNdata.log
+vi RunForecastDates.log         
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log       
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail /data/ooi/api/mj03[b-e]/2021-06-09.csv
+exit
+tail /data/ooi/api/mj03[b-e]/2021-06-09.csv
+cd ~/4Chadwick/RSN/
+ls -l *.job
+ls -l ProcessRSNdata.*
+diff ProcessRSNdata.job ProcessRSNdata.Job
+vi ProcessRSNdata.job
+vi ProcessRSNdata.Job
+vi ProcessRSNdata.job
+crontab -l
+tail /data/ooi/api/mj03[b-e]/2021-06-09.csv
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+tail /data/ooi/api/mj03[b-e]/2021-06-09.csv
+cd ~/4Chadwick/RSN/
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ifconfig
+crontab -l
+ls -l /data/ooi/ftp/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+head /data/ooi/api/mj03b/2021-06-08.csv
+tail /data/ooi/api/mj03b/2021-06-08.csv
+wc -l /data/ooi/api/mj03b/2021-06-08.csv
+wc -l /data/ooi/api/mj03b/2021-06-07.csv
+/data/ooi/api/mj03b/2021-06-08.csv
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log             
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log                     
+vi RunPlotRSNdata.log
+vi RunForecastDates.log             
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log                
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail      
+ls -l /data/ooi/api/mj03e/ | tail
+exit
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03d/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+tail /data/ooi/api/mj03[b-e]/2021-06-10.csv
+head /data/ooi/api/mj03[b-e]/2021-06-10.csv
+head /data/ooi/api/mj03[b-e]/2021-06-11.csv
+tail /data/ooi/api/mj03[b-e]/2021-06-11.csv
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus\
+exit
+tail /data/ooi/api/mj03[b-e]/2021-06-11.csv
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03d/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/fpt/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03e/ | tail
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/api/mj03e/ | tail
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03b/ | tail
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03e/ | tail
+head /data/ooi/api/mj03e/2021-06-10.csv
+head /data/ooi/api/mj03e/2021-06-12.csv
+tail /data/ooi/api/mj03e/2021-06-12.csv
+tail /data/ooi/api/mj03e/2021-06-09.csv
+head /data/ooi/api/mj03e/2021-06-09.csv
+ls -l /data/ooi/api/mj03e/ | tail
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03f/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/fpt/mj03b/ | tail
+ls -l /data/ooi/ftp/mj03b/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03e/ | tail
+head /data/ooi/api/mj03e/2021-06-12.csv
+tail /data/ooi/api/mj03e/2021-06-12.csv
+wc -l /data/ooi/api/mj03e/2021-06-12.csv
+wc -l /data/ooi/api/mj03e/2021-06-08.csv
+wc -l /data/ooi/api/mj03e/2021-06-11.csv
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+exit
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+exit
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+exit
+cd ~/4Chadwick/RSN/
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03b/ | tail -30
+ls -l RunProcessCTDdata.pro
+ls -l RunProcessCTDdata.*
+vi RunProcessCTDdata.old
+cp RunProcessCTDdata.pro RunProcessCTDdata.old
+vi RunProcessCTDdata.pro
+ls -l ProcessRSNdata.?ob
+vi ProcessRSNdata.Job
+vi ProcessRSNdata.job
+diff ProcessRSNdata.job ProcessRSNdata.Job
+vi ProcessRSNdata.job
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+crontab -l
+ifconfig
+exit
+crontab -l
+ifconfig
+cd ~/4Chadwick/RSN/
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03b/ | tail -30
+ls -l /data/ooi/api/mj03e/ | tail -30
+diff ProcessRSNdata.job ProcessRSNdata.Job
+vi ProcessRSNdata.Job
+cp ProcessRSNdata.Job ProcessRSNdata.job
+vi RunProcessCTDdata.pro
+exit
+ls -l /data/ooi/api/mj03b/ | tail -30
+ls -l /data/ooi/api/mj03e/ | tail -30
+cd ~/4Chadwick/RSN/
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls *.idl
+ls MJ03E/
+exit
+cd ~/4Chadwick/RSN/
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03e/ | tail
+history | grep vi | tail -30
+vi RunUpdateRSNsaveFiles.log
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+ date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+ls -l /data/ooi/ftp/mj03e/ | tail
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log           
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log        
+vi RunPlotRSNdata.log
+vi RunForecastDates.log               
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log           
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/ftp/mj03f/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03d/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+ls *.job
+vi ProcessRSNdata.job
+diff ProcessRSNdata.job ProcessRSNdata.Job
+vi ProcessRSNdata.job
+diff ProcessRSNdata.job ProcessRSNdata.Job
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+exit
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+head /data/ooi/api/mj03e/2021-06-26.csv
+exit
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+tail /data/ooi/api/mj03e/2021-06-25.csv
+head /data/ooi/api/mj03e/2021-06-25.csv
+head /data/ooi/api/mj03b/2021-06-25.csv
+tail /data/ooi/api/mj03b/2021-06-25.csv
+exit
+tail /data/ooi/api/mj03b/2021-06-25.csv
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls *job
+ls -l ProcessRSNdata*
+diff ProcessRSNdata.Job ProcessRSNdata.job
+cp ProcessRSNdata.Job ProcessRSNdata.job
+vi ProcessRSNdata.job
+vi RunProcessCTDdata.pro
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi ProcessRSNdata.job
+wc -l /data/ooi/api/mj03e/2021-06-25.csv
+wc -l /data/ooi/api/mj03e/2021-06-26.csv
+tail /data/ooi/api/mj03b/2021-06-24.csv
+wc -l /data/ooi/api/mj03b/2021-06-24.csv
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+wc -l /data/ooi/api/mj03b/2021-06-24.csv
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+exit
+ls -l /data/ooi/api/mj03b/ | tail
+exit
+ls -l /data/ooi/api/mj03b/ | tail
+ls -l /data/ooi/api/mj03e/ | tail
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+cd ~/4Chadwick/RSN/
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+vi RunProcessCTDdata.pro
+ls -l /data/ooi/api/mj03e/ | tail
+ls -l /data/ooi/api/mj03b/ | tail
+vi ProcessRSNdata.job
+diff ProcessRSNdata.job ProcessRSNdata.Job
+wc -l ProcessRSNdata.job ProcessRSNdata.Job
+cp ProcessRSNdata.Job ProcessRSNdata.job
+vi ProcessRSNdata.job
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+ifconfig
+crontab -l
+tail RunPlotMJ03?-LILY.log
+ls -l RunPlotMJ03?-LILY.log
+vi RunUpdateRSNsaveFiles.log          
+history | grep "vi Run" | tail -30
+vi RunPrintRSNdata2Files.log
+vi RunGetRates.log
+vi RunPlotRSNdata.log
+vi RunForecastDates.log
+vi SaveCTDdata.log
+vi BackUpIDLfiles2data.log
+date ; atq ; ls -l ProcessRSN-MJ03?data.log ; cat MJ03?/MJ03?.ProcessingStatus
+exit
+atq
+man at
+atrm 15549
+atq
+ps -aux
+ps -aux | grep lau
+cd
+cd 4Chadwick/
+vi readme
+cd RSN/
+cat MJ03?/MJ03?.ProcessingStatus
+for i in MJ03?/MJ03?.ProcessingStatus; do echo $i; cat $i; done
+cp MJ03E/MJ03E.ProcessingStatus MJ03E-MJ03E.ProcessingStatus
+cp MJ03B/MJ03B.ProcessingStatus MJ03E/MJ03E.ProcessingStatus
+for i in MJ03?/MJ03?.ProcessingStatus; do echo $i; cat $i; done
+cp MJ03B/MJ03B.ProcessingStatus MJ03F/MJ03F.ProcessingStatus

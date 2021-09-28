@@ -1,0 +1,6 @@
+     This is an automated email.  Do not reply.
+
+     A possible tsunami signal has been detected by
+     an OOI/RSN/BOTPT instrument at Axial Seamount,
+     based on a rate of pressure-depth change greater than 1 cm/min
+     in the last 15 minutes.  Check the data to confirm.

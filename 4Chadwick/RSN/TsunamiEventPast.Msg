@@ -1,0 +1,5 @@
+     Possible tsunami detected by a BOTPT instrument at Axial Seamount,
+     based on rate of pressure-depth change greater than 5 cm in the
+     last 5 minutes.
+
+     This is an auto-alert message.  Do not reply.

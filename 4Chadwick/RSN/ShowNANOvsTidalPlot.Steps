@@ -1,0 +1,229 @@
+;
+; File: ShowNANOvsTidalPlot.Steps
+;
+; Display the NANO Data and the Predicted Tide values.
+; Revised: January 28th, 2015
+
+;
+ .RUN ~/idl/IDLcolors.pro
+ .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
+;
+; Restrieve the Predicted Tide values.
+; Array variables: TIDAL_TIME, TIDAL and N_TIDALS
+;
+  RESTORE, '~/4Chadwick/RSN/Dec2014Jan2015AxialTidalData.idl'
+;
+; Restrieve the NANO data Array variables:
+; NANO_DETIDE, NANO_PSIA, NANO_TEMP and NANO_TIME.
+;
+  RESTORE, '~/4Chadwick/RSN/MJ03D/MJ03D-NANO.idl'
+;
+; Locate the Start and End Times range indexes for the NANO_TIME.
+;
+  S  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,22,2015,07,0,0) )
+  N  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,22,2015,08,0,0) )
+  S  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,25,2015,11,0,0) )
+  N  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,25,2015,12,0,0) )
+  S  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,26,2015, 6,0,0) )
+  N  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,26,2015, 9,0,0) )
+  S  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,24,2015,10,0,0) )
+  N  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,25,2015,10,0,0) )
+  S  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,25,2015,10,0,0) )
+  N  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,26,2015,10,0,0) )
+  S  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,26,2015,04,0,0) )
+  N  = LOCATE_TIME_POSITION(  NANO_TIME, JULDAY(1,27,2015,04,0,0) )
+  S -= 1
+  N -= 2
+;
+; Locate the Start and End Times range indexes for the TIDAL_TIME.
+;
+  I  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,22,2015,07,0,0) )
+  M  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,22,2015,08,0,0) )
+  I  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,25,2015,11,0,0) )
+  M  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,25,2015,12,0,0) )
+  I  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,26,2015, 6,0,0) )
+  M  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,26,2015, 9,0,0) )
+  I  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,24,2015,10,0,0) )
+  M  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,25,2015,10,0,0) )
+  I  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,25,2015,10,0,0) )
+  M  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,26,2015,10,0,0) )
+  I  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,26,2015,04,0,0) )
+  M  = LOCATE_TIME_POSITION( TIDAL_TIME, JULDAY(1,27,2015,04,0,0) )
+  I -= 1
+  M -= 2
+;
+; Check the time ranges.
+;
+  PRINT, FORMAT='(C())', TIDAL_TIME[I], NANO_TIME[S]
+  PRINT, FORMAT='(C())', TIDAL_TIME[M], NANO_TIME[N]
+;
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=256
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=512  ; for 1/26/2015 07:00 - 09:00.
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=1024 ; for R24-Hr Long Data.
+;
+; The following 2 procedures are in the file IDLcolors.pro
+;
+  SET_BACKGROUND, /WHITE  ; Plotting background to White.
+  RGB_COLORS,      C      ; Color name indexes, e.g. C.BLUE, C.GREEN, ... etc.
+;
+; Define an Upside Down Triangle symbol for plotting PSYM=8.
+;
+; USERSYM, [-1, 1, 0, -1 ], [1, 1, -1, 1]
+;
+; Determine number of Hourly or Daily marks per day.
+;
+; N      = N_ELEMENTS( NANO_TIME  )
+; N_DAYS = ( NANO_TIME[N]   - NANO_TIME[S] )  ; Data Range in days.
+;
+; Call LABEL_DATE() to ask for plotting Time Label
+; as Hour, Month/Day/Year or Day, Month/Day/Year
+;
+; TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%D','%N/%D/%Z'] )
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%I:%S' ] )
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%H:%I'      ]   )
+;
+  TIME_RANGE  = STRING( NANO_TIME[S],   $ ; Date & Time of the 1st data point.
+       FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' ) 
+  TIME_RANGE += ' to ' + STRING( NANO_TIME[N],  $  ; to the Last data point.
+       FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' )
+;
+; Define the Y ranges for plotting.
+;
+  MN = 1513.7  &  MX = 1513.9  ; for January 25, 2015 11:00 to 12:00. 
+  MN = 1511.7  &  MX = 1511.8  ; for January 26, 2015 06:00 to 07:00. 
+  MN = 1511.7  &  MX = 1512.6  ; for January 26, 2015 06:00 to 09:00. 
+  MN = 1511.5  &  MX = 1514.0  ; for January 25-27, 2015
+  MN = 1511.4  &  MX = 1513.9  ; for January 24-25, 2015
+;
+; Define the Hardware Fonts to be used.
+;
+  DEVICE, FONT='-adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+;
+ !X.THICK = 2
+ !Y.THICK = 2  ; for thinker line drawing.
+ !P.FONT  = 0  ; Use the hardware font above.
+;
+; Display the NANO Pressure values in meters.
+;
+  PLOT, NANO_TIME[S:N], NANO_PSIA[S:N]*0.670,  XMARGIN=[9,3],   $
+        YRANGE=[MX,MN], YSTYLE=1,         YMARGIN=[5,2],   $
+        XSTYLE=1,  XRANGE=[ NANO_TIME[S],NANO_TIME[N] ],   $
+        XTICKFORMAT=['LABEL_DATE'],  XTICKUNITS='Time' ,   $
+        XTITLE=TIME_RANGE, XTICKINTERVAL=02,   THICK=2,    $ ; 1/25-1/26 2015
+;       XTITLE=TIME_RANGE, XTICKINTERVAL=0.25, THICK=2,    $ ; for Hr:Mn
+  TITLE='MJ03D NANO Pressure & the Predicted Tidal data'
+;
+; Over Plot the predicted tide values with 1512.675 meters offset added.
+; with 1512.7 meters offset added for Janurary 25, 2015 07:00 to 08:00.
+;                                 and Janurary 22, 2015 11:00 to 12:00.
+;
+ OPLOT, TIDAL_TIME[I:M], TIDAL[I:M]+1512.700,   THICK=2, COLOR=C.GREEN
+ OPLOT, TIDAL_TIME[I:M], TIDAL[I:M]+1512.675,   THICK=2, COLOR=C.GREEN
+; 
+; Over Plot the Detided Vales with -0.925 meters offset added.
+; with 1.1    meters offset added for Janurary 25, 2015 11:00 to 12:00.
+;
+ OPLOT, NANO_TIME[S:N], NANO_DETIDE[S:N]+1.100, THICK=2, COLOR=C.ORANGE
+ OPLOT, NANO_TIME[S:N], NANO_DETIDE[S:N]-0.925, THICK=2, COLOR=C.ORANGE
+;
+; Over Plot the Detided Vales with No Offset values for 1/25-1/26 2015.
+;
+ OPLOT, NANO_TIME[S:N], NANO_DETIDE[S:N]      , THICK=2, COLOR=C.ORANGE
+; 
+; Label each of the plotted lines for Janurary 25, 2015 11:00 to 12:00.
+;
+  XYOUTS, /DEVICE, 125, 190, 'NANO Pressure Data'
+  XYOUTS, /DEVICE, 125, 130, 'De-Tided Data + 1.1',            COLOR=C.ORANGE
+  XYOUTS, /DEVICE, 700,  90, 'Predicted Tide Data + 1512.7',   COLOR=C.GREEN
+; 
+; Label each of the plotted lines for Janurary 26, 2015 06:00 to 07:00.
+;
+  XYOUTS, /DEVICE, 125, 190, 'NANO Pressure Data'
+  XYOUTS, /DEVICE, 125, 120, 'De-Tided Data - 0.925',          COLOR=C.ORANGE
+  XYOUTS, /DEVICE, 700, 200, 'Predicted Tide Data + 1512.675', COLOR=C.GREEN
+;
+; Label each of the plotted lines for Janurary 26, 2015 06:00 to 09:00.
+;
+  XYOUTS, JULDAY(1,26,2015,07,20,00),1512, 'NANO Pressure Data'
+  XYOUTS, JULDAY(1,26,2015,06,15,00),1511.8, 'De-Tided Data - 0.925',  $
+          COLOR=C.ORANGE
+  XYOUTS, JULDAY(1,26,2015,07,58,00),1512, 'Predicted Tide Data + 1512.675', $
+          COLOR=C.GREEN
+;
+; Label each of the plotted lines for Janurary 24, 2015 04:00:00
+;                                  to Janurary 25, 2015 04:00:00
+;
+  XYOUTS, JULDAY(1,24,2015,22,00,00),1512,   'NANO Pressure Data'
+  XYOUTS, JULDAY(1,24,2015,22,00,00),1512.6, 'De-Tided Data', COLOR=C.ORANGE
+  XYOUTS, JULDAY(1,24,2015,17,00,00),1511.8,'Predicted Tide Data + 1512.675',$
+          COLOR=C.GREEN
+;
+; Label each of the plotted lines for Janurary 25, 2015 10:00:00
+;                                  to Janurary 26, 2015 10:00:00
+;
+  XYOUTS, JULDAY(1,26,2015,01,00,00),1512, 'NANO Pressure Data'
+  XYOUTS, JULDAY(1,25,2015,17,00,00),1512.7, 'De-Tided Data', COLOR=C.ORANGE
+  XYOUTS, JULDAY(1,26,2015,02,30,00),1513, 'Predicted Tide Data + 1512.675', $
+          COLOR=C.GREEN
+;
+; Label each of the plotted lines for Janurary 26, 2015 04:00:00
+;                                  to Janurary 27, 2015 04:00:00
+;
+  XYOUTS, JULDAY(1,26,2015,12,00,00),1512,   'NANO Pressure Data'
+  XYOUTS, JULDAY(1,26,2015,12,00,00),1512.6, 'De-Tided Data', COLOR=C.ORANGE
+  XYOUTS, JULDAY(1,26,2015,20,00,00),1511.8,'Predicted Tide Data + 1512.675',$
+          COLOR=C.GREEN
+;
+ !P.FONT = -1  ; Back to graphic font.
+ XYOUTS, CHARSIZE=1.25, CHARTHICK=1, ORIENTATION=90,  $    ; Right Y-Axis's
+         JULDAY(1,24,2015,08,50,00), 1512.80, '!17Meters'  ; Label.
+         JULDAY(1,25,2015,08,50,00), 1512.90, '!17Meters'  ; Label.
+         JULDAY(1,26,2015,03,00,00), 1512.90, '!17Meters'  ; Label.
+;        JULDAY(1,26,2015,05,51,00), 1512.05, '!17Meters'  ; Label.
+;
+;
+  WRITE_PNG, '~/4Chadwick/RSN/Test/MJ03D25Jan2015NANO.png',    TVRD( TRUE=1 )
+  WRITE_PNG, '~/4Chadwick/RSN/Test/MJ03D26Jan2015NANO.png',    TVRD( TRUE=1 )
+  WRITE_PNG, '~/4Chadwick/RSN/Test/MJ03D24-25Jan2015NANO.png', TVRD( TRUE=1 )
+  WRITE_PNG, '~/4Chadwick/RSN/Test/MJ03D25-26Jan2015NANO.png', TVRD( TRUE=1 )
+  WRITE_PNG, '~/4Chadwick/RSN/Test/MJ03D26-27Jan2015NANO.png', TVRD( TRUE=1 )
+;
+; Display the NANO Pressure values in meters for the January 22, 2015.
+;
+ !P.FONT  = 0  ; Use the hardware font above.
+  MN = 1512.6  &  MX = 1513.3  ; for January 22, 2015 07:00 to 08:00. 
+  PLOT, NANO_TIME[S:N], NANO_PSIA[S:N]*0.670,  XMARGIN=[9,8],   $
+        YRANGE=[MX,MN], YSTYLE=1+4,       YMARGIN=[5,2],   $
+        XSTYLE=1,  XRANGE=[ NANO_TIME[S],NANO_TIME[N] ],   $
+        XTICKFORMAT=['LABEL_DATE'],  XTICKUNITS='Time' ,   $
+        XTITLE=TIME_RANGE, XTICKINTERVAL= 5, THICK=2,      $
+  TITLE='MJ03D NANO Pressure & the Predicted Tidal data'
+;
+  AXIS, YAXIS=0, YRANGE=[MX,MN], YSTYLE=1, CHARSIZE=1.15
+;
+; Over Plot the predicted tide values with 1512.7 meters offset added.
+;
+  OPLOT, TIDAL_TIME[I:M], TIDAL[I:M]+1512.700,   THICK=2, COLOR=C.GREEN
+;
+; Redefine the plotting area for the Detided data.
+;
+; MN = 1512.6587  &  MX = 1512.6895  ; for January 22, 2015 0700 - 08:00
+  MN = 1512.65    &  MX = 1512.69    ; for January 22, 2015 0700 - 08:00
+;
+  PLOT, NANO_TIME[S:N], NANO_DETIDE[S:N], XMARGIN=[9,8],   $
+        YRANGE=[MX,MN], YSTYLE=1+4,       YMARGIN=[5,2],   $
+        XSTYLE=1,  XRANGE=[ NANO_TIME[S],NANO_TIME[N] ],   $
+        XTICKFORMAT=['LABEL_DATE'],  XTICKUNITS='Time' ,   $
+        XTITLE=TIME_RANGE, XTICKINTERVAL= 5, THICK=2, /NODATA, /NOERASE
+  AXIS, YAXIS=1, YRANGE=[MX,MN], YSTYLE=1, COLOR=C.ORANGE
+ OPLOT, NANO_TIME[S:N], NANO_DETIDE[S:N],  COLOR=C.ORANGE, THICK=2
+; 
+; Label each of the plotted lines for Janurary 26, 2015 06:00 to 07:00.
+;
+  XYOUTS, /DEVICE, 300, 190, 'NANO Pressure Data'
+  XYOUTS, /DEVICE, 410, 100, 'De-Tided Data',                  COLOR=C.ORANGE
+  XYOUTS, /DEVICE, 100, 170, 'Predicted Tide Data + 1517.7',   COLOR=C.GREEN
+;
+  WRITE_PNG, '~/4Chadwick/RSN/Test/MJ03D22Jan2015NANO.png',  TVRD( TRUE=1 )
+;
+; Done PLotting.

@@ -1,0 +1,25 @@
+cd /data/lau/4Chadwick/RSN/
+
+cp LastUpatedMJ03BinfoFile.LILY lastUpatedMJ03BinfoFile.LILY
+cp LastUpatedMJ03DinfoFile.LILY lastUpatedMJ03DinfoFile.LILY
+cp LastUpatedMJ03EinfoFile.LILY lastUpatedMJ03EinfoFile.LILY
+cp LastUpatedMJ03FinfoFile.LILY lastUpatedMJ03FinfoFile.LILY
+
+cp LastUpatedMJ03BinfoFile.NANO lastUpatedMJ03BinfoFile.NANO
+cp LastUpatedMJ03DinfoFile.NANO lastUpatedMJ03DinfoFile.NANO
+cp LastUpatedMJ03EinfoFile.NANO lastUpatedMJ03EinfoFile.NANO
+cp LastUpatedMJ03FinfoFile.NANO lastUpatedMJ03FinfoFile.NANO
+
+cp LastUpatedMJ03E-FinfoFile.Diff lastUpatedMJ03E-FinfoFile.Diff 
+
+cd ~/4Chadwick/RSN/
+rm -f RunPrintRSNdata2Files.log
+crontab crontab.null
+date  > RunPrintRSNdata2Files.log
+echo Stopped crontab >> RunPrintRSNdata2Files.log
+
+/usr/local/bin/idl < RunPrintRSNdata2ftpdata.pro >> RunPrintRSNdata2Files.log 2>&1
+
+date >> RunPrintRSNdata2Files.log
+crontab crontab
+echo Resummed crontab >> RunPrintRSNdata2Files.log

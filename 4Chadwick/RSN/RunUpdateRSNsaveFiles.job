@@ -1,0 +1,32 @@
+cd ~/4Chadwick/RSN/
+export DISPLAY=:2
+rm -f RunUpdateRSNsaveFiles.log
+crontab crontab.null
+date  > RunUpdateRSNsaveFiles.log
+echo Stopped crontab >> RunUpdateRSNsaveFiles.log
+idl < RunUpdateRSNsaveFiles.pro   >> RunUpdateRSNsaveFiles.log   2>&1
+idl < RunUpdateMJ03EsaveFiles.pro >> RunUpdateRSNsaveFiles.log   2>&1
+idl < RunUpdateMJ03FsaveFiles.pro >> RunUpdateRSNsaveFiles.log   2>&1
+date >> RunUpdateRSNsaveFiles.log
+echo Running RunPlotRSNdata.pro and RunPlotMJ03Fdata.pro >> RunUpdateRSNsaveFiles.log
+rm -f RunPlotRSNdata.log
+idl < RunPlotRSNdata.pro          > RunPlotRSNdata.log          2>&1
+idl < RunPlotMJ03Fdata.pro       >> RunPlotRSNdata.log          2>&1
+echo Running GetLongTermDataProducts.pro   >> RunUpdateRSNsaveFiles.log
+rm -f GetLongTermDataProducts.log
+idl < GetLongTermDataProducts.pro > GetLongTermDataProducts.log 2>&1
+date >> RunUpdateRSNsaveFiles.log
+echo Running RunUpdate1HrAveFile.pro   >> RunUpdateRSNsaveFiles.log
+rm -f RunUpdate1HrAveFile.log
+idl < RunUpdate1HrAveFile.pro > RunUpdate1HrAveFile.log 2>&1
+date >> RunUpdateRSNsaveFiles.log
+echo Running Run1HrAveTilt.pro   >> RunUpdateRSNsaveFiles.log
+rm -f Run1HrAveTilt.log
+idl < Run1HrAveTilt.pro           > Run1HrAveTilt.log 2>&1
+date >> RunUpdateRSNsaveFiles.log
+echo Running RunUpdateNANOdiffE-F.pro >> RunUpdateRSNsaveFiles.log
+rm -f RunUpdateNANOdiffE-F.log
+idl < RunUpdateNANOdiffE-F.pro    > RunUpdateNANOdiffE-F.log 2>&1
+date >> RunUpdateRSNsaveFiles.log
+crontab crontab
+echo Resumed crontab >> RunUpdateRSNsaveFiles.log

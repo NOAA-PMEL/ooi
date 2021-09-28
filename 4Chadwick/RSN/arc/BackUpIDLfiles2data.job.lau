@@ -1,0 +1,7 @@
+cd ~/4Chadwick/RSN/
+rm -f BackUpIDLfiles2data.log
+./BackUpIDLfiles2data > BackUpIDLfiles2data.log
+date >> BackUpIDLfiles2data.log
+echo $DISPLAY >> BackUpIDLfiles2data.log
+printenv      >> BackUpIDLfiles2data.log
+at 03:00 -f BackUpIDLfiles2data.job 2>> BackUpIDLfiles2data.log

@@ -1,0 +1,46 @@
+Data Times before RSN Data Processing switching to using 3-Day long data set.
+
+.RUN ~/4Chadwick/RSN/SplitRSNdata.pro
+.RUN ~/4Chadwick/RSN/GetShortTermDataSets.pro
+
+Using the following precedure calls:  March 11th, 2015
+CD, '~/4Chadwick/RSN/MJ03D/'
+GET_ST_HEAT_DATA, 'MJ03D-HEAT.idl', SAVE2FILE='3DayMJ03D-HEAT.idl', 4, TIME & HELP, TIME
+GET_ST_IRIS_DATA, 'MJ03D-IRIS.idl', SAVE2FILE='3DayMJ03D-IRIS.idl', 4, TIME & HELP, TIME
+GET_ST_LILY_DATA, 'MJ03D-LILY.idl', SAVE2FILE='3DayMJ03D-LILY.idl', 4, TIME & HELP, TIME
+GET_ST_NANO_DATA, 'MJ03D-NANO.idl', SAVE2FILE='3DayMJ03D-NANO.idl', 4, TIME & HELP, TIME
+
+to get the following results.
+MJ03D:     First               and     Last                Total Poitns
+HEAT : Sat Mar 07 00:00:03 2015 to Wed Mar 11 16:35:08 2015   100134
+IRIS : Sat Mar 07 00:00:01 2015 to Wed Mar 11 16:35:08 2015   251432
+LILY : Sat Mar 07 00:00:01 2015 to Wed Mar 11 16:35:09 2015   273768
+NANO : Sat Mar 07 00:00:15 2015 to Wed Mar 11 16:35:00 2015    18252
+
+Using the following precedure calls:  March 11th, 2015
+CD, '~/4Chadwick/RSN/MJ03E/'
+GET_ST_HEAT_DATA, 'MJ03E-HEAT.idl', SAVE2FILE='3DayMJ03E-HEAT.idl', 4, TIME & HELP, TIME
+GET_ST_IRIS_DATA, 'MJ03E-IRIS.idl', SAVE2FILE='3DayMJ03E-IRIS.idl', 4, TIME & HELP, TIME
+GET_ST_LILY_DATA, 'MJ03E-LILY.idl', SAVE2FILE='3DayMJ03E-LILY.idl', 4, TIME & HELP, TIME
+GET_ST_NANO_DATA, 'MJ03E-NANO.idl', SAVE2FILE='3DayMJ03E-NANO.idl', 4, TIME & HELP, TIME
+
+to get the following results.
+MJ03E:     First               and     Last                Total Poitns
+HEAT : Sat Mar 07 00:00:02 2015 to Wed Mar 11 16:35:18 2015   996644
+IRIS : Sat Mar 07 00:00:01 2015 to Wed Mar 11 16:35:19 2015   250253
+LILY : Sat Mar 07 00:00:01 2015 to Wed Mar 11 16:35:19 2015   272481
+NANO : Sat Mar 07 00:00:15 2015 to Wed Mar 11 16:35:15 2015    18166
+
+Using the following precedure calls:  March 11th, 2015
+CD, '~/4Chadwick/RSN/MJ03F/'
+GET_ST_HEAT_DATA, 'MJ03F-HEAT.idl', SAVE2FILE='3DayMJ03F-HEAT.idl', 4, TIME & HELP, TIME
+GET_ST_IRIS_DATA, 'MJ03F-IRIS.idl', SAVE2FILE='3DayMJ03F-IRIS.idl', 4, TIME & HELP, TIME
+GET_ST_LILY_DATA, 'MJ03F-LILY.idl', SAVE2FILE='3DayMJ03F-LILY.idl', 4, TIME & HELP, TIME
+GET_ST_NANO_DATA, 'MJ03F-NANO.idl', SAVE2FILE='3DayMJ03F-NANO.idl', 4, TIME & HELP, TIME
+
+to get the following results.
+MJ03F:     First               and     Last                Total Poitns
+HEAT : Sat Mar 07 00:00:03 2015 to Wed Mar 11 16:35:27 2015   996474
+IRIS : Sat Mar 07 00:00:01 2015 to Wed Mar 11 16:35:28 2015   250204
+LILY : Sat Mar 07 00:00:01 2015 to Wed Mar 11 16:35:29 2015   272432
+NANO : Sat Mar 07 00:00:15 2015 to Wed Mar 11 16:35:15 2015    18161

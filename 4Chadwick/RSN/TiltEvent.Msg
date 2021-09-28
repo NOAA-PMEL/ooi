@@ -1,0 +1,14 @@
+     This is an automated email.   Do not reply.
+
+     The LILY tilt sensor in one of the OOI/RSN/BOTPT instruments at
+     Axial Seamount has exceeded +/- 300 microradians in X-tilt or Y-tilt.
+     The sensor will go off-scale when the X-tilt or Y-tilt exceeds
+     +/- 330 microradians.  Therefore, the LILY tilt sensor needs to be
+     re-leveled ASAP.  To do that, issue the following commands:
+
+     LILY,*9900XY-LEVEL,1
+     ...as soon as the re-leveling has finished (a few minutes),
+        stop the re-leveling process with:
+     LILY,*9900XY-LEVEL,0
+     ...and then resume data output with:
+     LILY,*9900XYC2

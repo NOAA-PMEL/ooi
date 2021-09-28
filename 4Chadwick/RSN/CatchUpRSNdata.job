@@ -1,0 +1,11 @@
+cd ~/4Chadwick/RSN
+
+export DISPLAY=localhost:10.0
+
+date  >> CatchUpRSNdata.log
+echo Running Plotting Long-Term Data    >> CatchUpRSNdata.log
+/usr/local/bin/idl < CatchUpRSNdata.pro >> CatchUpRSNdata.log 2>&1
+date  >> CatchUpRSNdata.log
+echo Copying png files...  >> CatchUpRSNdata.log
+cp ~/4Chadwick/RSN/MJ03?/MJ03?*.png /internet/httpd/html/new-eoi/rsn/graphs/
+date  >> CatchUpRSNdata.log

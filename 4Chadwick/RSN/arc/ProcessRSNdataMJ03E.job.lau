@@ -1,0 +1,4 @@
+rm -f ProcessRSNdata.log
+idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03E/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+at -f ProcessRSNdata.job 23:59 2> ProcessRSNdata.log

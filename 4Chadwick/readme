@@ -1,0 +1,35 @@
+Attached is the file: RSN-IDLfiles.Info showing what output files: *.idl
+& *.png generated and used by which IDL programs (the *.pro).  It also
+shows other status files such as LastProcessedFileName.MJ03? ,
+LastProcessedCTD.FileName and UpLiftAlertStatus.MJ03? used by some of
+the IDL programs.
+
+At the end of the RSN-IDLfiles.Info  It shows the Orders of the RSN and
+CTD data processing.
+
+The data directory structure is following:
+/home/lau/4Chadwick/RSN/   and it has 3 subdirectories:  MJ03B/, MJ03D/,
+...,  MJ03F/.
+Each one of the subdirectories contains the IDL save files ( e.g.
+MJ03B1HrAveLILY.idl),
+status files (e.g. LILY-XtiltAlertStatus.MJ03B &
+LastProcessedFileName.MJ03B)
+and graphic files (e.g. MJ03B25Apr2015onIRIS.png)
+All these files will be updated either every 15 minutes or once a day.
+
+At the main directory: /home/lau/4Chadwick/RSN/, there are tidal cycle
+data stored in the IDL save files.  The current ones being used are
+Dec2018-2019AxialTidalDataMJ03[B/D/E/F].idl by the program:
+ProcessRSNdata.pro in the procedure: DETIDE_NANO_DATA.  In mid-December
+this year, the new files: Dec2019-2020AxialTidalDataMJ03[B/D/E/F].idl 
+need to be used.
+
+Also in the directory: /home/lau/4Chadwick/RSN/ are the IDL programs for
+processing the RSN and CTD data.  One of them is the
+RunPrintRSNdata2Files.pro which shows the steps for printing out the
+NANO or LILY data by specify the time range into a text file.
+
+Another file: RunGetRates2Start.pro, shows the steps for relevelling the
+tilt data from beginning to the end of the available data.
+
+

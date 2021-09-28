@@ -1,0 +1,127 @@
+;
+; File: ShowCenterBPR2010TestResults.Steps
+;
+; Display the results from the TestNANOdata4Alerts.pro
+; Revised: January 13th, 2015
+
+;
+; Restrieve the Pressure Data used for testing.
+; Array variables: TIME, DETIDED
+;
+  RESTORE, '~/4Chadwick/RSN/Test/Center2010BPR.idl'
+;
+ .RUN ~/idl/IDLcolors.pro
+;
+  WINDOW, RETAIN=2, XSIZE=1024, YSIZE=256
+;
+; The following 2 procedures are in the file IDLcolors.pro
+;
+  SET_BACKGROUND, /WHITE  ; Plotting background to White.
+  RGB_COLORS,      C      ; Color name indexes, e.g. C.BLUE, C.GREEN, ... etc.
+;
+; Define an Upside Down Triangle symbol for plotting PSYM=8.
+;
+  USERSYM, [-1, 1, 0, -1 ], [1, 1, -1, 1]
+;
+; Determine number of Hourly or Daily marks per day.
+;
+  N      = N_ELEMENTS( TIME  )
+  N_DAYS = ( TIME[N-1] - TIME[0] )  ; Data Range in days.
+;
+; Call LABEL_DATE() to ask for plotting Time Label
+; as Hour, Month/Day/Year or Day, Month/Day/Year
+;
+; TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%D','%N/%D/%Z'] )
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%M'] )
+;
+  TIME_RANGE  = STRING( TIME[0],   $ ; Date & Time of the 1st data point.
+        FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' ) 
+  TIME_RANGE += ' to ' + STRING( TIME[N-1],  $  ; to the Last data point.
+        FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' )
+;
+; Define the Y ranges for plotting.
+;
+; MX = MAX( ABS( DETIDED ), MIN=MN )
+  MX = 1511.05
+  MN = 1510.80
+;
+; Define the Hardware Fonts to be used.
+;
+  DEVICE, FONT='-adobe-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+;
+ !X.THICK = 2
+ !Y.THICK = 2  ; for thinker line drawing.
+ !P.FONT  = 0  ; Use the hardware font above.
+;
+; Display the temperature values 1st.
+;
+  PLOT, TIME, ABS( DETIDED ),             XMARGIN=[9,3],   $
+        YRANGE=[MN,MX], YSTYLE=1,         YMARGIN=[5,2],   $
+        XSTYLE=1,  XRANGE=[ TIME[0],     TIME[N-1]]    ,   $
+        XTICKFORMAT=['LABEL_DATE'],  XTICKUNITS='Months',  $
+        XTITLE=TIME_RANGE, XTICKINTERVAL= 1,  $
+  TITLE='Using 2010 Center BPR Detided Data for Testing the Alert Detections'
+; 
+; Mark the Detected Subsidence Events' Times as Oreange Upside Down Triangles.
+;
+  R = -5.46/600 + 1510.83 ; Scale the Rate for plotting.
+  T = JULDAY( 9, 7, 2010, 16,23,15 )  ; Time of the Subsidence Event.
+  PLOTS, T, R, THICK=2, COLOR=C.ORANGE, PSYM=8  ; 8 = User Defined.
+;
+  PLOTS, /DEVICE, 120,  25, PSYM=8, COLOR=C.ORANGE, THICK=2
+ XYOUTS, /DEVICE, 125,  20, 'Subsidence Event', COLOR=C.ORANGE
+;
+ !P.FONT = -1  ; Back to graphic font.
+  XYOUTS, CHARSIZE=1.25, CHARTHICK=1, ORIENTATION=90,  $ 
+          /DEVICE, 13, 125,  '!17Meters'  ; Right Y-Axis's Label.
+;
+  WRITE_PNG, '~/4Chadwick/RSN/Test/CenterBPR2010Detect.png', TVRD( TRUE=1 )
+;
+; Zoom in Display.
+;
+; Define the Y ranges for plotting.
+;
+  MX = 1511.05
+  MN = 1510.80
+   S = 0
+   N = 149987  ; <-- for TIME[149987] = 'Fri Oct 01 00:00:00 2010'
+   S = 11747   ; <-- for TIME[N] = 'Tue Sep 07 00:00:00 2010'
+   N = 17507   ; <-- for TIME[N] = 'Wed Sep 08 00:00:00 2010'
+;
+; TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%M'] )
+  TIME_RANGE  = LABEL_DATE( DATE_FORMAT=['%H:%I:%S'] )
+  TIME_RANGE  = STRING( TIME[S],   $ ; Date & Time of the 1st data point.
+        FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' ) 
+  TIME_RANGE += ' to ' + STRING( TIME[N],  $  ; to the Last data point.
+        FORMAT='(C(CMOI,"/",CDI2.2,"/",CYI,X,CHI2.2,":",CMI2.2,":",CSI2.2))' )
+;
+ !P.FONT  = 0  ; Use the hardware font above.
+;
+; Display the temperature values 1st.
+;
+  PLOT, TIME[S:N], ABS( DETIDED[S:N] ),   XMARGIN=[9,3],   $
+        YRANGE=[MN,MX], YSTYLE=1,         YMARGIN=[5,2],   $
+        XSTYLE=1,  XRANGE=[ TIME[S],     TIME[N-1]]    ,   $
+        XTICKFORMAT=['LABEL_DATE'],  XTICKUNITS='Time'  ,  $
+        XTITLE=TIME_RANGE, XTICKINTERVAL= 3,  $
+  TITLE='Using 2010 Center BPR Detided Data for Testing the Alert Detections'
+;
+; Mark the Detected Subsidence Events' Times as Oreange Upside Down Triangles.
+;
+  R = -5.46/600 + 1510.85 ; Scale the Rate for plotting.
+  T = JULDAY( 9, 7, 2010, 16,23,15 )  ; Time of the Subsidence Event.
+  PLOTS, T, R, THICK=2, COLOR=C.ORANGE, PSYM=8  ; 8 = User Defined.
+;
+  PLOTS, /DEVICE, 120,  25, PSYM=8, COLOR=C.ORANGE, THICK=2
+ XYOUTS, /DEVICE, 125,  20, 'Subsidence Event', COLOR=C.ORANGE
+;
+;
+ !P.FONT = -1  ; Back to graphic font.
+ XYOUTS, CHARSIZE=1.25, CHARTHICK=1, ORIENTATION=90,  $
+         /DEVICE, 15, 120,  '!17Meters'  ; Right Y-Axis's Label.
+;
+  WRITE_PNG, '~/4Chadwick/RSN/Test/CtrBPR2010ZmInDetect.png', TVRD( TRUE=1 )
+;
+
+;
+; Done PLotting.

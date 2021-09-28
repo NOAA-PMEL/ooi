@@ -1,0 +1,11 @@
+I am testing UNIX command Line function : mail and You will get this
+message at least 2 more times.
+
+Please Do Not Reply to this email.
+
+But Do Please send a "I got your test message." to andy.lau@noaa.gov
+the 1st time and ignore it next time.
+
+Thank you very much for helping me!
+
+--Andy

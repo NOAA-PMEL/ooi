@@ -1,0 +1,392 @@
+;Fri Feb 11 02:05:00 2011 Uplift Event Detected from: Test Rate: 33.870000 > Limit: 5
+;Fri Feb 11 02:20:00 2011 Subsidence Detected from: Test Rate: -12.945000 < Limit: -5
+;Fri Feb 11 02:35:00 2011 Subsidence Detected from: Test Rate: -14.880000 < Limit: -5
+;Fri Feb 11 02:50:00 2011 Subsidence Detected from: Test Rate: -12.510000 < Limit: -5
+;Fri Feb 11 03:05:00 2011 Uplift Event Detected from: Test Rate: 475914.88 > Limit: 5
+;Fri Feb 11 03:20:00 2011 Uplift Event Detected from: Test Rate: 12.975000 > Limit: 5
+;Fri Feb 11 03:35:00 2011 Uplift Event Detected from: Test Rate: 13.965000 > Limit: 5
+;Fri Feb 11 03:50:00 2011 Subsidence Detected from: Test Rate: -11.700000 < Limit: -5
+;Fri Feb 11 04:05:00 2011 Subsidence Detected from: Test Rate: -15.000000 < Limit: -5
+;Fri Feb 11 04:20:00 2011 Subsidence Detected from: Test Rate: -14.970000 < Limit: -5
+;Fri Feb 11 04:35:00 2011 Subsidence Detected from: Test Rate: -14.580000 < Limit: -5
+;Fri Feb 11 04:50:00 2011 Subsidence Detected from: Test Rate: -13.845000 < Limit: -5
+;Fri Feb 11 05:05:00 2011 Subsidence Detected from: Test Rate: -12.765000 < Limit: -5
+;Fri Feb 11 05:20:00 2011 Subsidence Detected from: Test Rate: -11.490000 < Limit: -5
+;Fri Feb 11 05:35:00 2011 Subsidence Detected from: Test Rate: -9.7050000 < Limit: -5
+;Fri Feb 11 05:50:00 2011 Subsidence Detected from: Test Rate: -7.7550000 < Limit: -5
+;Fri Feb 11 06:05:00 2011 Subsidence Detected from: Test Rate: -5.5800000 < Limit: -5
+;Fri Feb 11 07:20:00 2011 Uplift Event Detected from: Test Rate: 7.6200000 > Limit: 5
+;Fri Feb 11 07:35:00 2011 Uplift Event Detected from: Test Rate: 10.440000 > Limit: 5
+;Fri Feb 11 07:50:00 2011 Uplift Event Detected from: Test Rate: 13.020000 > Limit: 5
+;Fri Feb 11 08:05:00 2011 Uplift Event Detected from: Test Rate: 15.630000 > Limit: 5
+;Fri Feb 11 08:20:00 2011 Uplift Event Detected from: Test Rate: 18.030000 > Limit: 5
+;Fri Feb 11 08:35:00 2011 Uplift Event Detected from: Test Rate: 20.280000 > Limit: 5
+;Fri Feb 11 08:50:00 2011 Uplift Event Detected from: Test Rate: 22.215000 > Limit: 5
+;Fri Feb 11 09:05:00 2011 Subsidence Detected from: Test Rate: -10.740000 < Limit: -5
+;Fri Feb 11 09:20:00 2011 Subsidence Detected from: Test Rate: -25.185000 < Limit: -5
+;Fri Feb 11 09:35:00 2011 Subsidence Detected from: Test Rate: -26.355000 < Limit: -5
+;Fri Feb 11 09:50:00 2011 Subsidence Detected from: Test Rate: -26.970000 < Limit: -5
+;Fri Feb 11 10:05:00 2011 Subsidence Detected from: Test Rate: -27.285000 < Limit: -5
+;Fri Feb 11 10:20:00 2011 Subsidence Detected from: Test Rate: -27.225000 < Limit: -5
+;Fri Feb 11 10:35:00 2011 Subsidence Detected from: Test Rate: -26.700000 < Limit: -5
+;Fri Feb 11 10:50:00 2011 Subsidence Detected from: Test Rate: -25.830000 < Limit: -5
+;Fri Feb 11 11:05:00 2011 Subsidence Detected from: Test Rate: -24.540000 < Limit: -5
+;Fri Feb 11 11:20:00 2011 Subsidence Detected from: Test Rate: -22.935000 < Limit: -5
+;Fri Feb 11 11:35:00 2011 Subsidence Detected from: Test Rate: -20.925000 < Limit: -5
+;Fri Feb 11 11:50:00 2011 Subsidence Detected from: Test Rate: -18.660000 < Limit: -5
+;Fri Feb 11 12:05:00 2011 Subsidence Detected from: Test Rate: -15.975000 < Limit: -5
+;Fri Feb 11 12:20:00 2011 Subsidence Detected from: Test Rate: -13.095000 < Limit: -5
+;Fri Feb 11 12:35:00 2011 Subsidence Detected from: Test Rate: -10.005000 < Limit: -5
+;Fri Feb 11 12:50:00 2011 Subsidence Detected from: Test Rate: -6.7350000 < Limit: -5
+;Fri Feb 11 13:50:00 2011 Uplift Event Detected from: Test Rate: 7.4250000 > Limit: 5
+;Fri Feb 11 14:05:00 2011 Uplift Event Detected from: Test Rate: 10.935000 > Limit: 5
+;Fri Feb 11 14:20:00 2011 Uplift Event Detected from: Test Rate: 14.370000 > Limit: 5
+;Fri Feb 11 14:35:00 2011 Uplift Event Detected from: Test Rate: 17.685000 > Limit: 5
+;Fri Feb 11 14:50:00 2011 Uplift Event Detected from: Test Rate: 20.775000 > Limit: 5
+;Fri Feb 11 15:05:00 2011 Uplift Event Detected from: Test Rate: 23.655000 > Limit: 5
+;Fri Feb 11 15:20:00 2011 Uplift Event Detected from: Test Rate: 26.205000 > Limit: 5
+;Fri Feb 11 15:35:00 2011 Uplift Event Detected from: Test Rate: 28.485000 > Limit: 5
+;Fri Feb 11 15:50:00 2011 Uplift Event Detected from: Test Rate: 30.450000 > Limit: 5
+;Fri Feb 11 16:05:00 2011 Uplift Event Detected from: Test Rate: 32.010000 > Limit: 5
+;Fri Feb 11 16:20:00 2011 Uplift Event Detected from: Test Rate: 33.195000 > Limit: 5
+;Fri Feb 11 16:35:00 2011 Uplift Event Detected from: Test Rate: 33.975000 > Limit: 5
+;Fri Feb 11 16:50:00 2011 Uplift Event Detected from: Test Rate: 34.395000 > Limit: 5
+;Fri Feb 11 17:05:00 2011 Uplift Event Detected from: Test Rate: 8.4900000 > Limit: 5
+;Fri Feb 11 17:20:00 2011 Subsidence Detected from: Test Rate: -33.975000 < Limit: -5
+;Fri Feb 11 17:35:00 2011 Subsidence Detected from: Test Rate: -33.135000 < Limit: -5
+;Fri Feb 11 17:50:00 2011 Subsidence Detected from: Test Rate: -31.935000 < Limit: -5
+;Fri Feb 11 18:05:00 2011 Subsidence Detected from: Test Rate: -30.345000 < Limit: -5
+;Fri Feb 11 18:20:00 2011 Subsidence Detected from: Test Rate: -28.500000 < Limit: -5
+;Fri Feb 11 18:35:00 2011 Subsidence Detected from: Test Rate: -26.250000 < Limit: -5
+;Fri Feb 11 18:50:00 2011 Subsidence Detected from: Test Rate: -23.775000 < Limit: -5
+;Fri Feb 11 19:05:00 2011 Subsidence Detected from: Test Rate: -21.090000 < Limit: -5
+;Fri Feb 11 19:20:00 2011 Subsidence Detected from: Test Rate: -18.135000 < Limit: -5
+;Fri Feb 11 19:35:00 2011 Subsidence Detected from: Test Rate: -15.090000 < Limit: -5
+;Fri Feb 11 19:50:00 2011 Subsidence Detected from: Test Rate: -11.895000 < Limit: -5
+;Fri Feb 11 20:05:00 2011 Subsidence Detected from: Test Rate: -8.6700000 < Limit: -5
+;Fri Feb 11 20:20:00 2011 Subsidence Detected from: Test Rate: -5.4150000 < Limit: -5
+;Fri Feb 11 21:20:00 2011 Uplift Event Detected from: Test Rate: 7.0050000 > Limit: 5
+;Fri Feb 11 21:35:00 2011 Uplift Event Detected from: Test Rate: 9.6450000 > Limit: 5
+;Fri Feb 11 21:50:00 2011 Uplift Event Detected from: Test Rate: 12.120000 > Limit: 5
+;Fri Feb 11 22:05:00 2011 Uplift Event Detected from: Test Rate: 14.370000 > Limit: 5
+;Fri Feb 11 22:20:00 2011 Uplift Event Detected from: Test Rate: 16.290000 > Limit: 5
+;Fri Feb 11 22:35:00 2011 Uplift Event Detected from: Test Rate: 17.940000 > Limit: 5
+;Fri Feb 11 22:50:00 2011 Uplift Event Detected from: Test Rate: 19.260000 > Limit: 5
+;Fri Feb 11 23:05:00 2011 Uplift Event Detected from: Test Rate: 20.205000 > Limit: 5
+;Fri Feb 11 23:20:00 2011 Uplift Event Detected from: Test Rate: 20.880000 > Limit: 5
+;Fri Feb 11 23:35:00 2011 Uplift Event Detected from: Test Rate: 21.180000 > Limit: 5
+;Fri Feb 11 23:50:00 2011 Uplift Event Detected from: Test Rate: 21.135000 > Limit: 5
+;Sat Feb 12 00:05:00 2011 Uplift Event Detected from: Test Rate: 20.805000 > Limit: 5
+;Sat Feb 12 00:20:00 2011 Uplift Event Detected from: Test Rate: 20.145000 > Limit: 5
+;Sat Feb 12 00:35:00 2011 Uplift Event Detected from: Test Rate: 19.200000 > Limit: 5
+;Sat Feb 12 00:50:00 2011 Uplift Event Detected from: Test Rate: 17.985000 > Limit: 5
+;Sat Feb 12 01:05:00 2011 Uplift Event Detected from: Test Rate: 16.500000 > Limit: 5
+;Sat Feb 12 01:20:00 2011 Uplift Event Detected from: Test Rate: 14.910000 > Limit: 5
+;Sat Feb 12 01:35:00 2011 Uplift Event Detected from: Test Rate: 7.9950000 > Limit: 5
+;Sat Feb 12 01:50:00 2011 Subsidence Detected from: Test Rate: -11.160000 < Limit: -5
+;Sat Feb 12 02:05:00 2011 Subsidence Detected from: Test Rate: -9.0750000 < Limit: -5
+;Sat Feb 12 02:20:00 2011 Subsidence Detected from: Test Rate: -7.0200000 < Limit: -5
+;Sat Feb 12 03:05:00 2011 Subsidence Detected from: Test Rate: -475912.77 < Limit: -5
+;Sat Feb 12 20:05:00 2011 Subsidence Detected from: Test Rate: -72.135000 < Limit: -5
+;Sat Feb 12 20:20:00 2011 Uplift Event Detected from: Test Rate: 15.615000 > Limit: 5
+;Sat Feb 12 20:35:00 2011 Uplift Event Detected from: Test Rate: 14.805000 > Limit: 5
+;Sat Feb 12 20:50:00 2011 Uplift Event Detected from: Test Rate: 17.280000 > Limit: 5
+;Sat Feb 12 21:05:00 2011 Uplift Event Detected from: Test Rate: 475717.20 > Limit: 5
+;Sat Feb 12 21:20:00 2011 Subsidence Detected from: Test Rate: -8.2650000 < Limit: -5
+;Sat Feb 12 22:35:00 2011 Uplift Event Detected from: Test Rate: 7.5750000 > Limit: 5
+;Sat Feb 12 22:50:00 2011 Uplift Event Detected from: Test Rate: 10.380000 > Limit: 5
+;Sat Feb 12 23:05:00 2011 Uplift Event Detected from: Test Rate: 12.930000 > Limit: 5
+;Sat Feb 12 23:20:00 2011 Uplift Event Detected from: Test Rate: 15.285000 > Limit: 5
+;Sat Feb 12 23:35:00 2011 Uplift Event Detected from: Test Rate: 17.325000 > Limit: 5
+;Sat Feb 12 23:50:00 2011 Uplift Event Detected from: Test Rate: 19.110000 > Limit: 5
+;Sun Feb 13 00:05:00 2011 Uplift Event Detected from: Test Rate: 20.580000 > Limit: 5
+;Sun Feb 13 00:20:00 2011 Uplift Event Detected from: Test Rate: 21.675000 > Limit: 5
+;Sun Feb 13 00:35:00 2011 Uplift Event Detected from: Test Rate: 22.560000 > Limit: 5
+;Sun Feb 13 00:50:00 2011 Uplift Event Detected from: Test Rate: 22.980000 > Limit: 5
+;Sun Feb 13 01:05:00 2011 Uplift Event Detected from: Test Rate: 23.070000 > Limit: 5
+;Sun Feb 13 01:20:00 2011 Uplift Event Detected from: Test Rate: 22.995000 > Limit: 5
+;Sun Feb 13 01:35:00 2011 Uplift Event Detected from: Test Rate: 22.470000 > Limit: 5
+;Sun Feb 13 01:50:00 2011 Uplift Event Detected from: Test Rate: 21.690000 > Limit: 5
+;Sun Feb 13 02:05:00 2011 Uplift Event Detected from: Test Rate: 20.640000 > Limit: 5
+;Sun Feb 13 02:20:00 2011 Uplift Event Detected from: Test Rate: 19.335000 > Limit: 5
+;Sun Feb 13 02:35:00 2011 Uplift Event Detected from: Test Rate: 17.835000 > Limit: 5
+;Sun Feb 13 02:50:00 2011 Uplift Event Detected from: Test Rate: 16.095000 > Limit: 5
+;Sun Feb 13 03:05:00 2011 Subsidence Detected from: Test Rate: -10.785000 < Limit: -5
+;Sun Feb 13 03:20:00 2011 Subsidence Detected from: Test Rate: -12.285000 < Limit: -5
+;Sun Feb 13 03:35:00 2011 Subsidence Detected from: Test Rate: -10.185000 < Limit: -5
+;Sun Feb 13 03:50:00 2011 Subsidence Detected from: Test Rate: -8.0850000 < Limit: -5
+;Sun Feb 13 04:05:00 2011 Subsidence Detected from: Test Rate: -5.9850000 < Limit: -5
+;Sun Feb 13 05:50:00 2011 Uplift Event Detected from: Test Rate: 5.7750000 > Limit: 5
+;Sun Feb 13 06:05:00 2011 Uplift Event Detected from: Test Rate: 6.5850000 > Limit: 5
+;Sun Feb 13 06:20:00 2011 Uplift Event Detected from: Test Rate: 7.2450000 > Limit: 5
+;Sun Feb 13 06:35:00 2011 Uplift Event Detected from: Test Rate: 7.5750000 > Limit: 5
+;Sun Feb 13 06:50:00 2011 Uplift Event Detected from: Test Rate: 7.6800000 > Limit: 5
+;Sun Feb 13 07:05:00 2011 Uplift Event Detected from: Test Rate: 7.4550000 > Limit: 5
+;Sun Feb 13 07:35:00 2011 Subsidence Detected from: Test Rate: -6.1950000 < Limit: -5
+;Sun Feb 13 07:50:00 2011 Subsidence Detected from: Test Rate: -5.2050000 < Limit: -5
+;Sun Feb 13 09:35:00 2011 Uplift Event Detected from: Test Rate: 7.0350000 > Limit: 5
+;Sun Feb 13 09:50:00 2011 Uplift Event Detected from: Test Rate: 6.4050000 > Limit: 5
+;Sun Feb 13 10:05:00 2011 Subsidence Detected from: Test Rate: -11.235000 < Limit: -5
+;Sun Feb 13 10:20:00 2011 Subsidence Detected from: Test Rate: -13.080000 < Limit: -5
+;Sun Feb 13 10:35:00 2011 Subsidence Detected from: Test Rate: -15.030000 < Limit: -5
+;Sun Feb 13 10:50:00 2011 Subsidence Detected from: Test Rate: -16.815000 < Limit: -5
+;Sun Feb 13 11:05:00 2011 Subsidence Detected from: Test Rate: -18.345000 < Limit: -5
+;Sun Feb 13 11:20:00 2011 Subsidence Detected from: Test Rate: -19.725000 < Limit: -5
+;Sun Feb 13 11:35:00 2011 Subsidence Detected from: Test Rate: -20.820000 < Limit: -5
+;Sun Feb 13 11:50:00 2011 Subsidence Detected from: Test Rate: -21.660000 < Limit: -5
+;Sun Feb 13 12:05:00 2011 Subsidence Detected from: Test Rate: -22.185000 < Limit: -5
+;Sun Feb 13 12:20:00 2011 Subsidence Detected from: Test Rate: -22.455000 < Limit: -5
+;Sun Feb 13 12:35:00 2011 Subsidence Detected from: Test Rate: -22.290000 < Limit: -5
+;Sun Feb 13 12:50:00 2011 Subsidence Detected from: Test Rate: -21.840000 < Limit: -5
+;Sun Feb 13 13:05:00 2011 Subsidence Detected from: Test Rate: -21.030000 < Limit: -5
+;Sun Feb 13 13:20:00 2011 Subsidence Detected from: Test Rate: -19.905000 < Limit: -5
+;Sun Feb 13 13:35:00 2011 Subsidence Detected from: Test Rate: -18.360000 < Limit: -5
+;Sun Feb 13 13:50:00 2011 Subsidence Detected from: Test Rate: -16.560000 < Limit: -5
+;Sun Feb 13 14:05:00 2011 Subsidence Detected from: Test Rate: -14.400000 < Limit: -5
+;Sun Feb 13 14:20:00 2011 Subsidence Detected from: Test Rate: -11.970000 < Limit: -5
+;Sun Feb 13 14:35:00 2011 Subsidence Detected from: Test Rate: -9.2850000 < Limit: -5
+;Sun Feb 13 14:50:00 2011 Subsidence Detected from: Test Rate: -6.3150000 < Limit: -5
+;Sun Feb 13 15:50:00 2011 Uplift Event Detected from: Test Rate: 6.9150000 > Limit: 5
+;Sun Feb 13 16:05:00 2011 Uplift Event Detected from: Test Rate: 10.470000 > Limit: 5
+;Sun Feb 13 16:20:00 2011 Uplift Event Detected from: Test Rate: 13.950000 > Limit: 5
+;Sun Feb 13 16:35:00 2011 Uplift Event Detected from: Test Rate: 17.370000 > Limit: 5
+;Sun Feb 13 16:50:00 2011 Uplift Event Detected from: Test Rate: 20.685000 > Limit: 5
+;Sun Feb 13 17:05:00 2011 Uplift Event Detected from: Test Rate: 23.850000 > Limit: 5
+;Sun Feb 13 17:20:00 2011 Uplift Event Detected from: Test Rate: 26.820000 > Limit: 5
+;Sun Feb 13 17:35:00 2011 Uplift Event Detected from: Test Rate: 29.535000 > Limit: 5
+;Sun Feb 13 17:50:00 2011 Uplift Event Detected from: Test Rate: 31.995000 > Limit: 5
+;Sun Feb 13 18:05:00 2011 Uplift Event Detected from: Test Rate: 34.080000 > Limit: 5
+;Sun Feb 13 18:20:00 2011 Uplift Event Detected from: Test Rate: 35.835000 > Limit: 5
+;Sun Feb 13 18:35:00 2011 Uplift Event Detected from: Test Rate: 37.230000 > Limit: 5
+;Sun Feb 13 18:50:00 2011 Uplift Event Detected from: Test Rate: 38.205000 > Limit: 5
+;Sun Feb 13 19:05:00 2011 Subsidence Detected from: Test Rate: -5.3100000 < Limit: -5
+;Sun Feb 13 19:20:00 2011 Subsidence Detected from: Test Rate: -38.955000 < Limit: -5
+;Sun Feb 13 19:35:00 2011 Subsidence Detected from: Test Rate: -38.670000 < Limit: -5
+;Sun Feb 13 19:50:00 2011 Subsidence Detected from: Test Rate: -37.950000 < Limit: -5
+;Sun Feb 13 20:05:00 2011 Subsidence Detected from: Test Rate: -36.780000 < Limit: -5
+;Sun Feb 13 20:20:00 2011 Subsidence Detected from: Test Rate: -35.295000 < Limit: -5
+;Sun Feb 13 20:35:00 2011 Subsidence Detected from: Test Rate: -33.315000 < Limit: -5
+;Sun Feb 13 20:50:00 2011 Subsidence Detected from: Test Rate: -31.005000 < Limit: -5
+;Sun Feb 13 21:05:00 2011 Subsidence Detected from: Test Rate: -475726.96 < Limit: -5
+;Fri Mar 11 14:35:00 2011  Tsunami Event Detected from: Test |Height|: -9.9000000 > Limit: 5
+;Fri Mar 11 14:35:00 2011 Subsidence Detected from: Test Rate: -60.405000 < Limit: -5
+;Fri Mar 11 14:50:00 2011 Uplift Event Detected from: Test Rate: 36.930000 > Limit: 5
+;Fri Mar 11 15:35:00 2011 Subsidence Detected from: Test Rate: -5.0400000 < Limit: -5
+;Fri Mar 11 15:50:00 2011  Tsunami Event Detected from: Test |Height|: -8.1000000 > Limit: 5
+;Fri Mar 11 15:50:00 2011 Subsidence Detected from: Test Rate: -10.845000 < Limit: -5
+;Fri Mar 11 16:05:00 2011 Uplift Event Detected from: Test Rate: 12.615000 > Limit: 5
+;Fri Mar 11 16:20:00 2011 Uplift Event Detected from: Test Rate: 8.5650000 > Limit: 5
+;Fri Mar 11 16:35:00 2011 Subsidence Detected from: Test Rate: -5.8050000 < Limit: -5
+;Fri Mar 11 17:05:00 2011 Uplift Event Detected from: Test Rate: 39.735000 > Limit: 5
+;Fri Mar 11 17:20:00 2011 Uplift Event Detected from: Test Rate: 36.615000 > Limit: 5
+;Fri Mar 11 17:35:00 2011  Tsunami Event Detected from: Test |Height|: -9.9000000 > Limit: 5
+;Fri Mar 11 17:35:00 2011 Subsidence Detected from: Test Rate: -34.485000 < Limit: -5
+;Fri Mar 11 17:50:00 2011 Subsidence Detected from: Test Rate: -21.810000 < Limit: -5
+;Fri Mar 11 18:05:00 2011  Tsunami Event Detected from: Test |Height|: -14.800000 > Limit: 5
+;Fri Mar 11 18:05:00 2011 Subsidence Detected from: Test Rate: -18.330000 < Limit: -5
+;Fri Mar 11 18:20:00 2011  Tsunami Event Detected from: Test |Height|: 11.200000 > Limit: 5
+;Fri Mar 11 18:20:00 2011 Uplift Event Detected from: Test Rate: 11.355000 > Limit: 5
+;Fri Mar 11 18:50:00 2011  Tsunami Event Detected from: Test |Height|: -20.600000 > Limit: 5
+;Fri Mar 11 18:50:00 2011 Subsidence Detected from: Test Rate: -31.830000 < Limit: -5
+;Fri Mar 11 19:05:00 2011 Uplift Event Detected from: Test Rate: 9.0000000 > Limit: 5
+;Fri Mar 11 19:20:00 2011  Tsunami Event Detected from: Test |Height|: 7.9000000 > Limit: 5
+;Fri Mar 11 19:20:00 2011 Subsidence Detected from: Test Rate: -14.490000 < Limit: -5
+;Fri Mar 11 19:50:00 2011 Uplift Event Detected from: Test Rate: 18.630000 > Limit: 5
+;Fri Mar 11 20:20:00 2011 Uplift Event Detected from: Test Rate: 16.110000 > Limit: 5
+;Fri Mar 11 20:35:00 2011  Tsunami Event Detected from: Test |Height|: -7.9000000 > Limit: 5
+;Fri Mar 11 20:35:00 2011 Subsidence Detected from: Test Rate: -47.415000 < Limit: -5
+;Fri Mar 11 20:50:00 2011  Tsunami Event Detected from: Test |Height|: 9.5000000 > Limit: 5
+;Fri Mar 11 21:05:00 2011 Uplift Event Detected from: Test Rate: 24.480000 > Limit: 5
+;Fri Mar 11 21:20:00 2011 Subsidence Detected from: Test Rate: -16.800000 < Limit: -5
+;Fri Mar 11 21:35:00 2011  Tsunami Event Detected from: Test |Height|: 6.0000000 > Limit: 5
+;Fri Mar 11 21:35:00 2011 Uplift Event Detected from: Test Rate: 18.480000 > Limit: 5
+;Fri Mar 11 21:50:00 2011 Subsidence Detected from: Test Rate: -18.495000 < Limit: -5
+;Fri Mar 11 22:05:00 2011  Tsunami Event Detected from: Test |Height|: 5.2000000 > Limit: 5
+;Fri Mar 11 22:05:00 2011 Uplift Event Detected from: Test Rate: 36.270000 > Limit: 5
+;Fri Mar 11 22:20:00 2011 Subsidence Detected from: Test Rate: -11.670000 < Limit: -5
+;Fri Mar 11 22:35:00 2011 Uplift Event Detected from: Test Rate: 5.2200000 > Limit: 5
+;Fri Mar 11 22:50:00 2011 Subsidence Detected from: Test Rate: -29.085000 < Limit: -5
+;Fri Mar 11 23:05:00 2011 Uplift Event Detected from: Test Rate: 33.525000 > Limit: 5
+;Fri Mar 11 23:20:00 2011 Subsidence Detected from: Test Rate: -21.975000 < Limit: -5
+;Fri Mar 11 23:35:00 2011  Tsunami Event Detected from: Test |Height|: -8.1000000 > Limit: 5
+;Fri Mar 11 23:35:00 2011 Subsidence Detected from: Test Rate: -16.725000 < Limit: -5
+;Fri Mar 11 23:50:00 2011 Uplift Event Detected from: Test Rate: 8.3100000 > Limit: 5
+;Sat Mar 12 00:05:00 2011  Tsunami Event Detected from: Test |Height|: -5.5000000 > Limit: 5
+;Sat Mar 12 00:05:00 2011 Uplift Event Detected from: Test Rate: 5.8500000 > Limit: 5
+;Sat Mar 12 00:20:00 2011 Subsidence Detected from: Test Rate: -12.300000 < Limit: -5
+;Sat Mar 12 00:35:00 2011 Uplift Event Detected from: Test Rate: 8.7450000 > Limit: 5
+;Sat Mar 12 00:50:00 2011 Subsidence Detected from: Test Rate: -10.155000 < Limit: -5
+;Sat Mar 12 01:05:00 2011 Uplift Event Detected from: Test Rate: 11.700000 > Limit: 5
+;Sat Mar 12 01:20:00 2011 Subsidence Detected from: Test Rate: -9.6750000 < Limit: -5
+;Sat Mar 12 01:35:00 2011 Subsidence Detected from: Test Rate: -21.555000 < Limit: -5
+;Sat Mar 12 01:50:00 2011 Uplift Event Detected from: Test Rate: 26.745000 > Limit: 5
+;Sat Mar 12 02:20:00 2011 Subsidence Detected from: Test Rate: -24.915000 < Limit: -5
+;Sat Mar 12 02:35:00 2011 Subsidence Detected from: Test Rate: -11.160000 < Limit: -5
+;Sat Mar 12 02:50:00 2011 Uplift Event Detected from: Test Rate: 27.330000 > Limit: 5
+;Sat Mar 12 03:05:00 2011  Tsunami Event Detected from: Test |Height|: -5.1000000 > Limit: 5
+;Sat Mar 12 03:05:00 2011 Subsidence Detected from: Test Rate: -10.695000 < Limit: -5
+;Sat Mar 12 03:35:00 2011 Subsidence Detected from: Test Rate: -10.695000 < Limit: -5
+;Sat Mar 12 03:50:00 2011 Subsidence Detected from: Test Rate: -10.245000 < Limit: -5
+;Sat Mar 12 04:05:00 2011 Uplift Event Detected from: Test Rate: 22.665000 > Limit: 5
+;Sat Mar 12 04:20:00 2011 Subsidence Detected from: Test Rate: -6.4050000 < Limit: -5
+;Sat Mar 12 05:20:00 2011  Tsunami Event Detected from: Test |Height|: 7.0000000 > Limit: 5
+;Sat Mar 12 05:35:00 2011 Uplift Event Detected from: Test Rate: 6.3900000 > Limit: 5
+;Sat Mar 12 05:50:00 2011 Uplift Event Detected from: Test Rate: 27.645000 > Limit: 5
+;Sat Mar 12 06:05:00 2011  Tsunami Event Detected from: Test |Height|: 5.2000000 > Limit: 5
+;Sat Mar 12 06:05:00 2011 Subsidence Detected from: Test Rate: -14.670000 < Limit: -5
+;Sat Mar 12 06:50:00 2011 Subsidence Detected from: Test Rate: -6.2550000 < Limit: -5
+;Sat Mar 12 07:05:00 2011 Uplift Event Detected from: Test Rate: 15.015000 > Limit: 5
+;Sat Mar 12 07:20:00 2011 Subsidence Detected from: Test Rate: -19.095000 < Limit: -5
+;Sat Mar 12 07:35:00 2011 Uplift Event Detected from: Test Rate: 20.850000 > Limit: 5
+;Sat Mar 12 07:50:00 2011 Subsidence Detected from: Test Rate: -15.060000 < Limit: -5
+;Sat Mar 12 08:05:00 2011 Uplift Event Detected from: Test Rate: 10.170000 > Limit: 5
+;Sat Mar 12 08:20:00 2011 Uplift Event Detected from: Test Rate: 19.710000 > Limit: 5
+;Sat Mar 12 08:35:00 2011 Subsidence Detected from: Test Rate: -9.7350000 < Limit: -5
+;Sat Mar 12 08:50:00 2011 Subsidence Detected from: Test Rate: -9.9450000 < Limit: -5
+;Sat Mar 12 09:05:00 2011 Uplift Event Detected from: Test Rate: 16.770000 > Limit: 5
+;Sat Mar 12 09:20:00 2011 Uplift Event Detected from: Test Rate: 7.4100000 > Limit: 5
+;Sat Mar 12 10:20:00 2011 Subsidence Detected from: Test Rate: -6.6150000 < Limit: -5
+;Sat Mar 12 10:35:00 2011 Uplift Event Detected from: Test Rate: 11.565000 > Limit: 5
+;Sat Mar 12 12:05:00 2011 Uplift Event Detected from: Test Rate: 10.260000 > Limit: 5
+;Sat Mar 12 12:20:00 2011 Subsidence Detected from: Test Rate: -5.0700000 < Limit: -5
+;Sat Mar 12 12:35:00 2011 Subsidence Detected from: Test Rate: -10.095000 < Limit: -5
+;Sat Mar 12 13:20:00 2011 Subsidence Detected from: Test Rate: -12.045000 < Limit: -5
+;Sat Mar 12 13:50:00 2011 Uplift Event Detected from: Test Rate: 17.820000 > Limit: 5
+;Sat Mar 12 14:20:00 2011 Subsidence Detected from: Test Rate: -6.1800000 < Limit: -5
+;Sat Mar 12 14:35:00 2011 Subsidence Detected from: Test Rate: -5.3100000 < Limit: -5
+;Sat Mar 12 15:05:00 2011 Uplift Event Detected from: Test Rate: 10.185000 > Limit: 5
+;Sat Mar 12 15:35:00 2011 Subsidence Detected from: Test Rate: -19.740000 < Limit: -5
+;Sat Mar 12 15:50:00 2011 Uplift Event Detected from: Test Rate: 13.485000 > Limit: 5
+;Sat Mar 12 16:20:00 2011 Subsidence Detected from: Test Rate: -10.905000 < Limit: -5
+;Sat Mar 12 16:35:00 2011 Uplift Event Detected from: Test Rate: 8.9850000 > Limit: 5
+;Sat Mar 12 17:05:00 2011 Subsidence Detected from: Test Rate: -7.4550000 < Limit: -5
+;Sat Mar 12 18:05:00 2011 Uplift Event Detected from: Test Rate: 10.155000 > Limit: 5
+;Sat Mar 12 18:20:00 2011 Subsidence Detected from: Test Rate: -9.5400000 < Limit: -5
+;Sat Mar 12 18:50:00 2011 Subsidence Detected from: Test Rate: -8.8050000 < Limit: -5
+;Sat Mar 12 19:05:00 2011 Uplift Event Detected from: Test Rate: 12.465000 > Limit: 5
+;Sat Mar 12 19:50:00 2011 Uplift Event Detected from: Test Rate: 6.3000000 > Limit: 5
+;Sat Mar 12 20:50:00 2011 Uplift Event Detected from: Test Rate: 8.6700000 > Limit: 5
+;Sat Mar 12 21:05:00 2011 Subsidence Detected from: Test Rate: -9.2250000 < Limit: -5
+;Sat Mar 12 21:20:00 2011 Uplift Event Detected from: Test Rate: 14.715000 > Limit: 5
+;Sat Mar 12 22:05:00 2011 Subsidence Detected from: Test Rate: -6.0450000 < Limit: -5
+;Sat Mar 12 22:20:00 2011 Uplift Event Detected from: Test Rate: 11.955000 > Limit: 5
+;Sat Mar 12 22:35:00 2011 Subsidence Detected from: Test Rate: -14.430000 < Limit: -5
+;Sat Mar 12 22:50:00 2011 Uplift Event Detected from: Test Rate: 13.530000 > Limit: 5
+;Sat Mar 12 23:05:00 2011 Subsidence Detected from: Test Rate: -5.5950000 < Limit: -5
+;Sat Mar 12 23:20:00 2011 Subsidence Detected from: Test Rate: -8.0850000 < Limit: -5
+;Sat Mar 12 23:50:00 2011 Uplift Event Detected from: Test Rate: 7.1550000 > Limit: 5
+;Sun Mar 13 00:05:00 2011 Subsidence Detected from: Test Rate: -5.3850000 < Limit: -5
+;Sun Mar 13 00:35:00 2011 Uplift Event Detected from: Test Rate: 7.0500000 > Limit: 5
+;Sun Mar 13 00:50:00 2011 Subsidence Detected from: Test Rate: -6.3900000 < Limit: -5
+;Sun Mar 13 01:35:00 2011 Subsidence Detected from: Test Rate: -12.015000 < Limit: -5
+;Sun Mar 13 01:50:00 2011 Uplift Event Detected from: Test Rate: 6.7200000 > Limit: 5
+;Sun Mar 13 02:20:00 2011 Subsidence Detected from: Test Rate: -10.590000 < Limit: -5
+;Sun Mar 13 02:50:00 2011 Uplift Event Detected from: Test Rate: 8.7750000 > Limit: 5
+;Sun Mar 13 03:50:00 2011 Subsidence Detected from: Test Rate: -11.025000 < Limit: -5
+;Sun Mar 13 05:05:00 2011 Uplift Event Detected from: Test Rate: 9.0000000 > Limit: 5
+;Sun Mar 13 06:05:00 2011 Uplift Event Detected from: Test Rate: 6.0450000 > Limit: 5
+;Sun Mar 13 07:35:00 2011 Subsidence Detected from: Test Rate: -12.495000 < Limit: -5
+;Sun Mar 13 07:50:00 2011 Uplift Event Detected from: Test Rate: 5.5650000 > Limit: 5
+;Sun Mar 13 09:05:00 2011 Subsidence Detected from: Test Rate: -6.0750000 < Limit: -5
+;Sun Mar 13 09:50:00 2011 Uplift Event Detected from: Test Rate: 7.3050000 > Limit: 5
+;Sun Mar 13 10:05:00 2011 Uplift Event Detected from: Test Rate: 9.7500000 > Limit: 5
+;Sun Mar 13 10:20:00 2011 Subsidence Detected from: Test Rate: -12.030000 < Limit: -5
+;Sun Mar 13 10:35:00 2011 Uplift Event Detected from: Test Rate: 13.560000 > Limit: 5
+;Sun Mar 13 10:50:00 2011 Subsidence Detected from: Test Rate: -10.200000 < Limit: -5
+;Sun Mar 13 11:05:00 2011 Uplift Event Detected from: Test Rate: 10.905000 > Limit: 5
+;Sun Mar 13 11:35:00 2011 Uplift Event Detected from: Test Rate: 5.7750000 > Limit: 5
+;Sun Mar 13 12:05:00 2011 Subsidence Detected from: Test Rate: -5.2800000 < Limit: -5
+;Sun Mar 13 12:20:00 2011 Uplift Event Detected from: Test Rate: 5.0850000 > Limit: 5
+;Sun Mar 13 12:35:00 2011 Subsidence Detected from: Test Rate: -9.4800000 < Limit: -5
+;Sun Mar 13 13:05:00 2011 Subsidence Detected from: Test Rate: -7.4250000 < Limit: -5
+;Sun Mar 13 13:20:00 2011 Uplift Event Detected from: Test Rate: 9.9450000 > Limit: 5
+;Sun Mar 13 13:50:00 2011 Subsidence Detected from: Test Rate: -8.4150000 < Limit: -5
+;Sun Mar 13 14:05:00 2011 Subsidence Detected from: Test Rate: -12.840000 < Limit: -5
+;Sun Mar 13 14:20:00 2011 Uplift Event Detected from: Test Rate: 11.010000 > Limit: 5
+;Sun Mar 13 14:35:00 2011 Subsidence Detected from: Test Rate: -7.6500000 < Limit: -5
+;Sun Mar 13 14:50:00 2011 Subsidence Detected from: Test Rate: -6.0750000 < Limit: -5
+;Sun Mar 13 15:05:00 2011 Subsidence Detected from: Test Rate: -5.6550000 < Limit: -5
+;Sun Mar 13 15:50:00 2011 Subsidence Detected from: Test Rate: -5.6850000 < Limit: -5
+;Sun Mar 13 16:35:00 2011 Uplift Event Detected from: Test Rate: 5.2200000 > Limit: 5
+;Sun Mar 13 18:20:00 2011 Subsidence Detected from: Test Rate: -5.5500000 < Limit: -5
+;Sun Mar 13 18:35:00 2011 Uplift Event Detected from: Test Rate: 6.0150000 > Limit: 5
+;Sun Mar 13 18:50:00 2011 Uplift Event Detected from: Test Rate: 8.6550000 > Limit: 5
+;Sun Mar 13 19:05:00 2011 Subsidence Detected from: Test Rate: -10.995000 < Limit: -5
+;Sun Mar 13 19:20:00 2011 Uplift Event Detected from: Test Rate: 8.6850000 > Limit: 5
+;Sun Mar 13 20:20:00 2011 Uplift Event Detected from: Test Rate: 6.2700000 > Limit: 5
+;Sun Mar 13 20:35:00 2011 Subsidence Detected from: Test Rate: -5.6550000 < Limit: -5
+;Sun Mar 13 21:05:00 2011 Uplift Event Detected from: Test Rate: 5.6700000 > Limit: 5
+;Sun Mar 13 21:35:00 2011 Uplift Event Detected from: Test Rate: 6.1650000 > Limit: 5
+;Sun Mar 13 22:35:00 2011 Uplift Event Detected from: Test Rate: 5.0700000 > Limit: 5
+;Sun Mar 13 22:50:00 2011 Uplift Event Detected from: Test Rate: 5.0700000 > Limit: 5
+;Mon Mar 14 01:20:00 2011 Uplift Event Detected from: Test Rate: 5.2800000 > Limit: 5
+;Mon Mar 14 01:35:00 2011 Subsidence Detected from: Test Rate: -8.9850000 < Limit: -5
+;Mon Mar 14 02:20:00 2011 Uplift Event Detected from: Test Rate: 5.7450000 > Limit: 5
+;Mon Mar 14 02:35:00 2011 Subsidence Detected from: Test Rate: -7.3200000 < Limit: -5
+;Mon Mar 14 03:35:00 2011 Subsidence Detected from: Test Rate: -6.4200000 < Limit: -5
+;Mon Mar 14 06:05:00 2011 Uplift Event Detected from: Test Rate: 6.3150000 > Limit: 5
+;Mon Mar 14 07:05:00 2011 Uplift Event Detected from: Test Rate: 5.9100000 > Limit: 5
+;Mon Mar 14 08:20:00 2011 Uplift Event Detected from: Test Rate: 7.5150000 > Limit: 5
+;Mon Mar 14 09:05:00 2011 Uplift Event Detected from: Test Rate: 6.4350000 > Limit: 5
+;Mon Mar 14 10:35:00 2011 Uplift Event Detected from: Test Rate: 9.5250000 > Limit: 5
+;Mon Mar 14 11:05:00 2011 Uplift Event Detected from: Test Rate: 6.0600000 > Limit: 5
+;Mon Mar 14 12:20:00 2011 Subsidence Detected from: Test Rate: -5.7900000 < Limit: -5
+;Mon Mar 14 13:05:00 2011 Uplift Event Detected from: Test Rate: 5.5200000 > Limit: 5
+;Mon Mar 14 13:20:00 2011 Subsidence Detected from: Test Rate: -6.4500000 < Limit: -5
+;Mon Mar 14 14:05:00 2011 Subsidence Detected from: Test Rate: -6.8400000 < Limit: -5
+;Mon Mar 14 15:05:00 2011 Subsidence Detected from: Test Rate: -6.0000000 < Limit: -5
+;Mon Mar 14 15:35:00 2011 Subsidence Detected from: Test Rate: -5.5500000 < Limit: -5
+;Mon Mar 14 17:20:00 2011 Subsidence Detected from: Test Rate: -6.2100000 < Limit: -5
+;Mon Mar 14 20:20:00 2011 Subsidence Detected from: Test Rate: -5.7900000 < Limit: -5
+;Mon Mar 14 22:50:00 2011 Uplift Event Detected from: Test Rate: 5.0250000 > Limit: 5
+;Mon Mar 14 23:05:00 2011 Uplift Event Detected from: Test Rate: 5.0400000 > Limit: 5
+;Tue Mar 15 02:20:00 2011 Subsidence Detected from: Test Rate: -6.1200000 < Limit: -5
+;Tue Mar 15 04:35:00 2011 Subsidence Detected from: Test Rate: -5.7150000 < Limit: -5
+;Tue Mar 15 06:35:00 2011 Subsidence Detected from: Test Rate: -5.0100000 < Limit: -5
+;Tue Mar 15 11:05:00 2011 Uplift Event Detected from: Test Rate: 8.2200000 > Limit: 5
+;Tue Mar 15 16:05:00 2011 Subsidence Detected from: Test Rate: -6.1350000 < Limit: -5
+;Tue Mar 15 16:50:00 2011 Subsidence Detected from: Test Rate: -6.1200000 < Limit: -5
+;Tue Mar 15 23:35:00 2011 Uplift Event Detected from: Test Rate: 9.1200000 > Limit: 5
+;Thu Mar 17 02:05:00 2011 Uplift Event Detected from: Test Rate: 5.8200000 > Limit: 5
+;Fri Mar 18 01:35:00 2011 Uplift Event Detected from: Test Rate: 5.1750000 > Limit: 5
+;Wed Apr 06 02:50:00 2011 Uplift Event Detected from: Test Rate: 9.6150000 > Limit: 5
+;Wed Apr 06 03:05:00 2011 Uplift Event Detected from: Test Rate: 10.770000 > Limit: 5
+;Wed Apr 06 03:35:00 2011 Subsidence Detected from: Test Rate: -44.655000 < Limit: -5
+;Wed Apr 06 03:50:00 2011 Subsidence Detected from: Test Rate: -50.955000 < Limit: -5
+;Wed Apr 06 04:05:00 2011 Subsidence Detected from: Test Rate: -39.720000 < Limit: -5
+;Wed Apr 06 04:20:00 2011 Subsidence Detected from: Test Rate: -35.820000 < Limit: -5
+;Wed Apr 06 04:35:00 2011 Subsidence Detected from: Test Rate: -29.595000 < Limit: -5
+;Wed Apr 06 04:50:00 2011 Subsidence Detected from: Test Rate: -27.270000 < Limit: -5
+;Wed Apr 06 05:05:00 2011 Subsidence Detected from: Test Rate: -20.415000 < Limit: -5
+;Wed Apr 06 05:20:00 2011 Subsidence Detected from: Test Rate: -16.815000 < Limit: -5
+;Wed Apr 06 05:35:00 2011 Subsidence Detected from: Test Rate: -15.090000 < Limit: -5
+;Wed Apr 06 05:50:00 2011 Subsidence Detected from: Test Rate: -12.975000 < Limit: -5
+;Wed Apr 06 06:05:00 2011 Subsidence Detected from: Test Rate: -11.565000 < Limit: -5
+;Wed Apr 06 06:20:00 2011 Subsidence Detected from: Test Rate: -9.4350000 < Limit: -5
+;Wed Apr 06 06:35:00 2011 Subsidence Detected from: Test Rate: -10.035000 < Limit: -5
+;Wed Apr 06 06:50:00 2011 Subsidence Detected from: Test Rate: -8.7150000 < Limit: -5
+;Wed Apr 06 07:05:00 2011 Subsidence Detected from: Test Rate: -6.6450000 < Limit: -5
+;Wed Apr 06 07:20:00 2011 Subsidence Detected from: Test Rate: -7.6950000 < Limit: -5
+;Wed Apr 06 07:35:00 2011 Subsidence Detected from: Test Rate: -6.1500000 < Limit: -5
+;Wed Apr 06 08:05:00 2011 Subsidence Detected from: Test Rate: -6.3150000 < Limit: -5
+;Wed Apr 06 08:20:00 2011 Subsidence Detected from: Test Rate: -5.7150000 < Limit: -5
+;Wed Apr 06 08:35:00 2011 Subsidence Detected from: Test Rate: -6.8700000 < Limit: -5
+;Wed Apr 06 08:50:00 2011 Subsidence Detected from: Test Rate: -7.1550000 < Limit: -5
+;Wed Apr 06 09:05:00 2011 Subsidence Detected from: Test Rate: -7.6650000 < Limit: -5
+;Wed Apr 06 09:20:00 2011 Subsidence Detected from: Test Rate: -6.2250000 < Limit: -5
+;Wed Apr 06 09:35:00 2011 Subsidence Detected from: Test Rate: -6.8250000 < Limit: -5
+;Wed Apr 06 09:50:00 2011 Subsidence Detected from: Test Rate: -6.3150000 < Limit: -5
+;Wed Apr 06 10:05:00 2011 Subsidence Detected from: Test Rate: -6.3000000 < Limit: -5
+;Wed Apr 06 10:20:00 2011 Subsidence Detected from: Test Rate: -6.7650000 < Limit: -5
+;Wed Apr 06 10:35:00 2011 Subsidence Detected from: Test Rate: -5.9850000 < Limit: -5
+;Wed Apr 06 10:50:00 2011 Subsidence Detected from: Test Rate: -5.5650000 < Limit: -5
+;Wed Apr 06 11:05:00 2011 Subsidence Detected from: Test Rate: -5.8050000 < Limit: -5
+;Wed Apr 06 11:20:00 2011 Subsidence Detected from: Test Rate: -6.8700000 < Limit: -5
+;Wed Apr 06 11:35:00 2011 Subsidence Detected from: Test Rate: -6.8700000 < Limit: -5
+;Wed Apr 06 11:50:00 2011 Subsidence Detected from: Test Rate: -5.0250000 < Limit: -5
+;Wed Apr 06 12:20:00 2011 Subsidence Detected from: Test Rate: -5.5350000 < Limit: -5
+;Wed Apr 06 12:35:00 2011 Subsidence Detected from: Test Rate: -5.8800000 < Limit: -5
+;Wed Apr 06 12:50:00 2011 Subsidence Detected from: Test Rate: -5.1300000 < Limit: -5
+;Thu Apr 07 00:50:00 2011 Subsidence Detected from: Test Rate: -5.0400000 < Limit: -5
+;Thu Apr 07 04:20:00 2011 Subsidence Detected from: Test Rate: -7.3200000 < Limit: -5
+;Thu Apr 07 04:35:00 2011 Subsidence Detected from: Test Rate: -5.2800000 < Limit: -5

@@ -1,0 +1,55 @@
+$ kahn@caldera 08:36:24 ~/4Chadwick $
+ /home/kahn/4Chadwick/RSN/RunUpdateRSNsaveFiles.job
+$ kahn@caldera 09:25:43 ~/4Chadwick $
+
+$ kahn@caldera 08:42:37 ~/4Chadwick/RSN $
+ ./RunUpdateRSNsaveFiles.job
+$ kahn@caldera 09:32:01 ~/4Chadwick/RSN $
+
+
+Tue Sep 21 09:38:16 PDT 2021
+after  ./RunUpdateRSNsaveFiles.job
+$ kahn@syspc 09:35:45 /internet/httpd/html/new-eoi/rsn/graphs $
+ rsync -ai -e "ssh -q" \
+ >   --delete \
+ >   /internet/httpd/html/new-eoi/rsn/graphs/ \
+ >   eclipse:/home/web/eoi/htdocs/rsn/graphs
+ <f.st...... MJ03B-AllBPR.png
+ <f.st...... MJ03B-AllDET.png
+ <f.st...... MJ03B-AllHEAT.png
+ <f.st...... MJ03B-AllIRIS.png
+ <f.st...... MJ03B-AllIRIStilts.png
+ <f.st...... MJ03B-LTrates.png
+ <f..t...... MJ03B-RTM-12MO.png
+ <f..t...... MJ03B-RTM-Since2015.png
+ <f..t...... MJ03B-RTM1DayMeans.png
+ <f..t...... MJ03B-RTM1WkRate.png
+ <f..t...... MJ03B-STrates-3day.png
+ <f..t...... MJ03B-STrates-All.png
+ <f.st...... MJ03B1DayMeans.png
+ <f.st...... MJ03B1WkAllRTMD.png
+ <f.st...... MJ03B1WkLast6MonthsRTMD.png
+ <f.st...... MJ03B1WkLast7DaysRTMD.png
+ <f.st...... MJ03B7DaysBPR.png
+ <f.st...... MJ03B7DaysDET.png
+ <f..t...... MJ03B7DaysHEAT.png
+ <f..t...... MJ03B7DaysIRIS.png
+ <f..t...... MJ03B7DaysIRIStilts.png
+ <f..t...... MJ03B7DaysLILY.png
+ <f..t...... MJ03B7DaysRTMD.png
+ <f.st...... MJ03BAllLILY.png
+ <f.st...... MJ03BAllRTMD.png
+ <f..t...... MJ03BCTDDens6mo.png
+ <f..t...... MJ03BCTDDens7days.png
+ <f..t...... MJ03BCTDDensAll.png
+ <f..t...... MJ03BCTDSal6mo.png
+ <f..t...... MJ03BCTDSal7days.png
+ <f..t...... MJ03BCTDSalAll.png
+ <f..t...... MJ03BCTDTemp6mo.png
+ <f..t...... MJ03BCTDTemp7days.png
+ <f..t...... MJ03BCTDTempAll.png
+ <f.st...... MJ03BLast6MonthsBPR.png
+ <f.st...... MJ03BLast6MonthsDET.png
+ <f.st...... MJ03BLast6MonthsLILY.png
+ <f.st...... MJ03BLast6MonthsRTMD.png
+

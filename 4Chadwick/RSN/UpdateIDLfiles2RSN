@@ -1,0 +1,15 @@
+echo "Copying *.MJ03D * MJ03D*.idl from /data/lau/4Chadwick/RSN/MJ03D/ to ~/4Chadwick/RSN/MJ03D/"
+cp /data/lau/4Chadwick/RSN/MJ03D/*.MJ03D        ~/4Chadwick/RSN/MJ03D/
+cp /data/lau/4Chadwick/RSN/MJ03D/MJ03D*.idl     ~/4Chadwick/RSN/MJ03D/
+cp /data/lau/4Chadwick/RSN/MJ03D/3DayMJ03D*.idl ~/4Chadwick/RSN/MJ03D/
+cp /data/lau/4Chadwick/RSN/MJ03D/EventDetectionParametersMJ03D.idl ~/4Chadwick/RSN/MJ03D/
+echo "Copying *.MJ03E * MJ03E*.idl from /data/lau/4Chadwick/RSN/MJ03E/ to ~/4Chadwick/RSN/MJ03E/"
+cp /data/lau/4Chadwick/RSN/MJ03E/*.MJ03E        ~/4Chadwick/RSN/MJ03E/
+cp /data/lau/4Chadwick/RSN/MJ03E/MJ03E*.idl     ~/4Chadwick/RSN/MJ03E/
+cp /data/lau/4Chadwick/RSN/MJ03E/3DayMJ03E*.idl ~/4Chadwick/RSN/MJ03E/
+cp /data/lau/4Chadwick/RSN/MJ03E/EventDetectionParametersMJ03E.idl ~/4Chadwick/RSN/MJ03E/
+echo "Copying *.MJ03F * MJ03F*.idl from /data/lau/4Chadwick/RSN/MJ03F/ to ~/4Chadwick/RSN/MJ03F/"
+cp /data/lau/4Chadwick/RSN/MJ03F/*.MJ03F        ~/4Chadwick/RSN/MJ03F/
+cp /data/lau/4Chadwick/RSN/MJ03F/MJ03F*.idl     ~/4Chadwick/RSN/MJ03F/
+cp /data/lau/4Chadwick/RSN/MJ03F/3DayMJ03F*.idl ~/4Chadwick/RSN/MJ03F/
+cp /data/lau/4Chadwick/RSN/MJ03F/EventDetectionParametersMJ03F.idl ~/4Chadwick/RSN/MJ03F/

@@ -1,0 +1,14 @@
+cd ~/4Chadwick/RSN/
+export DISPLAY=:2
+rm -f Run1HrAve.log
+crontab -r
+date >> Run1HrAve.log
+echo Running RunUpdateLILY1HrAveFile.pro   >> Run1HrAve.log
+rm -f RunUpdateLILY1HrAveFile.log
+idl < RunUpdateLILY1HrAveFile.pro > RunUpdateLILY1HrAveFile.log 2>&1
+date >> Run1HrAve.log
+echo Running Run1HrAveTilt.pro   >> Run1HrAve.log
+rm -f Run1HrAveTilt.log
+idl < Run1HrAveTilt.pro           > Run1HrAveTilt.log 2>&1
+crontab crontab
+echo Resummed crontab >> Run1HrAve.log

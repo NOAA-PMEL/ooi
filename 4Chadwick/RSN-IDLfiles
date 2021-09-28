@@ -1,0 +1,193 @@
+File: RSN-IDLfile.Info        Revised: February  5th, 2019
+
+This file shows all the Input and Output files used for processing the RSN data
+including the CTD data processing
+
+In the following the "MJ03?" implies MJ03B, MJ03D,MJ03E or MJ03F.
+All 3-Day or 3Day have been changed to 7-Day or 7Day.   March 16th, 2018
+
+The 3DayMJ03[B,D-F]-[HEAT/IRIS/LILY/NANO].idl save files contain 7-Day long of data
+more if they have been updated.  Noted before January 2018, they were only storing
+3-Day or more data.  That is whay the "3Day" is part of the file name. 
+
+The program: ProcessRSNdata.pro will update the 3DayMJ03?-[HEAT/IRIS/LILY/NANO].idl
+files about every 15 minutes and their data will be used to generate the graphic files:
+MJ03?3Days[BPR/DET/HEAT/IRIS/IRIStilts/LILY/RTMD].png  by the following programs:
+Plot[LILY/NANO/RSN/TILT]data.pro
+
+3DayMJ03?-HEAT.idl   <-- To be used for generating the following graphic files:
+3DayMJ03?-IRIS.idl   <-- MJ03[B,D-f]3Days[BPR/DET/HEAT/IRIS/IRIStilts/LILY/RTMD].png
+3DayMJ03?-LILY.idl   <-- Also used for updating the IDL Save files:
+3DayMJ03?-NANO.idl   <-- MJ03[B,D-f]-[HEAT/IRIS/LILY/NANO].idl
+
+
+The following MJ03[B,D-F]-[HEAT/IRIS/LILY/NANO].idl save files contain All the processed
+data since 2014.  These file will be update once aday at 6:30 pm local time by the program:
+UpdateRSNsaveFiles.pro  It appends the lastest data in the 3Day*.idl files above into their
+respective: MJ03[B,D-F]-[HEAT/IRIS/LILY/NANO].idl save files.
+
+The data in the MJ03[B,D-F]-[HEAT/IRIS/LILY/NANO].idl save files will be used by the
+programs: Plot[LILY/NANO/RSN/TILT]data.pro  to  generate the following graphic files:
+MJ03?-All[BPR/DET/HEAT/IRIS/RIStilts/LILY/RTMD].png      and
+MJ03?-25Apr2015on[BPR/DET/HEAT/IRIS/IRIStilts/LILY/RTMD].png
+
+   MJ03?-HEAT.idl   <-- To be used for generating the following graphic files:
+   MJ03?-IRIS.idl   <-- MJ03[B,D-F]-All[BPR/DET/HEAT/IRIS/RIStilts/LILY/RTMD].png and
+   MJ03?-LILY.idl   <-- MJ03[B,D-F]-25Apr2015on[BPR/DET/HEAT/IRIS/IRIStilts/LILY/RTMD].png
+   MJ03?-NANO.idl   <-- Forecasted[Date/Histogram]MJ03F.png & ScatterDatesMJ03F.png
+
+
+The data in the MJ03[B,D-F]1HrAve[IRIS/LILY].idl save files will be used by the program:
+GetTiltDiff.pro and these files are updated by the program: Update1HrAveFile.pro
+
+MJ03?1HrAveIRIS.idl
+MJ03?1HrAveLILY.idl  <-- for creating graphic files: MJ03?1WkLast7DaysRTMD.png,
+                        MJ0?F1WkAllRTMD.png  and  MJ03?1Wk25Apr2015onRTMD.png
+                        by the program: PlotLILYdata.pro
+
+
+The data in the MJ03[B,D-F]-LilyRates.idl save files will used by the programs:
+GetRelevelingTimes.pro and AdjustOffsets.pro.
+
+MJ03?-LilyRates.idl  <-- for creating graphic files:
+                        MJ03?-RTM[1DayMeans/1WkRate/-12MO/-Since2015].png
+                        by the program: AdjustOffsets.pro
+
+
+The data in the MJ03[B,D-F]-NANO1DayMeans.idl save files are
+Created/Updated by the program:  GetLongTermDataProducts.pro
+and also used   by the program: PlotLongTermDataProducts.pro:
+
+
+
+EventDetectionParametersMJ03?.idl
+Created/Updated by the program: GetShortTermNANOdataProducts.pro
+Used by the programs: ChkNANOdata4Alerts.pro,  DisplayAlarmSummary.pro
+                and  PlotShortTermDataProducts.pro
+
+LongTermNANOdataProducts.MJ03[B,D-F]
+Created/Updated by the program: GetLongTermNANOdataProducts.pro
+Used by the programs: DisplayAlarmSummary.pro, RunForecastDates.pro
+                and  PlotLongTermDataProducts.pro
+
+MJ03B/CTD7DaysMJ03B.idl and MJ03B/CTD-MJ03B.idl    November 13th, 2018
+Created/Updated by the program: ProcessCTDdata.pro called by
+the RunProcessCTDdata.pro from Process[RSN/CTD]data.pro and SaveCTDdata.job
+
+MJ03F/NANOdifferencesMJ03E-F.idl
+Updated by the program: GetNANOdifferenceRates.pro
+Used by the programs: RunPlotNANOdiffE-F[7Days].pro
+
+MJ03F/NANOdiffRatesMJ03E-F.idl
+Updated by the program: GetNANOdifferenceRates.pro
+Used by the programs: RunPlotNANOdiffE-Frates.pro
+
+
+MJ03?.ProcessingStatus     is used by the program: ProcessRSNdata.pro
+L1B4ProcessedFileName.MJ03?
+LastProcessedFileName.MJ03?
+L1B4ProcessedCTD.FileName   <-- Located at the        They are used by the
+LastProcessedCTD.FileName   <-- MJ03B/ subdirectory.  program ProcessCTDdata.pro
+
+The following 2 LILY-[X/Y]tiltAlertStatus.MJ03? files are used by the program:
+CheckTiltData4Alerts.pro which is called from the program: ProcessRSNdata.pro.
+LILY-XtiltAlertStatus.MJ03?
+LILY-YtiltAlertStatus.MJ03?
+
+SpikesReplacements.MJ03?   is used by the program: ProcessRSNdata.pro
+
+The following 3 *AlertStatus.MJ03? files are used by the program: CheckNANOdata4Alerts.pro
+which is called by the program: DisplayAlarmSummary.pro
+SubsidenceAlertStatus.MJ03?   <-- They are part of
+TsunamiAlertStatus.MJ03?      <-- Alert Status read and updated
+UpLiftAlertStatus.MJ03?       <-- by CheckNANOdata4Alerts.pro
+
+ForecastDateMJ03F.png         <-- All created by
+ForecastHistogram]MJ03F.png   <-- PlotForecastDates.pro
+ScatterDatesMJ03F.png         <-- and called by          <-- RunForecastDates.pro
+Forecast2DateMJ03F.png        <-- All created by
+Forecast2Histogram]MJ03F.png  <-- PlotForecastDates.pro
+Scatter2DatesMJ03F.png        <-- and called by          <-- RunDiffForecastDates.pro
+
+MJ03?1DayMeans.png         <-- Created by the program:
+MJ03?-LTrates.png          <-- PlotLongTermDataProducts.pro
+
+MJ03?1WkAllRTMD.png        <-- Created by
+MJ03?1WkLast7DaysRTMD.png  <-- the program:
+MJ03?AllRTMD.png           <-- PlotTD-RTMD.pro        <-- Called by Run1HrAveTilt.pro
+
+MJ03?25Apr2015onBPR.png    <-- Created by the
+MJ03?25Apr2015onDET.png    <-- programs:
+MJ03?3DaysBPR.png          <-- PlotRSNdata.pro
+MJ03?3DaysDET.png          <-- PlotNANOdata.pro
+MJ03?3DaysLILY.png         <-- and
+MJ03?3DaysRTMD.png         <-- PlotLILYdata.pro or PlotLILY.pro
+
+MJ03?3DaysHEAT.png         <-- Created by the PlotRSNdata.pro
+MJ03?3DaysIRIS.png         <-- the PlotRSNdata.pro
+MJ03?3DaysIRIStilts.png    <-- and PlotTILTSdata.pro
+
+MJ03?-AllBPR.png           <-- Created by the
+MJ03?-AllDET.png           <-- programs:
+MJ03?-AllHEAT.png          <-- PlotRSNdata.pro
+MJ03?-AllIRIS.png          <-- PlotTILTSddata.pro
+MJ03?-AllIRIStilts.png     <-- and
+MJ03?AllLILY.png           <-- PlotLILYdata.pro
+
+MJ03?-RTM-12MO.png         <-- Created by the programs: AdjustOffsets.pro
+MJ03?-RTM1DayMeans.png     <-- which contains 3 procedures:
+MJ03?-RTM1WkRate.png       <-- PLOT_RATES, PLOT_LAST_NDAY_MEANS
+MJ03?-RTM-Since2015.png    <-- and PLOT_RTM1DAYMEANS.   Also see RunGetRates.pro
+
+MJ03?-STrates-3day.png    <-- Created by the program:
+MJ03?-STrates-All.png     <-- PlotShortTermDataProducts.pro
+
+MJ03BCTDDens7days.png     <-- Created by the program: RunPlotCTD7Days.pro
+MJ03BCTDSal7days.png      <-- call called from
+MJ03BCTDTemp7days.png     <-- the Process[RSN/CTD]data.job
+
+MJ03BCTDDens6mo.png       <-- Created by the program:
+MJ03BCTDSal6mo.png        <-- RunPlotCTD.pro
+MJ03BCTDTemp6mo.png       <-- are called by the
+MJ03BCTDDensAll.png       <-- RunSaveCTDdata.pro
+MJ03BCTDSalAll.png        <-- from SaveCTDdata.job
+MJ03BCTDTempAll.png
+
+
+MJ03F/NANOdifferenceAllE-F.png             <-- Create by
+MJ03F/NANOdifferenceLast3monthsE-F.png     <-- the
+MJ03F/NANOdifferenceLast6monthsE-F.png     <-- program:
+MJ03F/NANOdifferenceSince25May2015E-F.png  <-- RunPlotNANOdiffE-F.pro
+MJ03F/NANOdifferenceLast7DaysE-F.png       <-- By the program: RunPlotNANOdiffE-F7Days.pro
+MJ03F/NANOdifferenceLTratesE-F.png         <-- Creates by the program:
+MJ03F/NANOratesLast3monthsE-F.png          <-- RunPlotNANOdiffE-Frates.pro
+
+
+Orders of the RSN and CTD data processing.
+
+crontab  ProcessRSNdata.crontab
+at 18:30 -f RunUpdateRSNsaveFiles.job
+at 20:30 -f RunGetRates.job
+at 21:30 -f RunPlotMJ03F-LILY.job
+at 22:30 -f RunPlotMJ03D-LILY.job
+at 23:30 -f RunForecastDates.job
+at 00:30 -f      SaveCTDdata.job
+at 01:30 -f RunPlotMJ03E-LILY.job
+at 03:00 -f BackUpIDLfiles2data.job
+
+where
+
+ProcessRSNdata.crontab   will run the following
+at now -f ~/4Chadwick/RSN/ProcessRSNdata.job 2> ~/4Chadwick/RSN/ProcessRSNdata.log
+at every 9,24,39 and 54 minutes at every hour.
+
+RunUpdateRSNsaveFiles.job  includes the following:
+RunUpdateRSNsaveFiles.pro, GetLongTermDataProducts.pro,
+RunUpdate1HrAveFile.pro  , Run1HrAveTilt.pro, and
+RunUpdateNANOdiffE-F.pro
+
+SaveCTDdata.job   includes the following:
+RunSaveCTDdata.pro  and  RunPlotCTD.pro
+
+
+End of File: RSN-IDLfile.Info

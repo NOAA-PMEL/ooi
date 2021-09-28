@@ -1,0 +1,5 @@
+     An subsidence signal of greater than -5 cm/hr has been detected from
+     a BOTPT instrument at Axial Seamount, which indicates intrusion or
+     an eruption may be in progress, based on previous events.
+
+     This is an auto-alert message.  Do not reply.

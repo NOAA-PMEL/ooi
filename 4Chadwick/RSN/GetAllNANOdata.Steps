@@ -1,0 +1,42 @@
+     The follow combinational UNIX commands (in 1 line) will Retrieve all the NANO records from
+     a RSN data file, Change all the commas: "," into blacks: " " characters, then Get Only the
+     NANO value (units in PSIA) and Save them into an Output file.
+
+     Here is the command:
+
+     grep NANO RSN.DataFileName | tr "," " " | awk '{ print $5 }' > NANO.Data
+
+     where RSN.DataFileName = 'BOTPTA303_10.31.9.6_9338_20170815T0000_UTC.dat' for example
+           NANO.Data        = Output file name.
+           
+     The '|' characters are used to 'Pipe' to the output to the next command.
+     The 'grep NANO RSN.DataFileName' part will retrieve all the records that contain: 'NANO'.
+     The ' tr "," " " '    part will Translate or Change all the commas into black characters.
+     The   awk '{ print $5 }' > NANO.Data   will retrieve the NANO PSIA value at the 5th
+                                            coloumn and send '>' then to the output file: NANO.Data
+
+     The Example of the NANO records:
+
+     NANO,P,2017/08/15 00:01:27.200,2260.088911,3.191950460
+     NANO,P,2017/08/15 00:01:27.250,2260.087003,3.191950551
+     NANO,P,2017/08/15 00:01:27.300,2260.087704,3.191950646
+
+     The NANO data are sampled at 20 points/second, or 20 Hz.
+
+     After the   tr "," " "   part, the records will become
+
+     NANO P 2017/08/15 00:01:27.200 2260.088911 3.191950460
+     NANO P 2017/08/15 00:01:27.250 2260.087003 3.191950551
+     NANO P 2017/08/15 00:01:27.300 2260.087704 3.191950646
+
+     Note that No commas.
+
+     After the   awk '{ print $5 }' > NANO.Data   part, the NANO.Data file will contain
+
+     2260.088911
+     2260.087003
+     2260.087704 
+
+     Programmer: T-K Andy Lau
+           Date: Auguest 18th, 2017
+        Revised: Auguest 18th, 2017

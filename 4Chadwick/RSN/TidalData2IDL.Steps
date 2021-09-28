@@ -1,0 +1,154 @@
+;
+; File: TidalData2IDL.Steps
+;
+; Get the Predicted Tidal Data and Save them into
+; an IDL Save File.
+;
+; Revised: September 18th, 2020
+;
+
+;
+; Begin: Converting the Predicted Tide Data into an IDL Save File.
+;
+; The TIDE_DATA_FILE file will be created by users using the "awk" command.
+; For example,
+; awk '{ print $7 }' < /data/chadwick/4andy/axial-predicted-tides/pred_F_2022.txt \
+;                    > ~/4Chadwick/RSN/MJ03F2022AxialTidal.Data
+;
+  YEAR = 2014  ; Define a year.
+  YEAR = 2015  ; November 18th, 2015
+  YEAR = 2016  ; Leap Year.
+  YEAR = 2017  ; July     12th, 2016
+  YEAR = 2018  ;
+  YEAR = 2019  ;
+  YEAR = 2020  ; Leap Year.
+  YEAR = 2021  ; Done on September 17th, 2020
+  YEAR = 2022  ;
+;
+  ID   = 'B'
+  ID   = 'D'   ; Select an ID
+  ID   = 'E'   ; for MJ03[D/E/F].
+  ID   = 'F'
+;
+; Define the TIDE_DATA_FILE as
+; TIDE_DATA_FILE = '~/4Chadwick/RSN/MJ03B2020AxialTidal.Data'  or
+; TIDE_DATA_FILE = '~/4Chadwick/RSN/MJ03F2021AxialTidal.Data'
+;
+  TIDE_DATA_FILE = '~/4Chadwick/RSN/MJ03' + ID          $
+                 + STRTRIM( YEAR, 2 ) + 'AxialTidal.Data'
+  PRINT, TIDE_DATA_FILE  ; Show the contents.
+;
+N_TIDALS     = 2102400              ; Total number of Tidal Data for 1 whole year.
+N_TIDALS     = 2108160              ; Total number of Tidal Data for 1 whole Leap year.
+  TIDAL      =  DBLARR( N_TIDALS )  ; For storing the Tidal data.
+;
+  TIDAL_TIME = TIMEGEN( N_TIDALS, START=JULDAY(1,1,YEAR,0,0,0), STEP=15, UNIT='SECOND' )
+  PRINT, FORMAT='(C())', TIDAL_TIME[0:5], TIDAL_TIME[N_TIDALS-5:*]  ; for checking.
+;
+; TIDAL_NOTE = [ 'Times in the IDL function: JULDAY() & TIDAL in meters.',        $
+;                'Ocean tide prediction with model for Axial OOI Station: MJ03B.' ]
+; TIDAL_NOTE = [ 'Times in the IDL function: JULDAY() & TIDAL in meters.',        $
+;                'Ocean tide prediction with model for Axial OOI Station: MJ03D.' ]
+; TIDAL_NOTE = [ 'Times in the IDL function: JULDAY() & TIDAL in meters.',        $
+;                'Ocean tide prediction with model for Axial OOI Station: MJ03E.' ]
+; TIDAL_NOTE = [ 'Times in the IDL function: JULDAY() & TIDAL in meters.',        $
+;                'Ocean tide prediction with model for Axial OOI Station: MJ03F.' ]
+  TIDAL_NOTE = [ 'Times in the IDL function: JULDAY() & TIDAL in meters.',        $
+        'Ocean tide prediction with model for Axial OOI Station: MJ03' + ID + '.' ]
+  PRINT, FORMAT='(A)', TIDAL_NOTE
+;
+  OPENR, 10, TIDE_DATA_FILE
+  READF, 10, TIDAL  ; Read in All the data.
+  CLOSE, 10
+;
+  WINDOW, RETAIN=2
+  PLOT, XSTYLE=1, TIDAL  ; to see the data.
+;
+; Define the IDL_FILE as
+; IDL_FILE = '~/4Chadwick/RSN/MJ03B2017AxialTidalData.idl'  or
+; IDL_FILE = '~/4Chadwick/RSN/MJ03F2016AxialTidalData.idl'
+;
+  IDL_FILE = '~/4Chadwick/RSN/MJ03' + ID             $
+           + STRTRIM( YEAR, 2 ) + 'AxialTidalData.idl'
+  HELP, IDL_FILE  ; Show the contents.
+;
+; Save the Predicted Tide values.
+; Array variables: TIDAL_TIME, TIDAL, TIDAL_NOTE and N_TIDALS
+;
+  SAVE, FILE=IDL_FILE, TIDAL, TIDAL_TIME, TIDAL_NOTE, N_TIDALS
+  PRINT, IDL_FILE + ' is created.'
+;
+; End  : Converting the Predicted Tide Data into an IDL Save File.
+;
+; Begin: Create the Predicted Tide Data in 2 IDL Save Files into
+;        a new file that the data are acrossing into a new year.
+;
+; Revised on September 17th-18th, 2020
+;
+; Note the the Order of the following steps must be followed.
+;
+  CD, '~/4Chadwick/RSN/'
+;
+  WINDOW, RETAIN=2  ; Optional.
+;
+  YEAR = 2022  ;
+  ID   = 'B'
+;
+  IDL_FILE = '~/4Chadwick/RSN/MJ03' + ID             $
+           + STRTRIM( YEAR-1, 2 ) + 'AxialTidalData.idl'
+  PRINT, IDL_FILE  ; Show the contents.
+;
+; RESTORE, '~/4Chadwick/RSN/MJ03B2020AxialTidalData.idl'  ; 1st File.
+  RESTORE, IDL_FILE  ; 1st File: the YEAR before.
+; to get the arrays: TIDAL_TIME and TIDAL plus N_TIDALS
+;
+  PRINT, FORMAT='(C())', TIDAL_TIME[[0,N_TIDALS-1]]  ; Check out the new times.
+;
+; Locate the array index: S[0] at the Date: December 1st of the year.
+;
+  S = WHERE( TIDAL_TIME GT JULDAY( 12,1,YEAR-1,0,0,0) )  &  HELP, S  
+  PRINT, FORMAT='(C())', TIDAL_TIME[S[0]]  ; Check to sure the Date & Time are correct.
+;
+  T = TIDAL_TIME[S[0]:N_TIDALS-1]  ; Save the times and data from
+  D = TIDAL[S[0]:N_TIDALS-1]       ; S to the end of the year.
+  N = N_ELEMENTS( T )              ; Total data points in the array: T which is also for D.
+;
+  HELP, NAME='*'                      ; Check out the ararys' variables.
+  PRINT, FORMAT='(C())', T[[0,N-1]]   ; Check out the times.
+  PLOT, XSTYLE=1, TIDAL_TIME, TIDAL   ; Optional: Additional Checking.
+ OPLOT, COLOR='00FF00'XL,  T,   D     ;      The 1st part of the year.
+;
+  IDL_FILE = '~/4Chadwick/RSN/MJ03' + ID             $
+           + STRTRIM( YEAR, 2 ) + 'AxialTidalData.idl'
+  PRINT, IDL_FILE  ; Show the contents.
+;
+; RESTORE, '~/4Chadwick/RSN/MJ03B2021AxialTidalData.idl'  ; 2nd File.
+  RESTORE, IDL_FILE  ; 2nd File: this YEAR.
+; to get the arrays: TIDAL_TIME and TIDAL plus N_TIDALS
+;
+  PRINT, FORMAT='(C())', TIDAL_TIME[[0,N_TIDALS-1]]  ; Check out the new times.
+;
+  HELP, NAME='*'                               ; Check out the ararys' variables.
+  TIDAL_TIME = [ T, TEMPORARY( TIDAL_TIME ) ]  ; Join the data sets
+  TIDAL      = [ D, TEMPORARY( TIDAL      ) ]  ; together.
+  N_TIDALS  +=   N
+;
+  HELP, NAME='*'                               ; Check out the arrays' variables.
+  PRINT, FORMAT='(C())', TIDAL_TIME[[0,N_TIDALS-1]]  ; Check out the new times.
+  PRINT, FORMAT='(C())', TIDAL_TIME[N-3:N+3]         ; Check out across the years.
+  PLOT, XSTYLE=1, TIDAL_TIME, TIDAL   ; Optional: Additional Checking.
+ OPLOT, COLOR='00FF00'XL,  T,   D     ;      The 1st part of the year.
+;
+  IDL_FILE = '~/4Chadwick/RSN/Dec' + STRTRIM( YEAR-1, 2 ) + '-'   $
+           + STRTRIM( YEAR, 2 ) + 'AxialTidalDataMJ03' + ID + '.idl'
+  PRINT, IDL_FILE  ; Show the contents.
+;
+; SAVE, FILE='Dec2020-2021AxialTidalDataMJ03B.idl',   $  ; Save the joint data set
+  SAVE, FILE=IDL_FILE,  $  ; Save the joint data set
+        TIDAL, TIDAL_NOTE, TIDAL_TIME, N_TIDALS  ; into a new IDL save file.
+;
+;
+; End  : Create the Predicted Tide Data in 2 IDL Save Files into
+;        a new file that the data are acrossing into a new year.
+;
+; End: TidalData2IDL.Steps

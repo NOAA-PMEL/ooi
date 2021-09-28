@@ -1,0 +1,4 @@
+rm -f ProcessRSNdata.log
+export DISPLAY=:2
+idl < ProcessRSN-MJ03Ddata.pro  > ProcessRSN-MJ03Ddata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03D/*.png /internet/httpd/html/new-eoi/rsn/graphs/
