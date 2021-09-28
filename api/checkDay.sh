@@ -5,7 +5,7 @@
 dirname=$(dirname $0)
 cd $dirname
 #instruments="mj03b"
-instruments="mj03b mj03e"
+instruments="mj03b mj03e mj03f"
 
 # minimum for data to be "good" - not quite one per second
 mini=870
@@ -48,8 +48,6 @@ for inst in $instruments; do
   if [ $segs -gt $lines ]; then
     echo "$date got more data, $(($segs-$lines)) lines"
     cat segments/$inst/$date* >> $file
-    exit 0
   fi
 done # inst
 
-exit 1

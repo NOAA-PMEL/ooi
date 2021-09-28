@@ -13,7 +13,7 @@ base=$(basename $0 .sh)
 dir=$(dirname $0)
 cd $dir
 
-instruments="mj03b mj03e"
+instruments="mj03b mj03e mj03f"
 # Date
 if [ $# -gt 0 ]; then
   when=$1

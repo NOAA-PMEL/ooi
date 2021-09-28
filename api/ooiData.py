@@ -13,6 +13,7 @@
 # v3: reorganized for exception handling. retry fetch 3 times.
 # v4: two instruments
 # v5: anaconda/python2 -> /usr/bin/python2
+# v6: add mj03f
 
 from datetime import datetime, timedelta
 from time import sleep
@@ -120,6 +121,7 @@ auth = (username, token)
 CTDs = {
   'mj03b': 'RS03ASHS/MJ03B/10-CTDPFB304',
   'mj03e': 'RS03ECAL/MJ03E/12-CTDPFB306',
+  'mj03f': 'RS03CCAL/MJ03F/12-CTDPFB305',
 }
 try: ctd = CTDs[instrument]
 except: print 'bad instrument'; raise
@@ -148,7 +150,7 @@ try:
   saveSegment( dtStr, segPath, data, select )
   # should have close to 1 sec data intervals 
   if len(data) > mini:
-    print( "%s success: %s" % (dtStr, len(data)) )
+    print( "%s %s success: %s" % (instrument, dtStr, len(data)) )
     sys.exit(0)
   else: # short
     raise ValueError(('fetch short (%s)' % len(data), response))
