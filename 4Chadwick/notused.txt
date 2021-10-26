@@ -1,0 +1,11 @@
+RunUpdateRSNsaveFiles.job := Run1HrAve.pro Run1HrAveTilt.pro
+
+. unused:
+Run1HrAve.job Run1HrAveTilt.job ProcessRSNdataMJ03?.job
+
+. overused:
+ grep ProcessRSNdata.pro $pj | grep -v ':;'
+Run1HrAveTilt.pro: .RUN ~/4Chadwick/RSN/ProcessRSNdata.pro
+RunGetTD-RTMD.pro:.RUN ~/4Chadwick/RSN/ProcessRSNdata.pro
+RunGetTiltDiff.pro:.RUN ~/4Chadwick/RSN/ProcessRSNdata.pro
+SetupRSN.pro:.RUN ~/4Chadwick/RSN/ProcessRSNdata.pro

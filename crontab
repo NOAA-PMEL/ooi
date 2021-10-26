@@ -3,18 +3,18 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:
 #------------------------------------------------------------------------------
 #0-59 0-23 1-31 1-12 1-7 Command
 #------------------------------------------------------------------------------
-# daily check previous days and delete old segments
-01    01    *    *    * /home/kahn/ooi/api/cleanup.sh
-# 3x / hr
-00,20,40 *  *    *    * /home/kahn/ooi/api/ooiData.sh
-00,20,40 *  *    *    * /home/kahn/ooi/ftp/ooiftp.sh
-05,25,45 *  *    *    * /home/kahn/4Chadwick/RSN/ProcessRSNdata.job 
+01    01     *   *   *   /home/kahn/ooi/api/cleanup.sh
+# 4x / hr
+0,15,30,45 * *   *   *   /home/kahn/ooi/api/ooiData.sh
+0,15,30,45 * *   *   *   /home/kahn/ooi/ftp/ooiftp.sh
+0,15,30,45 * *   *   *   /home/kahn/ooi/rsn/CheckStatus.sh
+5,20,35,50 * *   *   *   /home/kahn/ooi/rsn/ProcessRSNdata.job 
 # daily
-30    18    *    *    * /home/kahn/4Chadwick/RSN/RunUpdateRSNsaveFiles.job
-30    20    *    *    * /home/kahn/4Chadwick/RSN/RunGetRates.job
-30    21    *    *    * /home/kahn/4Chadwick/RSN/RunPlotMJ03F-LILY.job
-30    22    *    *    * /home/kahn/4Chadwick/RSN/RunPlotMJ03D-LILY.job
-30    23    *    *    * /home/kahn/4Chadwick/RSN/RunForecastDates.job
-30    00    *    *    * /home/kahn/4Chadwick/RSN/SaveCTDdata.job
-30    01    *    *    * /home/kahn/4Chadwick/RSN/RunPlotMJ03E-LILY.job
-30    03    *    *    * /home/kahn/4Chadwick/RSN/BackUpIDLfiles2data.job
+32    18     *   *   *   /home/kahn/ooi/rsn/RunUpdateRSNsaveFiles.job
+32    20     *   *   *   /home/kahn/ooi/rsn/RunGetRates.job
+32    21     *   *   *   /home/kahn/ooi/rsn/RunPlotMJ03F-LILY.job
+32    22     *   *   *   /home/kahn/ooi/rsn/RunPlotMJ03D-LILY.job
+32    23     *   *   *   /home/kahn/ooi/rsn/RunForecastDates.job
+32    00     *   *   *   /home/kahn/ooi/rsn/SaveCTDdata.job
+32    01     *   *   *   /home/kahn/ooi/rsn/RunPlotMJ03E-LILY.job
+32    03     *   *   *   /home/kahn/ooi/rsn/BackUpIDLfiles2data.job

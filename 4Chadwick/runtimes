@@ -1,3 +1,7 @@
+$ kahn@caldera 08:34:51 ~/ooi/4Chadwick/RSN $
+ /home/kahn/4Chadwick/RSN/ProcessRSNdata.job
+$ kahn@caldera 08:42:38 ~/ooi/4Chadwick/RSN $
+
 $ kahn@caldera 08:36:24 ~/4Chadwick $
  /home/kahn/4Chadwick/RSN/RunUpdateRSNsaveFiles.job
 $ kahn@caldera 09:25:43 ~/4Chadwick $
@@ -5,6 +9,11 @@ $ kahn@caldera 09:25:43 ~/4Chadwick $
 $ kahn@caldera 08:42:37 ~/4Chadwick/RSN $
  ./RunUpdateRSNsaveFiles.job
 $ kahn@caldera 09:32:01 ~/4Chadwick/RSN $
+
+0,15,30,45 *  *    *    * /home/kahn/ooi/api/ooiData.sh
+0,15,30,45 *  *    *    * /home/kahn/ooi/ftp/ooiftp.sh
+$ kahn@caldera 12:45:59 ~/ooi/4Chadwick/RSN $
+ done
 
 
 Tue Sep 21 09:38:16 PDT 2021

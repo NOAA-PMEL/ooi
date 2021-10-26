@@ -4,7 +4,7 @@
 #Email="brian.kahn@noaa.gov william.w.chadwick@gmail.com andy.lau@noaa.gov"
 #Email="brian.kahn@noaa.gov"
 # days to check - use parm $1 if present
-days=i${1:-14}
+days=${1:-14}
 exclude="2020-08-15 2020-08-16 2020-08-17 2020-08-18 2020-08-19 2020-08-20"
 
 base=$(basename $0 .sh)
@@ -20,7 +20,7 @@ cd $dir
   done
 
   # remove segments older than days
-  find segments/ -mtime +$days -delete
+  find segments/ -type f -mtime +$days -delete
 ) >& $base.out
 
 if [ -n "$Email" -a -s "$base.out" ]; then 
