@@ -202,6 +202,19 @@ MJ03F/NANOratesLast3monthsE-F.png          <-- RunPlotNANOdiffE-Frates.pro
 
 Orders of the RSN and CTD data processing.
 
+     at 18:30 -f RunUpdateRSNsaveFiles.job
+     at 20:30 -f RunGetRates.job
+     at 21:30 -f RunPlotMJ03F-LILY.job
+     at 22:30 -f RunPlotMJ03D-LILY.job
+     at 23:30 -f RunForecastDates.job
+     at 00:30 -f      SaveCTDdata.job
+     at 01:30 -f RunPlotMJ03E-LILY.job
+     at 03:00 -f BackUpIDLfiles2data.job
+     at 03:51 -f RunPrintRSNdata2Files.job
+        <-- (*) 9/3/2020.
+
+     at 05:00 -f CopyPrintedRSNdataFiles2FTP.job  <-- At Garifield.
+
 crontab  ProcessRSNdata.crontab
 at 18:30 -f RunUpdateRSNsaveFiles.job
 at 20:30 -f RunGetRates.job

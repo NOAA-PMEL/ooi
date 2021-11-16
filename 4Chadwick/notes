@@ -26,3 +26,8 @@ at 00:30 -f SaveCTDdata.job    2>> SaveCTDdata.log
 watch out:
 ~/idl/IDLcolors.pro
 ~/idl/match.pro
+
+chain:
+5,20,35,50 * *   *   *   /home/kahn/ooi/rsn/ProcessRSNdata.job
+ -> ProcessRSN-MJ03Bdata.pro -> PrintRSNdata2Files.pro
+ -> ;       Generate a New OUTPUT_FILE name, e.g. 'MJ03D2019LILY.Data'
