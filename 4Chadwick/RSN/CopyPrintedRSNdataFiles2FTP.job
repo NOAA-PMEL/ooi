@@ -7,9 +7,10 @@ echo Copying RSN Text Files to OOI-BOTPT-NANO >> CopyPrintedRSNdataFiles2FTP.log
 
 # syspc:/data
 cd /data/lau/4Chadwick/RSN/
-rsync -a MJ03*2021NANO.Data /ftpdata/pub/chadwick/OOI-BOTPT-NANO/
-rsync -a MJ03*2021LILY.Data /ftpdata/pub/chadwick/OOI-BOTPT-LILY/
-rsync -a MJ03E-F2021NANOdiff.Data /ftpdata/pub/chadwick/OOI-NANO-DIFF/
+yr=$(date +"%Y")
+rsync -a MJ03*${yr}NANO.Data /ftpdata/pub/chadwick/OOI-BOTPT-NANO/
+rsync -a MJ03*${yr}LILY.Data /ftpdata/pub/chadwick/OOI-BOTPT-LILY/
+rsync -a MJ03E-F${yr}NANOdiff.Data /ftpdata/pub/chadwick/OOI-NANO-DIFF/
 
 echo Copying RSN Graphs to OOI-RSN-GRAPHS >> CopyPrintedRSNdataFiles2FTP.log
 rsync -a /internet/httpd/html/new-eoi/rsn/numbered_plots/*.png \

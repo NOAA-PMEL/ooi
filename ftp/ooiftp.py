@@ -43,7 +43,8 @@ with pysftp.Connection(site, username=user,
       # cd to month directory on ftp server
       path="/data/%s/%s/%4d/%02d/" % (node, inst, mon.year, mon.month)
       # this fails out if data is not updating
-      sftp.cwd(path)
+      try: sftp.cwd(path)
+      except: print("could not cd to %s at ftp server" % path)
       # for all files in directory
       for f in sftp.listdir_attr():
         # ignore dirs
@@ -52,7 +53,8 @@ with pysftp.Connection(site, username=user,
           if ((not os.path.isfile(f.filename)) or
               (f.st_mtime > os.path.getmtime(f.filename))):
             # download with server timestamp preserved
-            sftp.get(f.filename, preserve_mtime=True)
+            try: sftp.get(f.filename, preserve_mtime=True)
+            except: print("could not get %s" % (f.filename))
     else: # for months: print last file downloaded (today's)
       print("%s/%s" % (node, f.filename))
 

@@ -2,14 +2,14 @@
 ; File: ProcessRSNdata.pro
 ;
 ; This IDL program will process the provided RSN data files.
-; The RSN data are collected by the OOI Regional Scale Nodes program
-; statred on August 2014 from the Axial Summit.
+; The RSN data are collected by the OOI Regional Cabled Array program
+; started on August 2014 from Axial Seamount.
 ;
 ; The provided RSN data file contains records from 4 different sensors:
 ; LILY, HEAT, IRIS and NANO.
 ; All records contain Time Stamps in Year/MM/DD Hr:Mm:Sd
 ; The NANO   records contain pressure and temperature values.
-; The others records contain at least X-Tilt, Y-Tilt and temperatue.
+; The other  records contain at least X-Tilt, Y-Tilt and temperature.
 ; The LILY   records contain extra values: Compass & Voltage.
 ;
 ; Note that the main procedure: PROCESS_RSN_FILES will be calling
@@ -18,15 +18,15 @@
 ; and the WRITE_LAST_PROCESSED_FILE_NAME procedure (in the file:
 ; StatusFile4RSN.pro).
 ;
-; Programmer: T-K Andy Lau  NOAA/PMEL/OEI Program Newport, Oregon.
+; Programmer: T-K Andy Lau  NOAA/PMEL/EOI Program Newport, Oregon.
 ;
+; Revised on December   8th, 2021, by Bill Chadwick for tide file update
 ; Revised on June       7th, 2021
+; Revised on April      2nd, 2021
 ; Created on September 16th, 2014
 ;
-
 ;
 ; Callers: GET_[HEAT/IRIS/LILY/NANO]_DATA or Any
-; Revised: March    29th, 2021
 ;
 FUNCTION GET_JULDAY, DATE_TIME  ; = '2014/08/29 23:17:57' for example.
 ;
@@ -62,7 +62,7 @@ FUNCTION GET_JULDAY, DATE_TIME  ; = '2014/08/29 23:17:57' for example.
 RETURN, JULDAY( MT,DY,YR, HR,MN,SD )
 END  ; GET_JULDAY
 ;
-; This funcion produces the index: I so that TIDAL_TIME[I] = TARGET_TIME.
+; This function produces the index: I so that TIDAL_TIME[I] = TARGET_TIME.
 ; To save time, this function is Not using the IDL WHERE() to locate I.
 ; It counts the seconds to find the Index: I.  This works due to the
 ; TIDAL_TIME in the array are at every 15 seconds.
@@ -106,7 +106,7 @@ END     ;  RSN_TIDAL_TIME_INDEX
 FUNCTION RSN_TILT_DIRECTION, XTILT, YTILT,  $ ; Inputs: 1-D arrays.
                              CCMP             ; Input : in degrees.
 ;
-; The XTILT & YTILT are in micro-randians. 
+; The XTILT & YTILT are in micro-radians. 
 ;
 ; The following pseudo codes are provided by Dr. Bill Chadwick.
 ; This subroutine computes the Resultant Tilt Direction using
@@ -127,7 +127,7 @@ FUNCTION RSN_TILT_DIRECTION, XTILT, YTILT,  $ ; Inputs: 1-D arrays.
 ;      e.g. if Resultant Tilt Direction = 450, it will become 90.
 ; CS4) Return the Resultant Tilt Direction value to the main program.
 ;
-; It is assummed the XTILT & YTILT are the same size.
+; It is assumed the XTILT & YTILT arrays are the same size.
 ; Get the total data points in the array: XTILT or YTILT
 ;
 ; N = N_ELEMENTS( XTILT )  ; = N_ELEMENTS( YTILT )
@@ -136,8 +136,8 @@ FUNCTION RSN_TILT_DIRECTION, XTILT, YTILT,  $ ; Inputs: 1-D arrays.
 ;
   Z = WHERE( XTILT EQ 0.0, N_ZEROS )
 ;
-; Assgin XTILT to a temporary array (RTD) in case XTILT is passed
-; as an expression instead of an variable by the callers.
+; Assign XTILT to a temporary array (RTD) in case XTILT is passed
+; as an expression instead of a variable by the callers.
 ;
   RTD = FLOAT( XTILT )  ; 
 ;
@@ -269,14 +269,14 @@ MONTH = 12    ; 1-12
 DAY   = 31    ; 1-31
 YEAR  = 2014  ; e.g.
 ;
-        DATE = SYSTIME( /JULIAN )  ; Get the surrent date and time.
+        DATE = SYSTIME( /JULIAN )  ; Get the current date and time.
 CALDAT, DATE,  MONTH, DAY, YEAR    ; Get the MONTH, DAY, YEAR
 ;
 DAY = ROUND( DATE - JULDAY( 1, 0, YEAR, 0,0,0 ) )
 ;
 IF DAY EQ 10 THEN  BEGIN
-   PRINT, 'It is about 10 days after the new years.'
-   PRINT, 'Save the last year RSN data into differenct files.'
+   PRINT, 'It is about 10 days after the New Year.'
+   PRINT, 'Save the last year RSN data into different files.'
    NOTIFY_ADMINISTRATOR, 'Time2SetNewFiles'
 ENDIF
 ;
@@ -297,7 +297,7 @@ PRO CHECK_OPEN_WINDOW_STATUS, CONDITION
        PRINT, '          MSG: ', !ERROR_STATE.MSG
        PRINT, '      SYS_MSG: ', !ERROR_STATE.SYS_MSG
        PRINT, '   MSG_PREFIX: ', !ERROR_STATE.MSG_PREFIX
-       PRINT, 'Plottings will be Skipped!'
+       PRINT, 'Plotting will be Skipped!'
 ;      CATCH, /CANCEL
        CONDITION = 'Not OK'  ; Cannot Open a graphic window.
        RETURN  ; to the Caller.
@@ -320,22 +320,20 @@ END  ; CHECK_OPEN_WINDOW_STATUS
 ; Callers: PROCESS_RSN_DATA or Users.
 ; Revised: February 22nd, 2018
 ;
-PRO COMPUTE_LILY_RTMD, ID,  $ ; Input: 'MJ03D', 'MJ03E' or 'MJ03F'.
+PRO COMPUTE_LILY_RTMD, ID,  $ ; Input: 'MJ03B', 'MJ03D', 'MJ03E' or 'MJ03F'.
                N_LILY_CNT     ; Input: Total number of data points
 ;
 COMMON LILY, TIME, XTILT, YTILT, COMPASS, TEMP, VOLTAGE, N_LILY
 ;
-; Use the ID value: 'MJ03D', 'MJ03E' or 'MJ03F' and the following
+; Use the ID value: 'MJ03B', 'MJ03D', 'MJ03E' or 'MJ03F' and the following
 ; conditions to determine the compass value: CCMP.
-; A304 - MJ03B - Ashes Vent Fiels       (LILY s/n N96??) - CCMP = 201°  Since August 16th, 2017.
-; A304 - MJ03B - Ashes Vent Fiels       (LILY s/n N96??) - CCMP = 345°  Correct value to use.
+; A304 - MJ03B - Ashes Vent Field       (LILY s/n N9651) - CCMP = 345°
 ; A303 - MJ03D - International District (LILY s/n N9655) - CCMP = 106°
 ; A302 - MJ03E - East Caldera           (LILY s/n N9652) - CCMP = 195°
 ; A301 - MJ03F - Central Caldera        (LILY s/n N9676) - CCMP = 345°
 ;
   CASE  ID  OF
-;   'MJ03B' : CCMP = 201  ; Added on August 16th, 2017.
-    'MJ03B' : CCMP = 345  ; 354 is the "Corrected" value to used.  February 22nd, 2018
+    'MJ03B' : CCMP = 345  ; 345 is the "Corrected" value to use.  February 22nd, 2018
     'MJ03D' : CCMP = 106
     'MJ03E' : CCMP = 195
     'MJ03F' : CCMP = 345
@@ -346,7 +344,7 @@ COMMON LILY, TIME, XTILT, YTILT, COMPASS, TEMP, VOLTAGE, N_LILY
      END
   ENDCASE
 ;
-; Compute the Resultant Tilt Megnitudes (RTM),
+; Compute the Resultant Tilt Magnitudes (RTM),
 ; and     the Resultant Tilt Directions (RTD).
 ;
   RTM = XTILT[0:N_LILY_CNT-1]*XTILT[0:N_LILY_CNT-1]
@@ -367,9 +365,10 @@ END  ; COMPUTE_LILY_RTMD
 ; data stored in the array: PSIA of the COMMON Block: NANO
 ;
 ; Callers: PROCESS_RSN_DATA or users.
-; Revised: December  8th, 2020
+; Revised: December  8th, 2020, by Andy Lau
+; Revised: December  8th, 2021, by Bill Chadwick
 ;
-PRO DETIDE_NANO_DATA, STATION_ID,  $ ; Input: 'MJ03D', 'MJ03E', 'MJ03F' or ''.
+PRO DETIDE_NANO_DATA, STATION_ID,  $ ; Input: 'MJ03D', 'MJ03E', 'MJ03F' or 'MJ03B'.
                       N_NANO_CNT,  $ ; Input: Integer.
                       STATUS       ;  Output: Unused.
 ;
@@ -377,7 +376,7 @@ PRO DETIDE_NANO_DATA, STATION_ID,  $ ; Input: 'MJ03D', 'MJ03E', 'MJ03F' or ''.
 ; have been subsampled into every 15th seconds.
 ;
 COMMON NANO,   TIME, PSIA, TEMP, N_NANO
-COMMON DETIDE,       METER ; for storing the de-tided press data in meters.
+COMMON DETIDE,       METER ; for storing the de-tided pressure data in meters.
 ;
 ; Define a factor for converting pressure in psia into millimeters.
 ;
@@ -386,7 +385,7 @@ COMMON DETIDE,       METER ; for storing the de-tided press data in meters.
 ; MM = PSIA * PSIA2MM  ; Convert pressure in psia into millimeters.
 ;
 ;
-; Retrieve the predicate Tidal Signal Data in meters at every 15 seconds.
+; Retrieve the predicted Tidal Signal Data in meters at every 15 seconds.
 ; Note the TIDAL array stores the Tidal Signals in meters as Heights. 
 ;
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Aug-Dec2014AxialTidalData.idl'
@@ -399,7 +398,8 @@ COMMON DETIDE,       METER ; for storing the de-tided press data in meters.
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2017-2018AxialTidalData' + STATION_ID + '.idl'
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/' + STATION_ID + '2018AxialTidalData.idl'
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2019-2020AxialTidalData' + STATION_ID + '.idl'
-  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2020-2021AxialTidalData' + STATION_ID + '.idl'
+;  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2020-2021AxialTidalData' + STATION_ID + '.idl'
+  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2021-2022AxialTidalData' + STATION_ID + '.idl'
 ;
 RESTORE, TIDAL_DATA_FILE  ; to get TIDAL_TIME (Julian Days), TIDAL (m)
 ;                         ; and N_TIDALS.
@@ -485,7 +485,7 @@ ENDIF
   STATUS = 'OK'  ; RCD contains all the HEAT data.
 ;
 ; Convert the Date & Time: '2014/08/29 23:17:57' for example,
-; into a Julain Day from the IDL funcition: JULDAY().
+; into a Julian Day from the IDL function: JULDAY().
 ;
   T = GET_JULDAY( S[1] + ' ' + S[2] )
 ;
@@ -493,7 +493,7 @@ ENDIF
 ; assume the Time is having problem and skip this record.
 ;
 IF T LT JULDAY( 11,1,2014, 0,0,0 ) THEN  BEGIN  ; February 5th, 2015
-   STATUS = 'Time Index Porbem'
+   STATUS = 'Time Index Problem'
    RETURN ; to caller.
 ENDIF
 ;
@@ -558,7 +558,7 @@ ENDIF
   STATUS = 'OK'  ; RCD contains all the IRIS data.
 ;
 ; Convert the Date & Time: '2014/08/29 23:17:55' for example,
-; into a Julain Day from the IDL funcition: JULDAY().
+; into a Julian Day from the IDL function: JULDAY().
 ;
   T = GET_JULDAY( S[1] + ' ' + S[2] )
 ;
@@ -566,7 +566,7 @@ ENDIF
 ; assume the Time is having problem and skip this record.
 ;
 IF T LT JULDAY( 11,1,2014, 0,0,0 ) THEN  BEGIN  ; February 5th, 2015
-   STATUS = 'Time Index Porbem'
+   STATUS = 'Time Index Problem'
    RETURN ; to caller.
 ENDIF
 ;
@@ -632,7 +632,7 @@ ENDIF
   STATUS = 'OK'  ; RCD contains all the LILY data.
 ;
 ; Convert the Date & Time: '2014/08/29 23:18:03' for example,
-; into a Julain Day from the IDL funcition: JULDAY().
+; into a Julian Day from the IDL function: JULDAY().
 ;
   T = GET_JULDAY( S[1] + ' ' + S[2] )
 ;
@@ -640,14 +640,14 @@ ENDIF
 ; assume the Time is having problem and skip this record.
 ;
 IF T LT JULDAY( 11,1,2014, 0,0,0 ) THEN  BEGIN  ; February 5th, 2015
-   STATUS = 'Time Index Porbem'
+   STATUS = 'Time Index Problem'
    RETURN ; to caller.
 ENDIF
 ;
 ; Get the X & Y Tilts & Temperature values in integers.
 ; 
   X = FLOAT( S[3] )  ; X-Tilt  in
-  Y = FLOAT( S[4] )  ; Y-Tilt  microrandians.
+  Y = FLOAT( S[4] )  ; Y-Tilt  microradians.
   C = FLOAT( S[5] )  ; Compass in degrees.
 TMP = FLOAT( S[6] )  ; Temperature in degree: C.
   V = FLOAT( S[7] )  ; Voltage.
@@ -713,7 +713,7 @@ ENDIF
   STATUS = 'OK'  ; RCD contains all the NANO data.
 ;
 ; Convert the Date & Time: '2014/08/29 23:17:59.000' for example,
-; into a Julain Day from the IDL funcition: JULDAY().
+; into a Julian Day from the IDL function: JULDAY().
 ;
   T = GET_JULDAY( S[2] + ' ' + S[3] )
 ;
@@ -721,7 +721,7 @@ ENDIF
 ; assume the Time is having problem and skip this record.
 ;
 IF T LT JULDAY( 11,1,2014, 0,0,0 ) THEN  BEGIN  ; February 5th, 2015
-   STATUS = 'Time Index Porbem'
+   STATUS = 'Time Index Problem'
    RETURN ; to caller.
 ENDIF
 ;
@@ -753,7 +753,7 @@ ENDIF
 RETURN
 END  ; GET_NANO_DATA
 ;
-;  Caller: PROCESS_RSN_DATA_FILES
+; Caller: PROCESS_RSN_DATA_FILES
 ; Revised: June 7th, 2021  for updating email address.
 ;
 PRO NOTIFY_ADMINISTRATOR, SUBJECT  ; Input: Characters.
@@ -767,8 +767,8 @@ PRO NOTIFY_ADMINISTRATOR, SUBJECT  ; Input: Characters.
 OPENW,    MAIL_OUTPUT, MAIL, /GET_LUN
 ;
 PRINTF,   MAIL_OUTPUT, [ SYSTIME(),                           $
-         'It is about 10 days after the new years.',          $
-         'Save the last year RSN data into differenct files.' ]
+         'It is about 10 days after the New Year.',          $
+         'Save the last year RSN data into different files.' ]
 ;
 CLOSE,    MAIL_OUTPUT
 FREE_LUN, MAIL_OUTPUT
@@ -788,7 +788,7 @@ END  ; NOTIFY_ADMINISTRATOR
 ; file.  The data in the RSN_FILE will be Retrieved and Saved into the
 ; IDL files.  Then the data will be plotted.
 ;
-; Note that plotting rountines are located in the file: PlotRSNdata.pro
+; Note that plotting routines are located in the file: PlotRSNdata.pro
 ;
 ; Callers: PROCESS_RSN_DATA_FILE or Users.
 ; Revised: April      2nd, 2021
@@ -804,8 +804,8 @@ PRO PROCESS_RSN_DATA,  RSN_FILE, FILE_ORIG,  $ ;  Inputs: Strings.
 IF NOT KEYWORD_SET( OUTPUT_DIRECTORY ) THEN  BEGIN
    OUTPUT_DIRECTORY = ''  ;
 ENDIF  ELSE  BEGIN  ; OUTPUT_DIRECTORY is provided.
-;  If OUTPUT_DIRECTORY does not have the directory seperator character:
-;  '/' in UNIX or '\' in Windows at the end, Add the seperator at the end.
+;  If OUTPUT_DIRECTORY does not have the directory separator character:
+;  '/' in UNIX or '\' in Windows at the end, Add the separator at the end.
 ;  For example If OUTPUT_DIRECTORY = '/RSN/Outputs', then
 ;      Change     OUTPUT_DIRECTORY = '/RSN/Outputs/'.
    TYPE = STRMID( OUTPUT_DIRECTORY, STRLEN( OUTPUT_DIRECTORY )-1, 1 )
@@ -832,7 +832,7 @@ ENDELSE
   FILE_ID = FILE_BASENAME( RSN_FILE, '.dat' )
 ;
 ; Open 2 of the Output files for printing out the Non-Data Records
-; and the Unknow data types including Incomplete Records if any.
+; and the Unknown data types including Incomplete Records if any.
 ; The output file names will be
 ; '/RSN/Output/MJ03D/BOTPTA303_10.31.9.6_9338_20140829T2334_UTC.NonData' 
 ; '/RSN/Output/MJ03D/BOTPTA303_10.31.9.6_9338_20140829T2334_UTC.Unknown'
@@ -845,7 +845,7 @@ ENDELSE
   OPENW, NOND_UNIT, /GET_LUN, NOND_FILE
   OPENW, UNKN_UNIT, /GET_LUN, UNKN_FILE
 ;
-; In the RSN_FILE data, there are 4 differen records from 4 different
+; In the RSN_FILE data, there are 4 different records from 4 different
 ; sensors: LILY, HEAT, IRIS and NANO.
 ;
          RCD = 'For reading a RSN record.'
@@ -874,7 +874,7 @@ WHILE NOT EOF( RSN_UNIT ) DO  BEGIN
             PRINT, 'Unknown Record: ' + RCD
             PRINTF, UNKN_UNIT,  RCD ; to the Unknown Record Output File.
                   N_UNKN_CNT += 1
-         ENDIF  ELSE  BEGIN  ; Assumming the RCD is correct and Decode it.
+         ENDIF  ELSE  BEGIN  ; Assuming the RCD is correct and Decode it.
             STATUS = ''  ; Nothing to begin.
             TYPE   = STRMID(    RCD, 0, 4 )  ; = 'LILY', 'HEAT', 'IRIS' or 'NANO'
             TYPE   = STRUPCASE( TYPE )       ; Make sure the TYPE are all Caps.
@@ -894,7 +894,7 @@ WHILE NOT EOF( RSN_UNIT ) DO  BEGIN
 ;           IF STATUS EQ 'Incomplete Record' THEN  BEGIN
 ;              PRINT, 'Incomplete Record: ' + RCD
             IF ( STATUS EQ 'Incomplete Record' ) OR    $   ; April 2nd, 2021
-               ( STATUS EQ 'Time Index Porbem' ) THEN  BEGIN
+               ( STATUS EQ 'Time Index Problem' ) THEN  BEGIN
                PRINT, STATUS + ': ' + RCD
                                    RCD = STATUS + ': ' + TEMPORARY( RCD )
                PRINTF, UNKN_UNIT,  RCD ; to the Unknown Record Output File.
@@ -949,9 +949,9 @@ ENDIF
 ; Save the new data when are they retrieved
 ; and Generate the figures with the new data.
 ;
-; Note that plotting rountines are located in the file: PlotRSNdata.pro
+; Note that plotting routines are located in the file: PlotRSNdata.pro
 ;
-; FILE_ORIG = 'MJ03F', 'MJ03E', or 'MJ03D'  ;
+; FILE_ORIG = 'MJ03B', 'MJ03F', 'MJ03E', or 'MJ03D'  ;
 ;
 ; Define the Directory Path for where the respective IDL Save Files are.
 ; For example,
@@ -975,7 +975,7 @@ IF N_LILY_CNT GT 0 THEN  BEGIN
    IF STATUS EQ 'OK' THEN  BEGIN  ; Data are Updated & Get ready to Plot.
       CHECK_OPEN_WINDOW_STATUS, STATUS  ; Can a PIXMAP window be opened?
       IF STATUS EQ 'OK' THEN  BEGIN     ; If Yes, then Plot the data.
-;        Note that parameter [-3,1] was used before March  11th,2015 and the
+;        Note that parameter [-3,1] was used before March 11th, 2015 and the
 ;        [-3,0] with Only the 3-Day Plot is being used after March 11th, 2015
 ;        PLOT_LILY_DATA, IDL_FILE,[-3,1], SHOW_PLOT=0,UPDATE_PLOTS=1  ; 1=Yes
 ;        PLOT_LILY_DATA, IDL_FILE,[-3,0], SHOW_PLOT=0,UPDATE_PLOTS=1  ; 1=Yes
@@ -997,7 +997,7 @@ IF N_IRIS_CNT GT 0 THEN  BEGIN
    IF STATUS EQ 'OK' THEN  BEGIN  ; Data are Updated & Get ready to Plot.
       CHECK_OPEN_WINDOW_STATUS, STATUS  ; Can a PIXMAP window be opened?
       IF STATUS EQ 'OK' THEN  BEGIN     ; If Yes, then Plot the data.
-;        Note that parameter [-3,1] was used before March  11th,2015 and the
+;        Note that parameter [-3,1] was used before March 11th, 2015 and the
 ;        [-3,0] with Only the 3-Day Plot is being used after March 11th, 2015
 ;        PLOT_IRIS_DATA, IDL_FILE,[-3,1], SHOW_PLOT=0,UPDATE_PLOTS=1  ; 0=No
 ;        PLOT_IRIS_DATA, IDL_FILE,[-3,0], SHOW_PLOT=0,UPDATE_PLOTS=1  ; 0=No
@@ -1015,7 +1015,7 @@ IF N_HEAT_CNT GT 0 THEN  BEGIN
    IF STATUS EQ 'OK' THEN  BEGIN  ; Data are Updated & Get ready to Plot.
       CHECK_OPEN_WINDOW_STATUS, STATUS  ; Can a PIXMAP window be opened?
       IF STATUS EQ 'OK' THEN  BEGIN     ; If Yes, then Plot the data.
-;        Note that parameter [-3,1] was used before March  11th,2015 and the
+;        Note that parameter [-3,1] was used before March 11th, 2015 and the
 ;        [-3,0] with Only the 3-Day Plot is being used after March 11th, 2015
 ;        PLOT_HEAT_DATA, IDL_FILE,[-3,1], SHOW_PLOT=0,UPDATE_PLOTS=1  ; 1=Yes
 ;        PLOT_HEAT_DATA, IDL_FILE,[-3,0], SHOW_PLOT=0,UPDATE_PLOTS=1  ; 1=Yes
@@ -1048,7 +1048,7 @@ IF N_NANO_CNT GT 0 THEN  BEGIN
 ;        They are replaced by the procedure: PROCESS_NANO_DATA
 ;        and it is at the end of the procedure: PROCESS_RSN_FILES.
 ;
-;        Detect whether there are Tsunami/Upleft/Subsidence events or not.
+;        Detect whether there are Tsunami/Uplift/Subsidence events or not.
 ;        Note that CHECK_NANO4ALERTS procedure is located in the file:
 ;        CHECK_NANO4ALERTS, IDL_FILE       ; CheckNANOdata4Alerts.pro  11/2014
 ;        CHECK_OPEN_WINDOW_STATUS, STATUS  ; Can a PIXMAP window be opened?
@@ -1071,7 +1071,7 @@ RETURN
 END  ; PROCESS_RSN_DATA
 ;
 ; This procedure will be the process One given RSN Data File.
-; It deteremines the data file's origin then pass it on to the procedure
+; It determines the data file's origin then pass it on to the procedure
 ; PROCESS_RSN_DATA for processing. 
 ;
 ; Callers: PROCESS_RSN_FILES, or Users.
@@ -1086,8 +1086,8 @@ PRO PROCESS_RSN_DATA_FILE,  RSN_FILE,  $ ;  Input File Name.
 IF NOT KEYWORD_SET( OUTPUT_DIRECTORY ) THEN  BEGIN
    OUTPUT_DIRECTORY = '~/4Chadwick/RSN/'  ;
 ENDIF  ELSE  BEGIN  ; OUTPUT_DIRECTORY is provided.
-;  If OUTPUT_DIRECTORY does not have the directory seperator character:
-;  '/' in UNIX or '\' in Windows at the end, Add the seperator at the end.
+;  If OUTPUT_DIRECTORY does not have the directory separator character:
+;  '/' in UNIX or '\' in Windows at the end, Add the separator at the end.
 ;  For example If OUTPUT_DIRECTORY = '/RSN/Outputs', then
 ;      Change     OUTPUT_DIRECTORY = '/RSN/Outputs/'.
    TYPE = STRMID( OUTPUT_DIRECTORY, STRLEN( OUTPUT_DIRECTORY )-1, 1 )
@@ -1104,17 +1104,17 @@ IF N_PARAMS() LE 0 THEN  BEGIN
    RETURN  ; Back to the callers.
 ENDIF
 ;
-; Determine the file's origin (Power Junction-Box) from the file name.
+; Determine the file's origin (OOI Junction-Box) from the file name.
 ; For this project, it will be looking for the following file types:
 ; A301 - MJ03F - Central Caldera        (LILY s/n N9676)
-; A302 - MJ03E - East    Caldera        (LILY s/n N9652)
+; A302 - MJ03E - Eastern Caldera        (LILY s/n N9652)
 ; A303 - MJ03D - International District (LILY s/n N9655)
-; A304 - MJ03B - Ashes Vent Fiels       (LILY s/n N96??)  Since August 16th, 2017.
+; A304 - MJ03B - Ashes Vent Field       (LILY s/n N9651)  Since August 16th, 2017.
 ;
 MJ03F = STRPOS( RSN_FILE, 'A301' )  ; Look for file from the Central Caldera.
-MJ03E = STRPOS( RSN_FILE, 'A302' )  ; Look for file from the East    Caldera.
-MJ03D = STRPOS( RSN_FILE, 'A303' )  ; Look for file from the Internation District 2
-MJ03B = STRPOS( RSN_FILE, 'A304' )  ; Look for file from the ashes Vent Fiels
+MJ03E = STRPOS( RSN_FILE, 'A302' )  ; Look for file from the Eastern Caldera.
+MJ03D = STRPOS( RSN_FILE, 'A303' )  ; Look for file from the International District
+MJ03B = STRPOS( RSN_FILE, 'A304' )  ; Look for file from the Ashes Vent Field
 ;
 TYPE = MJ03F + MJ03E + MJ03D + MJ03B  ; will = 0 or 1.  August 24th, 2017.
 ;
@@ -1160,8 +1160,8 @@ RETURN
 END  ; PROCESS_RSN_DATA_FILE
 ;
 ; This procedure will be the Starting Point for the RSN Data Processing.
-; It deteremines the whether or not the New RSN data files are available.
-; If the New files are ready, they will be processed 1 at atime by the
+; It determines the whether or not the New RSN data files are available.
+; If the New files are ready, they will be processed 1 at a time by the
 ; procedure: PROCESS_RSN_DATA_FILE. 
 ;
 ; Callers: Users.
@@ -1171,7 +1171,7 @@ PRO PROCESS_RSN_FILES,    RSN_DIRECTORY,  $ ; Input Directory
                        OUTPUT_DIRECTORY,  $ ; Input names.
     LOG_THE_LAST_FILE=WRITE_DOWN_LAST_FILE  ; After processing the last file.
 ;
-IF N_PARAMS() LT 1 THEN  BEGIN  ; No directorys are provided.
+IF N_PARAMS() LT 1 THEN  BEGIN  ; No directories are provided.
    PRINT, 'Must provide the directory path for the new RSN data files.'
    RETURN
 ENDIF
@@ -1198,7 +1198,7 @@ ENDIF
 ;
 IF STATUS EQ 0 THEN  BEGIN  ; March 3rd, 2015
    PRINT, 'Cannot the Lock the process.  Other RSN processing is running.'
-   PRINT, 'This proram will stop & wait for the next time to process the data.'
+   PRINT, 'This program will stop & wait for the next time to process the data.'
    RETURN  ; to Caller.
 ENDIF
 ;
@@ -1283,7 +1283,7 @@ IF FILE.EXISTS THEN  BEGIN
 ;  HEAT_TIME, HEAT_XTILT, HEAT_YTILT, HEAT_TEMP
    N = N_ELEMENTS( HEAT_TIME )
    PRINT, SYSTIME() + ' In SAVE_HEAT_DATA,'
-   IF HEAT_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequency is OK.
+   IF HEAT_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequence is OK.
       PRINT, 'Appending New Data'
       HEAT_TIME   = [ TEMPORARY( HEAT_TIME  ),  TIME[0:N_HEAT_CNT-1] ]
       HEAT_XTILT  = [ TEMPORARY( HEAT_XTILT ), XTILT[0:N_HEAT_CNT-1] ]
@@ -1304,7 +1304,7 @@ IF FILE.EXISTS THEN  BEGIN
       HEAT_TEMP   = [ TEMPORARY( HEAT_TEMP  ),  TEMP[I:N_HEAT_CNT-1] ]
    ENDIF  ELSE  BEGIN  ;
       IF HEAT_TIME[N-1] GE TIME[0] THEN  BEGIN   ; Times Out of Order.
-         PRINT, 'The Time Sequency is Out of Order!'
+         PRINT, 'The Time Sequence is Out of Order!'
          PRINT, 'The Last Time of the stored data is: '   $
               + STRING( FORMAT='( C() )', HEAT_TIME[N-1] )
          PRINT, 'which  is  After  the 1st data time: '   $
@@ -1313,7 +1313,7 @@ IF FILE.EXISTS THEN  BEGIN
       STATUS   = 'Not OK'
    ENDELSE
 ENDIF  ELSE  BEGIN  ; IDL_FILE does not exist.
-;  Assumming it is the 1st time.
+;  Assuming it is the 1st time.
    HEAT_TIME   =  TIME[0:N_HEAT_CNT-1]
    HEAT_XTILT  = XTILT[0:N_HEAT_CNT-1]
    HEAT_YTILT  = YTILT[0:N_HEAT_CNT-1]
@@ -1334,7 +1334,7 @@ IF STATUS EQ 'OK' THEN  BEGIN
    SAVE, FILENAME=FILE, HEAT_TIME, HEAT_XTILT, HEAT_YTILT, HEAT_TEMP
    FILE_MOVE, FILE, IDL_FILE, /OVERWRITE
    PRINT, SYSTIME() + ' IDL Save File: ' + IDL_FILE + ' is updated.'
-;  Replace the lastest TILT data by the cumulative data
+;  Replace the latest TILT data by the cumulative data
 ;  before returning to the caller.
 ;   TIME = TEMPORARY( HEAT_TIME  )
 ;  XTILT = TEMPORARY( HEAT_XTILT )
@@ -1378,7 +1378,7 @@ IF FILE.EXISTS THEN  BEGIN
 ;  IRIS_TIME, IRIS_XTILT, IRIS_YTILT, IRIS_TEMP
    N = N_ELEMENTS( IRIS_TIME )
    PRINT, SYSTIME() + ' In SAVE_IRIS_DATA,'
-   IF IRIS_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequency is OK.
+   IF IRIS_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequence is OK.
       PRINT, 'Appending New Data'
       IRIS_TIME   = [ TEMPORARY( IRIS_TIME  ),  TIME[0:N_IRIS_CNT-1] ]
       IRIS_TEMP   = [ TEMPORARY( IRIS_TEMP  ),  TEMP[0:N_IRIS_CNT-1] ]
@@ -1399,7 +1399,7 @@ IF FILE.EXISTS THEN  BEGIN
       IRIS_YTILT  = [ TEMPORARY( IRIS_YTILT ), YTILT[I:N_IRIS_CNT-1] ]
    ENDIF  ELSE  BEGIN  ;
       IF IRIS_TIME[N-1] GE TIME[0] THEN  BEGIN  ;  Times Out of Order.
-         PRINT, 'The Time Sequency is Out of Order!'
+         PRINT, 'The Time Sequence is Out of Order!'
          PRINT, 'The Last Time of the stored data is: '   $
               + STRING( FORMAT='( C() )', IRIS_TIME[N-1] )
          PRINT, 'which  is  After  the 1st data time: '   $
@@ -1408,7 +1408,7 @@ IF FILE.EXISTS THEN  BEGIN
       STATUS   = 'Not OK'
    ENDELSE
 ENDIF  ELSE  BEGIN  ; IDL_FILE does not exist.
-;  Assumming it is the 1st time.
+;  Assuming it is the 1st time.
    IRIS_TIME   =  TIME[0:N_IRIS_CNT-1]
    IRIS_TEMP   =  TEMP[0:N_IRIS_CNT-1]
    IRIS_XTILT  = XTILT[0:N_IRIS_CNT-1]
@@ -1429,7 +1429,7 @@ IF STATUS EQ 'OK' THEN  BEGIN
    SAVE, FILENAME=FILE, IRIS_TIME, IRIS_XTILT, IRIS_YTILT, IRIS_TEMP
    FILE_MOVE, FILE, IDL_FILE, /OVERWRITE
    PRINT, SYSTIME() + ' IDL Save File: ' + IDL_FILE + ' is updated.'
-;  Replace the lastest TILT data by the cumulative data
+;  Replace the latest TILT data by the cumulative data
 ;  before returning to the caller.
 ;   TIME = TEMPORARY( IRIS_TIME  )
 ;  XTILT = TEMPORARY( IRIS_XTILT )
@@ -1481,7 +1481,7 @@ IF FILE.EXISTS THEN  BEGIN
 ;  LILY_TIME, LILY_XTILT, LILY_YTILT, LILY_TEMP, LILY_RTM, LILY_RTD
    N = N_ELEMENTS( LILY_TIME )
    PRINT, SYSTIME() + ' In SAVE_LILY_DATA,'
-   IF LILY_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequency is OK.
+   IF LILY_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequence is OK.
       I = 0
       PRINT, 'Appending New Data'
       LILY_TIME   = [ TEMPORARY( LILY_TIME  ),  TIME[0:N_LILY_CNT-1] ]
@@ -1508,7 +1508,7 @@ IF FILE.EXISTS THEN  BEGIN
    ENDIF  ELSE  BEGIN
       I = -1  ; Indicates No data are added to the LILY_* arrays.
       IF LILY_TIME[N-1] GE TIME[0] THEN  BEGIN  ; Times Out of Order.
-         PRINT, 'The Time Sequency is Out of Order!'
+         PRINT, 'The Time Sequence is Out of Order!'
          PRINT, 'The Last Time of the stored data is: '   $
               + STRING( FORMAT='( C() )', LILY_TIME[N-1] )
          PRINT, 'which  is  After  the 1st data time: '   $
@@ -1517,7 +1517,7 @@ IF FILE.EXISTS THEN  BEGIN
       STATUS   = 'Not OK'
    ENDELSE
 ENDIF  ELSE  BEGIN  ; IDL_FILE does not exist.
-;  Assumming it is the 1st time.
+;  Assuming it is the 1st time.
    I = 0
    LILY_TIME   =  TIME[0:N_LILY_CNT-1]
    LILY_XTILT  = XTILT[0:N_LILY_CNT-1]
@@ -1542,7 +1542,7 @@ IF STATUS EQ 'OK' THEN  BEGIN
                         LILY_RTM,  LILY_TEMP,  LILY_RTD
    FILE_MOVE, FILE, IDL_FILE, /OVERWRITE
    PRINT, SYSTIME() + ' IDL Save File: ' + IDL_FILE + ' is updated.'
-;  Replace the lastest TILT data by the cumulative data
+;  Replace the latest TILT data by the cumulative data
 ;  before returning to the caller.
 ;     TIME = TEMPORARY( LILY_TIME    )
 ;    XTILT = TEMPORARY( LILY_XTILT   )
@@ -1592,7 +1592,7 @@ IF FILE.EXISTS THEN  BEGIN
 ;  The  Variables in IDL_FILE are assumed to be
 ;  NANO_TIME, NANO_PSIA, NANO_DETIDE and NANO_TEMP
    N = N_ELEMENTS( NANO_TIME )
-   IF NANO_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequency is OK.
+   IF NANO_TIME[N-1] LT TIME[0] THEN BEGIN  ; Time sequence is OK.
       PRINT, 'Appending New Data'
       NANO_TIME   = [ TEMPORARY( NANO_TIME   ),  TIME[0:N_NANO_CNT-1] ]
       NANO_PSIA   = [ TEMPORARY( NANO_PSIA   ),  PSIA[0:N_NANO_CNT-1] ]
@@ -1615,7 +1615,7 @@ IF FILE.EXISTS THEN  BEGIN
    ENDIF  ELSE  BEGIN
       IF NANO_TIME[N-1] GE TIME[0] THEN  BEGIN  ; Times Out of Order.
          PRINT, SYSTIME() + ' In SAVE_NANO_DATA,'
-         PRINT, 'The Time Sequency is Out of Order!'
+         PRINT, 'The Time Sequence is Out of Order!'
          PRINT, 'The Last Time of the stored data is: '   $
               + STRING( FORMAT='( C() )', NANO_TIME[N-1] )
          PRINT, 'which  is  After  the 1st data time: '   $
@@ -1624,7 +1624,7 @@ IF FILE.EXISTS THEN  BEGIN
       STATUS   = 'Not OK'
    ENDELSE
 ENDIF  ELSE  BEGIN  ; IDL_FILE does not exist.
-;  Assumming it is the 1st time.
+;  Assuming it is the 1st time.
    NANO_TIME   =  TIME[0:N_NANO_CNT-1]
    NANO_PSIA   =  PSIA[0:N_NANO_CNT-1]
    NANO_DETIDE = METER[0:N_NANO_CNT-1]
@@ -1667,7 +1667,7 @@ RETURN
 END  ; SAVE_NANO_DATA
 ;
 ; This procedure will check for unusual large psia values in the array: PSIA.
-; If the large values are found, the avrage values of the 2 values: 1 before
+; If the large values are found, the average values of the 2 values: 1 before
 ; and 1 after the large value will be replace the large value.
 ;
 ; Callers: PROCESS_RSN_DATA or users
@@ -1684,10 +1684,10 @@ COMMON DETIDE,  METER ; for storing the de-tided press data in meters.
 ;
 ; Added the following check on December 4th, 2017.
 ;
-IF N_NANO_CNT GT 2 THEN  BEGIN  ; Enought data for checkng spikes.
+IF N_NANO_CNT GT 2 THEN  BEGIN  ; Enough data for checking spikes.
    PRINT, 'Spike values (if any) will be printed to ',  SPIKE_LOG_FILE
-ENDIF  ELSE  BEGIN  ; N_NANO_CNT <= 2.  Not enought data for spike check.
-   PRINT, 'Not enought data.  No Spikes checking will be done!'
+ENDIF  ELSE  BEGIN  ; N_NANO_CNT <= 2.  Not enough data for spike check.
+   PRINT, 'Not enough data.  No Spike checking will be done!'
    RETURN  ; to caller.
 ENDELSE
 ;
@@ -1711,7 +1711,7 @@ FOR S = 1, N_NANO_CNT - 2 DO  BEGIN
        IF METER[S] GT ( M + 0.050D0  ) THEN  BEGIN  ; METER[S] is a spike.
           PRINT, FORMAT='(A,C())', 'On ', TIME[S]
           PRINT, 'Replaced the Spike value: ' + STRTRIM( METER[S], 2 )  $
-               + ' by the arevage: '          + STRTRIM( M, 2 )
+               + ' by the average: '          + STRTRIM( M, 2 )
           PRINTF, SPIKE_UNIT, FORMAT='(C(),A)', TIME[S],  $
           STRCOMPRESS( STRING( [ METER[S], M ], /PRINT ) )
           METER[S] = M  ; Replace the large (spike) value by the average.
@@ -1723,8 +1723,8 @@ ENDFOR  ; S
 ;
 ; Check the 1st the data point for a spike value.
 ;
-; Note the reason the 1st data point is being check after the FOR loop above
-; is that if the 2nd or the 3rd data point is spike, it will be take care of
+; Note the reason the 1st data point is being checked after the FOR loop above
+; is that if the 2nd or the 3rd data point is a spike, it will be taken care of
 ; by the checking of the FOR loop above.
 ;
   S   = 0  ; 1st data point.
@@ -1737,7 +1737,7 @@ IF ROUND( STD ) EQ 30 THEN  BEGIN  ; No Time Gap.  OK to check for spike.
    IF METER[S] GT ( M + 0.050D0  ) THEN  BEGIN  ; METER[S] is a spike.
       PRINT, FORMAT='(A,C())', 'On ', TIME[S]
       PRINT, 'Replaced the Spike value: ' + STRTRIM( METER[S], 2 )  $
-           + ' by the arevage: '          + STRTRIM( M, 2 )
+           + ' by the average: '          + STRTRIM( M, 2 )
       PRINTF, SPIKE_UNIT, FORMAT='(C(),A)', TIME[S],  $
       STRCOMPRESS( STRING( [ METER[S], M ], /PRINT ) )
       METER[S] = M  ; Replace the large (spike) value by the average.
@@ -1753,12 +1753,12 @@ ENDIF  ; ROUND( STD ) EQ 30
 ;
 IF ROUND( STD ) EQ 30 THEN  BEGIN  ; No Time Gap.  OK to check for spike.
 ;  Get the standard deviation and the mean of the values
-;  from the 2 values befor the last data point.
+;  from the 2 values before the last data point.
    STD = STDEV( METER[S-2:S-1], M )  ; M = the Mean.
    IF METER[S] GT ( M + 0.050D0  ) THEN  BEGIN  ; METER[S] is a spike.
       PRINT, FORMAT='(A,C())', 'On ', TIME[S]
       PRINT, 'Replaced the Spike value: ' + STRTRIM( METER[S], 2 )  $
-           + ' by the arevage: '          + STRTRIM(      M , 2 )
+           + ' by the average: '          + STRTRIM(      M , 2 )
       PRINTF, SPIKE_UNIT, FORMAT='(C(),A)', TIME[S],  $
       STRCOMPRESS( STRING( [ METER[S], M ], /PRINT ) )
       METER[S] = M  ; Replace the large (spike) value by the average.
@@ -1776,7 +1776,7 @@ END  ; SPIKE_CHECK4NANO_DATA
 ; This procedure will resample the NANO data stored in the arrays of the
 ; COMMON Block: NANO by selecting every 15th point, i.e. every 15th seconds,
 ; in the order of 0,15,30,45, 0,15,30,45, ...etc.
-; Then store the resampled data back to the the arrays into the
+; Then store the resampled data back to the arrays into the
 ; COMMON Block: NANO
 ;
 ; Callers: PROCESS_RSN_DATA or users
@@ -1822,7 +1822,7 @@ IF N GT 2 THEN  BEGIN
    ENDIF
 ENDIF
 ;
-; At this point if the NONA data have not been resampled,
+; At this point if the NANO data have not been resampled,
 ; assuming there are Time Gaps.  Then Check every Time-Stamp to
 ; select the seconds at [0,15,30,45] or select the one at their
 ; neighborhood one, e.g. [0+/-1, 15+/-1, 30+/-1, 45+/-1].
@@ -1831,7 +1831,7 @@ IF STATUS EQ 'Time Gaps' THEN  BEGIN
    T = S[0] LE [0,15,30,45]
    I = WHERE( T EQ 1, MN )
    IF MN EQ 0 THEN  BEGIN  ; 46 <= S[0] <=59
-      SCD = 0              ; The next vaule to look for is 0.
+      SCD = 0              ; The next value to look for is 0.
    ENDIF  ELSE  BEGIN
       SCD = ([0,15,30,45])[I[0]]   ; = 0, 15, 30 or 45.
    ENDELSE
