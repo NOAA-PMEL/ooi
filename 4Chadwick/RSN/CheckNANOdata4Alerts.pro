@@ -4,25 +4,25 @@
 ; Started on February 10th, 2015.
 ;
 ; This IDL program will use the data in the IDL Save file: MJ03?-NANO.idl
-; to check for Alerts conditions.  When the conditons are met, Alerts'
-; messages will be sent to the monitors.
+; to check for Alert conditions.  When the conditions are met, Alerts'
+; messages will be sent to the monitors (email addresses included below).
 ;
 ; There are 3 kinds of the Alerts:
-; 1) A tsunami event when the |depth change: 5 min & current| is >  5 cm. 
-; 2) A pre-eruption uplift event    when rate of depth change is > +5 cm/hr.
-; 3) A co-eruption subsidence event when rate of depth change is < -5 cm/hr.
+; 1) A tsunami event when the |depth change: 5 min & current| is >  10 cm. 
+; 2) A pre-eruption uplift event    when rate of depth change is > +10 cm/hr.
+; 3) A co-eruption subsidence event when rate of depth change is < -10 cm/hr.
 ;
-; This program also produces a Alert Statistics Table as an image file
+; This program also produces an Alert Statistics Table as an image file
 ;
 ; Any of the procedures below will be called by the routines in the
 ; file: ProcessRSNdata.pro
 ;
 ; Programmer: T-K Andy Lau  NOAA/PMEL/OEI Program Newport, Oregon.
 ;
+; Revised on January 19, 2022 by Bill Chadwick to update email recipients
 ; Revised on June       7th, 2021
 ; Created on February   9th, 2015
 ;
-
 ;
 ; Callers: CHECK4TSUNAMI_EVENT or Users
 ; Revised: November  21st, 2014
@@ -91,7 +91,7 @@ END   ; ALERT_PERMISSION
 ; Callers: PROCESS_RSN_DATA or Users.
 ; Revised: May      12th, 2015
 ;
-PRO CHECK_NANO4ALERTS,   ID,  $ ; Input: 'MJ03D', 'MJ03E' or 'MJ03F'.
+PRO CHECK_NANO4ALERTS,   ID,  $ ; Input: 'MJ03D', 'MJ03E', 'MJ03F' or 'MJ03B.
                        RATE     ; Input: 2-D array: n x 3.
 ;
 ; The 2-D array: RATE has the following settings:
@@ -99,7 +99,7 @@ PRO CHECK_NANO4ALERTS,   ID,  $ ; Input: 'MJ03D', 'MJ03E' or 'MJ03F'.
 ; RATE[*,1] = Depth Differences in cm/5-minute.
 ; RATE[*,2] = Depth Differences in cm/hour of two 10-minute averaged Depths
 ;
-         S = SIZE( RATE, /DIMENSION )
+  S = SIZE( RATE, /DIMENSION )
   N_RATE = S[0]        ; 1st Dimension and S[1] = 3.
   N      = N_RATE - 1  ; Use as the last 1st dimensional index for RATE.
 ;
@@ -173,15 +173,15 @@ PRO CHECK_NANO4ALERTS,   ID,  $ ; Input: 'MJ03D', 'MJ03E' or 'MJ03F'.
 RETURN
 END  ; CHECK_NANO4ALERTS
 ;
-; Callers: CHECK4SUDSIDE_EVENT or Users
+; Callers: CHECK4SUBSIDE_EVENT or Users
 ; Revised: June       4th, 2021
 ;
 PRO SEND_SUBSIDENCE_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
-        ID,  $  ; Input: 'MJ03D', 'MJ03E' or MJ03F'
+        ID,  $  ; Input: 'MJ03D', 'MJ03E', 'MJ03F', or 'MJ03B'
          D,  $  ; Input: Rate Change in cm/hour.
     RATE_LIMIT  ; Input: in cm/hour.
 ;
-; Set the Tsunami Event warning message file's name.
+; Set the Subsidence Event warning message file's name.
 ;
   MAIL = '~/4Chadwick/RSN/SubsidenceEvent.Msg'
 ;
@@ -199,7 +199,9 @@ PRO SEND_SUBSIDENCE_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
 ; MAIL = 'mail william.w.chadwick@noaa.gov -c Andy.Lau@noaa.gov '  $
 ;      +      '-s ' + SUBJECT + ' < ' + MAIL
   MAIL = 'mail -s ' + SUBJECT + ' -r Brian.Kahn@noaa.gov '  $
-       + 'william.w.chadwick@gmail.com < ' + MAIL       ; (*)
+       + 'dskelley@uw.edu kawkaoe@uw.edu manalang@uw.edu wilcock@uw.edu ' $
+       + 'nooners@uncw.edu jeff.beeson@noaa.gov ' $
+       + 'william.w.chadwick@gmail.com Brian.Kahn@noaa.gov < ' + MAIL     ; (*)
 ; MAIL = 'mail -s ' + SUBJECT + ' -c Andy.Lau@noaa.gov $Alist $Elist < ' + MAIL
 ;
 ; (*) when using the UNIX mail command, it is best to put All the mail options
@@ -218,7 +220,7 @@ END  ; SEND_SUBSIDENCE_ALERT
 ; Revised: June       4th, 2021
 ;
 PRO SEND_TSUNAMI_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
-         ID,  $  ; Input: 'MJ03D', 'MJ03E' or MJ03F'
+         ID,  $  ; Input: 'MJ03D', 'MJ03E', 'MJ03F', or 'MJ03B'
           D,  $  ; Input: Depth difference in cm.
     HIGHT_LIMIT  ; Input: in cm.
 ;
@@ -233,7 +235,7 @@ PRO SEND_TSUNAMI_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
   SUBJECT += ' Tsunami Event Detected from: ' +  ID   $
           +  ' Rate: '  + STRTRIM( D, 2 ) + ' >'      $
           +  ' Limit: ' + STRTRIM( HIGHT_LIMIT, 2 ) + '"'
-; SUBJECT = '"Tsunami Event Detected from: ' +  ID   $
+; SUBJECT = ' Tsunami Event Detected from: ' +  ID   $
 ;         + ' |Height|: ' + STRTRIM( D, 2 )  + ' >'  $
 ;         + ' Limit: '    + STRTRIM( HIGHT_LIMIT, 2 )  + '"'
 ;
@@ -241,7 +243,9 @@ PRO SEND_TSUNAMI_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
 ;
 ; MAIL = 'mail -s ' + SUBJECT + ' Andy.Lau@noaa.gov < ' + MAIL
   MAIL = 'mail -s ' + SUBJECT + ' -r Brian.Kahn@noaa.gov '  $
-       + 'william.w.chadwick@gmail.com < ' + MAIL       ; (*)
+       + 'dskelley@uw.edu kawkaoe@uw.edu manalang@uw.edu wilcock@uw.edu ' $
+       + 'nooners@uncw.edu jeff.beeson@noaa.gov ' $
+       + 'william.w.chadwick@gmail.com Brian.Kahn@noaa.gov < ' + MAIL   ; (*)
 ; MAIL = 'mail -s ' + SUBJECT + ' -c Andy.Lau@noaa.gov $Alist < ' + MAIL
 ;
 ; (*) when using the UNIX mail command, it is best to put All the mail options
@@ -260,11 +264,11 @@ END  ; SEND_TSUNAMI_ALERT
 ; Revised: June       4th, 2021
 ;
 PRO SEND_UPLIFT_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
-        ID,  $  ; Input: 'MJ03D', 'MJ03E' or MJ03F'
+        ID,  $  ; Input: 'MJ03D', 'MJ03E', 'MJ03F', or 'MJ03B'
          D,  $  ; Input: Rate Change in cm/hour.
     RATE_LIMIT  ; Input: in cm/hour.
 ;
-; Set the Tsunami Event warning message file's name.
+; Set the Uplift Event warning message file's name.
 ;
   MAIL = '~/4Chadwick/RSN/UpliftEvent.Msg'
 ;
@@ -285,7 +289,9 @@ PRO SEND_UPLIFT_ALERT,  TIME,  $ ; Input: Detected Time in JULDAY().
 ; MAIL = 'mail william.w.chadwick@gmail.com -c Andy.Lau@noaa.gov '  $
 ;      +      '-s ' + SUBJECT + ' < ' + MAIL
   MAIL = 'mail -s ' + SUBJECT + ' -r Brian.Kahn@noaa.gov '  $
-       + 'william.w.chadwick@gmail.com < ' + MAIL       ; (*)
+       + 'dskelley@uw.edu kawkaoe@uw.edu manalang@uw.edu wilcock@uw.edu ' $
+       + 'nooners@uncw.edu jeff.beeson@noaa.gov ' $
+       + 'william.w.chadwick@gmail.com Brian.Kahn@noaa.gov < ' + MAIL    ; (*)
 ; MAIL = 'mail -s ' + SUBJECT + ' -c Andy.Lau@noaa.gov $Alist $Elist < ' + MAIL
 ;
 ; (*) when using the UNIX mail command, it is best to put All the mail options
@@ -303,7 +309,7 @@ END  ; SEND_UPLIFT_ALERT
 ; This procedure check for the co-eruption Subsidence event
 ; which will be detected by the following condition:
 ; When the Rate of Change from 2 averages: AVE1D & AVE2D
-; is < RATE_LIMIT where RATE_LIMIT = -5 cm for example.
+; is < RATE_LIMIT where RATE_LIMIT = -10 cm for example.
 ;
 ; Note that the main difference between this procedure and the
 ; procedure: CHECK4_UPLIFT_EVENT is the condition of the detection.
@@ -312,7 +318,7 @@ END  ; SEND_UPLIFT_ALERT
 ; Callers: CHECK_NANO4ALERTS or Users.
 ; Revised: January  23rd, 2015
 ;
-PRO SUBSIDE_EVENT, ID,  $ ; Input : 'MJ03D', 'MJ03E' or MJ03F'
+PRO SUBSIDE_EVENT, ID,  $ ; Input : 'MJ03D', 'MJ03E', 'MJ03F', or 'MJ03B'
                  TIME,  $ ; Input : in JULDAY() value.
                 LIMIT,  $ ; Inputs: in cm/hour & < RATE_LIMIT.
            RATE_LIMIT     ; Input : in cm/hour.
@@ -337,7 +343,7 @@ END  ; SUBSIDE_EVENT
 ; Callers: CHECK_NANO4ALERTS or Users.
 ; Revised: April    24th, 2015
 ;
-PRO TSUNAMI_EVENT, ID,  $ ; Input: 'MJ03D', 'MJ03E' or MJ03F'
+PRO TSUNAMI_EVENT, ID,  $ ; Input: 'MJ03D', 'MJ03E', 'MJ03F', or 'MJ03B'
                  TIME,  $ ; Input: in minutes.
                 LIMIT,  $ ; Input: Depth Difference in cm.
           HIGHT_LIMIT     ; Input: in cm.
@@ -369,12 +375,12 @@ END  ; TSUNAMI_EVENT
 ;
 ; Note that the main difference between this procedure and the
 ; procedure: CHECK4_SUBSIDE_EVENT is the condition of the detection.
-; In CHECK4_SUDSIDE_EVENT, the condition is < RATE_LIMIT.
+; In CHECK4_SUBSIDE_EVENT, the condition is < RATE_LIMIT.
 ;
 ; Callers: CHECK_NANO4ALERTS or Users.
 ; Revised: January  23rd, 2015
 ;
-PRO UPLIFT_EVENT, ID,  $ ; Input : 'MJ03D', 'MJ03E' or MJ03F'
+PRO UPLIFT_EVENT, ID,  $ ; Input : 'MJ03D', 'MJ03E', 'MJ03F', or 'MJ03B'
                 TIME,  $ ; Input : in JULDAY() value.
                LIMIT,  $ ; Inputs: Average Depths in meters.
           RATE_LIMIT     ; Input : in cm/hour.
@@ -403,7 +409,7 @@ PRO UPDATE_ALERT_STATUS, ALERT_STATUS_FILE,  $  ; Input: File name.
                          TIME,               $  ; Input: in JULDAY().
                          SEND_STATUS            ; Input: = 0 or 1.
 ;
-; Open the ALERT_STATUS_FILE and read of the comment line.
+; Open the ALERT_STATUS_FILE and read the comment line.
 ; Note that the ALERT_STATUS_FILE has only 1 line.
 ;
   OPENR, STATUS_UNIT, ALERT_STATUS_FILE, /GET_LUN

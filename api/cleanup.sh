@@ -2,7 +2,7 @@
 # cleanup
 
 #Email="brian.kahn@noaa.gov william.w.chadwick@gmail.com andy.lau@noaa.gov"
-#Email="brian.kahn@noaa.gov"
+Email="brian.kahn@noaa.gov"
 # days to check - use parm $1 if present
 days=${1:-14}
 exclude="2020-08-15 2020-08-16 2020-08-17 2020-08-18 2020-08-19 2020-08-20"
@@ -24,5 +24,8 @@ cd $dir
 ) >& $base.out
 
 if [ -n "$Email" -a -s "$base.out" ]; then 
-  cat $base.out | mailx -r "brian.kahn@noaa.gov" -s $0 $Email 
+  problems=$(grep -v success $base.out)
+  if [ $(echo -n "$problems" | wc -l) -gt 0 ]; then
+    echo "$problems" | mailx -r "brian.kahn@noaa.gov" -s $0 $Email 
+  fi
 fi

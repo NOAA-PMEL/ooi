@@ -2,7 +2,8 @@
 
      A possible co-eruption subsidence signal has been detected by
      an OOI/RSN/BOTPT instrument at Axial Seamount
-     (a rate of pressure-depth change greater than -5 cm/hr
+     (a rate of pressure-depth change greater than -10 cm/hr
      in the last 10-20 minutes).  Based on past experience,
      this may indicate that an eruption may be in progress.
-     Check the data to confirm.
+     Check the data to confirm at
+     https://www.pmel.noaa.gov/eoi/rsn/index.html

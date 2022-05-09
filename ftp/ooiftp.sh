@@ -12,11 +12,13 @@ dir=$(dirname $0)
 cd $dir
 
 # run
-Prev=$(grep -s -c mj.*dat $base.out)
-./$base.py "$dateTime" > $base.out 2>> $base.err
+Prev=$(grep -s -c got.*mj.*dat $base.out)
+timeout -k 10 10m ./$base.py "$dateTime" > $base.out 2>> $base.err
 
 # count lines with "mj"
-Curr=$(grep -s -c mj.*dat $base.out)
+Curr=$(grep -s -c got.*mj.*dat $base.out)
+echo -n "$Curr @ " >> $base.log
+date >> $base.log
 if [ $Curr -ne $Prev ]; then
   if [ -n "$Email" ]; then
     (ls -l $base.out; cat $base.out) | \

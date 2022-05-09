@@ -1,0 +1,726 @@
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 110] Connection timed out
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused

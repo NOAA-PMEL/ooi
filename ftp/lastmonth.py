@@ -43,6 +43,7 @@ months = [lastmonth,]
 # with Connection, for nodeInst, for months, for listdir: get
 with pysftp.Connection(site, username=user, 
                        private_key=keyF, private_key_pass=keyP ) as sftp:
+  print("connected")
   for node, inst in nodeInst:
     os.chdir("%s/data/%s" % (here, node))
     for mon in months:
