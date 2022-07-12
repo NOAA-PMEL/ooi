@@ -24,7 +24,7 @@ cd $dir
 ) >& $base.out
 
 if [ -n "$Email" -a -s "$base.out" ]; then 
-  if grep -q short $base.out; then
-    echo $base.out | mailx -r "brian.kahn@noaa.gov" -s "$0 short" $Email 
+  if grep -q fail $base.out; then
+    cat $base.out | mailx -r "brian.kahn@noaa.gov" -s "$0 short" $Email 
   fi
 fi

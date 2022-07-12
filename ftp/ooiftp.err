@@ -750,3 +750,92 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
     "Unable to connect to {}: {}".format(hostname, reason)
 paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 401, in __init__
+    hostname, port, socket.AF_UNSPEC, socket.SOCK_STREAM
+  File "/usr/lib64/python3.6/socket.py", line 745, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 183, in _start_transport
+    raise ConnectionException(host, port)
+pysftp.exceptions.ConnectionException: ('ftp.ooirsn.uw.edu', 22)
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 111] Connection refused
