@@ -8,11 +8,10 @@ export Elist="william.w.chadwick@gmail.com dskelley@uw.edu manalang@uw.edu kawka
 
 export DISPLAY=:2
 
-# stop CTD processing for one month 
-#/usr/local/bin/idl < RunProcessCTDdata.pro     >  ProcessCTDdata.log 2>&1
-#/usr/local/bin/idl < RunPlotCTD7Days4MJ03B.pro >> ProcessCTDdata.log 2>&1
-#/usr/local/bin/idl < RunPlotCTD7Days4MJ03E.pro >> ProcessCTDdata.log 2>&1
-#/usr/local/bin/idl < RunPlotCTD7Days4MJ03F.pro >> ProcessCTDdata.log 2>&1
+/usr/local/bin/idl < RunProcessCTDdata.pro     >  ProcessCTDdata.log 2>&1
+/usr/local/bin/idl < RunPlotCTD7Days4MJ03B.pro >> ProcessCTDdata.log 2>&1
+/usr/local/bin/idl < RunPlotCTD7Days4MJ03E.pro >> ProcessCTDdata.log 2>&1
+/usr/local/bin/idl < RunPlotCTD7Days4MJ03F.pro >> ProcessCTDdata.log 2>&1
 
 /usr/local/bin/idl < ProcessRSN-MJ03Bdata.pro  > ProcessRSN-MJ03Bdata.log 2>&1
 cp ~/4Chadwick/RSN/MJ03B/*.png /internet/httpd/html/new-eoi/rsn/graphs/
