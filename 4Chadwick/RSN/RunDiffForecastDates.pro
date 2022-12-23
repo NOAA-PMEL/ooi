@@ -1,25 +1,30 @@
 ;
 ; File: RunDiffForecastDates.pro
 ;
+; Note added by Bill in Dec 2022:
+; This file only works on the plots for Forecast Methods #2, #3, #4 (using differential BPR data)
+; the other plot for Forecast Method #1 comes from RunForecastDates.pro 
+;
 ; The IDL steps will generate 3 figures using the data stored in the
 ; files: ~/4Chadwick/RSN/MJ03F/LongTermNANOdataProducts.MJ03F
 ; and    ~/4Chadwick/RSN/MJ03F/MJ03F-NANO.idl
 ;
-; This file is similare to the file: RunForecastDates.pro except here
-; the detided depth differences data are being used for forecasting.
+; This file is similar to the file: RunForecastDates.pro except here
+; the differential BPR data are being used for forecasting.
 ;
-; The 3 figures are: Forecast2HistogramMJ03F.png
-;                         SCatter2DatesMJ03F.png
-;              and  Forecast2ProjectionMJ03F.png
+; The 3 figures are: Forecast[2,3,4]HistogramMJ03F.png
+;                         Scatter[2,3,4]DatesMJ03F.png
+;                    and Forecast[2,3,4]DatesMJ03F.png
 ;
+; Bill revised on December 7, 2022
 ; Revised on January   14th, 2021
 ; Created on August    23rd, 2018
 ;
  .RUN ~/4Chadwick/RSN/GetLongTermNANOdataProducts.pro
  .RUN ~/4Chadwick/RSN/GetPredictedDates.pro
- .RUN ~/4Chadwick/RSN/PlotForecastDates.pro  ; For PRO PLOT_FORECAST_[STOGRAM/PORJECTION]
+ .RUN ~/4Chadwick/RSN/PlotForecastDates.pro  ; For PRO PLOT_FORECAST_[STOGRAM/PROJECTION]
 ;
-; Get the 1-Day average of the NANO (detided) Depth Differences and the 4-Week Rate (cm/yr)
+; Get the 1-Day average of the NANO (detided) Depth Differences and the 4/8/12-Week Rates (cm/yr)
 ; from the file: ~/4Chadwick/RSN/MJ03F/NANOdiffRatesMJ03E-F.idl which contains the
 ; array variables: NANO1DAY_TIME, NANO1DAY_MEAN, RATE_4WK, RATE_8WK, RATE12WK.
 ;
@@ -58,14 +63,14 @@
 ;-The following PERIOD & COLOR were used between  1/21/2020 & 1/14/2021-
 ;-----------------------------------------------------------------------
 ;
-; PERIOD = [ JULDAY( 6,1,2015, 0,0,0 ),  $
-;            JULDAY( 1,1,2016, 0,0,0 ),  JULDAY( 1,1,2017, 0,0,0 ),  $
-;            JULDAY( 1,1,2018, 0,0,0 ),  JULDAY( 1,1,2019, 0,0,0 ),  $
-;            JULDAY( 1,1,2020, 0,0,0 )   ]
+ ;PERIOD = [ JULDAY( 6,1,2015, 0,0,0 ),  $
+ ;           JULDAY( 1,1,2016, 0,0,0 ),  JULDAY( 1,1,2017, 0,0,0 ),  $
+ ;           JULDAY( 1,1,2018, 0,0,0 ),  JULDAY( 1,1,2019, 0,0,0 ),  $
+ ;           JULDAY( 1,1,2020, 0,0,0 )   ]
 ;
 ; Define the colors for each PERIOD above.
 ;
-; COLOR = ['PURPLE','BLUE','GREEN','YELLOW','ORANGE','RED']
+ ;COLOR = ['PURPLE','BLUE','GREEN','YELLOW','ORANGE','RED']
 ;
 ;-The following PERIOD & COLOR were used between 12/19/2018 & 1/20/2020-
 ;-----------------------------------------------------------------------
@@ -81,6 +86,8 @@
 ; Display the Forecast Histogram Plot.
 ;
 ; Note that the values [RATE_8WK] will not be used in the procedure: PLOT_FORECAST_HISTOGRAM. 
+;
+; The following forecast histogram is done by using the 4-Week Rate.  
 ;
   PLOT_FORECAST_HISTOGRAM,  [ [NANO1DAY_TIME], [NANO1DAY_MEAN], [RATE_8WK], [RATE_4WK] ],  $ 
        PERIOD, COLOR,       DEPTH_THRESHOLD,                $  ; Inputs.
@@ -99,7 +106,7 @@
 ;      MAX_XRANGE=JULDAY(1,1,2034 ),  $  ; Max Time range limit to be shown.  7/31/2018
           DISPLAY=0     ; Not display the figure on the screen.
 ;
-; The following forecast histogram is done by using the 6-Month Rate.   2/12/2020
+; The following forecast histogram is done by using the 6-Month (24-week) Rate.   2/12/2020
 ;
   PLOT_FORECAST_HISTOGRAM,  [ [NANO1DAY_TIME], [NANO1DAY_MEAN], [RATE_8WK], [RATE24WK] ],  $
        PERIOD, COLOR,       DEPTH_THRESHOLD,                $  ; Inputs.
@@ -149,12 +156,14 @@
 ; 'Date of prediction vs. Predicted date inflation will reach 2015 Extended threshold',  $
 ;  DISPLAY=0  ; Not display the figure on the screen.
 ;
-; From May 15th, 2018 on  The following rouitne will combine the 2 figures above.
+; From May 15th, 2018 on  The following routine will combine the 2 figures above.
+;
+; The following Scatter Forecast   is done by using the 4-Week Rate.  
 ;
   PLOT_SCATTER2FORECAST,  [ [NANO1DAY_TIME], [NANO1DAY_MEAN], [RATE_8WK], [RATE_4WK] ],  $
                             DEPTH_THRESHOLD,       $
   '~/4Chadwick/RSN/MJ03F/Scatter2DatesMJ03F.png',  $  ; Graphic output file.
-  'Date of prediction vs. Predicted date inflation will reach 2015 Extended threshold',  $
+  'Date of prediction vs. Predicted date inflation will reach 2015 threshold',  $
 ;  PLOT_OBJECT=P,  $ ; for getting the displayed image: P.CopyWindow() for example.
    EXTENDED_CM=-20,              $ ; To be added to the DEPTH_THRESHOLD for extended forecast.
    MAX_YRANGE=JULDAY(1,1,2035),  $ ; For limiting the upper Y-Range plotting.  August 1st, 2018
@@ -165,7 +174,7 @@
   PLOT_SCATTER2FORECAST,  [ [NANO1DAY_TIME], [NANO1DAY_MEAN], [RATE_8WK], [RATE12WK] ],  $
                             DEPTH_THRESHOLD,       $
   '~/4Chadwick/RSN/MJ03F/Scatter3DatesMJ03F.png',  $  ; Graphic output file.
-  'Date of prediction vs. Predicted date inflation will reach 2015 Extended threshold',  $
+  'Date of prediction vs. Predicted date inflation will reach 2015 threshold',  $
    EXTENDED_CM=-20,              $ ; To be added to the DEPTH_THRESHOLD for extended forecast.
    MAX_YRANGE=JULDAY(1,1,2035),  $ ; For limiting the upper Y-Range plotting.
    DISPLAY=0  ; Not display the figure on the screen.
@@ -175,7 +184,7 @@
   PLOT_SCATTER2FORECAST,  [ [NANO1DAY_TIME], [NANO1DAY_MEAN], [RATE_8WK], [RATE24WK] ],  $
                             DEPTH_THRESHOLD,       $
   '~/4Chadwick/RSN/MJ03F/Scatter4DatesMJ03F.png',  $  ; Graphic output file.
-  'Date of prediction vs. Predicted date inflation will reach 2015 Extended threshold',  $
+  'Date of prediction vs. Predicted date inflation will reach 2015 threshold',  $
    EXTENDED_CM=-20,              $ ; To be added to the DEPTH_THRESHOLD for extended forecast.
    MAX_YRANGE=JULDAY(1,1,2035),  $ ; For limiting the upper Y-Range plotting.
    DISPLAY=0  ; Not display the figure on the screen.
@@ -191,88 +200,93 @@
 ; T = D*100.0/DATA[N-1,3]               ; Times in years to the top & DATA[0:*,3]=12-Week Rate.
 ; T = DATA[N-1,0] + TEMPORARY( T )*365  ; Forecasted Times to the top.
 ;
+; The following Forecast Projection is done by using the 4-Week Rate.  
+;
   PLOT_FORECAST_PROJECTION, '~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.idl',  $ 
-         NANO1DAY_TIME[N-1],  $ ; The most resent date in JULDAY().
-         NANO1DAY_MEAN[N-1],  $ ; The most resent 1-Day average depth in meters.
-              RATE_4WK[N-1],  $ ; The most resent 4-Week Rate in cm/yr.
+         NANO1DAY_TIME[N-1],  $ ; The most recent date in JULDAY().
+         NANO1DAY_MEAN[N-1],  $ ; The most recent 1-Day average depth in meters.
+              RATE_4WK[N-1],  $ ; The most recent 4-Week Rate in cm/yr.
             DEPTH_THRESHOLD,  $ ; The eruption threshold in meters.
                 '~/4Chadwick/RSN/MJ03F/Forecast2DatesMJ03F.png',  $  ; Graphic output file.
 ;           PLOT_OBJECT=  P,  $ ; for getting the displayed image: P.CopyWindow() for example.
             EXTENDED_CM=-20,  $ ; To be added to the DEPTH_THRESHOLD for extended forecast.
-                 N_WEEK=  4,  $ ; Indicates 4-Week Rate will be used for forcasting. 11/19/2018
+                 N_WEEK=  4,  $ ; Indicates 4-Week Rate will be used for forecasting. 11/19/2018
                 DISPLAY=  0     ; Not display the figure on the screen.
 ;
 ; The following Forecast Projection is done by using the 12-Week Rate.  11/20/2018
 ;
   PLOT_FORECAST_PROJECTION, '~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.idl',  $
-         NANO1DAY_TIME[N-1],  $ ; The most resent date in JULDAY().
-         NANO1DAY_MEAN[N-1],  $ ; The most resent 1-Day average depth in meters.
-              RATE12WK[N-1],  $ ; The most resent 12-Week Rate in cm/yr.
+         NANO1DAY_TIME[N-1],  $ ; The most recent date in JULDAY().
+         NANO1DAY_MEAN[N-1],  $ ; The most recent 1-Day average depth in meters.
+              RATE12WK[N-1],  $ ; The most recent 12-Week Rate in cm/yr.
             DEPTH_THRESHOLD,  $ ; The eruption threshold in meters.
                 '~/4Chadwick/RSN/MJ03F/Forecast3DatesMJ03F.png',  $  ; Graphic output file.
             EXTENDED_CM=-20,  $ ; To be added to the DEPTH_THRESHOLD for extended forecast.
-                 N_WEEK= 12,  $ ; Indicates 12-Week Rate will be used for forcasting.
+                 N_WEEK= 12,  $ ; Indicates 12-Week Rate will be used for forecasting.
                 DISPLAY=  0     ; Not display the figure on the screen.
 ;
 ; The following Forecast Projection is done by using the 24-Week Rate.   2/12/2020
 ;
   PLOT_FORECAST_PROJECTION, '~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.idl',  $
-         NANO1DAY_TIME[N-1],  $ ; The most resent date in JULDAY().
-         NANO1DAY_MEAN[N-1],  $ ; The most resent 1-Day average depth in meters.
-              RATE24WK[N-1],  $ ; The most resent 24-Week Rate in cm/yr.
+         NANO1DAY_TIME[N-1],  $ ; The most recent date in JULDAY().
+         NANO1DAY_MEAN[N-1],  $ ; The most recent 1-Day average depth in meters.
+              RATE24WK[N-1],  $ ; The most recent 24-Week Rate in cm/yr.
             DEPTH_THRESHOLD,  $ ; The eruption threshold in meters.
                 '~/4Chadwick/RSN/MJ03F/Forecast4DatesMJ03F.png',  $  ; Graphic output file.
             EXTENDED_CM=-20,  $ ; To be added to the DEPTH_THRESHOLD for extended forecast.
-                 N_WEEK= 24,  $ ; Indicates 24-Week Rate will be used for forcasting.
+                 N_WEEK= 24,  $ ; Indicates 24-Week Rate will be used for forecasting.
                 DISPLAY=  0     ; Not display the figure on the screen.
 ;
-; Note that the PLOT_FORECAST_PROJECTION will always genrate a display,
+; Note that the PLOT_FORECAST_PROJECTION will always generate a display,
 ; so that SIZE( P, /TNAME ) will always == 'OBJREF'.
+;
+;---------------------------------------------------------------------------------------------
+; Bill commented out the lines below to stop the generation of numbered plots on Dec 7, 2022
 ;
 ; Look for the /internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast2DatesMJ03F-xxxxx.png
 ; files where xxxxx are numbers.
 ;
-  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast2DatesMJ03F-*.png', COUNT=N )
-     M = 100000  ; Skip the 3rd IF statement in case N < 0 after FILE_SEARCH() above.
-  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast2DatesMJ03F.png',  $
-    '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast2DatesMJ03F-00000.png'
-  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
-                         M = STRMID( F[N-1],  S+6, 5  )  & $
-     IF M GE 99999 THEN  PRINT, 'Forecast2DatesMJ03F-99999.png is reached'  & $
-  ENDIF  ; Check the "-xxxxx" file index.
-  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
-                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
-      FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast2DatesMJ03F.png', F  & $
-  ENDIF  ; Creating a new Forecast2DatesMJ03F-xxxxx.png file.
+;  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast2DatesMJ03F-*.png', COUNT=N )
+;     M = 100000  ; Skip the 3rd IF statement in case N < 0 after FILE_SEARCH() above.
+;  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast2DatesMJ03F.png',  $
+;    '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast2DatesMJ03F-00000.png'
+;  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
+;                         M = STRMID( F[N-1],  S+6, 5  )  & $
+;     IF M GE 99999 THEN  PRINT, 'Forecast2DatesMJ03F-99999.png is reached'  & $
+;  ENDIF  ; Check the "-xxxxx" file index.
+;  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
+;                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
+;      FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast2DatesMJ03F.png', F  & $
+;  ENDIF  ; Creating a new Forecast2DatesMJ03F-xxxxx.png file.
 ;
 ; Do the same for the Forecast3DatesMJ03F.png  November 20th, 2018
 ;
-  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast3DatesMJ03F-*.png', COUNT=N )
-     M = 100000  ; Skip the last IF statement in case N < 0 after FILE_SEARCH() above.
-  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast3DatesMJ03F.png',  $
-    '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast3DatesMJ03F-00000.png'
-  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
-                         M = STRMID( F[N-1],  S+6, 5  )  & $
-     IF M GE 99999 THEN  PRINT, 'Forecast3DatesMJ03F-99999.png is reached'  & $
-  ENDIF  ; Check the "-xxxxx" file index.
-  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
-                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
-      FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast3DatesMJ03F.png', F  & $
-  ENDIF  ; Creating a new Forecast3DatesMJ03F-xxxxx.png file.
+;  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast3DatesMJ03F-*.png', COUNT=N )
+;     M = 100000  ; Skip the last IF statement in case N < 0 after FILE_SEARCH() above.
+;  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast3DatesMJ03F.png',  $
+;    '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast3DatesMJ03F-00000.png'
+;  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
+;                         M = STRMID( F[N-1],  S+6, 5  )  & $
+;     IF M GE 99999 THEN  PRINT, 'Forecast3DatesMJ03F-99999.png is reached'  & $
+;  ENDIF  ; Check the "-xxxxx" file index.
+;  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
+;                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
+;      FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast3DatesMJ03F.png', F  & $
+;  ENDIF  ; Creating a new Forecast3DatesMJ03F-xxxxx.png file.
 ;
 ; Do the same for the Forecast4DatesMJ03F.png  February 12th, 2020
 ;
-  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4DatesMJ03F-*.png', COUNT=N )
-     M = 100000  ; Skip the last IF statement in case N < 0 after FILE_SEARCH() above.
-  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast4DatesMJ03F.png',  $
-    '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4DatesMJ03F-00000.png'
-  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
-                         M = STRMID( F[N-1],  S+6, 5  )  & $
-     IF M GE 99999 THEN  PRINT, 'Forecast4DatesMJ03F-99999.png is reached'  & $
-  ENDIF  ; Check the "-xxxxx" file index.
-  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
-                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
-      FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast4DatesMJ03F.png', F  & $
-  ENDIF  ; Creating a new Forecast4DatesMJ03F-xxxxx.png file.
+;  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4DatesMJ03F-*.png', COUNT=N )
+;     M = 100000  ; Skip the last IF statement in case N < 0 after FILE_SEARCH() above.
+;  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast4DatesMJ03F.png',  $
+;    '/internet/httpd/html/new-eoi/rsn/numbered_plots/Forecast4DatesMJ03F-00000.png'
+;  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
+;                         M = STRMID( F[N-1],  S+6, 5  )  & $
+;     IF M GE 99999 THEN  PRINT, 'Forecast4DatesMJ03F-99999.png is reached'  & $
+;  ENDIF  ; Check the "-xxxxx" file index.
+;  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
+;                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
+;      FILE_COPY, '~/4Chadwick/RSN/MJ03F/Forecast4DatesMJ03F.png', F  & $
+;  ENDIF  ; Creating a new Forecast4DatesMJ03F-xxxxx.png file.
 ;
 ; End of File: RunDiffForecastDates.pro

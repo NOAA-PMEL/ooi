@@ -1,20 +1,24 @@
 ;
 ; File: RunForecastDates.pro
 ;
+; Note added by Bill in Dec 2022:
+; This file only works on the plots for Forecast Method #1 (using single station BPR data)
+; the other plots for Forecast Methods #2, #2, #4 come from RunDiffForecastDates.pro 
+;
 ; The IDL steps will generate 3 figures using the data stored in the
 ; files: ~/4Chadwick/RSN/MJ03F/LongTermNANOdataProducts.MJ03F
 ; and    ~/4Chadwick/RSN/MJ03F/MJ03F-NANO.idl
 ;
 ; The 3 figures are: ForecastHistogramMJ03F.png
-;                         SCatterDatesMJ03F.png
-;              and  ForecastProjectionMJ03F.png
+;                         ScatterDatesMJ03F.png
+;                    and ForecastDatesMJ03F.png
 ;
 ; Revised on January   12th, 2021
 ; Created on May        1st, 2018
 ;
  .RUN ~/4Chadwick/RSN/GetLongTermNANOdataProducts.pro
  .RUN ~/4Chadwick/RSN/GetPredictedDates.pro
- .RUN ~/4Chadwick/RSN/PlotForecastDates.pro  ; For PRO PLOT_FORECAST_[STOGRAM/PORJECTION]
+ .RUN ~/4Chadwick/RSN/PlotForecastDates.pro  ; For PRO PLOT_FORECAST_[STOGRAM/PROJECTION]
 ;
 ; Get the 1-Day average of the NANO (detided) Depths and the 12-Week Rate (cm/yr)
 ; from the file: ~/4Chadwick/RSN/MJ03F/LongTermNANOdataProducts.MJ03F.
@@ -24,7 +28,7 @@
 ; DATA = 2-D arrays where
 ; DATA[*,0] = JULDAY()'s,
 ; DATA[*,1] = 1-Day average of the NANO (detided) Depths in meters.
-; DATA[*,2] =  8-Week Rate of the depth being change in cm/yr.
+; DATA[*,2] = 8-Week Rate of the depth being change in cm/yr.
 ; DATA[*,3] = 12-Week Rate of the depth being change in cm/yr.
 ;
   S = SIZE( DATA, /DIMENSION )  ; DATA is a 2-D array.
@@ -128,11 +132,11 @@
 ; 'Date of prediction vs. Predicted date inflation will reach 2015 Extended threshold',  $
 ;  DISPLAY=0  ; Not display the figure on the screen.
 ;
-; From May 15th, 2018 on  The following rouitne will combine the 2 figures above.
+; From May 15th, 2018 on  The following routine will combine the 2 figures above.
 ;
   PLOT_SCATTER2FORECAST,  DATA, DEPTH_THRESHOLD,  $
   '~/4Chadwick/RSN/MJ03F/ScatterDatesMJ03F.png',  $  ; Graphic output file.
-  'Date of prediction vs. Predicted date inflation will reach 2015 Extended threshold',  $
+  'Date of prediction vs. Predicted date inflation will reach 2015 thresholds',  $
 ;  PLOT_OBJECT=P,  $ ; for getting the displayed image: P.CopyWindow() for example.
    MAX_YRANGE=JULDAY(1,1,2035),  $  ; For limiting the upper Y-Range plotting.  August 1st, 2018
    DISPLAY=0         ; Not display the figure on the screen.
@@ -149,18 +153,19 @@
 ; T = DATA[N-1,0] + TEMPORARY( T )*365  ; Forecasted Times to the top.
 ;
   PLOT_FORECAST_PROJECTION, '~/4Chadwick/RSN/MJ03F/MJ03F-NANO.idl',  $  ; for NANO_[TIME/DETIDE]
-                DATA[N-1,0],  $ ; The most resent date in JULDAY().
-                DATA[N-1,1],  $ ; The most resent 1-Day average depth in meters.
-                DATA[N-1,3],  $ ; The most resent 12-Week Rate in cm/yr.
-;                  T       ,  $ ; The most resent Forecasted date to the threshold.
+                DATA[N-1,0],  $ ; The most recent date in JULDAY().
+                DATA[N-1,1],  $ ; The most recent 1-Day average depth in meters.
+                DATA[N-1,3],  $ ; The most recent 12-Week Rate in cm/yr.
+;                  T       ,  $ ; The most recent Forecasted date to the threshold.
             DEPTH_THRESHOLD,  $ ; The eruption threshold in meters.
                 '~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png',  $  ; Graphic output file.
 ;             PLOT_OBJECT=P,  $ ; for getting the displayed image: P.CopyWindow() for example.
                 DISPLAY=0       ; Not display the figure on the screen.
 ;
-; Note that the PLOT_FORECAST_PROJECTION will always genrate a display,
+; Note that the PLOT_FORECAST_PROJECTION will always generate a display,
 ; so that SIZE( P, /TNAME ) will always == 'OBJREF'.
 ;
+;---------------------------------------------------------------------------------------------
 ; May 14th, 2018
 ; Changed from /internet/httpd/html/new-eoi/rsn/graphs/ForecastDatesMJ03F-xxxxx.png
 ;           to /internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-xxxxx.png.
@@ -168,17 +173,19 @@
 ; Look for the /internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-xxxxx.png files
 ; where xxxxx are numbers.
 ;
-  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-*.png', COUNT=N )
-  M = 100000  ; Skip the last IF statement in case N < 0 after FILE_SEARCH() above.
-  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png',  $
-    '/internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-00000.png'
-  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
-                         M = STRMID( F[N-1], S+6, 5 )    & $
-     IF M GE 99999 THEN  PRINT, 'ForecastDatesMJ03F-99999.png is reached'  & $
-  ENDIF  ; Check the "-xxxxx" file index.
-  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
-                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
-      FILE_COPY, '~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png', F  & $
-  ENDIF  ; Creating a new ForecastDatesMJ03F-xxxxx.png file.
+; Bill commented out the lines below to stop the generation of numbered plots on Dec 7, 2022
+;
+;  F = FILE_SEARCH( '/internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-*.png', COUNT=N )
+;  M = 100000  ; Skip the last IF statement in case N < 0 after FILE_SEARCH() above.
+;  IF N LE 0 THEN FILE_COPY, '~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png',  $
+;    '/internet/httpd/html/new-eoi/rsn/numbered_plots/ForecastDatesMJ03F-00000.png'
+;  IF N GT 0 THEN BEGIN & S = STRPOS( F[N-1], 'MJ03F-' )  & $
+;                         M = STRMID( F[N-1], S+6, 5 )    & $
+;     IF M GE 99999 THEN  PRINT, 'ForecastDatesMJ03F-99999.png is reached'  & $
+;  ENDIF  ; Check the "-xxxxx" file index.
+;  IF M LT 99999 THEN BEGIN & F = STRMID( F[N-1], 0, S+6 )    $
+;                + STRING( FORMAT='(I5.5)', M+1 ) + '.png'  & $
+;      FILE_COPY, '~/4Chadwick/RSN/MJ03F/ForecastDatesMJ03F.png', F  & $
+;  ENDIF  ; Creating a new ForecastDatesMJ03F-xxxxx.png file.
 ;
 ; End of File: RunForecastDates.pro

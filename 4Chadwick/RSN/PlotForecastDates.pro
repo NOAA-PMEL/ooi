@@ -4,19 +4,19 @@
 ; This program contains 3 individual procedures:
 ; PLOT_FORECAST_HISTOGRAM, PLOT_FORECAST_PROJECTION, and PLOT_SCATTER_DATES
 ; to generate 3 different figures: ForecastHistogramMJ03F.png,
-; ForecastDatesMJ03F.png, ScatterDates[1,2]MJ03F.png
+; ForecastDatesMJ03F.png, ScatterDatesMJ03F.png
 ;
 ; Note that PLOT_FORECAST_HISTOGRAM will be calling the procedure:
 ; GET_PREDICTED_DATE which is in the file: GetPredictedDates.pro
 ;
-; See the file: RunForecastDates.pro for the preparations of the
+; See the file: RunForecastDates.pro and RunDiffForecastDates.pro for the preparations of the
 ; input parameters for these 3 procedures.
 ;
+; Revised on Dec 7, 2022 by Bill Chadwick (change to axis range)
 ; Revised on Sep 25, 2021 by Bill Chadwick (changes to axis ranges and rate threshold)
 ; Revised on February 12th, 2020
 ; Created on May       1st, 2018
 ;
-
 ;
 ; Callers: From Run[Diff]ForecastDates.pro and Users.
 ;
@@ -200,7 +200,7 @@ PRO PLOT_FORECAST_HISTOGRAM,  DATA,  $ ; Input: 2-D array of Dates, Depths & Rat
       P  = BARPLOT( FILL_COLOR=COLOR[S-1], /OVERPLOT, T, M  )
   ENDFOR  ; Overplot bar from each period with each time has 1 less period.
 ;
-; Label the color codings:
+; Label the color codings: (these are actually set in RunForecastDates.pro)
 ;
 ; --------- PERIOD[0:5] were used before December 19th, 2018 ---------
 ; PERIOD[0]: June 2015 to Dec 2016 = purple;
@@ -308,7 +308,7 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
   CALDAT, DATE2THRESHOLD,  M, I, Y     ; Get the Month, Day and Year from the DATE2THRESHOLD.
 ;
   START_DATE = JULDAY(1,1,2015,0,0,0)  ; For the plotting range.
-    END_DATE = JULDAY(1,1,2026,0,0,0)  ; Started July 5th, 2021 (bill).
+    END_DATE = JULDAY(1,1,2026,0,0,0)  ; Started July 5th, 2021 (by Bill).
 ;   END_DATE = JULDAY(1,1,2025,0,0,0)  ; Started December 10th, 2020.
 ;   END_DATE = JULDAY(1,1,2024,0,0,0)  ; Started January 20th, 2020 until Dec 10th, 2020.
 ;   END_DATE = JULDAY(1,1,2022,0,0,0)  ; Used till November 19th, 2018
@@ -556,12 +556,14 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
   ENDELSE  ;  Getting the remaining time to the extended threshold.
   I = TEXT( /NORMAL, 0.84, 0.30, Y, COLOR='PURPLE' )  ; Time remaining to the Extended threshold depth.
 ;
-; IF WEEKLY_RATE GT 0.0 THEN  BEGIN  ; Used before August, 2018. 4.9 used til 7/2021 (bill)
-  IF WEEKLY_RATE GT 1.9 THEN  BEGIN  ; Get the Forecast times only when the rate is >= +2cm/yr.
+  IF WEEKLY_RATE GT 0.0 THEN  BEGIN  ; Used before August, 2018. 4.9 cm/yr used until 7/2021 (bill)
+; ... then "reinstated" on 12/7/2022 by Bill to see if could get plots running again after
+; no plots from August 12, 2022 to December in the Forecast Method #2, #3, #4 plots
+;  IF WEEKLY_RATE GT 1.9 THEN  BEGIN  ; Get the Forecast times only when the rate is >= +2cm/yr.
      D = CURRENT_DATE + R*365       ; Forecast times to the Extended top.
      D = STRING( FORMAT="(C(CMoA,1X,CYI))", D )
      Y = STRING( FORMAT="(C(CMoA,1X,CYI))", DATE2THRESHOLD )
-  ENDIF  ELSE  BEGIN  ; WEEKLY_RATE < +2 cm/yr.
+  ENDIF  ELSE  BEGIN  ; WEEKLY_RATE < +2 cm/yr. (or negative rate after 12/7/2022 - Bill)
      D = '  N/A'
      Y = '  N/A'
   ENDELSE
@@ -582,9 +584,9 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
   RETURN
   END  ; PLOT_FORECAST_PROJECTION 
 ;--------------------------------------------------------------------------------------
-; The following routine has been used between May 11th to 14th, 2018
+; The following routine was only used between May 11th to 14th, 2018
 ; It only plots the 2015 threshold, not the extended threshold; see PLOT_SCATTER2FORECAST
-; for that below
+; for that below (so you can ignore this until the next horizontal line)
 ;
 ; Callers: From RunForecastDates.pro and Users.
 ;
@@ -611,11 +613,11 @@ PRO PLOT_SCATTER_FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates 
      IF N_PARAMS() LT 4 THEN  BEGIN  ; TITLE4FIGURE is not provided.
         TITLE4FIGURE = 'Date of prediction vs. Predicted date inflation will reach 2015 threshold'
      ENDIF 
-; Bill changed max XRANGE below to extend Scatter plot max x-axis range 7/2021
+; Bill changed max XRANGE below to extend Scatter plot max x-axis range to Jan 2024 - 12/2022
      M = PLOT( DATA[*,0], T,             LINESTYLE='NONE',     $
                SYMBOL='o', SYM_COLOR='BLUE', SYM_FILLED=1,     $
                DIMENSION=[1024,512],      TITLE=TITLE4FIGURE,  $
-               XRANGE=[ JULDAY(1,1,2015), JULDAY(1,1,2023) ],  XMINOR=11,    $
+               XRANGE=[ JULDAY(1,1,2015), JULDAY(1,1,2024) ],  XMINOR=11,    $
                XTICKFORMAT='(C(CMoA,1X,CYI))', YTICKFORMAT='(C(CYI))',       $
                YTITLE='Predicted date inflation will reach 2015 threshold',  $
                XTITLE='Date of prediction', BUFFER=( 1 - SHOW_PLOT ) )
@@ -630,8 +632,8 @@ PRO PLOT_SCATTER_FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates 
   RETURN
   END  ; PLOT_SCATTER_DATES
 ;--------------------------------------------------------------------------------------
-; This routine will display the both Forecast Dates for reaching the eruption threshold
-; and the threshold +, i.e. beyond together started on May 15th, 2018
+; This routine displays the both Forecast Dates for reaching the eruption threshold
+; and the extended threshold, i.e. this has been used since May 15th, 2018
 ;
 ; Callers: From Run[Diff]ForecastDates.pro and Users.
 ; Revised: February 12th, 2020
@@ -659,12 +661,12 @@ PRO PLOT_SCATTER2FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates 
   N = S[0]  ; The length of the 1st dimension of the DATA array.
 ;
 ; If the 12-Week Rate of the depth being change in cm/yr is negative,
-; No Forecast Histogram figure will be created.
+; No Forecast scatter plot figure will be created.
 ;
   IF ( DATA[N-1,3] LE 0.0 ) THEN  BEGIN  ; The current 4-, 12- or 24-Week Rate < 0.
      PRINT, SYSTIME() + ' The current 12-Week Rate is < 0 on '  $
                       +   STRING( FORMAT='(C())', DATA[N-1,0] )
-     PRINT, SYSTIME() + ' No Forecast Histogram figure will be created.'
+     PRINT, SYSTIME() + ' No Forecast scatter plot figure will be created.'
      M = -1  ; For PLOT_OBJECT=P to indicate No figure is created.
      RETURN  ; to Caller.
   ENDIF  ; Checking the current 4- or 12-Week Rate.
@@ -709,11 +711,13 @@ PRO PLOT_SCATTER2FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates 
      D = D +  M  - ( D MOD  M  )                ; Up the year, e.g. 2024 will be = 2030
      D = JULDAY( 1, 1, D, 0,0,0 )               ; Set to the beginning of the year.
 ;    PRINT, FORMAT='(C())', S, D
-; Bill changed XRANGE max to Jan 2023 in 7/2021 below
+;
+; Bill changed XRANGE max in this ScatterDates Plot to Jan 2024 on 12/2022 below
+;
      M = PLOT( DATA[R,0], T, LINESTYLE='NONE', YRANGE=[S,D],   $
                SYMBOL='o', SYM_COLOR='PURPLE', SYM_FILLED=1,   $
                DIMENSION=[1024,512],      TITLE=TITLE4FIGURE,  $
-               XRANGE=[ JULDAY(1,1,2015), JULDAY(1,1,2023) ], XMINOR=11,     $
+               XRANGE=[ JULDAY(1,1,2015), JULDAY(1,1,2024) ], XMINOR=11,     $
                XTICKFORMAT='(C(CMoA,1X,CYI))', YTICKFORMAT='(C(CYI))',       $
                YTITLE='Predicted date inflation will reach 2015 threshold',  $
                XTITLE='Date of prediction', BUFFER=( 1 - SHOW_PLOT ) )

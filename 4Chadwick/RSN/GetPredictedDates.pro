@@ -1,7 +1,7 @@
 ;
 ; File: GetPredictedDates.pro
 ;
-; This program will used the data retrieved from the file:
+; This program will use the data retrieved from the file:
 ; ~/4Chadwick/RSN/MJ03F/LongTermNANOdataProducts.MJ03F (*) for example
 ; to compute the predicted dates that will reach the highest top
 ; since the last eruption, e.g. April 25th, 2015.
@@ -16,7 +16,7 @@
 PRO GET_PREDICTED_DATE,  DATA, $ ;  Input: 2-D Array from file: (*) above.
                           TOP, $ ;  Input: Top Height in meters.
                          TIME, $ ; Output: 1-D array of the predicted time in JULDAY().
-                        COUNT, $ ; Output: 1-D array of the occurences within each month.
+                        COUNT, $ ; Output: 1-D array of the occurrences within each month.
     TIME_RANGE=START2END_TIMES   ;  Input: 2-Element array of the start & end days
 ;                                          in JULDAY()s.
 ; DATA[*,0] = Time Stamps in JULDAY().
@@ -24,8 +24,8 @@ PRO GET_PREDICTED_DATE,  DATA, $ ;  Input: 2-D Array from file: (*) above.
 ; DATA[*,2] = Estimated  8-week rate in cm/yr.
 ; DATA[*,3] = Estimated 12-week rate in cm/yr.
 ;
-; D2TOP = ( DATA[0:*,1] - TOP )    ; Distances to the TOP Heigth, e.g. 1509.8 meters.
-  D2TOP = ABS( DATA[0:*,1] ) - ABS( TOP )       ; Distances to the TOP Heigth, e.g. 1509.8 meters.
+; D2TOP = ( DATA[0:*,1] - TOP )    ; Distances to the TOP Height, e.g. 1509.8 meters.
+  D2TOP = ABS( DATA[0:*,1] ) - ABS( TOP )       ; Distances to the TOP Height, e.g. 1509.8 meters.
   RATE  = TEMPORARY( D2TOP )*100.0/DATA[0:*,3]  ; Times in years to the TOP.
   T     = DATA[0:*,0] + TEMPORARY( RATE )*365   ; Predicted Times in days to the TOP.
 ;
@@ -56,7 +56,7 @@ PRO GET_PREDICTED_DATE,  DATA, $ ;  Input: 2-D Array from file: (*) above.
       D[S[I]] += 1  ; Count up the occurrences per day.
   ENDFOR  ; I
 ;
-  N_MONTHS = ROUND( ( M - J )/30.5 )  ; Approixmately total number of months.
+  N_MONTHS = ROUND( ( M - J )/30.5 )  ; Approximately total number of months.
     COUNT  = REPLICATE( 0, N_MONTHS )
     TIME   = TIMEGEN( N_MONTHS, START=J, STEP=1, UNIT='MONTH' )
 ;
