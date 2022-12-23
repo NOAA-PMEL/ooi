@@ -14,6 +14,7 @@
 # v4: two instruments
 # v5: anaconda/python2 -> /usr/bin/python2
 # v6: add mj03f
+# v7: change select[] names (prefix sea_water_)
 
 from datetime import datetime, timedelta
 from time import sleep
@@ -137,9 +138,9 @@ dataRequestUrl ='/'.join((baseUrl, ctd, method, stream))
 
 # select data items, see list in README
 select = ( 
-  'density', 
-  'practical_salinity', 
-  'seawater_temperature', 
+  'sea_water_density', 
+  'sea_water_practical_salinity', 
+  'sea_water_temperature', 
 )
 
 # main

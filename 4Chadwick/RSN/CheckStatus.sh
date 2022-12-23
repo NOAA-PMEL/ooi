@@ -1,9 +1,10 @@
 #!/usr/bin/bash
 # status should be 0 if IDL is not running
-ps -ef | grep -v grep | grep bin.linux.x86_64/idl
-idl=$?
-grep 'Data are currently being processed' ~/ooi/rsn/*/*ProcessingStatus
-stat=$?
-if test $stat -a ! $idl; then
-  echo 'caldera:ooi/rsn/*/*ProcessingStatus' |
-    mailx -s 'alert: check ProcessingStatus on caldera' brian.kahn@noaa.gov
+idl=$( ps -C idl )
+data=$(grep 'Data are currently being processed' ~/ooi/rsn/*/*ProcessingStatus)
+#if test $? -a ! $idl; then
+if [[ $? -eq 0 ]]; then
+  bk="brian.kahn@noaa.gov"
+  subj="alert: $0 on caldera" 
+  echo "$idl" "$data" | mailx -r $bk -s "$subj" $bk
+fi

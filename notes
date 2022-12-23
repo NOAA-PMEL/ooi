@@ -1,3 +1,15 @@
+2022-09-01
+$ kahn@caldera 02:52:41 ~/ooi/rsn $
+  ps -C idl -o pid,start_time
+  PID START
+21136 14:50
+23099 15:05
+24730 15:20
+$ kahn@caldera 03:29:07 ~/ooi/rsn $
+ ps -fww -p 24730
+UID        PID  PPID  C STIME TTY          TIME CMD
+kahn     24730 24728 98 15:20 ?        00:09:19 /usr/local/IDL/idl85/bin/bin.linux.x86_64/idl RunProcessCTDdata.pro
+
 2022-06-19
 $ kahn@caldera 12:45:14 ~/ooi/rsn $
  cat MJ03?/*ProcessingStatus

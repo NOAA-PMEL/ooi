@@ -1,4 +1,6 @@
 cd ~/4Chadwick/RSN/
+out=ProcessRSNdata.log
+date > $out
 
 export Tlist="william.w.chadwick@gmail.com mikeh@apl.washington.edu dskelley@uw.edu manalang@uw.edu kawkaoe@uw.edu wilcock@uw.edu nooners@uncw.edu"
 
@@ -8,20 +10,28 @@ export Elist="william.w.chadwick@gmail.com dskelley@uw.edu manalang@uw.edu kawka
 
 export DISPLAY=:2
 
+echo "idl < RunProcessCTDdata.pro     >  ProcessCTDdata.log " >> $out
 /usr/local/bin/idl < RunProcessCTDdata.pro     >  ProcessCTDdata.log 2>&1
+echo "idl < RunPlotCTD7Days4MJ03B.pro >> ProcessCTDdata.log " >> $out
 /usr/local/bin/idl < RunPlotCTD7Days4MJ03B.pro >> ProcessCTDdata.log 2>&1
+echo "idl < RunPlotCTD7Days4MJ03E.pro >> ProcessCTDdata.log " >> $out
 /usr/local/bin/idl < RunPlotCTD7Days4MJ03E.pro >> ProcessCTDdata.log 2>&1
 /usr/local/bin/idl < RunPlotCTD7Days4MJ03F.pro >> ProcessCTDdata.log 2>&1
 
+echo "idl < ProcessRSN-MJ03Bdata.pro  > ProcessRSN-MJ03Bdata.log " >> $out
 /usr/local/bin/idl < ProcessRSN-MJ03Bdata.pro  > ProcessRSN-MJ03Bdata.log 2>&1
 cp ~/4Chadwick/RSN/MJ03B/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+echo "idl < ProcessRSN-MJ03Ddata.pro  > ProcessRSN-MJ03Ddata.log " >> $out
 /usr/local/bin/idl < ProcessRSN-MJ03Ddata.pro  > ProcessRSN-MJ03Ddata.log 2>&1
 cp ~/4Chadwick/RSN/MJ03D/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+echo "idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log " >> $out
 /usr/local/bin/idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log 2>&1
 cp ~/4Chadwick/RSN/MJ03E/*.png /internet/httpd/html/new-eoi/rsn/graphs/
 /usr/local/bin/idl < ProcessRSN-MJ03Fdata.pro  > ProcessRSN-MJ03Fdata.log 2>&1
+echo "idl < RunPlotNANOdiffE-F7Days.pro > RunPlotNANOdiffE-F7Days.log " >> $out
 /usr/local/bin/idl < RunPlotNANOdiffE-F7Days.pro > RunPlotNANOdiffE-F7Days.log 2>&1
 cp ~/4Chadwick/RSN/MJ03F/*.png /internet/httpd/html/new-eoi/rsn/graphs/
 
+echo "idl < RunDisplayAlarmSummary.pro > DisplayAlarmSummary.log " >> $out
 /usr/local/bin/idl < RunDisplayAlarmSummary.pro > DisplayAlarmSummary.log 2>&1
 cp ~/4Chadwick/RSN/AlarmSummary.png /internet/httpd/html/new-eoi/rsn/graphs/

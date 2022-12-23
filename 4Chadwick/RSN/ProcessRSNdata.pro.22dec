@@ -20,7 +20,7 @@
 ;
 ; Programmer: T-K Andy Lau  NOAA/PMEL/EOI Program Newport, Oregon.
 ;
-; Revised on December   20th, 2022, by Bill Chadwick for annual tide file update
+; Revised on December   8th, 2021, by Bill Chadwick for tide file update
 ; Revised on June       7th, 2021
 ; Revised on April      2nd, 2021
 ; Created on September 16th, 2014
@@ -398,9 +398,8 @@ COMMON DETIDE,       METER ; for storing the de-tided pressure data in meters.
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2017-2018AxialTidalData' + STATION_ID + '.idl'
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/' + STATION_ID + '2018AxialTidalData.idl'
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2019-2020AxialTidalData' + STATION_ID + '.idl'
-; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2020-2021AxialTidalData' + STATION_ID + '.idl'
-; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2021-2022AxialTidalData' + STATION_ID + '.idl'
-  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2022-2023AxialTidalData' + STATION_ID + '.idl'
+;  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2020-2021AxialTidalData' + STATION_ID + '.idl'
+  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2021-2022AxialTidalData' + STATION_ID + '.idl'
 ;
 RESTORE, TIDAL_DATA_FILE  ; to get TIDAL_TIME (Julian Days), TIDAL (m)
 ;                         ; and N_TIDALS.
