@@ -274,11 +274,11 @@ CALDAT, DATE,  MONTH, DAY, YEAR    ; Get the MONTH, DAY, YEAR
 ;
 DAY = ROUND( DATE - JULDAY( 1, 0, YEAR, 0,0,0 ) )
 ;
-IF DAY EQ 10 THEN  BEGIN
-   PRINT, 'It is about 10 days after the New Year.'
-   PRINT, 'Save the last year RSN data into different files.'
-   NOTIFY_ADMINISTRATOR, 'Time2SetNewFiles'
-ENDIF
+;IF DAY EQ 10 THEN  BEGIN
+;   PRINT, 'It is about 10 days after the New Year.'
+;   PRINT, 'Save the last year RSN data into different files.'
+;   NOTIFY_ADMINISTRATOR, 'Time2SetNewFiles'
+;ENDIF
 ;
 RETURN
 END  ; ALLOCATE_STORGES

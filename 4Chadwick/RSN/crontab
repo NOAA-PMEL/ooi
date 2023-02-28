@@ -6,7 +6,7 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:
 # 4x / hr
 0,15,30,45 * *   *   *   /home/kahn/ooi/api/ooiData.sh
 0,15,30,45 * *   *   *   /home/kahn/ooi/ftp/ooiftp.sh
-0,15,30,45 * *   *   *   /home/kahn/ooi/rsn/CheckStatus.sh
+# 0,15,30,45 * *   *   *   /home/kahn/ooi/rsn/CheckStatus.sh
 5,20,35,50 * *   *   *   /home/kahn/ooi/rsn/ProcessRSNdata.job 
 # daily
 28    16     *   *   *   /home/kahn/ooi/bin/checkReboot.sh
