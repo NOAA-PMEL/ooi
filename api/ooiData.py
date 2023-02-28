@@ -145,16 +145,22 @@ select = (
 
 # main
 try:
-  data, response = dataSegment( 
+  retry=1
+  for attempt in range(1, retry+1):
+    data, response = dataSegment( 
       dtStr, url=dataRequestUrl, 
       params=params, auth=auth )
-  saveSegment( dtStr, segPath, data, select )
-  # should have close to 1 sec data intervals 
-  if len(data) > mini:
-    print( "%s %s success: %s" % (instrument, dtStr, len(data)) )
-    sys.exit(0)
-  else: # short
-    raise ValueError(('fetch short (%s)' % len(data), response))
+    saveSegment( dtStr, segPath, data, select )
+    # should have close to 1 sec data intervals 
+    if len(data) > mini:
+      print( "%s %s success: %s" 
+          % (instrument, dtStr, len(data)) )
+      sys.exit(0)
+    if retry>1:
+      print( "%s %s (attempt %s) retry: %s"
+          % (instrument, dtStr, attempt, len(data)) )
+  # we tried and did not succeed
+  raise ValueError(('fetch short (%s)' % len(data), response))
 
 except ValueError as ex:
   msg = ex.message[0]
