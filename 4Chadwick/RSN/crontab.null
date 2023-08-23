@@ -5,6 +5,5 @@
 #------------------------------------------------------------------------------
 28    12     *    *    * /usr/bin/crontab /home/kahn/crontab
 ## 4x / hr
-0,15,30,45 * *    *    * /home/kahn/ooi/api/ooiData.sh
-0,15,30,45 * *    *    * /home/kahn/ooi/ftp/ooiftp.sh
-0,15,30,45 * *    *    * /home/kahn/ooi/rsn/CheckStatus.sh
+0,20,40 * *    *    * /home/kahn/ooi/api/ooiData.sh
+0,20,40 * *    *    * /home/kahn/ooi/ftp/ooiftp.sh

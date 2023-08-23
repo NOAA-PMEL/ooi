@@ -8,6 +8,9 @@ segments/
 *.idl
 *.log
 *.png
+*.tar
+*.ls
+*.*[0-9]
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

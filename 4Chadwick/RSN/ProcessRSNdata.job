@@ -27,7 +27,9 @@ cp ~/4Chadwick/RSN/MJ03D/*.png /internet/httpd/html/new-eoi/rsn/graphs/
 echo "idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log " >> $out
 /usr/local/bin/idl < ProcessRSN-MJ03Edata.pro  > ProcessRSN-MJ03Edata.log 2>&1
 cp ~/4Chadwick/RSN/MJ03E/*.png /internet/httpd/html/new-eoi/rsn/graphs/
+echo "idl < ProcessRSN-MJ03Fdata.pro  > ProcessRSN-MJ03Fdata.log " >> $out
 /usr/local/bin/idl < ProcessRSN-MJ03Fdata.pro  > ProcessRSN-MJ03Fdata.log 2>&1
+cp ~/4Chadwick/RSN/MJ03F/*.png /internet/httpd/html/new-eoi/rsn/graphs/
 echo "idl < RunPlotNANOdiffE-F7Days.pro > RunPlotNANOdiffE-F7Days.log " >> $out
 /usr/local/bin/idl < RunPlotNANOdiffE-F7Days.pro > RunPlotNANOdiffE-F7Days.log 2>&1
 cp ~/4Chadwick/RSN/MJ03F/*.png /internet/httpd/html/new-eoi/rsn/graphs/

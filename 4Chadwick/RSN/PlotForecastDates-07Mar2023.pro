@@ -12,11 +12,11 @@
 ; See the file: RunForecastDates.pro and RunDiffForecastDates.pro for the preparations of the
 ; input parameters for these 3 procedures.
 ;
-; Revised on Mar 12,2023 by Bill Chadwick to clean up after fixing plotting problems
 ; Revised on Dec 7, 2022 by Bill Chadwick (change to axis range)
 ; Revised on Sep 25, 2021 by Bill Chadwick (changes to axis ranges and rate threshold)
 ; Revised on February 12th, 2020
 ; Created on May       1st, 2018
+;
 ;
 ; Callers: From Run[Diff]ForecastDates.pro and Users.
 ;
@@ -50,11 +50,11 @@ PRO PLOT_FORECAST_HISTOGRAM,  DATA,  $ ; Input: 2-D array of Dates, Depths & Rat
   S = SIZE( DATA, /DIMENSION )  ; DATA is a 2-D array where
 ;           DATA[*,0] = JULDAY()'s,
 ;           DATA[*,1] = 1-Day average of the NANO (detided) Depths in meters.
-;           DATA[*,2] = 8-Week Rate of the depth change in cm/yr. <- Not being used here.
-;           DATA[*,3] = 4-Week, 12- or 24-Week Rate of the depth change in cm/yr.
+;           DATA[*,2] = 8-Week Rate of the depth being change in cm/yr. <- Not being used here.
+;           DATA[*,3] = 4-Week, 12- or 24-Week Rate of the depth being change in cm/yr.
   N = S[0]  ; The length of the 1st dimension of the DATA array.
 ;
-; If the 4-, 12- or 24-Week Rate of the depth change in cm/yr is negative,
+; If the 4-, 12- or 24-Week Rate of the depth being change in cm/yr is negative,
 ; No Forecast Histogram figure will be created.
 ;
   IF ( DATA[N-1,3] LE 0.0 ) THEN  BEGIN  ; The current 4-Week or 12-Week Rate < 0.
@@ -66,7 +66,7 @@ PRO PLOT_FORECAST_HISTOGRAM,  DATA,  $ ; Input: 2-D array of Dates, Depths & Rat
   ENDIF  ; Checking the current 4- or 12-Week Rate.
 ;
 ; Get all the index positions of the 12-Week Rates that are positive
-; just in case there are any values less or equal to zero.
+; just in case there are any value are less or equal to zero.
 ;
   R = WHERE( DATA[0:N-1,3] GT 0.0, N )  ;  So that all DATA[R,3] > 0.
 ;
@@ -75,7 +75,7 @@ PRO PLOT_FORECAST_HISTOGRAM,  DATA,  $ ; Input: 2-D array of Dates, Depths & Rat
 ; D =    ( DATA[R,1]   -      DEPTH_THRESHOLD ) ; Distances to the top: 1509.79 meters, e.g.
   D = ABS( DATA[R,1] ) - ABS( DEPTH_THRESHOLD )  ; in case all DATA[R,1] are < 0.  8/23/2018
 ;
-  I = WHERE( D LT 0.0, M )   ; Look for any distances past the threshold.
+  I = WHERE( D LT 0.0, M )   ; Look for any distances pass the threshold.
   IF ( M GT 0 ) THEN  BEGIN  ; There are at least 1 point across the threshold.
      PRINT, SYSTIME() + ' There are at least 1 depth value across the threshold: '  $
                       +   STRTRIM( DEPTH_THRESHOLD, 2 )
@@ -118,7 +118,7 @@ PRO PLOT_FORECAST_HISTOGRAM,  DATA,  $ ; Input: 2-D array of Dates, Depths & Rat
 ;
   COUNT[0:N_CNTS-1,0] = TEMPORARY( M )  ; Save the counts from the 1st period.
 ;
-; Count the rest of the periods except the last one.
+; Count the rests of the periods except the last one.
 ;
   FOR S = 1, N_PERIODS - 2 DO  BEGIN
       I = J[0]       ; For the next period.
@@ -267,7 +267,7 @@ PRO PLOT_FORECAST_HISTOGRAM,  DATA,  $ ; Input: 2-D array of Dates, Depths & Rat
   RETURN
   END  ; PLOT_FORECAST_HISTOGRAM 
 ;------------------------------------------------------------------------------------
-; Display a Forecast Projected Date plot
+; Display a Forecast Projected Date.
 ;
 ; Callers: From Run[Diff]ForecastDates.pro and Users.
 ; Revised: February 12th, 2020
@@ -284,7 +284,7 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
        N_WEEK=N_WEEK_RATE,     $ ; Input: Number, e.g., 8 means WEEKLY_RATE = 8-week Rate.
        PLOT_OBJECT=P           ;  Output: Return P = PLOT() to the caller. 
 ;
-  PRINT, SYSTIME() + ' Plotting the Forecast Projected Date figure..'
+  PRINT, SYSTIME() + ' Plotting the Forecast Projection figure..'
 ;
   IF NOT KEYWORD_SET( N_WEEK_RATE ) THEN  BEGIN  ; Set the default value.
      N_WEEK_RATE = 12   ; assume the WEEKLY_RATE = 12-week rate.
@@ -306,7 +306,7 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
   DATE2THRESHOLD = CURRENT_DATE + TEMPORARY( R )*365   ; Forecasted Times to the top.
 ;
   CALDAT, DATE2THRESHOLD,  M, I, Y     ; Get the Month, Day and Year from the DATE2THRESHOLD.
-; set limits on x-axis of plot
+;
   START_DATE = JULDAY(1,1,2015,0,0,0)  ; For the plotting range.
     END_DATE = JULDAY(1,1,2026,0,0,0)  ; Started July 5th, 2021 (by Bill).
 ;   END_DATE = JULDAY(1,1,2025,0,0,0)  ; Started December 10th, 2020.
@@ -380,7 +380,7 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
 ; if the 12-week Rate is Positive.                          July 17th, 2018
 ;
 ; IF WEEKLY_RATE GT 0.0 THEN  BEGIN  ;  Used before August, 2018; 4.9 used until 7/2021
-  IF WEEKLY_RATE GT 1.9 THEN  BEGIN  ;  OK to plot the projected lines. (bill edited this)
+  IF WEEKLY_RATE GT 1.9 THEN  BEGIN  ;  OK to plot the projected lines. (bill)
 ;    Compute the Predicted Times to the extended top.
 ;    D =    ( LATEST_DEPTH   -    ( DEPTH_THRESHOLD - 0.3 ) )  ; Distances to beyond the top.
      S = EXTRA_RNG/100.0  ; Convert the extend range from cm to meters.
@@ -395,8 +395,7 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
                  'ob--2',  SYM_FILLED=1,  /OVERPLOT )
   ENDIF  ; Plotting the projected lines to the 2015 Eruption Threshold top & Beyond.
 ;
-; Draw 2 dashed lines above and below the 2015 Eruption Threshold: 1509.79 (for method #1)
-; and threshole -8.45 for methods #2, #3, and #4 using the differential BPR data
+; Draw 2 dashed lines above and below the 2015 Eruption Threshold: 1509.79
 ; and 1 solid line at the Threshold.  All lines are in Red.
 ;
   R = EXTRA_RNG/100.0  ; Convert the extend range from cm to meters.
@@ -557,9 +556,9 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
   ENDELSE  ;  Getting the remaining time to the extended threshold.
   I = TEXT( /NORMAL, 0.84, 0.30, Y, COLOR='PURPLE' )  ; Time remaining to the Extended threshold depth.
 ;
-  IF WEEKLY_RATE GE 2.0 THEN  BEGIN  ; Used before August, 2018. 4.9 cm/yr used until 7/2021
-; ... then changed by Bill on 12/7/2022 and again on 3/12/2023.  Note this number should 
-; match the one above.  They control the last 2 lines in the legend on the far right of the plot
+  IF WEEKLY_RATE GT 0.0 THEN  BEGIN  ; Used before August, 2018. 4.9 cm/yr used until 7/2021 (bill)
+; ... then "reinstated" on 12/7/2022 by Bill to see if could get plots running again after
+; no plots from August 12, 2022 to December in the Forecast Method #2, #3, #4 plots
 ;  IF WEEKLY_RATE GT 1.9 THEN  BEGIN  ; Get the Forecast times only when the rate is >= +2cm/yr.
      D = CURRENT_DATE + R*365       ; Forecast times to the Extended top.
      D = STRING( FORMAT="(C(CMoA,1X,CYI))", D )
@@ -585,7 +584,55 @@ PRO PLOT_FORECAST_PROJECTION,  NANO_DATA_FILE,  $ ; Input: IDL Save File name.
   RETURN
   END  ; PLOT_FORECAST_PROJECTION 
 ;--------------------------------------------------------------------------------------
-; This routine is a Scatter Plot of the both Forecast Dates for reaching the eruption threshold
+; The following routine was only used between May 11th to 14th, 2018
+; It only plots the 2015 threshold, not the extended threshold; see PLOT_SCATTER2FORECAST
+; for that below (so you can ignore this until the next horizontal line)
+;
+; Callers: From RunForecastDates.pro and Users.
+;
+PRO PLOT_SCATTER_FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates info.
+         DEPTH_THRESHOLD,  $ ; Input: The eruption threshold in meters.
+            GRAPHIC_FILE,  $ ; Input: Graphic output file name.
+            TITLE4FIGURE,  $ ; Input: Character Strings.
+       DISPLAY=SHOW_PLOT,  $ ; Input: 0 = Not display the figure on the screen or 1 = yes.
+       PLOT_OBJECT=P       ;  Output: Return P = PLOT() to the caller. 
+;
+  PRINT, SYSTIME() + ' Plotting the predicted eruption dates versus dates of prediction...'
+;
+; Get the Forecasted Times.
+;
+  D = ( DATA[0:*,1] - DEPTH_THRESHOLD )  ; Distances to the top: 1509.79 meters, e.g.
+  S = WHERE( D LE 0.0, M )
+;
+  IF M GT 0 THEN  BEGIN
+     PRINT, SYSTIME() + ' Depth at or pass over the threshold: ' + STRTRIM( DEPTH_THRESHOLD, 2 )
+     PRINT, SYSTIME() + ' No Scatter Dates will be plotted.'
+  ENDIF  ELSE  BEGIN  ; Depths are not pass over the threshold yet.
+     T = D*100.0/DATA[0:*,3]                ; Times in years to the top & DATA[0:*,3]=12-Week Rate.
+     T = DATA[0:*,0] + TEMPORARY( T )*365   ; Forecasted Times to the top.
+     IF N_PARAMS() LT 4 THEN  BEGIN  ; TITLE4FIGURE is not provided.
+        TITLE4FIGURE = 'Date of prediction vs. Predicted date inflation will reach 2015 threshold'
+     ENDIF 
+; Bill changed max XRANGE below to extend Scatter plot max x-axis range to Jan 2024 - 12/2022
+     M = PLOT( DATA[*,0], T,             LINESTYLE='NONE',     $
+               SYMBOL='o', SYM_COLOR='BLUE', SYM_FILLED=1,     $
+               DIMENSION=[1024,512],      TITLE=TITLE4FIGURE,  $
+               XRANGE=[ JULDAY(1,1,2015), JULDAY(1,1,2024) ],  XMINOR=11,    $
+               XTICKFORMAT='(C(CMoA,1X,CYI))', YTICKFORMAT='(C(CYI))',       $
+               YTITLE='Predicted date inflation will reach 2015 threshold',  $
+               XTITLE='Date of prediction', BUFFER=( 1 - SHOW_PLOT ) )
+     IF GRAPHIC_FILE NE '' THEN  BEGIN  ; Generate a graphic file.
+        WRITE_PNG, GRAPHIC_FILE, M.CopyWindow( )
+;       where      GRAPHIC_FILE = '~/4Chadwick/RSN/MJ03F/ScatterDates1MJ03F.png' for example.
+;                  M.CopyWindow( ) is getting the figure from the graphic buffer.
+        PRINT, SYSTIME() + ' ' + GRAPHIC_FILE + ' is created.'
+     ENDIF 
+  ENDELSE
+;
+  RETURN
+  END  ; PLOT_SCATTER_DATES
+;--------------------------------------------------------------------------------------
+; This routine displays the both Forecast Dates for reaching the eruption threshold
 ; and the extended threshold, i.e. this has been used since May 15th, 2018
 ;
 ; Callers: From Run[Diff]ForecastDates.pro and Users.
@@ -599,8 +646,6 @@ PRO PLOT_SCATTER2FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates 
    EXTENDED_CM=EXTRA_RNG,  $ ; Input: in cm for +/- range for the DEPTH_THRESHOLD.
    MAX_YRANGE=END_YRANGE,  $ ; Input: JULDAY() for the max. time range to be shown.
        PLOT_OBJECT=M       ;  Output: Return P = PLOT() to the caller. 
-;
-  PRINT, SYSTIME() + ' Plotting the Scatter Plot of Projected Dates...'
 ;
   IF NOT KEYWORD_SET( EXTRA_RNG ) THEN  BEGIN  ; Set the default value.
      EXTRA_RNG = 30   ; in cm.
@@ -641,9 +686,9 @@ PRO PLOT_SCATTER2FORECAST, DATA,  $ ; Input: 2-D array of Dates, Depths & Rates 
   S = WHERE( D LE 0.0, M )
 ;
   IF M GT 0 THEN  BEGIN
-     PRINT, SYSTIME() + ' Depth at or past over the threshold: ' + STRTRIM( DEPTH_THRESHOLD, 2 )
+     PRINT, SYSTIME() + ' Depth at or pass over the threshold: ' + STRTRIM( DEPTH_THRESHOLD, 2 )
      PRINT, SYSTIME() + ' No Scatter Dates will be plotted.'
-  ENDIF  ELSE  BEGIN  ; Depths are not past over the threshold yet.
+  ENDIF  ELSE  BEGIN  ; Depths are not pass over the threshold yet.
      T = D*100.0/DATA[R,3]                ; Times in years to the top & DATA[R,3]=12-Week Rate.
      T = DATA[R,0] + TEMPORARY( T )*365   ; Forecasted Times to the top.
      IF N_PARAMS() LT 4 THEN  BEGIN  ; TITLE4FIGURE is not provided.

@@ -4,10 +4,10 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:
 #0-59 0-23 1-31 1-12 1-7 Command
 #------------------------------------------------------------------------------
 # 4x / hr
-0,15,30,45 * *   *   *   /home/kahn/ooi/api/ooiData.sh
-0,15,30,45 * *   *   *   /home/kahn/ooi/ftp/ooiftp.sh
-# 0,15,30,45 * *   *   *   /home/kahn/ooi/rsn/CheckStatus.sh
-5,20,35,50 * *   *   *   /home/kahn/ooi/rsn/ProcessRSNdata.job 
+0,20,40 *    *   *   *   /home/kahn/ooi/api/ooiData.sh
+0,20,40 *    *   *   *   /home/kahn/ooi/ftp/ooiftp.sh
+4,24,44 *    *   *   *   /home/kahn/ooi/rsn/CheckStatus.sh
+5,25,45 *    *   *   *   /home/kahn/ooi/rsn/ProcessRSNdata.job 
 # daily
 28    16     *   *   *   /home/kahn/ooi/bin/checkReboot.sh
 28    17     *   *   *   /home/kahn/ooi/bin/checkRSNhung.sh

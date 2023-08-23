@@ -5833,3 +5833,1426 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 701, in recv
     raise socket.timeout()
 socket.timeout
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 140, in __init__
+    self._start_transport(host, port)
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 176, in _start_transport
+    self._transport = paramiko.Transport((host, port))
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 416, in __init__
+    "Unable to connect to {}: {}".format(hostname, reason)
+paramiko.ssh_exception.SSHException: Unable to connect to ftp.ooirsn.uw.edu: [Errno 101] Network is unreachable
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Exception: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 607, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 607, in _read_timeout
+    x = self.__socket.recv(128)
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner[Errno 104] Connection reset by peer
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+OSError: [Errno 116] Stale file handle: '/home/kahn/ooi/ftp/data/mj03b'
+Traceback (most recent call last):
+  File "./ooiftp.py", line 47, in <module>
+    os.chdir("%s/data/%s" % (here, node))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kahn/ooi/ftp/data/mj03b'
+Exception: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2211, in _check_banner
+    buf = self.packetizer.readline(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 380, in readline
+    buf += self._read_timeout(timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/packet.py", line 609, in _read_timeout
+    raise EOFError()
+EOFError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 43, in <module>
+    private_key=keyF, private_key_pass=keyP ) as sftp:
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 143, in __init__
+    self._transport.connect(**self._tconnect)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 1291, in connect
+    self.start_client()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 660, in start_client
+    raise e
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2039, in run
+    self._check_banner()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/transport.py", line 2216, in _check_banner
+    "Error reading SSH protocol banner" + str(e)
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "./ooiftp.py", line 57, in <module>
+    ls = sftp.listdir_attr()
+  File "/usr/local/lib/python3.6/site-packages/pysftp/__init__.py", line 610, in listdir_attr
+    return sorted(self._sftp.listdir_attr(remotepath),
+  File "/usr/local/lib/python3.6/site-packages/paramiko/sftp_client.py", line 259, in listdir_attr
+    self._request(CMD_CLOSE, handle)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/sftp_client.py", line 813, in _request
+    return self._read_response(num)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/sftp_client.py", line 843, in _read_response
+    t, data = self._read_packet()
+  File "/usr/local/lib/python3.6/site-packages/paramiko/sftp.py", line 201, in _read_packet
+    x = self._read_all(4)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/sftp.py", line 185, in _read_all
+    x = self.sock.recv(n)
+  File "/usr/local/lib/python3.6/site-packages/paramiko/channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
