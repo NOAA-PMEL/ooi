@@ -5,7 +5,7 @@
 ; Programmer: T-K Andy Lau       NOAA/PMEL/OERD  HMSC  Newport, Oregon.
 ;    Revised: December 19th, 2014 ; to be run at Garfield.
 ;
-.RUN ~/idl/IDLcolors.pro
+.RUN ~/rsn/IDLcolors.pro
 .RUN ~/4Chadwick/RSN/CheckNANOdata4Alerts.pro
 .RUN ~/4Chadwick/RSN/DisplayAlarmSummary.pro
 ;

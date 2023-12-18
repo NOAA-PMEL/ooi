@@ -10,7 +10,7 @@
 ;    Revised: December  10th, 2018 ;
 ;
 ;
-.RUN ~/idl/IDLcolors.pro
+.RUN ~/rsn/IDLcolors.pro
 .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
 .RUN ~/4Chadwick/RSN/GetLongTermNANOdataProducts.pro
 .RUN ~/4Chadwick/RSN/PlotNANOdata.pro

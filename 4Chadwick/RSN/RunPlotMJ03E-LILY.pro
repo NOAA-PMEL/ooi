@@ -13,7 +13,7 @@
 .RUN ~/4Chadwick/RSN/StatusFile4RSN.pro
 .RUN ~/4Chadwick/RSN/UpdateRSNsaveFiles.pro
 ;
-.RUN ~/idl/IDLcolors.pro
+.RUN ~/rsn/IDLcolors.pro
 .RUN ~/4Chadwick/RSN/PlotLILYdata.pro
 .RUN ~/4Chadwick/RSN/PlotLongTermDataProducts.pro
 .RUN ~/4Chadwick/RSN/PlotNANOdata.pro

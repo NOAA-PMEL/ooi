@@ -1,0 +1,14 @@
+cd ~/4Chadwick/RSN/
+
+crontab crontab.null
+
+export DISPLAY=:2
+
+/usr/local/bin/idl < RunDisplayRates.pro > RunDisplayRates.log 2>&1
+
+crontab crontab
+
+cp ~/4Chadwick/RSN/MJ03?/MJ03?-RTM*.png /internet/httpd/html/new-eoi/rsn/graphs/
+
+rm -f /internet/httpd/html/new-eoi/rsn/graphs/MJ03?-RTM1DayMeans.png
+rm -f /internet/httpd/html/new-eoi/rsn/graphs/MJ03F-RTM4WkRATE.png

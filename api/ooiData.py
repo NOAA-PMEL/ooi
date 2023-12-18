@@ -74,7 +74,7 @@ def saveSegment(dtStr, path, data, select):
       tStr = dtFromNtpSec(ntpSec).strftime(tFmt)
       line = "%.2f, %s" % (ntpSec, tStr)
       for i in select:
-	line = line + ", %f" % data[j][i]
+        line = line + ", %f" % data[j][i]
       f.write(line+'\n')
 
 def beginDateTime():

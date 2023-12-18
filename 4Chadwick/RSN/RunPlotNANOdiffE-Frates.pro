@@ -9,7 +9,7 @@
 ; Revised: February  7th, 2020
 ;
  .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
-;.RUN ~/idl/match.pro
+;.RUN ~/rsn/match.pro
 ;
   CD, '~/4Chadwick/RSN/'
   PRINT, SYSTIME() + ' Start of RunPlotNANOdiffE-Frates.pro'

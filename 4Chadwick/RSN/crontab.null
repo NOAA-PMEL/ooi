@@ -1,0 +1,6 @@
+# null crontab with escape
+#------------------------------------------------------------------------------
+#0-59 0-23 1-31 1-12 1-7 Command
+#------------------------------------------------------------------------------
+# crontab should be restored by any program that nulls it, just in case ...
+00    12     *    *    *   crontab crontab

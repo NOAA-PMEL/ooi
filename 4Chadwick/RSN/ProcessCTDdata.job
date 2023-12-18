@@ -1,13 +1,17 @@
+#!/bin/bash
+# processRSNdata.job for the CTDs
+
 cd ~/4Chadwick/RSN/
+out=ProcessCTDdata.log
+date > $out
 
-date   > ProcessCTDdata.log
-/usr/local/bin/idl < RunProcessCTDdata.pro     >> ProcessCTDdata.log 2>&1
-date  >> ProcessCTDdata.log
+export DISPLAY=:2
+
+echo "idl < RunProcessCTDdata.pro" >> $out
+/usr/local/bin/idl < RunProcessCTDdata.pro     >  ProcessCTDdata.log 2>&1
+echo "idl < RunPlotCTD7Days4MJ03B.pro" >> $out
 /usr/local/bin/idl < RunPlotCTD7Days4MJ03B.pro >> ProcessCTDdata.log 2>&1
-date  >> ProcessCTDdata.log
+echo "idl < RunPlotCTD7Days4MJ03E.pro" >> $out
 /usr/local/bin/idl < RunPlotCTD7Days4MJ03E.pro >> ProcessCTDdata.log 2>&1
-date  >> ProcessCTDdata.log
-echo Copying CTD graphic files to /internet/httpd/html/new-eoi/rsn/graphs/  >> ProcessCTDdata.log
-cp ~/4Chadwick/RSN/MJ03B/*CTD*.png /internet/httpd/html/new-eoi/rsn/graphs/
-
-
+echo "idl < RunPlotCTD7Days4MJ03F.pro" >> $out
+/usr/local/bin/idl < RunPlotCTD7Days4MJ03F.pro >> ProcessCTDdata.log 2>&1

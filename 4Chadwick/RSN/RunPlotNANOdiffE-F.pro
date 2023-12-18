@@ -8,7 +8,7 @@
 ; Revised: October 31st, 2018
 ;
  .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
-;.RUN ~/idl/match.pro
+;.RUN ~/rsn/match.pro
 ;
   PRINT, SYSTIME() + ' Start running of RunPlotNANOdiffE-F.pro ...'
 ;
@@ -18,7 +18,7 @@
 ; Restrieve the NANO detided pressure difference data Array variables:
 ; NANO_DIFF and NANO_TIME.
 ;
-  RESTORE, '~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.idl'
+  RESTORE, '~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.rsn'
 ;
 ; Create a Time Range for labelling.
 ;

@@ -1,8 +1,0 @@
-cd ~/4Chadwick/RSN/
-export DISPLAY=:2
-rm -f RunUpdateMJ03EsaveFiles.log
-crontab crontab.null
-date  >> RunUpdateMJ03EsaveFiles.log
-idl < RunUpdateMJ03EsaveFiles.pro >> RunUpdateMJ03EsaveFiles.log   2>&1
-date >> RunUpdateMJ03EsaveFiles.log
-crontab crontab

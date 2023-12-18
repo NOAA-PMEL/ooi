@@ -10,7 +10,7 @@
 ; Revised: November 13th, 2018
 ;
  .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
-;.RUN ~/idl/match.pro
+;.RUN ~/rsn/match.pro
 ;
   PRINT, SYSTIME() + ' Start running of RunPlotCTD7Days4MJ03E.pro ...'
 ;
@@ -20,7 +20,7 @@
 ; Restrieve the CTD data Array variables: CDT_TIME, DENSITY, SALINITY & CTD_TEMP
 ; They are assumed to be the same size.
 ;
-  RESTORE, '~/4Chadwick/RSN/MJ03E/CTD7DaysMJ03E.idl'
+  RESTORE, '~/4Chadwick/RSN/MJ03E/CTD7DaysMJ03E.rsn'
 ;
 ; Locate the date 7 days from the current data.
 ; The following steps will be done by the file: RunPlotCTD7Days4MJ03E.pro

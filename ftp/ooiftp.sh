@@ -21,7 +21,7 @@ echo -n "$Curr @ " >> $base.log
 date >> $base.log
 if [ $Curr -ne $Prev ]; then
   if [ -n "$Email" ]; then
-    (ls -l $base.out; cat $base.out) | \
+    (ls -l $base.out; egrep 'got|trying' $base.out) | \
       mailx -r "brian.kahn@noaa.gov" -s "$0 $Prev to $Curr" $Email
   fi
 fi

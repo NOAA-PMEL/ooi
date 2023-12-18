@@ -13,7 +13,7 @@
  .RUN ~/4Chadwick/RSN/GetLongTermNANOdataProducts.pro
  .RUN ~/4Chadwick/RSN/GetNANOdifferenceRates.pro
  .RUN ~/4Chadwick/RSN/match.pro     ; At Caldera.
-;.RUN           ~/idl/match.pro     ; At Garfiled.
+;.RUN           ~/rsn/match.pro     ; At Garfiled.
 ;
   PRINT, SYSTIME() + ' Start running of RunUpdateNANOdiffE-Frates.pro ...'
 ;
@@ -22,12 +22,12 @@
 ; Restrieve the NANO data Array variables:
 ; NANO_DETIDE, NANO_PSIA, NANO_TEMP and NANO_TIME.
 ;
-  RESTORE, '~/4Chadwick/RSN/MJ03E/3DayMJ03E-NANO.idl'  ; It contains 7 Day data.
+  RESTORE, '~/4Chadwick/RSN/MJ03E/3DayMJ03E-NANO.rsn'  ; It contains 7 Day data.
   MJ03JE_TIME   = TEMPORARY( NANO_TIME   )
   MJ03JE_DETIDE = TEMPORARY( NANO_DETIDE )  ; Rename the arrays' variables.
 ; MJ03JE_PSIA   = TEMPORARY( NANO_PSIA   )
 ; MJ03JE_TEMP   = TEMPORARY( NANO_TEMP   )  ; Temperature values will not be used.
-  RESTORE, '~/4Chadwick/RSN/MJ03F/3DayMJ03F-NANO.idl'
+  RESTORE, '~/4Chadwick/RSN/MJ03F/3DayMJ03F-NANO.rsn'
   MJ03JF_TIME   = TEMPORARY( NANO_TIME   )
   MJ03JF_DETIDE = TEMPORARY( NANO_DETIDE )  ; Rename the arrays' variables.
 ; MJ03JF_PSIA   = TEMPORARY( NANO_PSIA   )
@@ -43,7 +43,7 @@
   NANO_TIME =   MJ03JF_TIME[JF]   ; Also = MJ03JE_TIME[JE].
 ;
 ; Append the newest differences data in: NANO_TIME & NANO_DIFF in any to the
-; data stored in the file: ~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.idl
+; data stored in the file: ~/4Chadwick/RSN/MJ03F/NANOdifferencesMJ03E-F.rsn
 ;
   UPDATE_NANO_DIFF_SAVE_FILE, 'MJ03F/NANOdifferencesMJ03E-F.idl',  $ ; File to be updates.
          NANO_TIME, NANO_DIFF,  $ ; Inputs: Arrays contain the Newest data from (7-Day)

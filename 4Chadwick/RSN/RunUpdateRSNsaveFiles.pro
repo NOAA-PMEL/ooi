@@ -23,7 +23,7 @@
 ;
 ; Plot all the data (No last 3-Day plots).
 ;
-.RUN ~/idl/IDLcolors.pro
+.RUN ~/rsn/IDLcolors.pro
 .RUN ~/4Chadwick/RSN/PlotLILYdata.pro
 .RUN ~/4Chadwick/RSN/PlotLongTermDataProducts.pro
 .RUN ~/4Chadwick/RSN/PlotNANOdata.pro

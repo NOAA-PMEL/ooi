@@ -400,7 +400,8 @@ COMMON DETIDE,       METER ; for storing the de-tided pressure data in meters.
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2019-2020AxialTidalData' + STATION_ID + '.idl'
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2020-2021AxialTidalData' + STATION_ID + '.idl'
 ; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2021-2022AxialTidalData' + STATION_ID + '.idl'
-  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2022-2023AxialTidalData' + STATION_ID + '.idl'
+; TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2022-2023AxialTidalData' + STATION_ID + '.idl'
+  TIDAL_DATA_FILE = '~/4Chadwick/RSN/Dec2023-2024AxialTidalData' + STATION_ID + '.idl'
 ;
 RESTORE, TIDAL_DATA_FILE  ; to get TIDAL_TIME (Julian Days), TIDAL (m)
 ;                         ; and N_TIDALS.

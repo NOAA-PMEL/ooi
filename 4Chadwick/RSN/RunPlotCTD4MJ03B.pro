@@ -7,7 +7,7 @@
 ; Revised: October 17th, 2018
 ;
  .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
-;.RUN ~/idl/match.pro
+;.RUN ~/rsn/match.pro
 ;
   PRINT, SYSTIME() + ' Start running of RunPlotCTD4MJ03B.pro ...'
 ;
@@ -17,7 +17,7 @@
 ; Restrieve the CTD data Array variables: CDT_TIME, DENSITY, SALINITY & CTD_TEMP
 ; They are assumed to be the same size.
 ;
-  RESTORE, '~/4Chadwick/RSN/MJ03B/CTD-MJ03B.idl'
+  RESTORE, '~/4Chadwick/RSN/MJ03B/CTD-MJ03B.rsn'
 ; RESTORE, '/data/lau/4Chadwick/RSN/MJ03B/CTD-MJ03B.idl'
 ;
 ; Create a Time Range for labelling.

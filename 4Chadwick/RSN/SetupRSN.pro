@@ -6,8 +6,8 @@
 ; Programmer: T-K Andy Lau       NOAA/PMEL/OERD  HMSC  Newport, Oregon.
 ;    Revised: February 10th, 2015 ; to be run at Garfield.
 ;
-.RUN ~/idl/IDLcolors.pro
-.RUN ~/idl/is_number.pro
+.RUN ~/4Chadwick/RSN/IDLcolors.pro
+.RUN ~/4Chadwick/RSN/is_number.pro
 .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
 .RUN ~/4Chadwick/RSN/ProcessRSNdata.pro
 .RUN ~/4Chadwick/RSN/ProcessNANOdata.pro
@@ -19,7 +19,7 @@
 .RUN ~/4Chadwick/RSN/CheckNANOdata4Alerts.pro
 .RUN ~/4Chadwick/RSN/CheckTiltData4Alerts.pro
 .RUN ~/4Chadwick/RSN/DisplayAlarmSummary.pro
-.RUN ~/4Chadwick/RSN/Test/GetDetectionParameters.pro
+.RUN ~/4Chadwick/RSN/GetDetectionParameters.pro
 .RUN ~/4Chadwick/RSN/GetLongTermNANOdataProducts.pro
 .RUN ~/4Chadwick/RSN/PlotLongTermDataProducts.pro
 .RUN ~/4Chadwick/RSN/GetShortTermNANOdataProducts.pro

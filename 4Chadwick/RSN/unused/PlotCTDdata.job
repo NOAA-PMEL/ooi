@@ -1,0 +1,9 @@
+cd ~/4Chadwick/RSN/
+
+date   > ProcessCTDdata.log
+/usr/local/bin/idl < RunPlotCTD4MJ03E.pro >> ProcessCTDdata.log 2>&1
+date  >> ProcessCTDdata.log
+echo Copying CTD graphic files to /internet/httpd/html/new-eoi/rsn/graphs/  >> ProcessCTDdata.log
+cp ~/4Chadwick/RSN/MJ03E/*CTD*.png /internet/httpd/html/new-eoi/rsn/graphs/
+
+

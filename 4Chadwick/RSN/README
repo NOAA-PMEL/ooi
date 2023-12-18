@@ -1,0 +1,65 @@
+2023-11-15
+. normalize
+.. crontab -> *.job -> *.sh
+.. x.job >> x.log
+.. all .job are in crontab (else mv to arc/)
+.. all .sh write to stdout stderr
+. cron job
+/home/kahn/ooi/rsn/RunUpdateRSNsaveFiles.job
+/home/kahn/ooi/rsn/RunGetRates.job
+/home/kahn/ooi/rsn/RunPlotMJ03D-LILY.job
+/home/kahn/ooi/rsn/RunPlotMJ03E-LILY.job
+/home/kahn/ooi/rsn/RunPlotMJ03F-LILY.job
+/home/kahn/ooi/rsn/RunForecastDates.job
+/home/kahn/ooi/rsn/SaveCTDdata.job
+/home/kahn/ooi/rsn/BackUpIDLfiles2data.job
+/home/kahn/ooi/rsn/RunPrintRSNdata2Files.job
+/home/kahn/ooi/rsn/CopyPrintedRSNdataFiles2FTP.job
+. rsn *.job
+BackUpIDLfiles2data.job CatchUpRSNdata.job CopyPrintedRSNdataFiles2FTP.job
+GetLongTermDataProducts.job PlotCTDdata.job ProcessCTDdata.job
+ProcessRSNdata.job Run1HrAve.job Run1HrAveTilt.job RunDisplayRates.job
+RunForecastDates.job RunGetRates.job RunPlotMJ03D-LILY.job
+RunPlotMJ03E-LILY.job RunPlotMJ03F-LILY.job RunPrintRSNdata2Files.job
+RunUpdateMJ03EsaveFiles.job RunUpdateRSNsaveFiles.job STARTcrontab.job
+STOPcrontab.job SaveCTDdata.job runGetRates.job
+
+2023-12-10
+#####
+# *.pro are IDL code, *.py are python code
+# *.job are shell scripts which run idl < *.pro
+# *.sh are shell scripts which run *.py *.sh and linux
+# crontab is root of all
+#
+: caldera.kahn 01:20:10 ~/ooi/rsn :
+# from crontab ProcessBOTPTdata.job ProcessCTDdata.job RunDay.sh
+ RunJob=$( cat RunDay.sh | grep 'rsn/.*\.job' | sed -e 's;.*/;;' | sort -u )
+ CronJob=$( echo ProcessBOTPTdata.job; echo ProcessCTDdata.job; echo "$RunJob" )
+ CronPro=$( cat $CronJob | grep -v echo | grep 'idl <' | cut -d' ' -f3 | sort -u )
+ kids=$( cat $CronPro | sed -e 's/ *;.*//' | egrep '@~|\.RUN' | sed -e 's;.*/;;' | sort -u )
+ gkids=$( cat $kids | sed -e 's/ *;.*//' | egrep '@~|\.RUN' | sed -e 's;.*/;;' | sort -u )
+ AllPro=$( (echo "$CronPro"; echo "$kids"; echo "$gkids") | sort -u )
+#
+ unuJob=$( ( ls -1 *.job ; echo "$CronJob" ) | sort | uniq -u )
+ unuPro=$( ( ls -1 *.pro ; echo "$AllPro" ) | sort | uniq -u )
+###
+ echo "$RunJob"
+RunForecastDates.job RunGetRates.job RunPlotMJ03D-LILY.job RunPlotMJ03E-LILY.job RunPlotMJ03F-LILY.job RunPrintRSNdata2Files.job RunUpdateRSNsaveFiles.job SaveCTDdata.job
+ echo $CronJob
+ProcessBOTPTdata.job ProcessCTDdata.job RunForecastDates.job RunGetRates.job RunPlotMJ03D-LILY.job RunPlotMJ03E-LILY.job RunPlotMJ03F-LILY.job RunPrintRSNdata2Files.job RunUpdateRSNsaveFiles.job SaveCTDdata.job
+# these are the .pro run almost directly by cron
+ echo $CronPro
+GetLongTermDataProducts.pro ProcessRSN-MJ03Bdata.pro ProcessRSN-MJ03Ddata.pro ProcessRSN-MJ03Edata.pro ProcessRSN-MJ03Fdata.pro Run1HrAveTilt.pro RunDiffForecastDates.pro RunDisplayAlarmSummary.pro RunForecastDates.pro RunGetRates.pro RunPlotCTD4MJ03B.pro RunPlotCTD4MJ03E.pro RunPlotCTD4MJ03F.pro RunPlotCTD7Days4MJ03B.pro RunPlotCTD7Days4MJ03E.pro RunPlotCTD7Days4MJ03F.pro RunPlotMJ03D-LILY.pro RunPlotMJ03D-RTMD.pro RunPlotMJ03E-LILY.pro RunPlotMJ03F-LILY.pro RunPlotMJ03Fdata.pro RunPlotNANOdiffE-F.pro RunPlotNANOdiffE-F7Days.pro RunPlotNANOdiffE-Frates.pro RunPlotRSNdata.pro RunPrintRSNdata2Files.pro RunProcessCTDdata.pro RunSaveCTDdata.pro RunUpdate1HrAveFile.pro RunUpdateMJ03EsaveFiles.pro RunUpdateMJ03FsaveFiles.pro RunUpdateNANOdiffE-F.pro RunUpdateRSNsaveFiles.pro
+# some *.pro idl scripts invoke other .pro idl scripts (remove comments first)
+ echo $kids
+AdjustOffsets.pro CheckNANOdata4Alerts.pro DisplayAlarmSummary.pro GetATD-RTMD.pro GetLongTermNANOdataProducts.pro GetNANOdifferenceRates.pro GetPredictedDates.pro GetRelevelingTimes.pro GetTiltDiff.pro IDLcolors.pro PlotForecastDates.pro PlotLILY.pro PlotLILYdata.pro PlotLongTermDataProducts.pro PlotNANOdata.pro PlotRSNdata.pro PlotShortTermDataProducts.pro PlotTD-RTMD.pro PlotTILTSdata.pro PrintRSNdata2Files.pro ProcessCTDdata.pro ProcessRSNdata.pro SetupRSN.pro SplitRSNdata.pro StatusFile4RSN.pro Update1HrAveFile.pro UpdateRSNsaveFiles.pro match.pro
+ echo $gkids
+CheckNANOdata4Alerts.pro CheckTiltData4Alerts.pro DisplayAlarmSummary.pro GetDetectionParameters.pro GetLongTermNANOdataProducts.pro GetShortTermNANOdataProducts.pro IDLcolors.pro PlotLILYdata.pro PlotLongTermDataProducts.pro PlotNANOdata.pro PlotRSNdata.pro PlotShortTermDataProducts.pro PlotTILTSdata.pro ProcessNANOdata.pro ProcessRSNdata.pro SplitRSNdata.pro StatusFile4RSN.pro is_number.pro
+ echo $AllPro
+AdjustOffsets.pro CheckNANOdata4Alerts.pro CheckTiltData4Alerts.pro DisplayAlarmSummary.pro GetATD-RTMD.pro GetDetectionParameters.pro GetLongTermDataProducts.pro GetLongTermNANOdataProducts.pro GetNANOdifferenceRates.pro GetPredictedDates.pro GetRelevelingTimes.pro GetShortTermNANOdataProducts.pro GetTiltDiff.pro IDLcolors.pro PlotForecastDates.pro PlotLILY.pro PlotLILYdata.pro PlotLongTermDataProducts.pro PlotNANOdata.pro PlotRSNdata.pro PlotShortTermDataProducts.pro PlotTD-RTMD.pro PlotTILTSdata.pro PrintRSNdata2Files.pro ProcessCTDdata.pro ProcessNANOdata.pro ProcessRSN-MJ03Bdata.pro ProcessRSN-MJ03Ddata.pro ProcessRSN-MJ03Edata.pro ProcessRSN-MJ03Fdata.pro ProcessRSNdata.pro Run1HrAveTilt.pro RunDiffForecastDates.pro RunDisplayAlarmSummary.pro RunForecastDates.pro RunGetRates.pro RunPlotCTD4MJ03B.pro RunPlotCTD4MJ03E.pro RunPlotCTD4MJ03F.pro RunPlotCTD7Days4MJ03B.pro RunPlotCTD7Days4MJ03E.pro RunPlotCTD7Days4MJ03F.pro RunPlotMJ03D-LILY.pro RunPlotMJ03D-RTMD.pro RunPlotMJ03E-LILY.pro RunPlotMJ03F-LILY.pro RunPlotMJ03Fdata.pro RunPlotNANOdiffE-F.pro RunPlotNANOdiffE-F7Days.pro RunPlotNANOdiffE-Frates.pro RunPlotRSNdata.pro RunPrintRSNdata2Files.pro RunProcessCTDdata.pro RunSaveCTDdata.pro RunUpdate1HrAveFile.pro RunUpdateMJ03EsaveFiles.pro RunUpdateMJ03FsaveFiles.pro RunUpdateNANOdiffE-F.pro RunUpdateRSNsaveFiles.pro SetupRSN.pro SplitRSNdata.pro StatusFile4RSN.pro Update1HrAveFile.pro UpdateRSNsaveFiles.pro is_number.pro match.pro
+# unused.pro unused.job
+: caldera.kahn 01:48:25 ~/rsn :
+ echo $unuPro
+CatchUpRSNdata.pro ChkNANOdata4Alerts.pro ChkRSNdataTimes.pro GetHEATdata.pro GetIRISdata.pro GetLILYtiltDiff.pro GetNANOdata.pro GetShortTermDataSets.pro JoinRSNdata.pro PlotForecastDates-07Mar2023.pro PlotRSN-MARSdata.pro ProcessHEATdata.pro ProcessIRISdata.pro ProcessRSN-MARSdata.pro RetrieveTiltVar.pro RunDisplayRates.pro RunGetTD-RTMD.pro RunGetTiltDiff.pro RunPlotCTD.pro RunPlotCTD7Days.pro RunPrintLILYdata2Files.pro RunProcessRSNdata.pro RunUpdateLILY1HrAveFile.pro StatusFile4MARS.pro UpdateLILY1HrAveFile.pro UpdateNANOdataFiles.pro runPlotNANOdiffE-Frates.pro
+ echo $unuJob
+CatchUpRSNdata.job GetLongTermDataProducts.job PlotCTDdata.job ProcessRSNdata.job ProcessRSNdataMJ03D.job ProcessRSNdataMJ03E.job ProcessRSNdataMJ03F.job Run1HrAve.job Run1HrAveTilt.job RunDisplayRates.job RunUpdateMJ03EsaveFiles.job STARTcrontab.job STOPcrontab.job runGetRates.job

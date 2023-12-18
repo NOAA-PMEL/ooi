@@ -7,19 +7,12 @@ PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:
 0,20,40 *    *    *    *   /home/kahn/ooi/api/ooiData.sh
 0,20,40 *    *    *    *   /home/kahn/ooi/ftp/ooiftp.sh
 4,24,44 *    *    *    *   /home/kahn/ooi/rsn/CheckStatus.sh
-5,25,45 *    *    *    *   /home/kahn/ooi/rsn/ProcessBOTPTdata.sh 
-5,25,45 *    *    *    *   /home/kahn/ooi/rsn/ProcessCTDdata.sh 
+5,25,45 *    *    *    *   /home/kahn/ooi/rsn/ProcessBOTPTdata.job 
+5,25,45 *    *    *    *   /home/kahn/ooi/rsn/ProcessCTDdata.job 
 # daily
-28    16     *    *    *   /home/kahn/ooi/bin/checkReboot.sh
-28    17     *    *    *   /home/kahn/ooi/bin/checkRSNhung.sh
-28    18     *    *    *   /home/kahn/ooi/rsn/RunUpdateRSNsaveFiles.job
-28    20     *    *    *   /home/kahn/ooi/rsn/RunGetRates.job
-28    21     *    *    *   /home/kahn/ooi/rsn/RunPlotMJ03F-LILY.job
-28    22     *    *    *   /home/kahn/ooi/rsn/RunPlotMJ03D-LILY.job
-28    23     *    *    *   /home/kahn/ooi/rsn/RunForecastDates.job
-28    00     *    *    *   /home/kahn/ooi/rsn/SaveCTDdata.job
-28    01     *    *    *   /home/kahn/ooi/rsn/RunPlotMJ03E-LILY.job
-28    03     *    *    *   /home/kahn/ooi/rsn/BackUpIDLfiles2data.job
-28    04     *    *    *   /home/kahn/ooi/rsn/RunPrintRSNdata2Files.job
-28    05     *    *    *   /home/kahn/ooi/rsn/CopyPrintedRSNdataFiles2FTP.job
-28    06     *    *    *   /home/kahn/ooi/api/cleanup.sh
+10    00     *    *    *   /home/kahn/ooi/api/cleanup.sh
+10    16     *    *    *   /home/kahn/ooi/bin/checkRSNhung.sh
+10    17     *    *    *   /home/kahn/ooi/rsn/RunDay.sh
+# see <Readme.RunJobs.txt>
+# root crontab
+#59   *     *    *    *   /home/kahn/ooi/bin/checkReboot.sh

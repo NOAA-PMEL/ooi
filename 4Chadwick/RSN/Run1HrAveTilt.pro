@@ -11,7 +11,7 @@
 ;    Revised: April   18th, 2018 ; to be run at Garfield.
 ;
 ;
- .RUN ~/idl/IDLcolors.pro
+ .RUN ~/rsn/IDLcolors.pro
  .RUN ~/4Chadwick/RSN/SplitRSNdata.pro
  .RUN ~/4Chadwick/RSN/ProcessRSNdata.pro
  .RUN ~/4Chadwick/RSN/GetLongTermNANOdataProducts.pro

@@ -49,9 +49,9 @@ for inst in $instruments; do
 done
 This=$(grep -c fail $base.out)
 
+cat $base.out >> $base.log
 # email if result differs from last time
 if [ "$This" -ne "$Last" ]; then
-  cat $base.out >> $base.log
   if [ -n "$Email" ]; then
     cat $base.out | mailx -r "brian.kahn@noaa.gov" -s "$0" $Email
   fi

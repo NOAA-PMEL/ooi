@@ -67,7 +67,10 @@ with pysftp.Connection(site, username=user,
               print("trying %s/%s" % (node, f.filename))
               sftp.get(f.filename, preserve_mtime=True)
               print("got %s/%s" % (node, f.filename))
-            except: print("could not get %s" % (f.filename))
+            except:
+              print("could not get %s" % (f.filename))
+          else:
+            print("older %s/%s" % (node, f.filename))
 
 # to run, requires .ssh/noaa-pmel4uw{.pub}  and known_hosts:
 #ftp.ooirsn.uw.edu,128.95.195.8 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWgwuFVWkOJpW4GMBv4ob77/i+bMjul1kQkzsWkFXq0d+EduakhHWE7mY8y5JiMpYdrjnBDktT5s9Ay5vfdl+tMeF+4Zb1fosVPVdZ60do0XePVsJ7junqwzclvZdrg4iiiwqtbS2Olw0UtIglUOY9us0VM4UTemOsFI6Uip6BLbg8FZOtVc9FNFdgzXtd8yrakTCMmZaOdh8AFWlJcSHt33Bv4uf2Aa8s+9MXDS4yb+zL+L3BcbxdfuCUAuDHQUUawZCZ/nl3JTMgzM+wOrFzsF1xzB3FnlK0d49Nw2ZMKaTruiuqsg1uEISlJ/uz0jbTBOLa0n5idqsnVNbdpbxL

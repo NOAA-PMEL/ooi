@@ -48,7 +48,7 @@ END  ; COMPUTE_RATE
 ; This procedure compute the differences between 2 detided NANO pressure data
 ; with their matched times.
 ;
-; This procedure requires the procedure: MATCH in ~/idl/match.pro in order to work.
+; This procedure requires the procedure: MATCH in ~/rsn/match.pro in order to work.
 ;
 ; Callers: Users.
 ; Revised: August  13th, 2018
